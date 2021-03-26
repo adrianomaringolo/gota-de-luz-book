@@ -8,9 +8,12 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "0.1.19",
+    "classnames": "2.2.6",
     "next": "latest",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "sass": "1.32.8"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",

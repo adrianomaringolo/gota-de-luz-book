@@ -1,0 +1,84 @@
+import React from "react";
+import ReactFullpage from "@fullpage/react-fullpage";
+import Image from "next/image";
+import cn from "classnames";
+
+import styles from "./../styles/layout.module.scss";
+import Products from "./Products";
+
+const Fullpage = () => (
+  <ReactFullpage
+    scrollingSpeed={1000}
+    render={() => {
+      return (
+        <ReactFullpage.Wrapper>
+          <div className={cn("section", styles.section, styles.sectionLogo)}>
+            <div className={styles.contentArea}>
+              <Image
+                priority
+                src="/images/logo.svg"
+                height={400}
+                width={600}
+                alt="Logo"
+              />
+              <p className={styles.highlight}>
+                A marca Gota de Luz oferece produtos artesanais, feitos à base
+                de óleos vegetais e óleos essenciais. Livres de conservantes,
+                sem produtos de origem animal e sem testes em animais.
+              </p>
+            </div>
+          </div>
+          <div
+            className={cn("section", styles.section, styles.sectionProducts)}
+          >
+            <div className={styles.contentArea}>
+              <h2 className="fancy-title">Conheça nossos produtos</h2>
+              <Products />
+            </div>
+          </div>
+          <div
+            className={cn("section", styles.section, styles.sectionDestination)}
+          >
+            <div className={styles.contentArea}>
+              <p className={styles.highlight}>
+                Os recursos das vendas são revertidos para a Morada Espírita
+                Professor Lairi Hans, e seu trabalho de assistência à famílias
+                carentes da periferia de Campinas.
+              </p>
+              <p className={styles.more}>
+                Conheça mais sobre o trabalho da Morada
+                <div>
+                  <a href="http://moradaespirita.org" target="blank">
+                    Site
+                  </a>
+                  <a
+                    href="https://www.facebook.com/moradaespirita"
+                    target="blank"
+                  >
+                    Facebook
+                  </a>
+                  <a href="https://instagram.com/moradaespirita" target="blank">
+                    Instragram
+                  </a>
+                </div>
+              </p>
+            </div>
+          </div>
+          <div className={cn("section", styles.section, styles.sectionPhotos)}>
+            <div className={styles.contentArea}></div>
+          </div>
+          <div className={cn("section", styles.section, styles.sectionContact)}>
+            <div className={styles.contentArea}>
+              <h2 className="fancy-title">Entre em contato</h2>
+              <p className={styles.highlight}>
+                Via WhatsApp: (19) 99135-5414 - Marcelo
+              </p>
+            </div>
+          </div>
+        </ReactFullpage.Wrapper>
+      );
+    }}
+  />
+);
+
+export default Fullpage;
