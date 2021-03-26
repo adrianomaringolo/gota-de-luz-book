@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import Link from "next/link";
 import Head from "next/head";
 import Fullpage from "./Fullpage";
 
@@ -8,7 +7,7 @@ type Props = {
   title?: string;
 };
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
+const Layout = ({ title = "This is the default title" }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
