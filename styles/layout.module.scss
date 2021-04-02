@@ -21,8 +21,8 @@
   }
 
   &.sectionLogo {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url("/images/background-init.jpg") no-repeat center/cover;
+    background: linear-gradient(rgb(110 52 130 / 59%), rgb(195 195 195 / 25%)),
+      url(/images/background-init.jpg) no-repeat 50% / cover;
   }
 
   &.sectionProducts {
@@ -31,7 +31,7 @@
 
   &.sectionDestination {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url("/images/background-destination.jpg") no-repeat center/cover;
+      url("/images/background-destination.jpg") no-repeat 20% / cover;
 
     .more {
       color: #fff;
