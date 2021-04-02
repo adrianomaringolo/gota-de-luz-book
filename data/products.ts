@@ -10,7 +10,7 @@ export const productTypes: ProductType[] = [
       { name: "Lavanda", description: "", image: "sabonete-lavanda-min.jpg" },
       { name: "Alecrim", description: "", image: "sabonete-alecrim-min.jpg" },
       {
-        name: "Laranja com limão siciliano cravo com canela",
+        name: "Laranja e limão",
         description: "",
         image: "sabonete-laranja-limao-min.jpg",
       },
@@ -86,6 +86,38 @@ export const productTypes: ProductType[] = [
     description:
       "Produtos feitos à base de óleos vegetais prensados a frio e óleos essenciais. Livre de essências sintéticas. Livre de produtos de origem animal.",
     image: "background-3.jpg",
+    items: [
+      {
+        name: "Face a mãos",
+        description:
+          "Combater o envelhecimento e o aparecimento de rugas. Manter o tônus e a nutrição da pele, auxiliando no combate às manchas em geral. Nutrir e recompor a pele durante o período de descanso, atuando principalmente na redução dos melasmas.",
+        image: "cosmetico-rosto.jpg",
+      },
+      {
+        name: "Cabelo",
+        description:
+          "Recompor e fechar as escamas dos fios quebradiços, hidratar e dar brilho aos cabelos. Ajuda a conter os fios arrepiados. No couro cabeludo, combate a queda, caspa e seborréia.",
+        image: "cosmetico-cabelo.jpg",
+      },
+      {
+        name: "Unhas",
+        description:
+          "Fortalecer, hidratar as unhas e combater os fungos. Eficaz no tratamento de ressecamento, micoses nas unhas e frieiras entre os dedos.",
+        image: "cosmetico-unhas.jpg",
+      },
+      {
+        name: "Hidratande",
+        description:
+          "Hidratar a pele, auxiliando na redução da perda de líquidos. Evita a flacidez e auxilia na cicatrização da pele. Fácil absorção sem engordurar a pele.",
+        image: "cosmetico-hidratante.jpg",
+      },
+      {
+        name: "Olhos",
+        description:
+          "Combater olheiras (atua na circulação da área dos olhos), clareando e mantendo a elasticidade da pele.",
+        image: "cosmetico-olhos.jpg",
+      },
+    ],
   },
   {
     id: "sais",

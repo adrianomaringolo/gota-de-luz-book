@@ -1,5 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { ProductItem, ProductType } from "../interfaces";
 import { getAllProductsIds, getProductData } from "../lib/products";
@@ -18,6 +20,15 @@ const Product = ({ productData }: { productData: ProductType }) => {
           backgroundImage: `url('/images/flower-backgrounds/${productData.image}')`,
         }}
       >
+        <Link href="/">
+          <Image
+            priority
+            src={`/images/logos/logo-${productData.id}.png`}
+            height={123}
+            width={400}
+            alt="Logo"
+          />
+        </Link>
         <h1>{productData.type}</h1>
         <section className={styles.infoArea}>
           <p className={styles.description}>
@@ -27,7 +38,7 @@ const Product = ({ productData }: { productData: ProductType }) => {
           </p>
           <div className={styles.productItems}>
             {productData.items?.map((item: ProductItem) => (
-              <div className={styles.itemContainer}>
+              <div className={styles.itemContainer} key={item.name}>
                 <div
                   className={styles.item}
                   style={{
