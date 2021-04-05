@@ -30,11 +30,18 @@
   }
 
   &.sectionDestination {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
       url("/images/background-destination.jpg") no-repeat 20% / cover;
 
+    p.highlight {
+      color: #555;
+    }
+
     .more {
-      color: #fff;
+      color: #555;
       font-size: 1.25rem;
       text-align: center;
 
@@ -44,13 +51,13 @@
         flex-wrap: wrap;
       }
       a {
-        color: #fff;
+        color: #555;
         padding: 20px;
         margin: 3px;
         background: rgba(255, 255, 255, 0.2);
         transition: background-color 0.5s;
         &:hover {
-          background: rgba(255, 255, 255, 0.5);
+          background: rgba(255, 255, 255, 0.8);
         }
       }
     }

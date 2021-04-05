@@ -41,9 +41,12 @@ const Fullpage = () => (
           >
             <div className={styles.contentArea}>
               <p className={styles.highlight}>
-                Os recursos das vendas são revertidos para a Morada Espírita
-                Professor Lairi Hans, e seu trabalho de assistência à famílias
-                carentes da periferia de Campinas.
+                Os recursos das vendas são revertidos para a{" "}
+                <strong>
+                  <i>Morada Espírita Professor Lairi Hans</i>
+                </strong>
+                , e seu trabalho de assistência à famílias carentes da periferia
+                de Campinas.
               </p>
               <p className={styles.more}>
                 Conheça mais sobre o trabalho da Morada

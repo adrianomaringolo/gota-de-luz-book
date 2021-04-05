@@ -140,11 +140,4 @@ export const productTypes: ProductType[] = [
       },
     ],
   },
-  {
-    id: "hidrolatos",
-    type: "Hidrolatos",
-    description:
-      "Produtos feitos à base de óleos essenciais. Livre de essências sintéticas. Livre de produtos de origem animal.",
-    image: "background-9.jpg",
-  },
 ];
