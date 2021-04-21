@@ -22,13 +22,15 @@ const Product = ({ productData }: { productData: ProductType }) => {
         }}
       >
         <Link href="/#produtos">
-          <Image
-            priority
-            src={`/images/logos/logo-${productData.id}.png`}
-            height={123}
-            width={400}
-            alt="Logo"
-          />
+          <div style={{ padding: "10px" }}>
+            <Image
+              priority
+              src={`/images/logos/logo-${productData.id}.png`}
+              height={123}
+              width={400}
+              alt="Logo"
+            />
+          </div>
         </Link>
         <h1>{productData.type}</h1>
         <section className={styles.infoArea}>
