@@ -47,36 +47,42 @@ export const productTypes: ProductType[] = [
         description:
           "Auxilia na remoção das vibrações negativas e paradas do ambiente. Estimula comportamentos e pensamentos positivos nas pessoas.",
         image: "spray-limpeza.jpg",
+        detailedDescription: "",
       },
       {
         name: "Prosperidade",
         description:
           'Traz "movimento" para o ambiente. Auxilia no fluxo contínuo das energias e na renovação das vibrações, ao mesmo tempo em que promove entusiasmo e alegria para o ambiente. Muito adequado para a época do Natal, mas pode ser usado durante todo o ano, pois traz as vibrações de renovação.',
         image: "spray-prosperidade.jpg",
+        detailedDescription: "",
       },
       {
         name: "Respire bem",
         description:
           "Atua na limpeza e desbloqueio das vias respiratórias. Auxilia no combate de alergias respiratórias. Traz sensação de frescor e alívio na respiração.",
         image: "spray-respire-bem.jpg",
+        detailedDescription: "",
       },
       {
         name: "Concentração",
         description:
           "Auxilia na limpeza mental, trazendo um frescor para a mente, facilitando o foco e a concentração. Ideal para ser usado no período da manhã, no estudo ou no trabalho.",
         image: "spray-concentracao.jpg",
+        detailedDescription: "",
       },
       {
         name: "Relaxamento",
         description:
           "Ideal para preparar o ambiente para uma atmosfera de relaxamento, calma, tranquilidade. Traz as vibrações naturalmente sedativas dos óleos essenciais. Bom para ser usado no fim do dia, à noite antes de dormir ou para fazer meditação",
         image: "spray-relaxamento.jpg",
+        detailedDescription: "",
       },
       {
         name: "Aconchego",
         description:
           "Harmoniza o ambiente familiar ou no trabalho. Melhora o padrão vibratório na convivência entre as pessoas, estimulando a empatia, trazendo uma sensação de acolhimento e harmonia.",
         image: "spray-aconchego.jpg",
+        detailedDescription: "",
       },
     ],
   },
@@ -88,10 +94,23 @@ export const productTypes: ProductType[] = [
     image: "background-3.jpg",
     items: [
       {
-        name: "Face a mãos",
+        name: "Face e mãos",
         description:
           "Combater o envelhecimento e o aparecimento de rugas. Manter o tônus e a nutrição da pele, auxiliando no combate às manchas em geral. Nutrir e recompor a pele durante o período de descanso, atuando principalmente na redução dos melasmas.",
         image: "cosmetico-rosto.jpg",
+        detailedDescription: `
+          <u>FACE E MÃOS (DIA)</u><br/>
+          Indicação:<br/>
+          Combater o envelhecimento e o aparecimento de rugas. Manter o tônus e a nutrição da pele, auxiliando no combate às manchas em geral.<br/><br/>
+          Uso:<br/>
+          Espalhar 2 a 3 gotas na face limpa e mãos, 2 vezes ao dia. Após a aplicação, pode-se utilizar maquiagem e protetor solar normalmente.
+          <br/><br/>
+          <u>FACE E MÃOS (NOITE)</u><br/>
+          Indicação:<br/>
+          Nutrir e recompor a pele durante o período de descanso, atuando principalmente na redução dos melasmas.<br/><br/>
+          Uso:<br/>
+          Antes de dormir, espalhar 2 a 3 gotas na face limpa e mãos.
+        `,
       },
       {
         name: "Cabelo",

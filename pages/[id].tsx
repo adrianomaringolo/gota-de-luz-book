@@ -7,6 +7,7 @@ import { ProductItem, ProductType } from "../interfaces";
 import { getAllProductsIds, getProductData } from "../lib/products";
 
 import styles from "./../styles/products.module.scss";
+import ProductItemDisplay from "../components/ProductItemDisplay";
 
 const Product = ({ productData }: { productData: ProductType }) => {
   return (
@@ -38,18 +39,7 @@ const Product = ({ productData }: { productData: ProductType }) => {
           </p>
           <div className={styles.productItems}>
             {productData.items?.map((item: ProductItem) => (
-              <div className={styles.itemContainer} key={item.name}>
-                <div
-                  className={styles.item}
-                  style={{
-                    background: `url('/images/products/${item.image}') no-repeat center / cover`,
-                  }}
-                ></div>
-                <div className={styles.productText}>
-                  <p className={styles.itemTitle}>{item.name}</p>
-                  <p className={styles.itemDesc}>{item.description}</p>
-                </div>
-              </div>
+              <ProductItemDisplay item={item} />
             ))}
           </div>
         </section>
