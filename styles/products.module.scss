@@ -69,12 +69,19 @@
   background-color: #fff;
   max-width: 1000px;
   width: 100%;
-  padding: 50px;
+  padding: 25px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 50px;
+    .infoOverflowArea {
+      max-height: 80vh;
+    }
+  }
   .infoOverflowArea {
     display: flex;
     flex-wrap: wrap;
-    overflow: auto;
-    max-height: 71vh;
+    overflow-x: auto;
+    max-height: 400px;
   }
   .itemTitle {
     margin-bottom: 50px;
@@ -89,8 +96,10 @@
     flex: 1;
     margin-top: 25px;
     text-align: left;
-    margin-left: 25px;
     min-width: 300px;
+    @media only screen and (min-width: 768px) {
+      margin-left: 25px;
+    }
   }
   .buttonArea {
     text-align: right;
