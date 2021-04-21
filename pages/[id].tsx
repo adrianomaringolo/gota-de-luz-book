@@ -21,7 +21,7 @@ const Product = ({ productData }: { productData: ProductType }) => {
           backgroundImage: `url('/images/flower-backgrounds/${productData.image}')`,
         }}
       >
-        <Link href="/">
+        <Link href="/#produtos">
           <Image
             priority
             src={`/images/logos/logo-${productData.id}.png`}
@@ -39,9 +39,12 @@ const Product = ({ productData }: { productData: ProductType }) => {
           </p>
           <div className={styles.productItems}>
             {productData.items?.map((item: ProductItem) => (
-              <ProductItemDisplay item={item} />
+              <ProductItemDisplay item={item} type={productData.type} />
             ))}
           </div>
+          <Link href="/#produtos">
+            <h3>&lt;&lt; Voltar para início</h3>
+          </Link>
         </section>
       </div>
     </>

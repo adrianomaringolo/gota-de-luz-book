@@ -5,10 +5,12 @@ import cn from "classnames";
 
 import styles from "./../styles/layout.module.scss";
 import Products from "./Products";
+import Questions from "./Questions";
 
 const Fullpage = () => (
   <ReactFullpage
     scrollingSpeed={1000}
+    anchors={["", "produtos", "recursos", "perguntas", "contato"]}
     render={() => {
       return (
         <ReactFullpage.Wrapper>
@@ -68,7 +70,9 @@ const Fullpage = () => (
             </div>
           </div>
           <div className={cn("section", styles.section, styles.sectionPhotos)}>
-            <div className={styles.contentArea}></div>
+            <div className={styles.contentArea}>
+              <Questions />
+            </div>
           </div>
           <div className={cn("section", styles.section, styles.sectionContact)}>
             <div className={styles.contentArea}>

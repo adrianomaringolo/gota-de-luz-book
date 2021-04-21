@@ -117,24 +117,48 @@ export const productTypes: ProductType[] = [
         description:
           "Recompor e fechar as escamas dos fios quebradiços, hidratar e dar brilho aos cabelos. Ajuda a conter os fios arrepiados. No couro cabeludo, combate a queda, caspa e seborréia.",
         image: "cosmetico-cabelo.jpg",
+        detailedDescription: `
+          Indicação:<br/>
+          Recompor e fechar as escamas dos fios quebradiços, hidratar e dar brilho aos cabelos. Ajuda a conter os fios arrepiados. No couro cabeludo, combate a queda, caspa e seborréia.<br/><br/>
+          Uso:<br/>
+          No couro cabeludo, colocar algumas gotas na ponta dos dedos e massagear. No cabelo, colocar por volta de 2 a 3 gotas na palma das mãos e passar no meio e pontas dos cabelos secos. Pentear normalmente. A quantidade de gotas poderá ser alterada dependendo do tipo e do volume.
+        `,
       },
       {
         name: "Unhas",
         description:
           "Fortalecer, hidratar as unhas e combater os fungos. Eficaz no tratamento de ressecamento, micoses nas unhas e frieiras entre os dedos.",
         image: "cosmetico-unhas.jpg",
+        detailedDescription: `
+          Indicação:<br/>
+          Fortalecer, hidratar as unhas e combater os fungos. Eficaz no tratamento de ressecamento, micoses nas unhas e frieiras entre os dedos.<br/><br/>
+          Uso:<br/>
+          Espalhar nas unhas e entre os dedos das mãos e pés, 2 vezes ao dia.
+        `,
       },
       {
-        name: "Hidratande",
+        name: "Hidratante",
         description:
           "Hidratar a pele, auxiliando na redução da perda de líquidos. Evita a flacidez e auxilia na cicatrização da pele. Fácil absorção sem engordurar a pele.",
         image: "cosmetico-hidratante.jpg",
+        detailedDescription: `
+          Indicação:<br/>
+          Hidratar a pele, auxiliando na redução da perda de líquidos. Evita a flacidez e auxilia na cicatrização da pele. Fácil absorção sem engordurar a pele.<br/><br/>
+          Uso:<br/>
+          Aplicar 2 a 3 gotas em cada braço e espalhar bem até a absorção completa. A mesma quantidade nas mãos. A quantidade de gotas pode variar dependendo do tipo de pele.
+        `,
       },
       {
         name: "Olhos",
         description:
           "Combater olheiras (atua na circulação da área dos olhos), clareando e mantendo a elasticidade da pele.",
         image: "cosmetico-olhos.jpg",
+        detailedDescription: `
+          Indicação:<br/>
+          Combater olheiras (atua na circulação da área dos olhos), clareando e mantendo a elasticidade da pele.<br/><br/>
+          Uso:<br/>
+          Lavar bem o rosto antes da aplicação. Passar e massagear na região das olheiras. Aplicar de manhã e à noite, podendo intercalar no meio do dia.
+        `,
       },
     ],
   },
@@ -150,12 +174,24 @@ export const productTypes: ProductType[] = [
         description:
           "Aliviar o estresse do dia-a-dia, com efeito calmante e sedativo natural. Antifúngico, bactericida e cicatrizante. Sem contraindicação, sendo o óleo essencial mais usado no mundo.",
         image: "sais-lavanda.jpg",
+        detailedDescription: `
+          Indicação:<br/>
+          Aliviar o estresse do dia-a-dia, com efeito calmante e sedativo natural. Antifúngico, bactericida e cicatrizante. Sem contraindicação, sendo o óleo essencial mais usado no mundo.<br/><br/>
+          Uso:<br/>
+          Preparar água quente numa bacia a uma temperatura aproximada de 37 graus, suficiente para cobrir o tornozelo. Acrescentar uma colher de sopa cheia dos sais. Deixar os pés mergulhados por 15 ou 20 minutos. Secar bem os pés e aplicar um hidratante.
+        `,
       },
       {
         name: "Alecrim",
         description:
           "Aliviar dores musculares, tensões, torcicolos, dores de cabeça, estafa mental. Estimular o sistema circulatório, combatendo a fadiga. Estimular a memória e a concentração. Uso contraindicado para hipertensos, grávidas e crianças menores de 8 anos de idade.",
         image: "sais-alecrim.jpg",
+        detailedDescription: `
+          Indicação:<br/>
+          Aliviar dores musculares, tensões, torcicolos, dores de cabeça, estafa mental. Estimular o sistema circulatório, combatendo a fadiga. Estimular a memória e a concentração. Uso contraindicado para hipertensos, grávidas e crianças menores de 8 anos de idade.<br/><br/>
+          Uso:<br/>
+          Preparar água quente numa bacia a uma temperatura aproximada de 37 graus, suficiente para cobrir o tornozelo. Acrescentar uma colher de sopa cheia dos sais. Deixar os pés mergulhados por 15 ou 20 minutos. Secar bem os pés e aplicar um hidratante.
+        `,
       },
     ],
   },

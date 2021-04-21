@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { ProductItem } from "../interfaces";
-import Image from "next/image";
 import styles from "./../styles/products.module.scss";
 
-const ProductItemDisplay = ({ item }: { item: ProductItem }) => {
+const ProductItemDisplay = ({
+  item,
+  type,
+}: {
+  item: ProductItem;
+  type: string;
+}) => {
   const [viewMode, setViewMode] = useState("");
   return (
     <>
@@ -29,7 +34,9 @@ const ProductItemDisplay = ({ item }: { item: ProductItem }) => {
       </div>
       <div className={`${styles.modal} ${viewMode}`}>
         <div className={`${styles.detailedItem} ${styles.modalItem}`}>
-          <p className={styles.itemTitle}>{item.name}</p>
+          <p className={styles.itemTitle}>
+            {type}: {item.name}
+          </p>
           <div className={styles.infoOverflowArea}>
             <div
               className={styles.image}
