@@ -94,18 +94,18 @@ export const productTypes: ProductType[] = [
     image: "background-3.jpg",
     items: [
       {
-        name: "Face e mãos",
+        name: "Rosto",
         description:
           "Combater o envelhecimento e o aparecimento de rugas. Manter o tônus e a nutrição da pele, auxiliando no combate às manchas em geral. Nutrir e recompor a pele durante o período de descanso, atuando principalmente na redução dos melasmas.",
         image: "cosmetico-rosto.jpg",
         detailedDescription: `
-          <u>FACE E MÃOS (DIA)</u><br/>
+          <u>ROSTO (DIA)</u><br/>
           Indicação:<br/>
           Combater o envelhecimento e o aparecimento de rugas. Manter o tônus e a nutrição da pele, auxiliando no combate às manchas em geral.<br/><br/>
           Uso:<br/>
           Espalhar 2 a 3 gotas na face limpa e mãos, 2 vezes ao dia. Após a aplicação, pode-se utilizar maquiagem e protetor solar normalmente.
           <br/><br/>
-          <u>FACE E MÃOS (NOITE)</u><br/>
+          <u>ROSTO (NOITE)</u><br/>
           Indicação:<br/>
           Nutrir e recompor a pele durante o período de descanso, atuando principalmente na redução dos melasmas.<br/><br/>
           Uso:<br/>
