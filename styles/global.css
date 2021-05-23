@@ -16,6 +16,8 @@
   font-weight: 500;
 }
 
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 html,
 body {
   padding: 0;
@@ -24,6 +26,14 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 15px;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (min-width: 768px) {

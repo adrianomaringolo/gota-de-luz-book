@@ -45,7 +45,7 @@ const Product = ({ productData }: { productData: ProductType }) => {
             ))}
           </div>
           <Link href="/#produtos">
-            <h3>&lt;&lt; Voltar para início</h3>
+            <h3 className="link">&lt;&lt; Voltar para início</h3>
           </Link>
         </section>
       </div>
