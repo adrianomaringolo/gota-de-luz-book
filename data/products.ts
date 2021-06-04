@@ -197,11 +197,52 @@ export const productTypes: ProductType[] = [
   },
   {
     id: "hidrolatos",
-    type: "Hidrolatos",
-    description: `Produtos feitos à base de óleos essenciais. Livre de essências sintéticas. Livre de produtos de origem animal.
-        <br/><br/>
-        <big><strong>Produto sazonal! Disponibilidade sob consulta!</strong></big>
+    type: "Hidrolatos e óleos essenciais",
+    description: `Os <b>óleos essenciais</b> são extratos naturais superconcentrados, extraídos principalmente por método de destilação a vapor ou por prensagem a frio das flores, plantas e frutas. Possuem propriedades terapêuticas e diversos benefícios para a saúde devido a sua alta concentração e, por isso, não devem ser usados puros diretamente na pele. Podem ser usados na aromaterapia em difusores pessoais, de ambiente e diluídos em óleos vegetais. São totalmente naturais, sem corantes e sem quaisquer aditivos químicos. 
+      <br/><br/>
+      <b>Hidrolatos</b>, ou águas florais são também um produto do processo de destilação na extração dos óleos essenciais, onde o vapor d'água que atravessa a planta destilada arrasta também vários elementos da planta que, ao passarem ao estado líquido novamente, formam os hidrolatos.
+      <br/><br/>
+      <big><strong>Produtos sazonais! Disponibilidade sob consulta!</strong></big>
       `,
     image: "background-9.jpg",
+    items: [
+      {
+        name: "Manjericão",
+        description: "",
+        image: "hidrolato-manjericao.jpg",
+        detailedDescription: ``,
+      },
+      {
+        name: "Melaleuca",
+        description: "",
+        image: "hidrolato-melaleuca.jpeg",
+        detailedDescription: `
+        <p><b>A história e a origem da Melaleuca</b></p>
+        <p>A Melaleuca é uma planta nativa do sul da Austrália e da Nova Caledônia. É conhecida também como Tea Tree ou árvore-do- chá. Das folhas desta árvore é destilado o óleo de melaleuca. Ele é usado para desinfecções, cicatrizações e pequenas curas. O óleo de melaleuca era usado por aborígenes da Austrália há milhares de anos. Eles misturavam as folhas com lama e aplicavam diretamente na pele atingida, para tratamento de cortes e infecções da pele.</p>
+        <p>Existem inclusive relatos de histórias em que esse povo aborígene banhava-se em uma lagoa “mágica” onde era possível curar ferimentos e afecções. O que acontecia de fato era que as folhas de melaleuca caíam sempre em um alagado próximo, e com o passar do tempo, era possível usufruir das suas propriedades medicinais que naquela água ficavam.</p>
+
+        <p><b>Benefícios da melaleuca</b></p>
+        <p>O óleo de melaleuca serve para uma série de problemas da pele. </p>
+        <p>Combate fungos, bactérias, vírus.</p>
+        <p>É antissépticas.</p>
+        <p>Combate acnes.</p>
+        <p>A ajuda no tratamento de problemas respiratórios, como dores de garganta, tosse, bronquite, asma;</p>
+        <p>Combate micoses em unhas, reduzindo a multiplicação de fungos e bactérias nas unhas, ajudando a regeneração de unhas deformadas.</p>
+
+        <p><b>Uso da melaleuca</b></p>
+        <p>Todo óleo essencial deve ser utilizado com cuidado e com orientação de um terapeuta.</p>
+        <p>O óleo jamais deve ser administrado por via oral a fim de evitar reação alérgica. </p>
+        <p>Deve ser usado apenas externamente e, dependendo da aplicação, ele deverá ser diluído. </p>
+        <p>Pode ser diluído em cremes neutros, gel e óleo vegetal.</p>
+        <p>Nos casos de acne, pode-se pingar uma única gota no local.</p>
+        <p>Pode ser usado em difusores de ambiente. Nesses casos, as moléculas aromáticas da melaleuca se dispersam no ambiente, beneficiando a todos da casa.</p>
+        <p>Pode ser inalado diretamente no frasco por alguns segundos.</p><br/>
+
+        </>Caso ingerido procure ajuda médica</p>
+        <p>Este óleo não deve ser utilizado por pessoas que tenham alergia a terebintina. </p>
+        <p>Ele também não deve ser aplicado diretamente em ferimentos abertos, nos olhos e nem sobre a pele rachada.</p>
+              `,
+      },
+    ],
   },
 ];

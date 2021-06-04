@@ -42,6 +42,7 @@ const ProductItemDisplay = ({
               className={styles.image}
               style={{
                 background: `url('/images/products/${item.image}') no-repeat center / contain`,
+                backgroundPosition: "top",
               }}
             ></div>
             <div
