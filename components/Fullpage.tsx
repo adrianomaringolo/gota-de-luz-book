@@ -85,7 +85,7 @@ const Fullpage = () => (
               <p className={styles.highlight}>
                 <a
                   className="link"
-                  href="Catálogo - Gota de luz.pdf"
+                  href="/Catálogo - Gota de luz.pdf"
                   target="_blank"
                 >
                   Clique aqui
