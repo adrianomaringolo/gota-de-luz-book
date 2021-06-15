@@ -85,7 +85,7 @@ const Fullpage = () => (
               <p className={styles.highlight}>
                 <a
                   className="link"
-                  href="/Catálogo - Gota de luz.pdf"
+                  href="https://drive.google.com/file/d/1dxLJ6MORxJV-QCBUdDX6OEsMsvd6xth1/view?usp=sharing"
                   target="_blank"
                 >
                   Clique aqui
