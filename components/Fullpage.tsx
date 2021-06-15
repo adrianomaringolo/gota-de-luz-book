@@ -79,7 +79,18 @@ const Fullpage = () => (
             <div className={styles.contentArea}>
               <h2 className="fancy-title">Entre em contato</h2>
               <p className={styles.highlight}>
-                Via WhatsApp: (19) 99135-5414 - Marcelo
+                Via WhatsApp:{" "}
+                <span style={{ color: "#000" }}>(19) 99135-5414</span> - Marcelo
+              </p>
+              <p className={styles.highlight}>
+                <a
+                  className="link"
+                  href="Catálogo - Gota de luz.pdf"
+                  target="_blank"
+                >
+                  Clique aqui
+                </a>{" "}
+                para baixar o catálogo em pdf
               </p>
             </div>
           </div>
