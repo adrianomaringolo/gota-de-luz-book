@@ -26,6 +26,11 @@ export const productTypes: ProductType[] = [
         image: "sabonete-cravo-canela-min.jpg",
       },
       {
+        name: "Manjericão",
+        description: "",
+        image: "sabonete-manjericao-min.jpg",
+      },
+      {
         name: "Linha facial",
         description: "",
         image: "sabonete-linha-facial-min.jpg",
