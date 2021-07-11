@@ -22,7 +22,7 @@ const Fullpage = () => (
                 height={400}
                 width={600}
                 alt="Logo"
-                className="svg-logo"
+                className={styles.svgLogo}
               />
               <p className={styles.highlight}>
                 A marca Gota de Luz oferece produtos artesanais, feitos à base
