@@ -106,3 +106,8 @@ h2.fancy-title {
   left: 0;
   right: 0;
 }
+
+.image-gallery-swipe {
+  max-height: 500px;
+  overflow: hidden;
+}

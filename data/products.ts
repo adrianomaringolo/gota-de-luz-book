@@ -203,24 +203,30 @@ export const productTypes: ProductType[] = [
   {
     id: "hidrolatos",
     type: "Hidrolatos e óleos essenciais",
-    description: `Os <b>óleos essenciais</b> são extratos naturais superconcentrados, extraídos principalmente por método de destilação a vapor ou por prensagem a frio das flores, plantas e frutas. Possuem propriedades terapêuticas e diversos benefícios para a saúde devido a sua alta concentração e, por isso, não devem ser usados puros diretamente na pele. Podem ser usados na aromaterapia em difusores pessoais, de ambiente e diluídos em óleos vegetais. São totalmente naturais, sem corantes e sem quaisquer aditivos químicos. 
+    description: `<div style="
+        width: 100%; min-height: 300px;
+        background: linear-gradient(rgb(255 255 255 / 75%), rgb(255 255 255 / 65%)),
+        url(/images/products/hidrolatos.jpg) no-repeat center / cover;
+        padding: 20px; margin-bottom: 20px;">
+      Os <b>óleos essenciais</b> são extratos naturais superconcentrados, extraídos principalmente por método de destilação a vapor ou por prensagem a frio das flores, plantas e frutas. Possuem propriedades terapêuticas e diversos benefícios para a saúde devido a sua alta concentração e, por isso, não devem ser usados puros diretamente na pele. Podem ser usados na aromaterapia em difusores pessoais, de ambiente e diluídos em óleos vegetais. São totalmente naturais, sem corantes e sem quaisquer aditivos químicos. 
       <br/><br/>
       <b>Hidrolatos</b>, ou águas florais são também um produto do processo de destilação na extração dos óleos essenciais, onde o vapor d'água que atravessa a planta destilada arrasta também vários elementos da planta que, ao passarem ao estado líquido novamente, formam os hidrolatos.
       <br/><br/>
+      </div>
       <big><strong>Produtos sazonais! Disponibilidade sob consulta!</strong></big>
       `,
     image: "background-9.jpg",
     items: [
       {
-        name: "Manjericão",
-        description: "",
+        name: "Hidrolato de Manjericão",
+        description: "Ocimum basilicum",
         image: "hidrolato-manjericao.jpg",
         detailedDescription: ``,
       },
       {
-        name: "Melaleuca",
-        description: "",
-        image: "hidrolato-melaleuca.jpeg",
+        name: "Hidrolato de Melaleuca",
+        description: "Melaleuca alternifolia",
+        image: "hidrolato-melaleuca.jpg",
         detailedDescription: `
         <p><b>A história e a origem da Melaleuca</b></p>
         <p>A Melaleuca é uma planta nativa do sul da Austrália e da Nova Caledônia. É conhecida também como Tea Tree ou árvore-do- chá. Das folhas desta árvore é destilado o óleo de melaleuca. Ele é usado para desinfecções, cicatrizações e pequenas curas. O óleo de melaleuca era usado por aborígenes da Austrália há milhares de anos. Eles misturavam as folhas com lama e aplicavam diretamente na pele atingida, para tratamento de cortes e infecções da pele.</p>
@@ -247,6 +253,38 @@ export const productTypes: ProductType[] = [
         <p>Este óleo não deve ser utilizado por pessoas que tenham alergia a terebintina. </p>
         <p>Ele também não deve ser aplicado diretamente em ferimentos abertos, nos olhos e nem sobre a pele rachada.</p>
               `,
+      },
+      {
+        name: "Hidrolato de Vetiver",
+        description: "Vetiveria zizanioides",
+        image: "hidrolato-vetiver.jpg",
+        detailedDescription: ``,
+      },
+
+      {
+        name: "Hidrolato de Lavanda",
+        description: "Lavandula dentata",
+        image: "hidrolato-lavanda.jpg",
+        detailedDescription: ``,
+      },
+      {
+        name: "Hidrolato de Breu branco",
+        description: "Protium heptaphyllum",
+        image: "hidrolato-breu.jpg",
+        detailedDescription: ``,
+      },
+      {
+        name: "Hidrolato de Hortelã",
+        description: "Mentha spicata",
+        image: "hidrolato-hortela.jpg",
+        detailedDescription: ``,
+      },
+
+      {
+        name: "Óleo essencial de melaleuca",
+        description: "Melaleuca alternifolia",
+        image: "oleo-melaleuca.jpg",
+        detailedDescription: ``,
       },
     ],
   },

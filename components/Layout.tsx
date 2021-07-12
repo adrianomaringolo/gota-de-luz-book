@@ -22,10 +22,6 @@ const Layout = ({ title = "This is the default title" }: Props) => (
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
     <Fullpage></Fullpage>
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
   </div>
 );
 
