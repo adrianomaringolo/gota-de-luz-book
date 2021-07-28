@@ -1,4 +1,3 @@
-import Cart from "../components/Cart";
 import Layout from "../components/Layout";
 
 const Home = () => (
