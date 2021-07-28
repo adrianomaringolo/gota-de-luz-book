@@ -1,15 +1,10 @@
-import Link from "next/link";
+import Cart from "../components/Cart";
 import Layout from "../components/Layout";
 
 const Home = () => (
-  <Layout title="Gota de Luz">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
+  <>
+    <Layout title="Gota de Luz"></Layout>
+  </>
 );
 
 export default Home;

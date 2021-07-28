@@ -107,7 +107,7 @@ const clearCart = () => {
 
 const saveOrder = async (cart: any, contactInfo: any) => {
   return await ordersRef.doc().set({
-    items: cart.items,
+    items: cart.items.filter((i: CartItemType) => i.amount),
     contactInfo,
     createdAt: new Date().toISOString(),
   });

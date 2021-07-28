@@ -171,16 +171,10 @@ const Cart = () => {
           {orderStep === 0 && (
             <div>
               <p className="title">Meu pedido</p>
-              <p className="title-description">
-                Escolha os itens e quantidades abaixo e finalize sua reserva de
-                pedido. Após o pedido, a equipe Gota de Luz vai entrar em
-                contato para confirmar a disponibilidade dos produtos
-                escolhidos.
-              </p>
               <div
                 style={{
                   padding: "20px",
-                  maxHeight: "55vh",
+                  maxHeight: "50vh",
                   overflow: "scroll",
                   border: "1px solid #ccc",
                 }}
