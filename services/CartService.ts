@@ -38,7 +38,7 @@ const addItemToCart = (item: CartItemType) => {
   );
 
   if (found) {
-    found.amount++;
+    found.amount = (found.amount || 0) + 1;
   } else {
     newItems.push(item);
   }

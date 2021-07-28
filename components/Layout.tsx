@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import Fullpage from "./Fullpage";
-import Cart from "./Cart";
 
 type Props = {
   children?: ReactNode;
