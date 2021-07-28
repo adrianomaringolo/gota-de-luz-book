@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import Fullpage from "./Fullpage";
+import Cart from "./Cart";
 
 type Props = {
   children?: ReactNode;
@@ -8,7 +9,7 @@ type Props = {
 };
 
 const Layout = ({ title = "This is the default title" }: Props) => (
-  <div>
+  <div style={{ position: "relative" }}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -21,6 +22,7 @@ const Layout = ({ title = "This is the default title" }: Props) => (
       <meta name="og:title" content={title} />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
+
     <Fullpage></Fullpage>
   </div>
 );

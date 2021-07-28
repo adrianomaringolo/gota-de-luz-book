@@ -7,31 +7,66 @@ export const productTypes: ProductType[] = [
     description: "Óleos vegetais e óleos essenciais",
     image: "background-8.jpg",
     items: [
-      { name: "Lavanda", description: "", image: "sabonete-lavanda-min.jpg" },
-      { name: "Alecrim", description: "", image: "sabonete-alecrim-min.jpg" },
       {
+        id: "SAB-LAV",
+        name: "Lavanda",
+        price: 15,
+        description: "",
+        image: "sabonete-lavanda-min.jpg",
+      },
+      {
+        id: "SAB-ALE",
+        name: "Alecrim",
+        price: 15,
+        description: "",
+        image: "sabonete-alecrim-min.jpg",
+      },
+      {
+        id: "SAB-LAR",
         name: "Laranja e limão",
+        price: 15,
         description: "",
         image: "sabonete-laranja-limao-min.jpg",
       },
       {
+        id: "SAB-HOR",
         name: "Hortelã com alecrim",
+        price: 15,
         description: "",
         image: "sabonete-hortela-alecrim-min.jpg",
       },
-      { name: "Cedro", description: "", image: "sabonete-cedro-min.jpg" },
       {
+        id: "SAB-CED",
+        name: "Cedro",
+        price: 15,
+        description: "",
+        image: "sabonete-cedro-min.jpg",
+      },
+      {
+        id: "SAB-CRA",
         name: "Cravo e canela",
+        price: 15,
         description: "",
         image: "sabonete-cravo-canela-min.jpg",
       },
       {
+        id: "SAB-MAN",
         name: "Manjericão",
+        price: 15,
         description: "",
         image: "sabonete-manjericao-min.jpg",
       },
       {
+        id: "SAB-BAU",
+        name: "Baunilha",
+        price: 15,
+        description: "",
+        image: "sabonete-baunilha-min.jpg",
+      },
+      {
+        id: "SAB-LIN",
         name: "Linha facial",
+        price: 12,
         description: "",
         image: "sabonete-linha-facial-min.jpg",
       },
@@ -48,42 +83,54 @@ export const productTypes: ProductType[] = [
     image: "background-2.jpg",
     items: [
       {
+        id: "SPR-LIM",
         name: "Limpeza",
+        price: 29,
         description:
           "Auxilia na remoção das vibrações negativas e paradas do ambiente. Estimula comportamentos e pensamentos positivos nas pessoas.",
         image: "spray-limpeza.jpg",
         detailedDescription: "",
       },
       {
+        id: "SPR-PRO",
         name: "Prosperidade",
+        price: 29,
         description:
           'Traz "movimento" para o ambiente. Auxilia no fluxo contínuo das energias e na renovação das vibrações, ao mesmo tempo em que promove entusiasmo e alegria para o ambiente. Muito adequado para a época do Natal, mas pode ser usado durante todo o ano, pois traz as vibrações de renovação.',
         image: "spray-prosperidade.jpg",
         detailedDescription: "",
       },
       {
+        id: "SPR-RES",
         name: "Respire bem",
+        price: 29,
         description:
           "Atua na limpeza e desbloqueio das vias respiratórias. Auxilia no combate de alergias respiratórias. Traz sensação de frescor e alívio na respiração.",
         image: "spray-respire-bem.jpg",
         detailedDescription: "",
       },
       {
+        id: "SPR-CON",
         name: "Concentração",
+        price: 29,
         description:
           "Auxilia na limpeza mental, trazendo um frescor para a mente, facilitando o foco e a concentração. Ideal para ser usado no período da manhã, no estudo ou no trabalho.",
         image: "spray-concentracao.jpg",
         detailedDescription: "",
       },
       {
+        id: "SPR-REL",
         name: "Relaxamento",
+        price: 29,
         description:
           "Ideal para preparar o ambiente para uma atmosfera de relaxamento, calma, tranquilidade. Traz as vibrações naturalmente sedativas dos óleos essenciais. Bom para ser usado no fim do dia, à noite antes de dormir ou para fazer meditação",
         image: "spray-relaxamento.jpg",
         detailedDescription: "",
       },
       {
+        id: "SPR-ACO",
         name: "Aconchego",
+        price: 29,
         description:
           "Harmoniza o ambiente familiar ou no trabalho. Melhora o padrão vibratório na convivência entre as pessoas, estimulando a empatia, trazendo uma sensação de acolhimento e harmonia.",
         image: "spray-aconchego.jpg",
@@ -99,7 +146,9 @@ export const productTypes: ProductType[] = [
     image: "background-3.jpg",
     items: [
       {
+        id: "COS-ROS",
         name: "Rosto",
+        price: 85,
         description:
           "Combater o envelhecimento e o aparecimento de rugas. Manter o tônus e a nutrição da pele, auxiliando no combate às manchas em geral. Nutrir e recompor a pele durante o período de descanso, atuando principalmente na redução dos melasmas.",
         image: "cosmetico-rosto.jpg",
@@ -118,7 +167,9 @@ export const productTypes: ProductType[] = [
         `,
       },
       {
+        id: "COS-CAB",
         name: "Cabelo",
+        price: 59,
         description:
           "Recompor e fechar as escamas dos fios quebradiços, hidratar e dar brilho aos cabelos. Ajuda a conter os fios arrepiados. No couro cabeludo, combate a queda, caspa e seborréia.",
         image: "cosmetico-cabelo.jpg",
@@ -130,7 +181,9 @@ export const productTypes: ProductType[] = [
         `,
       },
       {
+        id: "COS-UNH",
         name: "Unhas",
+        price: 49,
         description:
           "Fortalecer, hidratar as unhas e combater os fungos. Eficaz no tratamento de ressecamento, micoses nas unhas e frieiras entre os dedos.",
         image: "cosmetico-unhas.jpg",
@@ -142,7 +195,9 @@ export const productTypes: ProductType[] = [
         `,
       },
       {
+        id: "COS-HID",
         name: "Hidratante",
+        price: 49,
         description:
           "Hidratar a pele, auxiliando na redução da perda de líquidos. Evita a flacidez e auxilia na cicatrização da pele. Fácil absorção sem engordurar a pele.",
         image: "cosmetico-hidratante.jpg",
@@ -154,7 +209,9 @@ export const productTypes: ProductType[] = [
         `,
       },
       {
+        id: "COS-OLH",
         name: "Olhos",
+        price: 45,
         description:
           "Combater olheiras (atua na circulação da área dos olhos), clareando e mantendo a elasticidade da pele.",
         image: "cosmetico-olhos.jpg",
@@ -175,7 +232,9 @@ export const productTypes: ProductType[] = [
     image: "background-4.jpg",
     items: [
       {
+        id: "SAI-LAV",
         name: "Lavanda",
+        price: 29,
         description:
           "Aliviar o estresse do dia-a-dia, com efeito calmante e sedativo natural. Antifúngico, bactericida e cicatrizante. Sem contraindicação, sendo o óleo essencial mais usado no mundo.",
         image: "sais-lavanda.jpg",
@@ -187,7 +246,9 @@ export const productTypes: ProductType[] = [
         `,
       },
       {
+        id: "SAI-ALE",
         name: "Alecrim",
+        price: 29,
         description:
           "Aliviar dores musculares, tensões, torcicolos, dores de cabeça, estafa mental. Estimular o sistema circulatório, combatendo a fadiga. Estimular a memória e a concentração. Uso contraindicado para hipertensos, grávidas e crianças menores de 8 anos de idade.",
         image: "sais-alecrim.jpg",
@@ -218,13 +279,17 @@ export const productTypes: ProductType[] = [
     image: "background-9.jpg",
     items: [
       {
+        id: "HID-MAN",
         name: "Hidrolato de Manjericão",
+        price: 24,
         description: "Ocimum basilicum",
         image: "hidrolato-manjericao.jpg",
         detailedDescription: ``,
       },
       {
+        id: "HID-MEL",
         name: "Hidrolato de Melaleuca",
+        price: 24,
         description: "Melaleuca alternifolia",
         image: "hidrolato-melaleuca.jpg",
         detailedDescription: `
@@ -255,33 +320,59 @@ export const productTypes: ProductType[] = [
               `,
       },
       {
+        id: "HID-VET",
         name: "Hidrolato de Vetiver",
+        price: 24,
         description: "Vetiveria zizanioides",
         image: "hidrolato-vetiver.jpg",
         detailedDescription: ``,
       },
 
       {
+        id: "HID-LAV",
         name: "Hidrolato de Lavanda",
+        price: 24,
         description: "Lavandula dentata",
         image: "hidrolato-lavanda.jpg",
         detailedDescription: ``,
       },
       {
+        id: "HID-BRE",
         name: "Hidrolato de Breu branco",
+        price: 24,
         description: "Protium heptaphyllum",
         image: "hidrolato-breu.jpg",
         detailedDescription: ``,
       },
       {
+        id: "HID-HOR",
         name: "Hidrolato de Hortelã",
+        price: 24,
         description: "Mentha spicata",
         image: "hidrolato-hortela.jpg",
         detailedDescription: ``,
       },
+      {
+        id: "HID-JAM",
+        name: "Hidrolato de Jambolão",
+        price: 24,
+        description: "Syzygium cumini",
+        image: "hidrolato-jambolao.jpg",
+        detailedDescription: ``,
+      },
+      {
+        id: "HID-GUA",
+        name: "Hidrolato de Guaçatonga",
+        price: 24,
+        description: "Casearia sylvestris <br/> Edição limitada",
+        image: "hidrolato-guacatonga.jpg",
+        detailedDescription: ``,
+      },
 
       {
+        id: "OLE-MEL",
         name: "Óleo essencial de melaleuca",
+        price: 30,
         description: "Melaleuca alternifolia",
         image: "oleo-melaleuca.jpg",
         detailedDescription: ``,

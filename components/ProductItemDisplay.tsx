@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ProductItem } from "../interfaces";
+import { CartService } from "../services/CartService";
 import styles from "./../styles/products.module.scss";
 
 const ProductItemDisplay = ({
@@ -10,6 +11,16 @@ const ProductItemDisplay = ({
   type: string;
 }) => {
   const [viewMode, setViewMode] = useState("");
+
+  const addToCart = () => {
+    CartService.addItemToCart({
+      ...item,
+      id: item.id,
+      type,
+      price: item.price,
+    });
+  };
+
   return (
     <>
       <div className={styles.itemContainer} key={item.name}>
@@ -21,15 +32,32 @@ const ProductItemDisplay = ({
         ></div>
         <div className={styles.productText}>
           <p className={styles.itemTitle}>{item.name}</p>
+          <p>
+            <strong>R$ {item.price}</strong>
+          </p>
           <p className={styles.itemDesc}>{item.description}</p>
-          {item.detailedDescription && (
+          <div style={{ display: "flex" }}>
+            {item.detailedDescription && (
+              <button
+                style={{ margin: "0 5px" }}
+                onClick={() => setViewMode(styles.expanded)}
+                className={styles.moreButton}
+              >
+                Saiba mais
+              </button>
+            )}
             <button
-              onClick={() => setViewMode(styles.expanded)}
+              style={{ margin: "0 5px", display: "flex" }}
+              onClick={() => addToCart()}
               className={styles.moreButton}
             >
-              Saiba mais
+              <img
+                src="/images/shopping-bag.png"
+                style={{ width: 16, marginRight: "5px" }}
+              />{" "}
+              Pedir
             </button>
-          )}
+          </div>
         </div>
       </div>
       <div className={`${styles.modal} ${viewMode}`}>

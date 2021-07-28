@@ -8,97 +8,111 @@ import Products from "./Products";
 import Photos from "./Photos";
 
 const Fullpage = () => (
-  <ReactFullpage
-    scrollingSpeed={1000}
-    anchors={["", "produtos", "recursos", "galeria", "contato"]}
-    render={() => {
-      return (
-        <ReactFullpage.Wrapper>
-          <div className={cn("section", styles.section, styles.sectionLogo)}>
-            <div className={styles.contentArea}>
-              <Image
-                priority
-                src="/images/logo.svg"
-                height={400}
-                width={600}
-                alt="Logo"
-                className={styles.svgLogo}
-              />
-              <p className={styles.highlight}>
-                A marca Gota de Luz oferece produtos artesanais, feitos à base
-                de óleos vegetais e óleos essenciais. Livres de conservantes,
-                sem produtos de origem animal e sem testes em animais.
-              </p>
+  <>
+    <ReactFullpage
+      scrollingSpeed={1000}
+      anchors={["", "produtos", "recursos", "galeria", "contato"]}
+      render={() => {
+        return (
+          <ReactFullpage.Wrapper>
+            <div className={cn("section", styles.section, styles.sectionLogo)}>
+              <div className={styles.contentArea}>
+                <Image
+                  priority
+                  src="/images/logo.svg"
+                  height={400}
+                  width={600}
+                  alt="Logo"
+                  className={styles.svgLogo}
+                />
+                <p className={styles.highlight}>
+                  A marca Gota de Luz oferece produtos artesanais, feitos à base
+                  de óleos vegetais e óleos essenciais. Livres de conservantes,
+                  sem produtos de origem animal e sem testes em animais.
+                </p>
+              </div>
             </div>
-          </div>
-          <div
-            className={cn("section", styles.section, styles.sectionProducts)}
-          >
-            <div className={styles.contentArea}>
-              <h2 className="fancy-title">Conheça nossos produtos</h2>
-              <Products />
+            <div
+              className={cn("section", styles.section, styles.sectionProducts)}
+            >
+              <div className={styles.contentArea}>
+                <h2 className="fancy-title">Conheça nossos produtos</h2>
+                <Products />
+              </div>
             </div>
-          </div>
-          <div
-            className={cn("section", styles.section, styles.sectionDestination)}
-          >
-            <div className={styles.contentArea}>
-              <p className={styles.highlight}>
-                Os recursos das vendas são revertidos para a{" "}
-                <strong>
-                  <i>Morada Espírita Professor Lairi Hans</i>
-                </strong>
-                , e seu trabalho de assistência à famílias carentes da periferia
-                de Campinas.
-              </p>
-              <p className={styles.more}>
-                Conheça mais sobre o trabalho da Morada
-                <div>
-                  <a href="http://moradaespirita.org" target="blank">
-                    Site
-                  </a>
+            <div
+              className={cn(
+                "section",
+                styles.section,
+                styles.sectionDestination
+              )}
+            >
+              <div className={styles.contentArea}>
+                <p className={styles.highlight}>
+                  Os recursos das vendas são revertidos para a{" "}
+                  <strong>
+                    <i>Morada Espírita Professor Lairi Hans</i>
+                  </strong>
+                  , e seu trabalho de assistência à famílias carentes da
+                  periferia de Campinas.
+                </p>
+                <p className={styles.more}>
+                  Conheça mais sobre o trabalho da Morada
+                  <div>
+                    <a href="http://moradaespirita.org" target="blank">
+                      Site
+                    </a>
+                    <a
+                      href="https://www.facebook.com/moradaespirita"
+                      target="blank"
+                    >
+                      Facebook
+                    </a>
+                    <a
+                      href="https://instagram.com/moradaespirita"
+                      target="blank"
+                    >
+                      Instragram
+                    </a>
+                  </div>
+                </p>
+              </div>
+            </div>
+            <div
+              className={cn("section", styles.section, styles.sectionPhotos)}
+            >
+              <div className={styles.contentArea}>
+                <h2 className="fancy-title">Galeria</h2>
+                <Photos />
+              </div>
+            </div>
+            <div
+              className={cn("section", styles.section, styles.sectionContact)}
+            >
+              <div className={styles.contentArea}>
+                <h2 className="fancy-title">Entre em contato</h2>
+                <p className={styles.highlight}>
+                  Via WhatsApp:{" "}
+                  <span style={{ color: "#000" }}>(19) 99135-5414</span> -
+                  Marcelo
+                </p>
+                <p className={styles.highlight}>
                   <a
-                    href="https://www.facebook.com/moradaespirita"
-                    target="blank"
+                    className="link"
+                    href="https://drive.google.com/file/d/1dxLJ6MORxJV-QCBUdDX6OEsMsvd6xth1/view?usp=sharing"
+                    target="_blank"
                   >
-                    Facebook
-                  </a>
-                  <a href="https://instagram.com/moradaespirita" target="blank">
-                    Instragram
-                  </a>
-                </div>
-              </p>
+                    Clique aqui
+                  </a>{" "}
+                  para baixar o catálogo em pdf
+                </p>
+              </div>
             </div>
-          </div>
-          <div className={cn("section", styles.section, styles.sectionPhotos)}>
-            <div className={styles.contentArea}>
-              <h2 className="fancy-title">Galeria</h2>
-              <Photos />
-            </div>
-          </div>
-          <div className={cn("section", styles.section, styles.sectionContact)}>
-            <div className={styles.contentArea}>
-              <h2 className="fancy-title">Entre em contato</h2>
-              <p className={styles.highlight}>
-                Via WhatsApp:{" "}
-                <span style={{ color: "#000" }}>(19) 99135-5414</span> - Marcelo
-              </p>
-              <p className={styles.highlight}>
-                <a
-                  className="link"
-                  href="https://drive.google.com/file/d/1dxLJ6MORxJV-QCBUdDX6OEsMsvd6xth1/view?usp=sharing"
-                  target="_blank"
-                >
-                  Clique aqui
-                </a>{" "}
-                para baixar o catálogo em pdf
-              </p>
-            </div>
-          </div>
-        </ReactFullpage.Wrapper>
-      );
-    }}
-  />
+          </ReactFullpage.Wrapper>
+        );
+      }}
+    />
+  </>
 );
 
 export default Fullpage;
