@@ -45,6 +45,8 @@
   transition: all 0.5s;
   .modalItem {
     display: none;
+    position: absolute;
+    top: 0;
   }
   &.expanded {
     opacity: 1;
@@ -52,7 +54,7 @@
     display: flex;
     flex-wrap: wrap;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     justify-content: center;
     align-items: center;
     width: 100%;

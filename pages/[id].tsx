@@ -8,10 +8,12 @@ import { getAllProductsIds, getProductData } from "../lib/products";
 
 import styles from "./../styles/products.module.scss";
 import ProductItemDisplay from "../components/ProductItemDisplay";
+import Cart from "../components/Cart";
 
 const Product = ({ productData }: { productData: ProductType }) => {
   return (
     <>
+      <Cart />
       <Head>
         <title>Catálogo - {productData.type}</title>
       </Head>

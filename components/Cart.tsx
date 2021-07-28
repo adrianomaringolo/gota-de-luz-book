@@ -54,42 +54,7 @@ const CartModal = styled.div`
   }
 `;
 
-const StyledCart = styled.div`
-  .cart-button {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    background: #f2e4ee;
-    z-index: 1;
-    display: flex;
-    padding: 15px 25px;
-    border-radius: 5px;
-    transition: all 0.5s;
-
-    &:hover {
-      color: #fff;
-      background: #8f6f85;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    .text-area {
-      display: flex;
-      flex-direction: column;
-    }
-
-    img {
-      width: 67px;
-      height: 77px;
-      margin-right: 8px;
-    }
-
-    .title {
-      font-weight: 500;
-      display: inline-block;
-    }
-  }
-`;
+const StyledCart = styled.div``;
 
 const Cart = () => {
   const [cart, setCart] = useState<CartType>();
@@ -175,7 +140,7 @@ const Cart = () => {
                 style={{
                   padding: "20px",
                   maxHeight: "50vh",
-                  overflow: "scroll",
+                  overflowY: "scroll",
                   border: "1px solid #ccc",
                 }}
               >
