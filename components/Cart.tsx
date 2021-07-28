@@ -173,7 +173,7 @@ const Cart = () => {
               <div
                 style={{
                   padding: "20px",
-                  maxHeight: "500px",
+                  maxHeight: "55vh",
                   overflow: "scroll",
                   border: "1px solid #ccc",
                 }}
