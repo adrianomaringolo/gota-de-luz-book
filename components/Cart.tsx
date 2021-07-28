@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import styled from "styled-components";
 import { CartType, CartService, CartItemType } from "../services/CartService";
 import PubSub from "pubsub-js";
@@ -128,6 +128,13 @@ const Cart = () => {
     });
 
     return total;
+  };
+
+  const saveOrder = async (e: FormEvent) => {
+    e.preventDefault();
+    setOrderStep(3);
+    await CartService.saveOrder(cart, contactInfo);
+    setOrderStep(4);
   };
 
   const checkData = () => {
@@ -290,10 +297,7 @@ const Cart = () => {
                 </button>
                 <button
                   type="submit"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOrderStep(3);
-                  }}
+                  onClick={(e) => saveOrder(e)}
                   className="buy-button"
                 >
                   CONFIRMAR PEDIDO
@@ -303,6 +307,14 @@ const Cart = () => {
           )}
 
           {orderStep === 3 && (
+            <div style={{ textAlign: "center" }}>
+              <p style={{ fontSize: "2em", fontWeight: "bold", color: "#ddd" }}>
+                Sua reserva está sendo processada!
+              </p>
+            </div>
+          )}
+
+          {orderStep === 4 && (
             <div style={{ textAlign: "center" }}>
               <p style={{ fontSize: "1.5em", fontWeight: "bold" }}>
                 Sua reserva foi feita com sucesso!

@@ -41,7 +41,11 @@ const Product = ({ productData }: { productData: ProductType }) => {
           </p>
           <div className={styles.productItems}>
             {productData.items?.map((item: ProductItem) => (
-              <ProductItemDisplay item={item} type={productData.type} />
+              <ProductItemDisplay
+                item={item}
+                type={productData.type}
+                key={item.id}
+              />
             ))}
           </div>
           <Link href="/#produtos">

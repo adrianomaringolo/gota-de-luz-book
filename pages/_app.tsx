@@ -5,8 +5,8 @@ import "../styles/global.css";
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>
-    <Cart />
     <Component {...pageProps} />
+    <Cart />
   </>
 );
 

@@ -2,6 +2,10 @@ import PubSub from "pubsub-js";
 import { productTypes } from "../data/products";
 import { ProductItem, ProductType } from "../interfaces";
 
+import { db } from "./../utils/firebase";
+
+const ordersRef = db.collection("orders");
+
 export interface CartItemType extends ProductItem {
   amount?: number;
   type: string;
@@ -101,10 +105,19 @@ const clearCart = () => {
   PubSub.publish("card_add_item", "");
 };
 
+const saveOrder = async (cart: any, contactInfo: any) => {
+  return await ordersRef.doc().set({
+    items: cart.items,
+    contactInfo,
+    createdAt: new Date().toISOString(),
+  });
+};
+
 export const CartService = {
   addItemToCart,
   getCart,
   editItemAmount,
   clearCart,
   removeItem,
+  saveOrder,
 };
