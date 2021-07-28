@@ -139,8 +139,6 @@ const Cart = () => {
               <div
                 style={{
                   padding: "20px",
-                  maxHeight: "50vh",
-                  overflowY: "scroll",
                   border: "1px solid #ccc",
                 }}
               >
