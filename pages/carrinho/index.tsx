@@ -19,9 +19,12 @@ const CartArea = styled.div`
 
   .cart-area {
     background: #fff;
-    padding: 50px;
+    padding: 15px;
     max-width: 800px;
     height: fit-content;
+    @media only screen and (min-width: 768px) {
+      padding: 50px;
+    }
   }
   input {
     padding: 5px;
