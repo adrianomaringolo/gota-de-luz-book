@@ -15,7 +15,7 @@ const CartArea = styled.div`
   display: flex;
   justify-content: center;
   background: url(/images/background-init.jpg) no-repeat 50% / cover;
-  height: 100%;
+  height: 100vh;
 
   .cart-area {
     background: #fff;
@@ -36,6 +36,13 @@ const CartArea = styled.div`
     &:hover {
       color: white;
       background-color: #618566;
+    }
+  }
+
+  .product-name {
+    display: block;
+    @media only screen and (min-width: 500px) {
+      display: inline;
     }
   }
 
@@ -162,7 +169,14 @@ const Carrinho = () => {
                 }}
               >
                 {cart?.items?.map((item: CartItemType) => (
-                  <div key={`${item.id}`}>
+                  <div
+                    key={`${item.id}`}
+                    style={{
+                      borderBottom: "1px solid #ccc",
+                      paddingBottom: 5,
+                      marginBottom: 5,
+                    }}
+                  >
                     <input
                       onChange={(event) => {
                         CartService.editItemAmount(
@@ -181,7 +195,10 @@ const Carrinho = () => {
                     >
                       R$ {item.price * (item.amount || 0)}
                     </div>
-                    <span style={!item.amount ? { color: "#aaa" } : {}}>
+                    <span
+                      className="product-name"
+                      style={!item.amount ? { color: "#aaa" } : {}}
+                    >
                       [{item.type}] {item.name}
                     </span>
                   </div>

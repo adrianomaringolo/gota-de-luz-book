@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Layout = ({ title = "This is the default title", children }: Props) => (
-  <div style={{ position: "relative", height: "100%" }}>
+  <div style={{ position: "relative", minHeight: "100%" }}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
