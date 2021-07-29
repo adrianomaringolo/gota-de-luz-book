@@ -13,7 +13,7 @@ const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="icon" href="/favicon.ico" />
-      <meta name="description" content="Administração Gota de Luz'" />
+      <meta name="description" content="Administração Gota de Luz" />
       <meta name="og:title" content={title} />
       <meta name="twitter:card" content="summary_large_image" />
       <link

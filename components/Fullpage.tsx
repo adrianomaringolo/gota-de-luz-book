@@ -6,11 +6,11 @@ import cn from "classnames";
 import styles from "./../styles/layout.module.scss";
 import Products from "./Products";
 import Photos from "./Photos";
-import Cart from "./Cart";
+import { CartButton } from "./Cart/CartButton";
 
 const Fullpage = () => (
   <>
-    <Cart />
+    <CartButton />
     <ReactFullpage
       scrollingSpeed={1000}
       anchors={["", "produtos", "recursos", "galeria", "contato"]}

@@ -1,13 +1,28 @@
+import Layout from "../../components/Layout";
 import React, { FormEvent, useEffect, useState } from "react";
 import styled from "styled-components";
-import { CartType, CartService, CartItemType } from "../services/CartService";
-import PubSub from "pubsub-js";
-import styles from "./../styles/products.module.scss";
+import {
+  CartType,
+  CartService,
+  CartItemType,
+} from "../../services/CartService";
+import styles from "./../../styles/products.module.scss";
 import { useRouter } from "next/dist/client/router";
-import { ContactForm } from "./Cart/ContactForm";
-import { ConfirmationOrder } from "./Cart/ConfirmationOrder";
+import { ContactForm } from "../../components/Cart/ContactForm";
+import { ConfirmationOrder } from "../../components/Cart/ConfirmationOrder";
 
-const CartModal = styled.div`
+const CartArea = styled.div`
+  display: flex;
+  justify-content: center;
+  background: url(/images/background-init.jpg) no-repeat 50% / cover;
+  height: 100%;
+
+  .cart-area {
+    background: #fff;
+    padding: 50px;
+    max-width: 800px;
+    height: fit-content;
+  }
   input {
     padding: 5px;
     font-size: 1.2em;
@@ -52,13 +67,27 @@ const CartModal = styled.div`
     width: 70px;
     display: inline-block;
   }
+
+  .buttonArea {
+    text-align: right;
+    margin-top: 20px;
+  }
+  button {
+    padding: 15px;
+    border: 1px solid #333;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.5s;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
 `;
 
-const StyledCart = styled.div``;
-
-const Cart = () => {
+const Carrinho = () => {
   const [cart, setCart] = useState<CartType>();
-  const [viewMode, setViewMode] = useState("");
 
   const [errorMessage, setErrorMessage] = useState(false);
 
@@ -86,15 +115,6 @@ const Cart = () => {
     return total;
   };
 
-  const getTotalItens = () => {
-    let total = 0;
-    cart?.items.forEach((element: CartItemType) => {
-      total += element.amount || 0;
-    });
-
-    return total;
-  };
-
   const saveOrder = async (e: FormEvent) => {
     e.preventDefault();
     setOrderStep(3);
@@ -117,28 +137,24 @@ const Cart = () => {
   };
 
   return (
-    <StyledCart>
-      <div className="cart-button" onClick={() => setViewMode(styles.expanded)}>
-        <img src="/images/shopping-bag.png" />
-        <div className="text-area">
-          <span className="title">Reservas</span>
-          {cart?.items && (
-            <span className="ammount">
-              {getTotalItens()} {getTotalItens() > 1 ? "produtos" : "produto"}
-            </span>
-          )}
-          <small>Clique para {!cart ? "fazer" : "ver"} seu pedido</small>
-        </div>
-      </div>
-
-      <CartModal className={`${styles.modal} ${viewMode}`}>
-        <div className={`${styles.detailedItem} ${styles.modalItem}`}>
+    <Layout title="Gota de Luz - Reserva">
+      <CartArea>
+        <div className="cart-area">
           {orderStep === 0 && (
             <div>
               <p className="title">Meu pedido</p>
+              <p className="title-description">
+                Escolha os itens e quantidades abaixo e finalize sua reserva de
+                pedido. <br />
+                Após a finalização do pedido, a equipe Gota de Luz vai entrar em
+                contato para confirmar a disponibilidade dos produtos escolhidos
+                e pagamento.
+              </p>
               <div
                 style={{
                   padding: "20px",
+                  maxHeight: "600px",
+                  overflowY: "scroll",
                   border: "1px solid #ccc",
                 }}
               >
@@ -172,7 +188,6 @@ const Cart = () => {
               <div className={styles.buttonArea} style={{ display: "flex" }}>
                 <button
                   onClick={() => {
-                    setViewMode("");
                     setOrderStep(0);
                     router.push("/#produtos");
                   }}
@@ -288,7 +303,6 @@ const Cart = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    setViewMode("");
                     setContactInfo({});
                     CartService.clearCart();
                     setOrderStep(0);
@@ -301,9 +315,9 @@ const Cart = () => {
             </div>
           )}
         </div>
-      </CartModal>
-    </StyledCart>
+      </CartArea>
+    </Layout>
   );
 };
 
-export default Cart;
+export default Carrinho;

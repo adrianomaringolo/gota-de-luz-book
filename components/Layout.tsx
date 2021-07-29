@@ -1,14 +1,13 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
-import Fullpage from "./Fullpage";
 
 type Props = {
   children?: ReactNode;
   title?: string;
 };
 
-const Layout = ({ title = "This is the default title" }: Props) => (
-  <div style={{ position: "relative" }}>
+const Layout = ({ title = "This is the default title", children }: Props) => (
+  <div style={{ position: "relative", height: "100%" }}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -22,7 +21,7 @@ const Layout = ({ title = "This is the default title" }: Props) => (
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
 
-    <Fullpage></Fullpage>
+    {children}
   </div>
 );
 
