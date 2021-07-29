@@ -106,11 +106,52 @@ const clearCart = () => {
 };
 
 const saveOrder = async (cart: any, contactInfo: any) => {
+  const lastOrder = (await getOrders()).pop();
+
   return await ordersRef.doc().set({
-    items: cart.items.filter((i: CartItemType) => i.amount),
+    items: cart.items
+      .filter((i: CartItemType) => i.amount)
+      .map((i: CartItemType) => ({
+        id: i.id,
+        amount: i.amount,
+        name: i.name,
+        price: i.price,
+        type: i.type,
+      })),
+    orderId: Number(lastOrder.orderId) + 1,
     contactInfo,
     createdAt: new Date().toISOString(),
   });
+};
+
+const getOrders = async () => {
+  let result: any[] = [];
+  const snapshot = await ordersRef.orderBy("orderId").get();
+  if (snapshot.empty) {
+    throw Error("No matching results");
+  }
+
+  snapshot.forEach((doc) => {
+    result.push({ id: doc.id, ...doc.data() });
+  });
+  return result;
+};
+
+const getOrderById = async (orderId: number) => {
+  let result: any[] = [];
+
+  const snapshot = await ordersRef
+    .where("orderId", "==", Number(orderId))
+    .get();
+
+  if (snapshot.empty) {
+    throw Error("No matching results");
+  }
+
+  snapshot.forEach((doc) => {
+    result.push({ id: doc.id, ...doc.data() });
+  });
+  return result[0];
 };
 
 export const CartService = {
@@ -120,4 +161,6 @@ export const CartService = {
   clearCart,
   removeItem,
   saveOrder,
+  getOrders,
+  getOrderById,
 };
