@@ -108,6 +108,12 @@ const clearCart = () => {
 const saveOrder = async (cart: any, contactInfo: any) => {
   const lastOrder = (await getOrders()).pop();
 
+  fetch(
+    `https://us-central1-portal-morada.cloudfunctions.net/sendGotaDeLuzAlert?order=${
+      Number(lastOrder.orderId) + 1
+    }&client=${contactInfo.name}`
+  );
+
   return await ordersRef.doc().set({
     items: cart.items
       .filter((i: CartItemType) => i.amount)
