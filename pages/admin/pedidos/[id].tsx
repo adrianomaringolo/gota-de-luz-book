@@ -48,7 +48,8 @@ const Pedido = () => {
           <b>Email:</b> {order.contactInfo.email || "-"}
         </p>
         <p>
-          {order.contactInfo?.city} (CEP: {order.contactInfo?.zipcode})
+          <b>Cidade:</b> {order.contactInfo?.city} (CEP:{" "}
+          {order.contactInfo?.zipcode})
         </p>
 
         <p className="mt-3">
@@ -71,7 +72,7 @@ const Pedido = () => {
             {order.items
               .filter((item: any) => item.amount)
               .map((item: any) => (
-                <tr>
+                <tr key={`pedido-${item.id}`}>
                   <td>{item.id}</td>
                   <td>
                     [{item.type}] {item.name}

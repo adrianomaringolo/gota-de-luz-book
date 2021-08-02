@@ -9,16 +9,24 @@ type Props = {
 
 const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => {
   const router = useRouter();
+  const [user, setUser] = useState<any>();
 
   useEffect(() => {
-    const user = localStorage.getItem("adminLogged")
+    const userLS = localStorage.getItem("adminLogged")
       ? JSON.parse(localStorage.getItem("adminLogged") || "")
       : undefined;
 
-    if (!user) {
+    if (!userLS) {
       router.push("/admin/login");
+    } else {
+      setUser(userLS);
     }
   }, []);
+
+  const logout = () => {
+    localStorage.removeItem("adminLogged");
+    router.push("/admin/login");
+  };
 
   return (
     <div style={{ position: "relative" }}>
@@ -40,6 +48,31 @@ const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => {
           crossOrigin="anonymous"
         ></script>
       </Head>
+
+      {user && (
+        <nav
+          className="navbar has-background-light"
+          role="navigation"
+          aria-label="main navigation"
+        >
+          <div id="navbarBasicExample" className="navbar-menu">
+            <div className="navbar-start">
+              <a className="navbar-item has-text-weight-bold">Pedidos</a>
+            </div>
+
+            <div className="navbar-end">
+              <div className="navbar-item">
+                <p className="mr-3">Olá {user?.name}!</p>
+                <div className="buttons">
+                  <a className="button is-danger" onClick={logout}>
+                    Sair
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      )}
 
       <section className="section">
         <div className="container">{children}</div>
