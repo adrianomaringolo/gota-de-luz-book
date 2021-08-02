@@ -41,9 +41,18 @@ const Pedido = () => {
           Pedido #{order.orderId}
         </h1>
         <p className="is-size-3">{order.contactInfo.name}</p>
-        <p>Celular: {order.contactInfo.phone}</p>
+        <p>
+          <b>Celular:</b> {order.contactInfo.phone}
+        </p>
+        <p>
+          <b>Email:</b> {order.contactInfo.email || "-"}
+        </p>
         <p>
           {order.contactInfo?.city} (CEP: {order.contactInfo?.zipcode})
+        </p>
+
+        <p className="mt-3">
+          <b>Observações:</b> {order.contactInfo.observations || "-"}
         </p>
 
         <h1 className="is-size-4 has-text-weight-bold mt-3">Produtos</h1>

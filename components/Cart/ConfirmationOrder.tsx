@@ -49,7 +49,12 @@ export const ConfirmationOrder = ({
         <br />
         <b>Telefone:</b> {contactInfo?.phone}
         <br />
+        <b>Email:</b> {contactInfo?.email}
+        <br />
         <b>Cidade:</b> {contactInfo?.city} | <b>CEP:</b> {contactInfo?.zipcode}
+        <br />
+        <b>Observações:</b> {contactInfo?.observations || "-"}
+        <br />
       </p>
     </StyledContactForm>
   );
