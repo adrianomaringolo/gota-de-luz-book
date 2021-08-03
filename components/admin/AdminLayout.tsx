@@ -2,6 +2,7 @@ import React, { ReactNode, useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/dist/client/router";
 import { Toaster } from "react-hot-toast";
+import Link from "next/link";
 
 type Props = {
   children?: ReactNode;
@@ -58,7 +59,9 @@ const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => {
         >
           <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-start">
-              <a className="navbar-item has-text-weight-bold">Pedidos</a>
+              <Link href="/admin/pedidos">
+                <a className="navbar-item has-text-weight-bold">Pedidos</a>
+              </Link>
             </div>
 
             <div className="navbar-end">

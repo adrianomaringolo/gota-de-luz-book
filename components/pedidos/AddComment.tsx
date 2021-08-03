@@ -9,10 +9,13 @@ export const AddComment = ({
   afterSave: any;
 }) => {
   const [newComment, setNewComment] = useState<string>("");
+  const [isSaving, setIsSaving] = useState<boolean>(false);
   const addComment = async () => {
+    setIsSaving(true);
     await CartService.addCommentToOrder(order, newComment);
     afterSave();
     setNewComment("");
+    setIsSaving(false);
   };
   return (
     <>
@@ -22,7 +25,13 @@ export const AddComment = ({
         value={newComment}
         onChange={(e: any) => setNewComment(e.target.value)}
       />
-      <button className="button is-medium mt-2 is-primary" onClick={addComment}>
+      <button
+        className={`button is-medium mt-2 is-primary ${
+          isSaving ? "is-loading" : ""
+        }`}
+        onClick={addComment}
+        disabled={isSaving}
+      >
         Salvar
       </button>
     </>

@@ -9,10 +9,13 @@ export const StatusSelect = ({
   afterSave: any;
 }) => {
   const [newStatus, setNewStatus] = useState<string>(orderItem.status);
+  const [isSaving, setIsSaving] = useState<boolean>(false);
 
   const changeStatus = async () => {
+    setIsSaving(true);
     await CartService.editOrderStatus(orderItem, newStatus);
     afterSave();
+    setIsSaving(false);
   };
   return (
     <div className="is-flex">
@@ -31,8 +34,11 @@ export const StatusSelect = ({
         </select>
       </div>
       <button
-        className="button is-large ml-2 is-primary"
+        className={`button is-large ml-2 is-primary ${
+          isSaving ? "is-loading" : ""
+        }`}
         onClick={changeStatus}
+        disabled={isSaving}
       >
         Salvar
       </button>
