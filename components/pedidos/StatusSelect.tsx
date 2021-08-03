@@ -27,6 +27,7 @@ export const StatusSelect = ({
           <option value={ORDER_STATUS.PAGO}>Pago</option>
           <option value={ORDER_STATUS.SEPARADO}>Separado/enviado</option>
           <option value={ORDER_STATUS.FINALIZADO}>Finalizado</option>
+          <option value={ORDER_STATUS.CANCELADO}>Cancelado</option>
         </select>
       </div>
       <button

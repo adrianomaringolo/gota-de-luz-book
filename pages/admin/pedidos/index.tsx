@@ -60,6 +60,7 @@ const Pedidos = () => {
               <option value={ORDER_STATUS.PAGO}>Pago</option>
               <option value={ORDER_STATUS.SEPARADO}>Separado/enviado</option>
               <option value={ORDER_STATUS.FINALIZADO}>Finalizado</option>
+              <option value={ORDER_STATUS.CANCELADO}>Cancelado</option>
             </select>
           </div>
           <button
@@ -70,57 +71,64 @@ const Pedidos = () => {
           </button>
         </div>
         {orders && orders.length ? (
-          <div className="table-container">
-            <table className="table is-bordered is-striped is-hoverable">
-              <thead>
-                <tr>
-                  <th>Código</th>
-                  <th>Data</th>
-                  <th>Cliente</th>
-                  <th>Produtos</th>
-                  <th>Status</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                {orders.map((order: any) => (
+          <>
+            <p>
+              Exibindo <b>{orders.length}</b> pedido(s)
+            </p>
+            <div className="table-container">
+              <table className="table is-bordered is-striped is-hoverable">
+                <thead>
                   <tr>
-                    <td>{order.orderId}</td>
-                    <td>
-                      {format(new Date(order.createdAt), "dd/MM/yyyy HH:mm")}
-                    </td>
-                    <td>
-                      <div className="has-text-weight-bold">
-                        {order.contactInfo.name}
-                      </div>
-                      <div className="is-size-6">{order.contactInfo.phone}</div>
-                      <div className="is-size-6">
-                        {order.contactInfo.city} (CEP:{" "}
-                        {order.contactInfo.zipcode})
-                      </div>
-                    </td>
-                    <td>
-                      {getTotalItens(order)} items
-                      <div className="is-size-6 has-text-weight-bold">
-                        R$ {getTotal(order)}
-                      </div>
-                    </td>
-                    <td>
-                      <StatusTag status={order.status} size="is-medium" />
-                    </td>
-                    <td>
-                      <Link
-                        href={`/admin/pedidos/${order.orderId}`}
-                        key={order.id}
-                      >
-                        Ver detalhes
-                      </Link>
-                    </td>
+                    <th>Código</th>
+                    <th>Data</th>
+                    <th>Cliente</th>
+                    <th>Produtos</th>
+                    <th>Status</th>
+                    <th></th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {orders.map((order: any) => (
+                    <tr>
+                      <td>{order.orderId}</td>
+                      <td>
+                        {format(new Date(order.createdAt), "dd/MM/yyyy HH:mm")}
+                      </td>
+                      <td>
+                        <div className="has-text-weight-bold">
+                          {order.contactInfo.name}
+                        </div>
+                        <div className="is-size-6">
+                          {order.contactInfo.phone}
+                        </div>
+                        <div className="is-size-6">
+                          {order.contactInfo.city} (CEP:{" "}
+                          {order.contactInfo.zipcode})
+                        </div>
+                      </td>
+                      <td>
+                        {getTotalItens(order)} items
+                        <div className="is-size-6 has-text-weight-bold">
+                          R$ {getTotal(order)}
+                        </div>
+                      </td>
+                      <td>
+                        <StatusTag status={order.status} size="is-medium" />
+                      </td>
+                      <td>
+                        <Link
+                          href={`/admin/pedidos/${order.orderId}`}
+                          key={order.id}
+                        >
+                          Ver detalhes
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
         ) : (
           <p>Não há pedidos para exibir</p>
         )}

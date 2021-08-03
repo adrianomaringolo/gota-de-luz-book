@@ -22,6 +22,7 @@ export const ORDER_STATUS = {
   PAGO: "pago",
   SEPARADO: "separado-enviado",
   FINALIZADO: "finalizado",
+  CANCELADO: "cancelado",
 };
 
 const getAllItems = () => {
@@ -191,6 +192,23 @@ const editOrderStatus = async (orderItem: any, newStatus: string) => {
   return await ordersRef.doc(orderItem.id).update(newData);
 };
 
+const addCommentToOrder = async (orderItem: any, newComment: string) => {
+  const userLS = localStorage.getItem("adminLogged")
+    ? JSON.parse(localStorage.getItem("adminLogged") || "")
+    : undefined;
+
+  return await ordersRef.doc(orderItem.id).update({
+    comments: [
+      ...(orderItem.comments || []),
+      {
+        userName: userLS.name,
+        comment: newComment,
+        createdAt: new Date().toISOString(),
+      },
+    ],
+  });
+};
+
 export const CartService = {
   addItemToCart,
   getCart,
@@ -201,4 +219,5 @@ export const CartService = {
   getOrders,
   getOrderById,
   editOrderStatus,
+  addCommentToOrder,
 };

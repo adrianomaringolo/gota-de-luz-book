@@ -97,7 +97,7 @@ const Pedido = () => {
         </table>
         <p className="is-size-4 has-text-weight-bold">Total: R$ {getTotal()}</p>
 
-        <OrderActivities orderItem={order} />
+        <OrderActivities orderItem={order} afterSave={() => getOrder(id)} />
       </AdminLayout>
     </>
   );
