@@ -1,6 +1,7 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/dist/client/router";
+import { Toaster } from "react-hot-toast";
 
 type Props = {
   children?: ReactNode;
@@ -43,11 +44,11 @@ const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
         ></link>
-        <script
-          src="https://kit.fontawesome.com/819538a1d6.js"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
+
+      <div>
+        <Toaster />
+      </div>
 
       {user && (
         <nav

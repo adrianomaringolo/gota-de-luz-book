@@ -15,6 +15,15 @@ export interface CartType {
   items: CartItemType[];
 }
 
+export const ORDER_STATUS = {
+  EM_ESPERA: "em-espera",
+  EM_ANDAMENTO: "em-andamento",
+  APROVADO: "aprovado",
+  PAGO: "pago",
+  SEPARADO: "separado-enviado",
+  FINALIZADO: "finalizado",
+};
+
 const getAllItems = () => {
   let allProducts: CartItemType[] = [];
 
@@ -126,16 +135,16 @@ const saveOrder = async (cart: any, contactInfo: any) => {
       })),
     orderId: Number(lastOrder.orderId) + 1,
     contactInfo,
+    status: ORDER_STATUS.EM_ESPERA,
     createdAt: new Date().toISOString(),
   });
 };
 
-const getOrders = async () => {
+const getOrders = async (statusToFilter = "") => {
   let result: any[] = [];
-  const snapshot = await ordersRef.orderBy("orderId").get();
-  if (snapshot.empty) {
-    throw Error("No matching results");
-  }
+  const snapshot = await (statusToFilter
+    ? ordersRef.orderBy("orderId").where("status", "==", statusToFilter).get()
+    : ordersRef.orderBy("orderId").get());
 
   snapshot.forEach((doc) => {
     result.push({ id: doc.id, ...doc.data() });
@@ -160,6 +169,28 @@ const getOrderById = async (orderId: number) => {
   return result[0];
 };
 
+const editOrderStatus = async (orderItem: any, newStatus: string) => {
+  const userLS = localStorage.getItem("adminLogged")
+    ? JSON.parse(localStorage.getItem("adminLogged") || "")
+    : undefined;
+
+  const newData = {
+    updatedAt: new Date(),
+    status: newStatus,
+    statusLogs: [
+      ...(orderItem.statusLogs || []),
+      {
+        userName: userLS.name,
+        oldStatus: orderItem.status || "",
+        newStatus: newStatus,
+        updatedAt: new Date().toISOString(),
+      },
+    ],
+  };
+
+  return await ordersRef.doc(orderItem.id).update(newData);
+};
+
 export const CartService = {
   addItemToCart,
   getCart,
@@ -169,4 +200,5 @@ export const CartService = {
   saveOrder,
   getOrders,
   getOrderById,
+  editOrderStatus,
 };

@@ -4,6 +4,9 @@ import AdminLayout from "../../../components/admin/AdminLayout";
 import { useRouter } from "next/dist/client/router";
 import { CartItemType, CartService } from "../../../services/CartService";
 import Link from "next/link";
+import { StatusTag } from "../../../components/pedidos/StatusTag";
+import { StatusSelect } from "../../../components/pedidos/StatusSelect";
+import { OrderActivities } from "../../../components/pedidos/OrderActivities";
 
 const Pedido = () => {
   const router = useRouter();
@@ -37,24 +40,32 @@ const Pedido = () => {
 
       <AdminLayout>
         <Link href={`/admin/pedidos`}>Voltar</Link>
-        <h1 className="is-size-2 has-text-weight-bold">
-          Pedido #{order.orderId}
-        </h1>
-        <p className="is-size-3">{order.contactInfo.name}</p>
-        <p>
-          <b>Celular:</b> {order.contactInfo.phone}
-        </p>
-        <p>
-          <b>Email:</b> {order.contactInfo.email || "-"}
-        </p>
-        <p>
-          <b>Cidade:</b> {order.contactInfo?.city} (CEP:{" "}
-          {order.contactInfo?.zipcode})
-        </p>
+        <div className="columns">
+          <div className="column">
+            <h1 className="is-size-2 has-text-weight-bold is-flex is-align-items-center">
+              <span className="mr-3">Pedido #{order.orderId} </span>
+              <StatusTag status={order.status || ""} size="is-large" />
+            </h1>
+            <p className="is-size-3">{order.contactInfo.name}</p>
+            <p>
+              <b>Celular:</b> {order.contactInfo.phone}
+            </p>
+            <p>
+              <b>Email:</b> {order.contactInfo.email || "-"}
+            </p>
+            <p>
+              <b>Cidade:</b> {order.contactInfo?.city} (CEP:{" "}
+              {order.contactInfo?.zipcode})
+            </p>
 
-        <p className="mt-3">
-          <b>Observações:</b> {order.contactInfo.observations || "-"}
-        </p>
+            <p className="mt-3">
+              <b>Observações:</b> {order.contactInfo.observations || "-"}
+            </p>
+          </div>
+          <div className="column">
+            <StatusSelect orderItem={order} afterSave={() => getOrder(id)} />
+          </div>
+        </div>
 
         <h1 className="is-size-4 has-text-weight-bold mt-3">Produtos</h1>
 
@@ -85,6 +96,8 @@ const Pedido = () => {
           </tbody>
         </table>
         <p className="is-size-4 has-text-weight-bold">Total: R$ {getTotal()}</p>
+
+        <OrderActivities orderItem={order} />
       </AdminLayout>
     </>
   );
