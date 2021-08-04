@@ -51,7 +51,7 @@ export const OrderActivities = ({
                   <p>
                     <b>{comment.userName}</b>
                     <span className="ml-3 is-size-7">
-                      [{format(new Date(comment.createdAt), "dd/MM/yyyy hh:mm")}
+                      [{format(new Date(comment.createdAt), "dd/MM/yyyy HH:mm")}
                       ]
                     </span>
                   </p>
@@ -68,7 +68,7 @@ export const OrderActivities = ({
           {orderItem.statusLogs && orderItem.statusLogs.length ? (
             orderItem.statusLogs.map((log: any) => (
               <div className="mb-2">
-                [{format(new Date(log.updatedAt), "dd/MM/yyyy hh:mm")}]{" "}
+                [{format(new Date(log.updatedAt), "dd/MM/yyyy HH:mm")}]{" "}
                 <b>{log.userName}</b> mudou de{" "}
                 <StatusTag status={log.oldStatus} size="is-medium" /> para{" "}
                 <StatusTag status={log.newStatus} size="is-medium" />
