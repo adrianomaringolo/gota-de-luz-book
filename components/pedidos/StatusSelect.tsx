@@ -18,30 +18,33 @@ export const StatusSelect = ({
     setIsSaving(false);
   };
   return (
-    <div className="is-flex">
-      <div className="select is-large">
-        <select
-          value={newStatus}
-          onChange={(e: any) => setNewStatus(e.target.value)}
+    <div>
+      <p>Novo status:</p>
+      <div className="is-flex">
+        <div className="select is-large">
+          <select
+            value={newStatus}
+            onChange={(e: any) => setNewStatus(e.target.value)}
+          >
+            <option value={ORDER_STATUS.EM_ESPERA}>Em espera</option>
+            <option value={ORDER_STATUS.EM_ANDAMENTO}>Em andamento</option>
+            <option value={ORDER_STATUS.APROVADO}>Aprovado</option>
+            <option value={ORDER_STATUS.PAGO}>Pago</option>
+            <option value={ORDER_STATUS.SEPARADO}>Separado/enviado</option>
+            <option value={ORDER_STATUS.FINALIZADO}>Finalizado</option>
+            <option value={ORDER_STATUS.CANCELADO}>Cancelado</option>
+          </select>
+        </div>
+        <button
+          className={`button is-large ml-2 is-primary ${
+            isSaving ? "is-loading" : ""
+          }`}
+          onClick={changeStatus}
+          disabled={isSaving}
         >
-          <option value={ORDER_STATUS.EM_ESPERA}>Em espera</option>
-          <option value={ORDER_STATUS.EM_ANDAMENTO}>Em andamento</option>
-          <option value={ORDER_STATUS.APROVADO}>Aprovado</option>
-          <option value={ORDER_STATUS.PAGO}>Pago</option>
-          <option value={ORDER_STATUS.SEPARADO}>Separado/enviado</option>
-          <option value={ORDER_STATUS.FINALIZADO}>Finalizado</option>
-          <option value={ORDER_STATUS.CANCELADO}>Cancelado</option>
-        </select>
+          Salvar
+        </button>
       </div>
-      <button
-        className={`button is-large ml-2 is-primary ${
-          isSaving ? "is-loading" : ""
-        }`}
-        onClick={changeStatus}
-        disabled={isSaving}
-      >
-        Salvar
-      </button>
     </div>
   );
 };
