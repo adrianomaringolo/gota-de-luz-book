@@ -361,6 +361,14 @@ export const productTypes: ProductType[] = [
         detailedDescription: ``,
       },
       {
+        id: "HID-GER",
+        name: "Hidrolato de Gerânio",
+        price: 24,
+        description: "Pelargonium graveolens",
+        image: "hidrolato-geranio.jpg",
+        detailedDescription: ``,
+      },
+      {
         id: "HID-GUA",
         name: "Hidrolato de Guaçatonga",
         price: 24,

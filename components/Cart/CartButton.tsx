@@ -6,6 +6,7 @@ import {
 } from "../../services/CartService";
 import Link from "next/link";
 import styled from "styled-components";
+import PubSub from "pubsub-js";
 
 const StyledCartButton = styled.div`
   .cart-button {
@@ -28,6 +29,10 @@ export const CartButton = () => {
 
   useEffect(() => {
     setCart(CartService.getCart());
+
+    PubSub.subscribe("card_add_item", () => {
+      setCart(CartService.getCart());
+    });
   }, []);
 
   const getTotalItens = () => {
