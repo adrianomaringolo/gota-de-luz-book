@@ -88,43 +88,48 @@ const Pedidos = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {orders.map((order: any) => (
-                    <tr>
-                      <td>{order.orderId}</td>
-                      <td>
-                        {format(new Date(order.createdAt), "dd/MM/yyyy HH:mm")}
-                      </td>
-                      <td>
-                        <div className="has-text-weight-bold">
-                          {order.contactInfo.name}
-                        </div>
-                        <div className="is-size-6">
-                          {order.contactInfo.phone}
-                        </div>
-                        <div className="is-size-6">
-                          {order.contactInfo.city} (CEP:{" "}
-                          {order.contactInfo.zipcode})
-                        </div>
-                      </td>
-                      <td>
-                        {getTotalItens(order)} items
-                        <div className="is-size-6 has-text-weight-bold">
-                          R$ {getTotal(order)}
-                        </div>
-                      </td>
-                      <td>
-                        <StatusTag status={order.status} size="is-medium" />
-                      </td>
-                      <td>
-                        <Link
-                          href={`/admin/pedidos/${order.orderId}`}
-                          key={order.id}
-                        >
-                          Ver detalhes
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
+                  {orders
+                    .sort((a, b) => b.orderId - a.orderId)
+                    .map((order: any) => (
+                      <tr key={"order-" + order.orderId}>
+                        <td>{order.orderId}</td>
+                        <td>
+                          {format(
+                            new Date(order.createdAt),
+                            "dd/MM/yyyy HH:mm"
+                          )}
+                        </td>
+                        <td>
+                          <div className="has-text-weight-bold">
+                            {order.contactInfo.name}
+                          </div>
+                          <div className="is-size-6">
+                            {order.contactInfo.phone}
+                          </div>
+                          <div className="is-size-6">
+                            {order.contactInfo.city} (CEP:{" "}
+                            {order.contactInfo.zipcode})
+                          </div>
+                        </td>
+                        <td>
+                          {getTotalItens(order)} items
+                          <div className="is-size-6 has-text-weight-bold">
+                            R$ {getTotal(order)}
+                          </div>
+                        </td>
+                        <td>
+                          <StatusTag status={order.status} size="is-medium" />
+                        </td>
+                        <td>
+                          <Link
+                            href={`/admin/pedidos/${order.orderId}`}
+                            key={order.id}
+                          >
+                            Ver detalhes
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
                 </tbody>
               </table>
             </div>
