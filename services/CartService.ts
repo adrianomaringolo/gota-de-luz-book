@@ -30,18 +30,28 @@ const getAllItems = () => {
 
   productTypes.forEach((type: ProductType) => {
     allProducts = allProducts.concat(
-      type.items?.map((item: ProductItem) => ({
-        ...item,
-        amount: 0,
-        type: type.type,
-      })) || []
+      type.items
+        ?.filter((item: ProductItem) => !item.notAvailable)
+        .map((item: ProductItem) => ({
+          ...item,
+          amount: 0,
+          type: type.type,
+        })) || []
     );
   });
   return allProducts;
 };
 
+const isCartEmpty = (cartItems: any[]) =>
+  cartItems.filter((item) => item.amount > 0).length === 0;
+
 const addItemToCart = (item: CartItemType) => {
-  let cartObj = getCart() || { items: getAllItems() };
+  let cartObj = getCart();
+
+  if (!cartObj || isCartEmpty(cartObj?.items || [])) {
+    cartObj = { items: getAllItems() };
+  }
+
   item.amount = 1;
 
   const newItems = cartObj ? cartObj.items : [];

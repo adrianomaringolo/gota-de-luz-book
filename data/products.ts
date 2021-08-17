@@ -372,9 +372,10 @@ export const productTypes: ProductType[] = [
         id: "HID-GUA",
         name: "Hidrolato de Guaçatonga",
         price: 24,
-        description: "Casearia sylvestris <br/> Edição limitada",
+        description: "Casearia sylvestris - Edição limitada",
         image: "hidrolato-guacatonga.jpg",
         detailedDescription: ``,
+        notAvailable: true,
       },
 
       {

@@ -32,9 +32,17 @@ const ProductItemDisplay = ({
         ></div>
         <div className={styles.productText}>
           <p className={styles.itemTitle}>{item.name}</p>
-          <p>
-            <strong>R$ {item.price}</strong>
-          </p>
+          {item.notAvailable ? (
+            <p>
+              <big>
+                <strong>Produto não disponível</strong>
+              </big>
+            </p>
+          ) : (
+            <p>
+              <strong>R$ {item.price}</strong>
+            </p>
+          )}
           <p className={styles.itemDesc}>{item.description}</p>
           <div style={{ display: "flex" }}>
             {item.detailedDescription && (
@@ -46,17 +54,19 @@ const ProductItemDisplay = ({
                 Saiba mais
               </button>
             )}
-            <button
-              style={{ margin: "0 5px", display: "flex" }}
-              onClick={() => addToCart()}
-              className={styles.moreButton}
-            >
-              <img
-                src="/images/shopping-bag.png"
-                style={{ width: 16, marginRight: "5px" }}
-              />{" "}
-              Pedir
-            </button>
+            {!item.notAvailable && (
+              <button
+                style={{ margin: "0 5px", display: "flex" }}
+                onClick={() => addToCart()}
+                className={styles.moreButton}
+              >
+                <img
+                  src="/images/shopping-bag.png"
+                  style={{ width: 16, marginRight: "5px" }}
+                />{" "}
+                Pedir
+              </button>
+            )}
           </div>
         </div>
       </div>
