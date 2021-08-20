@@ -74,7 +74,7 @@ const Fullpage = () => (
                       href="https://instagram.com/moradaespirita"
                       target="blank"
                     >
-                      Instragram
+                      Instagram
                     </a>
                   </div>
                 </p>
