@@ -379,6 +379,15 @@ export const productTypes: ProductType[] = [
       },
 
       {
+        id: "HID-LOU",
+        name: "Hidrolato de Louro",
+        price: 24,
+        description: "Laurus nobilis",
+        image: "hidrolato-louro.jpg",
+        detailedDescription: ``,
+      },
+
+      {
         id: "OLE-MEL",
         name: "Óleo essencial de melaleuca",
         price: 30,
