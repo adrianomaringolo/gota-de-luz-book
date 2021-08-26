@@ -8,6 +8,7 @@ import { StatusTag } from "../../../components/pedidos/StatusTag";
 import { StatusSelect } from "../../../components/pedidos/StatusSelect";
 import { OrderActivities } from "../../../components/pedidos/OrderActivities";
 import Image from "next/image";
+import { formatDateAndTime } from "../../../utils/date";
 
 const Pedido = () => {
   const router = useRouter();
@@ -67,10 +68,10 @@ const Pedido = () => {
               <StatusTag status={order.status || ""} size="is-large" />
             </h1>
             <p className="is-size-3">{order.contactInfo.name}</p>
-            {/* <p className="mb-5">
+            <p className="mb-5">
               <b>Pedido feito em:</b>{" "}
-              {format(order.createdAt, "dd/MM/yyyy HH:mm")}
-            </p> */}
+              {formatDateAndTime(new Date(order.createdAt))}
+            </p>
             <p>
               <b>Celular:</b> {order.contactInfo.phone}
             </p>
