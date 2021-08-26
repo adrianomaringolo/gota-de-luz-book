@@ -8,7 +8,6 @@ import { StatusTag } from "../../../components/pedidos/StatusTag";
 import { StatusSelect } from "../../../components/pedidos/StatusSelect";
 import { OrderActivities } from "../../../components/pedidos/OrderActivities";
 import Image from "next/image";
-import { format } from "date-fns";
 
 const Pedido = () => {
   const router = useRouter();
