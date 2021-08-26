@@ -161,6 +161,10 @@ h2.fancy-title {
   display: inline-block;
 }
 
+.is-display-print {
+  display: none !important;
+}
+
 @media print {
   .is-hidden-print {
     display: none !important;

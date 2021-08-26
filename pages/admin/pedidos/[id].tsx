@@ -50,14 +50,15 @@ const Pedido = () => {
           </button>
         </div>
 
-        <Image
-          priority
-          src="/images/logo-color.png"
-          height={80}
-          width={261}
-          alt="Logo"
-          className="is-hidden is-display-print"
-        />
+        <div className="is-display-print">
+          <Image
+            priority
+            src="/images/logo-color.png"
+            height={80}
+            width={261}
+            alt="Logo"
+          />
+        </div>
 
         <div className="columns">
           <div className="column">
