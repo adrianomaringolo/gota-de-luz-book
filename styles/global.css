@@ -160,3 +160,12 @@ h2.fancy-title {
   font-weight: 500;
   display: inline-block;
 }
+
+@media print {
+  .is-hidden-print {
+    display: none !important;
+  }
+  .is-display-print {
+    display: inherit !important;
+  }
+}

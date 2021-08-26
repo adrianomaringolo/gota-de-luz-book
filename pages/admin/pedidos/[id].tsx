@@ -7,6 +7,8 @@ import Link from "next/link";
 import { StatusTag } from "../../../components/pedidos/StatusTag";
 import { StatusSelect } from "../../../components/pedidos/StatusSelect";
 import { OrderActivities } from "../../../components/pedidos/OrderActivities";
+import Image from "next/image";
+import { format } from "date-fns";
 
 const Pedido = () => {
   const router = useRouter();
@@ -39,7 +41,25 @@ const Pedido = () => {
       </Head>
 
       <AdminLayout>
-        <Link href={`/admin/pedidos`}>Voltar</Link>
+        <div className="is-flex is-justify-content-space-between is-align-content-space-between is-hidden-print">
+          <Link href={`/admin/pedidos`}>Voltar</Link>
+          <button
+            className="button is-small is-info"
+            onClick={() => window.print()}
+          >
+            Imprimir
+          </button>
+        </div>
+
+        <Image
+          priority
+          src="/images/logo-color.png"
+          height={80}
+          width={261}
+          alt="Logo"
+          className="is-hidden is-display-print"
+        />
+
         <div className="columns">
           <div className="column">
             <h1 className="is-size-2 has-text-weight-bold is-flex is-align-items-center">
@@ -47,6 +67,10 @@ const Pedido = () => {
               <StatusTag status={order.status || ""} size="is-large" />
             </h1>
             <p className="is-size-3">{order.contactInfo.name}</p>
+            <p className="mb-5">
+              <b>Pedido feito em:</b>{" "}
+              {format(new Date(order.createdAt), "dd/MM/yyyy HH:mm")}
+            </p>
             <p>
               <b>Celular:</b> {order.contactInfo.phone}
             </p>
@@ -58,11 +82,11 @@ const Pedido = () => {
               {order.contactInfo?.zipcode})
             </p>
 
-            <p className="mt-3">
+            <p className="mt-5">
               <b>Observações:</b> {order.contactInfo.observations || "-"}
             </p>
           </div>
-          <div className="column">
+          <div className="column is-hidden-print">
             <StatusSelect orderItem={order} afterSave={() => getOrder(id)} />
           </div>
         </div>
@@ -75,7 +99,7 @@ const Pedido = () => {
               <th>Código</th>
               <th>Nome produto</th>
               <th>Preço un.</th>
-              <th>Quantidade</th>
+              <th>Qtd.</th>
               <th>Total</th>
             </tr>
           </thead>
@@ -97,7 +121,9 @@ const Pedido = () => {
         </table>
         <p className="is-size-4 has-text-weight-bold">Total: R$ {getTotal()}</p>
 
-        <OrderActivities orderItem={order} afterSave={() => getOrder(id)} />
+        <div className="is-hidden-print">
+          <OrderActivities orderItem={order} afterSave={() => getOrder(id)} />
+        </div>
       </AdminLayout>
     </>
   );
