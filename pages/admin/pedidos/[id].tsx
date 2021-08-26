@@ -67,10 +67,10 @@ const Pedido = () => {
               <StatusTag status={order.status || ""} size="is-large" />
             </h1>
             <p className="is-size-3">{order.contactInfo.name}</p>
-            <p className="mb-5">
+            {/* <p className="mb-5">
               <b>Pedido feito em:</b>{" "}
-              {format(new Date(order.createdAt), "dd/MM/yyyy HH:mm")}
-            </p>
+              {format(order.createdAt, "dd/MM/yyyy HH:mm")}
+            </p> */}
             <p>
               <b>Celular:</b> {order.contactInfo.phone}
             </p>
