@@ -375,7 +375,7 @@ export const productTypes: ProductType[] = [
         description: "Casearia sylvestris - Edição limitada",
         image: "hidrolato-guacatonga.jpg",
         detailedDescription: ``,
-        notAvailable: true,
+        notAvailable: false,
       },
 
       {
