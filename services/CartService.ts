@@ -31,7 +31,7 @@ const getAllItems = () => {
   productTypes.forEach((type: ProductType) => {
     allProducts = allProducts.concat(
       type.items
-        ?.filter((item: ProductItem) => !item.notAvailable)
+        ?.filter((item: ProductItem) => item.available)
         .map((item: ProductItem) => ({
           ...item,
           amount: 0,
