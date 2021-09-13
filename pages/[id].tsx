@@ -2,15 +2,25 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ProductItem, ProductType } from "../interfaces";
 import { getAllProductsIds, getProductData } from "../lib/products";
 
 import styles from "./../styles/products.module.scss";
 import ProductItemDisplay from "../components/ProductItemDisplay";
 import { CartButton } from "../components/Cart/CartButton";
+import { ProductsService } from "../services/ProductsService";
 
 const Product = ({ productData }: { productData: ProductType }) => {
+  const [products, setProducts] = useState<any[]>([]);
+
+  const getProducts = async () =>
+    setProducts(await ProductsService.getProductsByType(productData.type));
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <>
       <CartButton />
@@ -42,7 +52,7 @@ const Product = ({ productData }: { productData: ProductType }) => {
             />
           </p>
           <div className={styles.productItems}>
-            {productData.items?.map((item: ProductItem) => (
+            {products?.map((item: ProductItem) => (
               <ProductItemDisplay
                 item={item}
                 type={productData.type}

@@ -230,4 +230,5 @@ export const CartService = {
   getOrderById,
   editOrderStatus,
   addCommentToOrder,
+  getAllItems,
 };

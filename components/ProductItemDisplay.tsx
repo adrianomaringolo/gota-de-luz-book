@@ -32,7 +32,7 @@ const ProductItemDisplay = ({
         ></div>
         <div className={styles.productText}>
           <p className={styles.itemTitle}>{item.name}</p>
-          {item.notAvailable ? (
+          {!item.available ? (
             <p>
               <big>
                 <strong>Produto não disponível</strong>
@@ -54,7 +54,7 @@ const ProductItemDisplay = ({
                 Saiba mais
               </button>
             )}
-            {!item.notAvailable && (
+            {item.available && (
               <button
                 style={{ margin: "0 5px", display: "flex" }}
                 onClick={() => addToCart()}

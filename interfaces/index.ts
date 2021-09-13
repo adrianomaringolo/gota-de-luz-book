@@ -13,5 +13,5 @@ export interface ProductItem {
   description: string;
   image: string;
   detailedDescription?: string;
-  notAvailable?: boolean;
+  available?: boolean;
 }

@@ -45,6 +45,8 @@ const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
         ></link>
+
+        <link rel="stylesheet" href="/css/bulma.checkbox.min.css" />
       </Head>
 
       <div>
@@ -61,6 +63,9 @@ const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => {
             <div className="navbar-start">
               <Link href="/admin/pedidos">
                 <a className="navbar-item has-text-weight-bold">Pedidos</a>
+              </Link>
+              <Link href="/admin/produtos">
+                <a className="navbar-item has-text-weight-bold">Produtos</a>
               </Link>
             </div>
 

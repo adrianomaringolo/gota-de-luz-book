@@ -8,16 +8,16 @@ import Link from "next/link";
 
 const Products = () => (
   <div className={styles.productTypes}>
-    {productTypes.map((product: ProductType) => (
-      <Link href={`/${product.id}`} key={product.id}>
+    {productTypes.map((type: ProductType) => (
+      <Link href={`/${type.id}`} key={type.id}>
         <div className={styles.typeContainer}>
           <div
             className={styles.productTypeCard}
             style={{
-              backgroundImage: `url('/images/flower-backgrounds/${product.image}')`,
+              backgroundImage: `url('/images/flower-backgrounds/${type.image}')`,
             }}
           >
-            <h3 className="hvr-underline-from-center">{product.type}</h3>
+            <h3 className="hvr-underline-from-center">{type.type}</h3>
           </div>
         </div>
       </Link>
