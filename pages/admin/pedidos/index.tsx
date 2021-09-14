@@ -17,8 +17,20 @@ const Pedidos = () => {
   const [orders, setOrders] = useState<any[]>([]);
   const [statusToFilter, setStatusToFilter] = useState<string>("");
 
-  const getOrders = async () =>
-    setOrders(await CartService.getOrders(statusToFilter));
+  const getOrders = async () => {
+    const resp = await CartService.getOrders(statusToFilter);
+    if (!statusToFilter) {
+      setOrders(
+        resp.filter(
+          (o) =>
+            o.status !== ORDER_STATUS.FINALIZADO &&
+            o.status !== ORDER_STATUS.CANCELADO
+        )
+      );
+    } else {
+      setOrders(resp);
+    }
+  };
 
   useEffect(() => {
     getOrders();
@@ -53,7 +65,7 @@ const Pedidos = () => {
               value={statusToFilter}
               onChange={(e: any) => setStatusToFilter(e.target.value)}
             >
-              <option value="">Todos</option>
+              <option value="">Todos (não finalizados)</option>
               <option value={ORDER_STATUS.EM_ESPERA}>Em espera</option>
               <option value={ORDER_STATUS.EM_ANDAMENTO}>Em andamento</option>
               <option value={ORDER_STATUS.APROVADO}>Aprovado</option>
