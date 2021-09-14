@@ -109,7 +109,6 @@ const getCart = async () => {
     //start cart
     const items = await getAllItems();
     localStorage.setItem("cart", JSON.stringify({ items }));
-    debugger;
     cartJSON = localStorage.getItem("cart");
   }
   return cartJSON ? JSON.parse(cartJSON) : undefined;
