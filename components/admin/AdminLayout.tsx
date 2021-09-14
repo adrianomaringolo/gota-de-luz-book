@@ -59,7 +59,11 @@ const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => {
           role="navigation"
           aria-label="main navigation"
         >
-          <div id="navbarBasicExample" className="navbar-menu">
+          <div
+            id="navbarBasicExample"
+            className="navbar-brand is-flex is-justify-content-space-between"
+            style={{ width: "100%" }}
+          >
             <div className="navbar-start">
               <Link href="/admin/pedidos">
                 <a className="navbar-item has-text-weight-bold">Pedidos</a>
