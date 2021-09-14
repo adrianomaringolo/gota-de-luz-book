@@ -108,6 +108,15 @@ const Fullpage = () => (
                   </a>{" "}
                   para baixar o catálogo em pdf
                 </p>
+                <p className={styles.highlight}>
+                  Nos siga no Instagram:{" "}
+                  <a
+                    href="https://www.instagram.com/gotadeluz_artesanais/"
+                    target="blank"
+                  >
+                    gotadeluz_artesanais
+                  </a>
+                </p>
               </div>
             </div>
           </ReactFullpage.Wrapper>
