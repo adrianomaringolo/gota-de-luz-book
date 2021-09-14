@@ -1,8 +1,7 @@
 import PubSub from "pubsub-js";
-import { productTypes } from "../data/products";
-import { ProductItem, ProductType } from "../interfaces";
-
+import { ProductItem } from "../interfaces";
 import { db } from "./../utils/firebase";
+import { ProductsService } from "./ProductsService";
 
 const ordersRef = db.collection("orders");
 
@@ -25,31 +24,25 @@ export const ORDER_STATUS = {
   CANCELADO: "cancelado",
 };
 
-const getAllItems = () => {
-  let allProducts: CartItemType[] = [];
+const getAllItems = async () => {
+  const products = await ProductsService.getProducts();
 
-  productTypes.forEach((type: ProductType) => {
-    allProducts = allProducts.concat(
-      type.items
-        ?.filter((item: ProductItem) => item.available)
-        .map((item: ProductItem) => ({
-          ...item,
-          amount: 0,
-          type: type.type,
-        })) || []
-    );
-  });
-  return allProducts;
+  return products
+    ?.filter((item: ProductItem) => item.available)
+    .map((item: ProductItem) => ({
+      ...item,
+      amount: 0,
+    }));
 };
 
 const isCartEmpty = (cartItems: any[]) =>
   cartItems.filter((item) => item.amount > 0).length === 0;
 
-const addItemToCart = (item: CartItemType) => {
-  let cartObj = getCart();
+const addItemToCart = async (item: CartItemType) => {
+  let cartObj = await getCart();
 
   if (!cartObj || isCartEmpty(cartObj?.items || [])) {
-    cartObj = { items: getAllItems() };
+    cartObj = { items: await getAllItems() };
   }
 
   item.amount = 1;
@@ -73,8 +66,8 @@ const addItemToCart = (item: CartItemType) => {
   PubSub.publish("card_add_item", "");
 };
 
-const editItemAmount = (itemId: string, newAmount: number) => {
-  let cartObj = getCart() || { items: [] };
+const editItemAmount = async (itemId: string, newAmount: number) => {
+  let cartObj = (await getCart()) || { items: [] };
 
   const newItems = cartObj ? cartObj.items : [];
 
@@ -93,8 +86,8 @@ const editItemAmount = (itemId: string, newAmount: number) => {
   PubSub.publish("card_add_item", "");
 };
 
-const removeItem = (itemId: string) => {
-  let cartObj = getCart() || { items: [] };
+const removeItem = async (itemId: string) => {
+  let cartObj = (await getCart()) || { items: [] };
 
   const newItems = cartObj ? cartObj.items : [];
 
@@ -109,12 +102,14 @@ const removeItem = (itemId: string) => {
   PubSub.publish("card_add_item", "");
 };
 
-const getCart = () => {
+const getCart = async () => {
   let cartJSON = localStorage.getItem("cart");
 
   if (!cartJSON) {
     //start cart
-    localStorage.setItem("cart", JSON.stringify({ items: getAllItems() }));
+    const items = await getAllItems();
+    localStorage.setItem("cart", JSON.stringify({ items }));
+    debugger;
     cartJSON = localStorage.getItem("cart");
   }
   return cartJSON ? JSON.parse(cartJSON) : undefined;

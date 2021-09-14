@@ -107,12 +107,16 @@ const Carrinho = () => {
 
   const router = useRouter();
 
+  const getCart = async () => {
+    setCart(await CartService.getCart());
+  };
+
   useEffect(() => {
-    setCart(CartService.getCart());
+    getCart();
 
     PubSub.subscribe("card_add_item", () => {
       console.log("Cart changed!");
-      setCart(CartService.getCart());
+      getCart();
     });
   }, []);
 
@@ -144,6 +148,10 @@ const Carrinho = () => {
       setErrorMessage(false);
       setOrderStep(2);
     }
+  };
+
+  const newCart = () => {
+    CartService.clearCart();
   };
 
   return (
@@ -215,10 +223,7 @@ const Carrinho = () => {
                 >
                   Pedir mais produtos
                 </button>
-                <button
-                  onClick={() => CartService.clearCart()}
-                  style={{ marginRight: 10 }}
-                >
+                <button onClick={newCart} style={{ marginRight: 10 }}>
                   Limpar tudo
                 </button>
                 <button onClick={() => setOrderStep(1)} className="buy-button">

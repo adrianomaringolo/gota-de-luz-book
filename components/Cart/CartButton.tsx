@@ -27,11 +27,15 @@ const StyledCartButton = styled.div`
 export const CartButton = () => {
   const [cart, setCart] = useState<CartType>();
 
+  const getCart = async () => {
+    setCart(await CartService.getCart());
+  };
+
   useEffect(() => {
-    setCart(CartService.getCart());
+    getCart();
 
     PubSub.subscribe("card_add_item", () => {
-      setCart(CartService.getCart());
+      getCart();
     });
   }, []);
 
