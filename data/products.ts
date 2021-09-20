@@ -146,11 +146,11 @@ export const productTypes: ProductType[] = [
     image: "background-3.jpg",
     items: [
       {
-        id: "COS-ROS",
-        name: "Rosto",
+        id: "COS-RDIA",
+        name: "Rosto - Dia",
         price: 85,
         description:
-          "Combater o envelhecimento e o aparecimento de rugas. Manter o tônus e a nutrição da pele, auxiliando no combate às manchas em geral. Nutrir e recompor a pele durante o período de descanso, atuando principalmente na redução dos melasmas.",
+          "Combater o envelhecimento e o aparecimento de rugas. Manter o tônus e a nutrição da pele, auxiliando no combate às manchas em geral.",
         image: "cosmetico-rosto.jpg",
         detailedDescription: `
           <u>ROSTO (DIA)</u><br/>
@@ -159,6 +159,16 @@ export const productTypes: ProductType[] = [
           Uso:<br/>
           Espalhar 2 a 3 gotas na face limpa e mãos, 2 vezes ao dia. Após a aplicação, pode-se utilizar maquiagem e protetor solar normalmente.
           <br/><br/>
+        `,
+      },
+      {
+        id: "COS-RNOI",
+        name: "Rosto - Noite",
+        price: 85,
+        description:
+          "Nutrir e recompor a pele durante o período de descanso, atuando principalmente na redução dos melasmas.",
+        image: "cosmetico-rosto.jpg",
+        detailedDescription: `
           <u>ROSTO (NOITE)</u><br/>
           Indicação:<br/>
           Nutrir e recompor a pele durante o período de descanso, atuando principalmente na redução dos melasmas.<br/><br/>
