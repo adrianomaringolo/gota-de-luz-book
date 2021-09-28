@@ -8,7 +8,7 @@ import { StatusTag } from "../../../components/pedidos/StatusTag";
 import { StatusSelect } from "../../../components/pedidos/StatusSelect";
 import { OrderActivities } from "../../../components/pedidos/OrderActivities";
 import Image from "next/image";
-import { formatDateAndTime } from "../../../utils/date";
+import { formatCurrency, formatDateAndTime } from "../../../utils/format";
 
 const Pedido = () => {
   const router = useRouter();
@@ -113,14 +113,16 @@ const Pedido = () => {
                   <td>
                     [{item.type}] {item.name}
                   </td>
-                  <td>R$ {item.price}</td>
+                  <td>{formatCurrency(item.price)}</td>
                   <td>{item.amount}</td>
-                  <td>R$ {item.price * (item.amount || 0)}</td>
+                  <td>{formatCurrency(item.price * (item.amount || 0))}</td>
                 </tr>
               ))}
           </tbody>
         </table>
-        <p className="is-size-4 has-text-weight-bold">Total: R$ {getTotal()}</p>
+        <p className="is-size-4 has-text-weight-bold">
+          Total: {formatCurrency(getTotal())}
+        </p>
 
         <div className="is-hidden-print">
           <OrderActivities orderItem={order} afterSave={() => getOrder(id)} />

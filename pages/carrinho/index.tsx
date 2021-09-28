@@ -10,6 +10,7 @@ import styles from "./../../styles/products.module.scss";
 import { useRouter } from "next/dist/client/router";
 import { ContactForm } from "../../components/Cart/ContactForm";
 import { ConfirmationOrder } from "../../components/Cart/ConfirmationOrder";
+import { formatCurrency } from "../../utils/format";
 
 const CartArea = styled.div`
   display: flex;
@@ -201,7 +202,7 @@ const Carrinho = () => {
                       className="item-price"
                       style={!item.amount ? { color: "#ccc" } : {}}
                     >
-                      R$ {item.price * (item.amount || 0)}
+                      {formatCurrency(item.price * (item.amount || 0))}
                     </div>
                     <span
                       className="product-name"
@@ -212,7 +213,9 @@ const Carrinho = () => {
                   </div>
                 ))}
               </div>
-              <div className="total-value">Valor total: R$ {getTotal()}</div>
+              <div className="total-value">
+                Valor total: {formatCurrency(getTotal())}
+              </div>
               <div className={styles.buttonArea} style={{ display: "flex" }}>
                 <button
                   onClick={() => {

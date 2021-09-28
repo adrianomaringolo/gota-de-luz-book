@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CartItemType } from "../../services/CartService";
+import { formatCurrency } from "../../utils/format";
 
 const StyledContactForm = styled.div``;
 
@@ -29,7 +30,7 @@ export const ConfirmationOrder = ({
               className="item-price"
               style={{ width: "80px", textAlign: "right" }}
             >
-              R$ {item.price * (item.amount || 0)}
+              {formatCurrency(item.price * (item.amount || 0))}
             </div>
             <div
               style={{ width: "50px", textAlign: "right", marginRight: "10px" }}
@@ -42,7 +43,9 @@ export const ConfirmationOrder = ({
           </div>
         ))}
 
-      <div className="total-value">Valor total: R$ {getTotal()}</div>
+      <div className="total-value">
+        Valor total: {formatCurrency(getTotal())}
+      </div>
 
       <p>
         <b>Nome:</b> {contactInfo?.name}

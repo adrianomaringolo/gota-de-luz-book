@@ -399,7 +399,7 @@ export const productTypes: ProductType[] = [
       {
         id: "OLE-MEL",
         name: "Óleo essencial de melaleuca",
-        price: 28,
+        price: 26.5,
         description: "Melaleuca alternifolia",
         image: "oleo-melaleuca.jpg",
         detailedDescription: ``,

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ProductItem } from "../interfaces";
 import { CartService } from "../services/CartService";
+import { formatCurrency } from "../utils/format";
 import styles from "./../styles/products.module.scss";
 
 const ProductItemDisplay = ({
@@ -40,7 +41,7 @@ const ProductItemDisplay = ({
             </p>
           ) : (
             <p>
-              <strong>R$ {item.price}</strong>
+              <strong>{formatCurrency(item.price)}</strong>
             </p>
           )}
           <p className={styles.itemDesc}>{item.description}</p>
