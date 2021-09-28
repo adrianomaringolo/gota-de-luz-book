@@ -126,7 +126,7 @@ const Pedidos = () => {
                         <td>
                           {getTotalItens(order)} items
                           <div className="is-size-6 has-text-weight-bold">
-                            R$ {getTotal(order)}
+                            {getTotal(order)}
                           </div>
                         </td>
                         <td>
