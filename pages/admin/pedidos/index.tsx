@@ -10,6 +10,7 @@ import {
 import { format } from "date-fns";
 import Link from "next/link";
 import { StatusTag } from "../../../components/pedidos/StatusTag";
+import { formatCurrency } from "../../../utils/format";
 
 const PedidosStyled = styled.div``;
 
@@ -126,7 +127,7 @@ const Pedidos = () => {
                         <td>
                           {getTotalItens(order)} items
                           <div className="is-size-6 has-text-weight-bold">
-                            {getTotal(order)}
+                            {formatCurrency(getTotal(order))}
                           </div>
                         </td>
                         <td>
