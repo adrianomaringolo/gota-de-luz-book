@@ -274,11 +274,7 @@ export const productTypes: ProductType[] = [
   {
     id: "hidrolatos",
     type: "Hidrolatos e óleos essenciais",
-    description: `<div style="
-        width: 100%; min-height: 300px;
-        background: linear-gradient(rgb(255 255 255 / 75%), rgb(255 255 255 / 65%)),
-        url(/images/products/hidrolatos.jpg) no-repeat center / cover;
-        padding: 20px; margin-bottom: 20px;">
+    description: `
       Os <b>óleos essenciais</b> são extratos naturais superconcentrados, extraídos principalmente por método de destilação a vapor ou por prensagem a frio das flores, plantas e frutas. Possuem propriedades terapêuticas e diversos benefícios para a saúde devido a sua alta concentração e, por isso, não devem ser usados puros diretamente na pele. Podem ser usados na aromaterapia em difusores pessoais, de ambiente e diluídos em óleos vegetais. São totalmente naturais, sem corantes e sem quaisquer aditivos químicos. 
       <br/><br/>
       <b>Hidrolatos</b>, ou águas florais são também um produto do processo de destilação na extração dos óleos essenciais, onde o vapor d'água que atravessa a planta destilada arrasta também vários elementos da planta que, ao passarem ao estado líquido novamente, formam os hidrolatos.
