@@ -21,15 +21,19 @@ const Layout = ({ title = "This is the default title", children }: Props) => (
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
 
-    <div style={{ textAlign: "center", paddingTop: "50px" }}></div>
+    {children}
 
-    <h1 style={{ textAlign: "center", paddingTop: "50px" }}>Em manutenção!</h1>
-    <h2 style={{ textAlign: "center", paddingTop: "50px" }}>
-      Desculpe pelo transtorno, tente novamente mais tarde!
-    </h2>
-    <h4 style={{ textAlign: "center", paddingTop: "50px" }}>
-      gotadeluz.net.br
-    </h4>
+    {/* <div style={{ textAlign: "center", paddingTop: "50px" }}>
+      <h1 style={{ textAlign: "center", paddingTop: "50px" }}>
+        Em manutenção!
+      </h1>
+      <h2 style={{ textAlign: "center", paddingTop: "50px" }}>
+        Desculpe pelo transtorno, tente novamente mais tarde!
+      </h2>
+      <h4 style={{ textAlign: "center", paddingTop: "50px" }}>
+        gotadeluz.net.br
+      </h4>
+    </div> */}
   </div>
 );
 
