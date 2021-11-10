@@ -4,7 +4,8 @@ export const productTypes: ProductType[] = [
   {
     id: "sabonetes",
     type: "Sabonetes artesanais",
-    description: "Óleos vegetais e óleos essenciais",
+    description:
+      "<p>Óleos vegetais e óleos essenciais.</p><p>Todos os sabonetes são feitos com hidrolato de melaleuca orgânica destilada por nós !</p>",
     image: "background-8.jpg",
     items: [
       {
