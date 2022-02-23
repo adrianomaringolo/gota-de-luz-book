@@ -98,7 +98,7 @@ const Fullpage = () => (
                   <span style={{ color: "#000" }}>(19) 99135-5414</span> -
                   Marcelo
                 </p>
-                <p className={styles.highlight}>
+                {/* <p className={styles.highlight}>
                   <a
                     className="link"
                     href="https://drive.google.com/file/d/1dxLJ6MORxJV-QCBUdDX6OEsMsvd6xth1/view?usp=sharing"
@@ -107,7 +107,7 @@ const Fullpage = () => (
                     Clique aqui
                   </a>{" "}
                   para baixar o catálogo em pdf
-                </p>
+                </p> */}
                 <p className={styles.highlight}>
                   Nos siga no Instagram:{" "}
                   <a
