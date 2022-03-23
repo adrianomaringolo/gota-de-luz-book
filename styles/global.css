@@ -173,3 +173,20 @@ h2.fancy-title {
     display: inherit !important;
   }
 }
+
+.button-confirmation {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  background: rgb(241, 241, 241);
+}
+
+.button-confirmation:hover {
+  background: rgb(167, 166, 166);
+}
+
+.button-confirmation.big {
+  font-size: 1.5em;
+}
