@@ -259,7 +259,7 @@ export const productTypes: ProductType[] = [
     type: "Hidrolatos - 1 litro",
     typeLabel: "Hidrolatos<br/><small>1 litro</small>",
     description: `
-      <b>Hidrolatos</b>, ou águas florais são também um produto do processo de destilação na extração dos óleos essenciais, onde o vapor d'água que atravessa a planta destilada arrasta também vários elementos da planta que, ao passarem ao estado líquido novamente, formam os hidrolatos. As embalagens padrão são de <b>120 ml</b>.
+      <b>Hidrolatos</b>, ou águas florais são também um produto do processo de destilação na extração dos óleos essenciais, onde o vapor d'água que atravessa a planta destilada arrasta também vários elementos da planta que, ao passarem ao estado líquido novamente, formam os hidrolatos.</b>.
       <br/><br/>
       </div>
       <big><strong>Produtos sazonais! Disponibilidade sob consulta!</strong></big>
