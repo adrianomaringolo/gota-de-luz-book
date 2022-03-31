@@ -17,7 +17,12 @@ const Products = () => (
               backgroundImage: `url('/images/flower-backgrounds/${type.image}')`,
             }}
           >
-            <h3 className="hvr-underline-from-center">{type.type}</h3>
+            <h3
+              className="hvr-underline-from-center"
+              dangerouslySetInnerHTML={{
+                __html: type.typeLabel || type.type,
+              }}
+            ></h3>
           </div>
         </div>
       </Link>

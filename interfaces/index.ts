@@ -1,6 +1,7 @@
 export interface ProductType {
   id: string;
   type: string;
+  typeLabel?: string;
   description: string;
   image: string;
   items?: Array<ProductItem>;
