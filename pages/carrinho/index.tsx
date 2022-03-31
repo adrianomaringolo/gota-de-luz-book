@@ -16,7 +16,7 @@ const CartArea = styled.div`
   display: flex;
   justify-content: center;
   background: url(/images/background-init.jpg) no-repeat 50% / cover;
-  height: 100vh;
+  //height: 100vh;
 
   .cart-area {
     background: #fff;
