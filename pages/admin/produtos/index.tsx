@@ -61,64 +61,62 @@ const Produtos = () => {
         {products && products.length && (
           <div className="table-container">
             <table className="table is-bordered is-striped is-hoverable">
-              <thead>
-                <tr>
+              <thead className="print-line">
+                <tr className="print-line">
                   <th className="print-none">Código</th>
                   <th>Produto</th>
                   <th>Preço</th>
-                  <th className="print-only">Descrição</th>
+                  <th>Descrição</th>
                   <th className="print-none">Disponível</th>
                   <th className="print-none">Quantidade</th>
                 </tr>
               </thead>
               <tbody>
-                {products?.map((item: any, index: number) => (
-                  <tr
-                    key={`${item.id}`}
-                    style={{
-                      borderBottom: "1px solid #ccc",
-                      paddingBottom: 5,
-                      marginBottom: 5,
-                    }}
-                  >
-                    <td className="print-none">{item.id}</td>
-                    <td>
-                      <div>{item.name}</div>
-                      <div className="has-text-grey is-size-7">{item.type}</div>
-                    </td>
-                    <td>{formatCurrency(item.price)}</td>
-                    <td className="print-only print-only-table">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: item.detailedDescription || "-",
-                        }}
-                      ></span>
-                    </td>
-                    <td className="print-none">
-                      <label className="b-checkbox checkbox is-medium">
+                {products
+                  ?.sort((a, b) => a.type - b.type || a.name - b.name)
+                  .filter((p) => p.available)
+                  .map((item: any, index: number) => (
+                    <tr key={`${item.id}`} className="print-line">
+                      <td className="print-none">{item.id}</td>
+                      <td>
+                        <div>{item.name}</div>
+                        <div className="has-text-grey is-size-7">
+                          {item.type}
+                        </div>
+                      </td>
+                      <td>{formatCurrency(item.price)}</td>
+                      <td>
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: item.detailedDescription || "-",
+                          }}
+                        ></span>
+                      </td>
+                      <td className="print-none">
+                        <label className="b-checkbox checkbox is-medium">
+                          <input
+                            type="checkbox"
+                            checked={item.available || false}
+                            onChange={(event) =>
+                              checkProduct(index, event.target.checked)
+                            }
+                          />
+                          <span className="check"></span>
+                        </label>
+                      </td>
+                      <td className="print-none">
                         <input
-                          type="checkbox"
-                          checked={item.available || false}
-                          onChange={(event) =>
-                            checkProduct(index, event.target.checked)
-                          }
+                          className="input is-medium mr-3"
+                          onChange={(event) => {
+                            changeAmount(index, Number(event.target.value));
+                          }}
+                          type="number"
+                          min={0}
+                          value={item.amount}
                         />
-                        <span className="check"></span>
-                      </label>
-                    </td>
-                    <td className="print-none">
-                      <input
-                        className="input is-medium mr-3"
-                        onChange={(event) => {
-                          changeAmount(index, Number(event.target.value));
-                        }}
-                        type="number"
-                        min={0}
-                        value={item.amount}
-                      />
-                    </td>
-                  </tr>
-                ))}
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>

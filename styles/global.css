@@ -199,13 +199,19 @@ h2.fancy-title {
   display: none;
 }
 
+table {
+  page-break-inside: auto;
+}
+tr {
+  page-break-inside: avoid;
+  page-break-after: auto;
+}
+
 @media print {
   .print-none {
     display: none;
   }
-  .print-line {
-    page-break-inside: avoid;
-  }
+
   .print-only {
     display: flex;
   }
