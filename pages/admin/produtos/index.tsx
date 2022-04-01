@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import AdminLayout from "../../../components/admin/AdminLayout";
 import { ProductsService } from "../../../services/ProductsService";
+import { formatCurrency } from "../../../utils/format";
 
 const Produtos = () => {
   const [products, setProducts] = useState<any[]>([]);
@@ -37,27 +38,37 @@ const Produtos = () => {
     <AdminLayout>
       <section>
         <h1 className="is-size-2">Produtos</h1>
-        <p>
-          Defina abaixo a disponibilidade para venda e a quantidade de cada
-          produto.
-        </p>
-        <p>
-          Remover a <u>disponibilidade impede que o produto seja pedido</u> por
-          novos clientes, mas o produto continua visível.
-        </p>
-        <p className="mb-5">
-          As <u>quantidades são apenas informativas</u> e não afetam o fluxo dos
-          pedidos.
-        </p>
+        <button
+          className="button is-small is-info print-none"
+          onClick={() => window.print()}
+        >
+          Imprimir
+        </button>
+        <div className="print-none">
+          <p>
+            Defina abaixo a disponibilidade para venda e a quantidade de cada
+            produto.
+          </p>
+          <p>
+            Remover a <u>disponibilidade impede que o produto seja pedido</u>{" "}
+            por novos clientes, mas o produto continua visível.
+          </p>
+          <p className="mb-5">
+            As <u>quantidades são apenas informativas</u> e não afetam o fluxo
+            dos pedidos.
+          </p>
+        </div>
         {products && products.length && (
           <div className="table-container">
             <table className="table is-bordered is-striped is-hoverable">
               <thead>
                 <tr>
-                  <th>Código</th>
+                  <th className="print-none">Código</th>
                   <th>Produto</th>
-                  <th>Disponível</th>
-                  <th>Quantidade</th>
+                  <th>Preço</th>
+                  <th className="print-only">Descrição</th>
+                  <th className="print-none">Disponível</th>
+                  <th className="print-none">Quantidade</th>
                 </tr>
               </thead>
               <tbody>
@@ -70,12 +81,20 @@ const Produtos = () => {
                       marginBottom: 5,
                     }}
                   >
-                    <td>{item.id}</td>
+                    <td className="print-none">{item.id}</td>
                     <td>
                       <div>{item.name}</div>
                       <div className="has-text-grey is-size-7">{item.type}</div>
                     </td>
-                    <td>
+                    <td>{formatCurrency(item.price)}</td>
+                    <td className="print-only print-only-table">
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: item.detailedDescription || "-",
+                        }}
+                      ></span>
+                    </td>
+                    <td className="print-none">
                       <label className="b-checkbox checkbox is-medium">
                         <input
                           type="checkbox"
@@ -87,7 +106,7 @@ const Produtos = () => {
                         <span className="check"></span>
                       </label>
                     </td>
-                    <td>
+                    <td className="print-none">
                       <input
                         className="input is-medium mr-3"
                         onChange={(event) => {
@@ -106,7 +125,7 @@ const Produtos = () => {
         )}
 
         <button
-          className={`button is-large is-primary ${
+          className={`button is-large is-primary print-none ${
             isSaving ? "is-loading" : ""
           }`}
           disabled={isSaving}

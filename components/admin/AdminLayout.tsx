@@ -55,7 +55,7 @@ const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => {
 
       {user && (
         <nav
-          className="navbar has-background-light"
+          className="navbar has-background-light print-none"
           role="navigation"
           aria-label="main navigation"
         >

@@ -194,3 +194,22 @@ h2.fancy-title {
 .button-confirmation.big {
   font-size: 1.5em;
 }
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  .print-none {
+    display: none;
+  }
+  .print-line {
+    page-break-inside: avoid;
+  }
+  .print-only {
+    display: flex;
+  }
+  .print-only-table {
+    display: table-cell;
+  }
+}

@@ -7,12 +7,12 @@ import "firebase/auth";
 import "firebase/firestore";
 
 var firebaseConfig = {
-  projectId: `${process.env.REACT_APP_FIREBASE_PROJECT_ID}`,
-  appId: `${process.env.REACT_APP_FIREBASE_APP_ID}`,
-  storageBucket: `${process.env.REACT_APP_FIREBASE_STORAGE_BUCKET}`,
-  apiKey: `${process.env.REACT_APP_FIREBASE_API_KEY}`,
-  authDomain: `${process.env.REACT_APP_FIREBASE_AUTH_DOMAIN}`,
-  messagingSenderId: `${process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID}`,
+  apiKey: "AIzaSyCevSBZ4T8wX_pk_Ki2nIZgZqouzGJnN1Y",
+  authDomain: "gota-de-luz.firebaseapp.com",
+  projectId: "gota-de-luz",
+  storageBucket: "gota-de-luz.appspot.com",
+  messagingSenderId: "215101370709",
+  appId: "1:215101370709:web:faa188fe2172084037bfdc",
 };
 
 if (!firebase.apps.length) {
