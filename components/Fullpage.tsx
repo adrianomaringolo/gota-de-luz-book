@@ -14,7 +14,7 @@ const Fullpage = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
-    const modalSet = localStorage.getItem("priceWarningSet");
+    const modalSet = true;
 
     if (!modalSet) {
       setShowModal(true);
@@ -162,6 +162,16 @@ const Fullpage = () => {
                     >
                       gotadeluz_artesanais
                     </a>
+                  </p>
+                  <p className={styles.highlight}>
+                    Nos deixe um{" "}
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSetBUhLfPUyn-AAaeZFSluLuB3BEzrpEX0yirA2CPk6LklYWg/viewform"
+                      target="blank"
+                    >
+                      depoimento
+                    </a>{" "}
+                    👋❤️
                   </p>
                 </div>
               </div>
