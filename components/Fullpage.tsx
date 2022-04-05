@@ -69,10 +69,11 @@ const Fullpage = () => {
                     className={styles.svgLogo}
                   />
                   <p className={styles.highlight}>
-                    A marca Gota de Luz oferece produtos artesanais, feitos à
-                    base de óleos vegetais e óleos essenciais. Livres de
-                    conservantes, sem produtos de origem animal e sem testes em
-                    animais.
+                    A marca Gota de Luz oferece produtos artesanais, feitos 100%
+                    à base de óleos vegetais nobres e óleos essenciais. Livres
+                    de conservantes. Toda a renda obtida é revertida para os
+                    trabalhos assistenciais da Morada Espírita Professor Lairi
+                    Hans.
                   </p>
                 </div>
               </div>
