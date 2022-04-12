@@ -1,6 +1,5 @@
 import React from "react";
 import { ContactArea } from "./main-areas/ContactArea";
-import { ProductsArea } from "./main-areas/ProductsArea";
 import { InitArea } from "./main-areas/InitArea";
 import { DestinationArea } from "./main-areas/DestinationArea";
 import { AlertModal } from "./main-areas/AlertModal";
