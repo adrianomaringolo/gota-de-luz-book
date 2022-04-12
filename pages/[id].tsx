@@ -8,8 +8,8 @@ import { getAllProductsIds, getProductData } from "../lib/products";
 
 import styles from "./../styles/products.module.scss";
 import ProductItemDisplay from "../components/ProductItemDisplay";
-import { CartButton } from "../components/Cart/CartButton";
 import { ProductsService } from "../services/ProductsService";
+import Layout from "../components/Layout";
 
 const Product = ({ productData }: { productData: ProductType }) => {
   const [products, setProducts] = useState<any[]>([]);
@@ -23,48 +23,49 @@ const Product = ({ productData }: { productData: ProductType }) => {
 
   return (
     <>
-      <CartButton />
-      <Head>
-        <title>Catálogo - {productData.type}</title>
-      </Head>
-      <div
-        className={styles.productDetais}
-        style={{
-          backgroundImage: `url('/images/flower-backgrounds/${productData.image}')`,
-        }}
-      >
-        <Link href="/#produtos">
-          <div style={{ padding: "10px" }}>
-            <Image
-              priority
-              src={`/images/logos/logo-${productData.id}.png`}
-              height={123}
-              width={400}
-              alt="Logo"
-            />
-          </div>
-        </Link>
-        <h1>{productData.type}</h1>
-        <section className={styles.infoArea}>
-          <p className={styles.description}>
-            <span
-              dangerouslySetInnerHTML={{ __html: productData.description }}
-            />
-          </p>
-          <div className={styles.productItems}>
-            {products?.map((item: ProductItem) => (
-              <ProductItemDisplay
-                item={item}
-                type={productData.type}
-                key={item.id}
-              />
-            ))}
-          </div>
+      <Layout title="Gota de Luz">
+        <Head>
+          <title>Catálogo - {productData.type}</title>
+        </Head>
+        <div
+          className={styles.productDetais}
+          style={{
+            backgroundImage: `url('/images/flower-backgrounds/${productData.image}')`,
+          }}
+        >
           <Link href="/#produtos">
-            <h3 className="link">&lt;&lt; Voltar para início</h3>
+            <div style={{ padding: "10px" }}>
+              <Image
+                priority
+                src={`/images/logos/logo-${productData.id}.png`}
+                height={92}
+                width={300}
+                alt="Logo"
+              />
+            </div>
           </Link>
-        </section>
-      </div>
+          <h1>{productData.type}</h1>
+          <section className={styles.infoArea}>
+            <p className={styles.description}>
+              <span
+                dangerouslySetInnerHTML={{ __html: productData.description }}
+              />
+            </p>
+            <div className={styles.productItems}>
+              {products?.map((item: ProductItem) => (
+                <ProductItemDisplay
+                  item={item}
+                  type={productData.type}
+                  key={item.id}
+                />
+              ))}
+            </div>
+            <Link href="/#produtos">
+              <h3 className="link">&lt;&lt; Voltar para início</h3>
+            </Link>
+          </section>
+        </div>
+      </Layout>
     </>
   );
 };

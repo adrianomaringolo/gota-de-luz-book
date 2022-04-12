@@ -1,10 +1,10 @@
 import Layout from "../components/Layout";
-import Fullpage from "../components/Fullpage";
+import Main from "../components/Main";
 
 const Home = () => (
   <>
     <Layout title="Gota de Luz">
-      <Fullpage />
+      <Main />
     </Layout>
   </>
 );

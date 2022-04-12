@@ -1,5 +1,8 @@
 .section {
   background-color: #000;
+  min-height: 100vh;
+  align-items: center;
+  display: flex;
 
   .contentArea {
     display: flex;
@@ -8,9 +11,9 @@
     max-width: 60rem;
     margin: 0 auto;
     padding: 0 20px;
-    p.highlight {
+    .highlight {
       color: #fff;
-      font-size: 1.25rem;
+      font-size: 1rem;
       text-align: center;
       font-weight: 300;
       font-weight: 400;
@@ -19,7 +22,7 @@
       color: #444;
 
       @media only screen and (min-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.7rem;
       }
     }
   }
@@ -73,6 +76,8 @@
 
   &.sectionPhotos {
     background-color: #fff;
+    display: grid;
+    padding: 20px;
   }
 
   &.sectionContact {

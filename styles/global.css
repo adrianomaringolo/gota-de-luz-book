@@ -130,41 +130,6 @@ h2.fancy-title {
   overflow: hidden;
 }
 
-.cart-button {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  background: #f2e4ee;
-  z-index: 1;
-  display: flex;
-  padding: 15px 25px;
-  border-radius: 5px;
-  transition: all 0.5s;
-}
-
-.cart-button:hover {
-  color: #fff;
-  background: #8f6f85;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.cart-button .text-area {
-  display: flex;
-  flex-direction: column;
-}
-
-.cart-button img {
-  width: 67px;
-  height: 77px;
-  margin-right: 8px;
-}
-
-.cart-button .title {
-  font-weight: 500;
-  display: inline-block;
-}
-
 .is-display-print {
   display: none !important;
 }

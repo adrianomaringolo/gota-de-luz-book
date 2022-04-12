@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
+import { Navbar } from "./layout/Navbar";
 
 type Props = {
   children?: ReactNode;
@@ -21,9 +22,16 @@ const Layout = ({ title = "This is the default title", children }: Props) => (
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
 
-    {children}
+    <Navbar />
 
-    {/* <div style={{ textAlign: "center", paddingTop: "50px" }}>
+    {children}
+  </div>
+);
+
+export default Layout;
+
+{
+  /* <div style={{ textAlign: "center", paddingTop: "50px" }}>
       <h1 style={{ textAlign: "center", paddingTop: "50px" }}>
         Em manutenção!
       </h1>
@@ -33,8 +41,5 @@ const Layout = ({ title = "This is the default title", children }: Props) => (
       <h4 style={{ textAlign: "center", paddingTop: "50px" }}>
         gotadeluz.net.br
       </h4>
-    </div> */}
-  </div>
-);
-
-export default Layout;
+    </div> */
+}

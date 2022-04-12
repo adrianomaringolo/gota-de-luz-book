@@ -15,6 +15,7 @@ import { formatCurrency } from "../../utils/format";
 const CartArea = styled.div`
   display: flex;
   justify-content: center;
+  padding-top: 100px;
   background: url(/images/background-init.jpg) no-repeat 50% / cover;
   //height: 100vh;
 
@@ -50,6 +51,7 @@ const CartArea = styled.div`
   .title {
     font-size: 1.2em;
     margin-bottom: 0;
+    margin-top: 0;
   }
 
   .title-description {

@@ -16,33 +16,13 @@ const images = [
     original: "/images/photos/photo1-min.jpg/",
     height: 500,
   },
-  {
-    original: "/images/photos/photo2-min.jpg",
-    height: 500,
-  },
-  {
-    original: "/images/photos/photo3-min.jpg",
-    height: 500,
-  },
-  {
-    original: "/images/photos/photo4-min.jpg",
-  },
+
   {
     original: "/images/photos/photo5-min.jpg",
   },
-  {
-    original: "/images/photos/photo6-min.jpg",
-  },
+
   {
     original: "/images/photos/photo7-min.jpg",
-  },
-  {
-    original: "/images/photos/photo8-min.jpg",
-    height: 500,
-  },
-  {
-    original: "/images/photos/photo9-min.jpg",
-    height: 500,
   },
   {
     original: "/images/photos/photo10-min.jpg",

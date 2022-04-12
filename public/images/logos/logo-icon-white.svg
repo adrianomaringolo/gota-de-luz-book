@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="80mm"
+   height="100mm"
+   viewBox="0 0 80.000001 100"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="logo-icon - white.svg"
+   inkscape:export-filename="/Users/adriano.maringolo/Desktop/Vídeos Marcelo/Vídeo 2/logo.png"
+   inkscape:export-xdpi="101.6"
+   inkscape:export-ydpi="101.6"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.0212917"
+     inkscape:cx="339.27623"
+     inkscape:cy="270.246"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g904"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1792"
+     inkscape:window-height="968"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:pagecheckerboard="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g904"
+       transform="matrix(1.6067571,0,0,1.6067571,-17.093354,-95.836182)"
+       style="fill:#666666">
+      <g
+         id="g873"
+         style="fill:#666666">
+        <g
+           aria-label="luz"
+           transform="scale(1.0503136,0.95209661)"
+           id="text849-4"
+           style="font-style:normal;font-weight:normal;font-size:27.1669px;line-height:1.25;font-family:sans-serif;fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:1.07819;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+      <g
+         id="g1018"
+         transform="matrix(1.6316944,0,0,1.6316944,-60.170447,-57.335301)"
+         style="fill:#ffffff">
+        <path
+           style="fill:#ffffff;stroke:none;stroke-width:0.167277px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 64.907597,83.412708 c 0.553582,4.648674 -1.644777,6.701755 -3.287992,9.470085 -1.513335,2.549521 -2.920948,4.695727 -0.193936,6.734079 1.587212,1.186398 4.997003,1.085728 6.833906,-1.277976 1.590959,-2.047223 1.920461,-5.790871 1.38976,-7.926788 -0.676416,-2.722377 -2.283336,-5.214368 -4.741738,-6.9994 z"
+           id="path893"
+           sodipodi:nodetypes="cssssc" />
+        <path
+           style="fill:#ffffff;stroke:none;stroke-width:0.167277px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 54.985304,73.024848 c 0,0 0.932538,4.938201 -1.549846,9.56342 -1.576607,2.937561 -4.127745,6.98442 -5.198735,8.544456 -1.867909,2.720851 -2.544205,6.634637 -1.544179,9.779806 0.841915,2.64789 3.369733,4.65403 5.816407,5.97082 4.625128,2.48923 9.428814,1.84853 13.434356,-0.15442 2.41867,-1.20945 4.143888,-3.11608 4.941372,-6.43408 0.401318,-1.669718 0.103531,-3.890892 -0.308836,-5.764931 0.147298,0 0.205586,4.922548 -3.860447,6.639971 -2.516994,1.06313 -6.675724,0.71645 -8.02973,-1.647125 -0.343177,-0.599057 -2.142716,-2.548252 2.264796,-8.853294 1.614219,-2.309174 3.271681,-5.129657 2.93394,-7.926784 -0.81878,-6.781028 -7.254434,-9.508668 -8.899098,-9.717839 z"
+           id="path895"
+           sodipodi:nodetypes="cssasascssssc" />
+      </g>
+    </g>
+  </g>
+</svg>
