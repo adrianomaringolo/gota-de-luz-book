@@ -9,7 +9,6 @@ const Main = () => (
   <>
     <AlertModal />
     <InitArea />
-
     <DestinationArea />
     <GalleryArea />
     <ContactArea />

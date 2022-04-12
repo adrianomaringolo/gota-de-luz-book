@@ -28,7 +28,7 @@ const ProductItemDisplay = ({
         <div
           className={styles.item}
           style={{
-            background: `url('/images/products/${item.image}') no-repeat center / cover`,
+            background: `url('${item.image}') no-repeat center / cover`,
           }}
         ></div>
         <div className={styles.productText}>
@@ -80,7 +80,7 @@ const ProductItemDisplay = ({
             <div
               className={styles.image}
               style={{
-                background: `url('/images/products/${item.image}') no-repeat center / contain`,
+                background: `url('${item.image}') no-repeat center / contain`,
                 backgroundPosition: "top",
               }}
             ></div>
