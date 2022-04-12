@@ -1,6 +1,7 @@
-import styles from "./../../styles/layout.module.scss";
+import styles from "styles/layout.module.scss";
 import Image from "next/image";
 import cn from "classnames";
+import Products from "components/Products";
 
 export const InitArea: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ export const InitArea: React.FC = () => {
         <Image
           priority
           src="/images/logo.svg"
-          height={200}
+          height={150}
           width={100}
           alt="Logo"
           className={styles.svgLogo}
@@ -20,6 +21,7 @@ export const InitArea: React.FC = () => {
           a renda obtida é revertida para os trabalhos assistenciais da Morada
           Espírita Professor Lairi Hans.
         </p>
+        <Products />
       </div>
     </div>
   );

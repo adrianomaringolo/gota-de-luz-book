@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { scrollToElement } from "../../utils/layout";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const StyledMobileMenu = styled.header`
   width: 100%;
@@ -67,8 +68,11 @@ export const MobileMenu: React.FC<{
   menuOpened: boolean;
   closeMenu: () => void;
 }> = ({ menuOpened, closeMenu }) => {
+  const router = useRouter();
+
   const goToArea = (id: string) => {
     closeMenu();
+    router.replace("/#" + id);
     scrollToElement(id);
   };
 
@@ -84,7 +88,7 @@ export const MobileMenu: React.FC<{
             alt="Logo Gota de Luz"
           />
         </span>
-        <a onClick={() => goToArea("produtos")}>Produtos</a>
+        <a onClick={() => goToArea("")}>Produtos</a>
         <a onClick={() => goToArea("recursos")}>Recursos</a>
         <a onClick={() => goToArea("instagram")}>Instagram</a>
         <a onClick={() => goToArea("contato")}>Contato</a>

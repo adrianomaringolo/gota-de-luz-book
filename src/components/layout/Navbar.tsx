@@ -126,7 +126,7 @@ export const Navbar = () => {
     cart?.items.length > 0 && <span className="tag">{getTotalItens()}</span>;
 
   const navOptions = [
-    { title: "Produtos", id: "#produtos", onClick: () => goToArea("produtos") },
+    { title: "Produtos", id: "#", onClick: () => goToArea("") },
     { title: "Recursos", id: "#recursos", onClick: () => goToArea("recursos") },
     {
       title: "Instagram",
