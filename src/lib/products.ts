@@ -1,5 +1,5 @@
-import { productTypes } from "../data/products";
-import { ProductType } from "../interfaces";
+import { productTypes } from "data/products";
+import { ProductType } from "interfaces";
 
 export const getAllProductsIds = () =>
   productTypes.map((productType: ProductType) => ({

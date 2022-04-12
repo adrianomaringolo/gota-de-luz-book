@@ -4,12 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { ProductItem, ProductType } from "../interfaces";
-import { getAllProductsIds, getProductData } from "../lib/products";
+import { getAllProductsIds, getProductData } from "lib/products";
 
-import styles from "./../styles/products.module.scss";
-import ProductItemDisplay from "../components/ProductItemDisplay";
-import { ProductsService } from "../services/ProductsService";
-import Layout from "../components/Layout";
+import styles from "styles/products.module.scss";
+import ProductItemDisplay from "components/ProductItemDisplay";
+import { ProductsService } from "services/ProductsService";
+import Layout from "components/Layout";
 
 const Product = ({ productData }: { productData: ProductType }) => {
   const [products, setProducts] = useState<any[]>([]);
