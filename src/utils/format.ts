@@ -13,6 +13,16 @@ export const formatDateAndTime = (date: Date): string => {
   return "";
 };
 
+export const formatDateLong = (date: Date): string => {
+  if (isValid(date)) {
+    return new Intl.DateTimeFormat("pt-BR", {
+      year: "numeric",
+      month: "long",
+    }).format(date);
+  }
+  return "";
+};
+
 export const formatCurrency = (number: number): string => {
   return new Intl.NumberFormat("pt-BR", {
     style: "currency",

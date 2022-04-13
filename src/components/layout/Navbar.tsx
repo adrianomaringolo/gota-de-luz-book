@@ -127,6 +127,11 @@ export const Navbar = () => {
 
   const navOptions = [
     { title: "Produtos", id: "#", onClick: () => goToArea("") },
+    {
+      title: "Depoimentos",
+      id: "#depoimentos",
+      onClick: () => goToArea("depoimentos"),
+    },
     { title: "Recursos", id: "#recursos", onClick: () => goToArea("recursos") },
     {
       title: "Instagram",
@@ -173,7 +178,7 @@ export const Navbar = () => {
             return (
               <li key={`nav-option-${option.id}`}>
                 <button
-                  className={`${option.classNames} ${
+                  className={`${option.classNames || ""} ${
                     router.asPath === `/${option.id}` ? "active" : ""
                   }`}
                   onClick={option.onClick}

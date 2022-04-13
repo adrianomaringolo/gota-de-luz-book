@@ -2,7 +2,7 @@ import { db } from "./../utils/firebase";
 
 const testimonyRef = db.collection("testimony");
 
-const getProductsTestimony = async () => {
+const getTestimonyList = async () => {
   let result: any[] = [];
   const snapshot = await testimonyRef.get();
 
@@ -13,5 +13,5 @@ const getProductsTestimony = async () => {
 };
 
 export const TestimonyService = {
-  getProductsTestimony,
+  getTestimonyList,
 };

@@ -89,6 +89,7 @@ export const MobileMenu: React.FC<{
           />
         </span>
         <a onClick={() => goToArea("")}>Produtos</a>
+        <a onClick={() => goToArea("depoimentos")}>Depoimentos</a>
         <a onClick={() => goToArea("recursos")}>Recursos</a>
         <a onClick={() => goToArea("instagram")}>Instagram</a>
         <a onClick={() => goToArea("contato")}>Contato</a>

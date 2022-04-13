@@ -34,6 +34,16 @@
 
   &.sectionLogo {
     background: url(/images/background-init.jpg) no-repeat 50% / cover;
+    padding-top: 25px;
+  }
+
+  &.sectionTestimony {
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.7)
+      ),
+      url(/images/background-testimony.jpg) no-repeat 50% / cover;
+    padding-top: 25px;
   }
 
   &.sectionProducts {

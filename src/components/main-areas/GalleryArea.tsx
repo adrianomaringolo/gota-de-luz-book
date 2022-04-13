@@ -1,4 +1,4 @@
-import styles from "./../../styles/layout.module.scss";
+import styles from "styles/layout.module.scss";
 import cn from "classnames";
 
 export const GalleryArea: React.FC = () => {
