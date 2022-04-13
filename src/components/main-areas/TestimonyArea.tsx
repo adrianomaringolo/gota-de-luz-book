@@ -51,8 +51,9 @@ export const TestimonyArea: React.FC = () => {
             autoPlay={true}
             infiniteLoop={true}
             showStatus={false}
-            interval={10000}
+            interval={15000}
             dynamicHeight={true}
+            stopOnHover={true}
           >
             {testimonyList.map((testimony) => (
               <MessageArea>
