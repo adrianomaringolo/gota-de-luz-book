@@ -53,13 +53,13 @@ export const TestimonyArea: React.FC = () => {
             showStatus={false}
             interval={15000}
             dynamicHeight={true}
-            stopOnHover={true}
           >
             {testimonyList.map((testimony) => (
               <MessageArea>
                 {testimony.message}
                 <div className="name">{testimony.name}</div>
                 <div className="date">
+                  {testimony.city && <>({testimony.city})</>}{" "}
                   {formatDateLong(new Date(testimony.sentAt))}
                 </div>
               </MessageArea>

@@ -11,11 +11,12 @@ const ContactAreaStyled = styled.div`
 
     .img-area {
       max-width: 350px;
+      margin: 0 10px;
     }
 
     .social-area {
       flex: 1;
-      margin-left: 20px;
+      margin: 0 10px;
     }
   }
 
