@@ -42,7 +42,7 @@ export const TestimonyArea: React.FC = () => {
       id="depoimentos"
       className={cn("section", styles.section, styles.sectionTestimony)}
     >
-      <div className={styles.contentArea} style={{ maxWidth: "100%" }}>
+      <div className={styles.contentArea} style={{ width: "100%" }}>
         <h2 className="fancy-title">Depoimentos</h2>
 
         <div>
@@ -65,6 +65,17 @@ export const TestimonyArea: React.FC = () => {
             ))}
           </Carousel>
         </div>
+
+        <p className={styles.highlight}>
+          Nos deixe um{" "}
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSetBUhLfPUyn-AAaeZFSluLuB3BEzrpEX0yirA2CPk6LklYWg/viewform"
+            target="blank"
+          >
+            depoimento
+          </a>{" "}
+          👋❤️
+        </p>
       </div>
     </div>
   );
