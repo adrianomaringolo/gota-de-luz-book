@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import AdminLayout from "../../../components/admin/AdminLayout";
-import {
-  CartItemType,
-  CartService,
-  ORDER_STATUS,
-} from "../../../services/CartService";
+import AdminLayout from "components/admin/AdminLayout";
+import { CartItemType, CartService, ORDER_STATUS } from "services/CartService";
 
 import { format } from "date-fns";
 import Link from "next/link";
-import { StatusTag } from "../../../components/pedidos/StatusTag";
-import { formatCurrency } from "../../../utils/format";
+import { StatusTag } from "components/pedidos/StatusTag";
+import { formatCurrency } from "utils/format";
 
 const PedidosStyled = styled.div``;
 
@@ -55,6 +51,11 @@ const Pedidos = () => {
     return total;
   };
 
+  const lastLastStatusLogPerson = (order: any) =>
+    order.statusLogs && order.statusLogs.length > 0
+      ? order.statusLogs[order.statusLogs.length - 1]?.userName
+      : "-";
+
   return (
     <AdminLayout>
       <PedidosStyled>
@@ -92,8 +93,7 @@ const Pedidos = () => {
               <table className="table is-bordered is-striped is-hoverable">
                 <thead>
                   <tr>
-                    <th>Código</th>
-                    <th>Data</th>
+                    <th>Código/Data</th>
                     <th>Cliente</th>
                     <th>Produtos</th>
                     <th>Status</th>
@@ -105,8 +105,9 @@ const Pedidos = () => {
                     .sort((a, b) => b.orderId - a.orderId)
                     .map((order: any) => (
                       <tr key={"order-" + order.orderId}>
-                        <td>{order.orderId}</td>
                         <td>
+                          <strong>{order.orderId}</strong>
+                          <br />
                           {format(
                             new Date(order.createdAt),
                             "dd/MM/yyyy HH:mm"
@@ -129,9 +130,30 @@ const Pedidos = () => {
                           <div className="is-size-6 has-text-weight-bold">
                             {formatCurrency(getTotal(order))}
                           </div>
+                          <details>
+                            <summary className="has-background-link-light is-size-5">
+                              Ver produtos
+                            </summary>
+                            <div className="card">
+                              <div className="card-content">
+                                <div className="content is-size-6">
+                                  {order.items
+                                    .filter((item: any) => item.amount)
+                                    .map((item: any) => (
+                                      <p>
+                                        {item.amount} x [{item.type}]{" "}
+                                        {item.name}
+                                      </p>
+                                    ))}
+                                </div>
+                              </div>
+                            </div>
+                          </details>
                         </td>
                         <td>
                           <StatusTag status={order.status} size="is-medium" />
+                          <br />
+                          {lastLastStatusLogPerson(order)}
                         </td>
                         <td>
                           <Link
