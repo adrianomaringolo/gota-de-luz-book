@@ -3,7 +3,7 @@ import Main from "../components/Main";
 
 const Home = () => (
   <>
-    <Layout title="Gota de Luz">
+    <Layout title={process.env.NEXT_PUBLIC_COMPANY_NAME}>
       <Main />
     </Layout>
   </>

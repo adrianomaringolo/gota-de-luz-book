@@ -38,7 +38,9 @@ const Login = () => {
   return (
     <AdminLayout>
       <LoginStyled>
-        <h1 className="is-size-1 has-text-weight-bold">Gota de Luz</h1>
+        <h1 className="is-size-1 has-text-weight-bold">
+          {process.env.NEXT_PUBLIC_COMPANY_NAME}
+        </h1>
         <p className="is-size-4 mb-3">Painel Administrativo</p>
         <div className="field">
           <label htmlFor="name">Nome</label>

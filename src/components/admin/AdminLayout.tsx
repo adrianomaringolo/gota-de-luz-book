@@ -9,7 +9,10 @@ type Props = {
   title?: string;
 };
 
-const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => {
+const AdminLayout = ({
+  title = `Admin - ${process.env.NEXT_PUBLIC_COMPANY_NAME}`,
+  children,
+}: Props) => {
   const router = useRouter();
   const [user, setUser] = useState<any>();
 
@@ -37,7 +40,10 @@ const AdminLayout = ({ title = "Admin - Gota de Luz", children }: Props) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Administração Gota de Luz" />
+        <meta
+          name="description"
+          content={`Administração ${process.env.REACT_APP_COMPANY_NAME}`}
+        />
         <meta name="og:title" content={title} />
         <meta name="twitter:card" content="summary_large_image" />
 

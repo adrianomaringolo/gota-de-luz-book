@@ -85,7 +85,7 @@ export const MobileMenu: React.FC<{
             src="/images/logos/logo-icon-white.svg"
             width={150}
             height={90}
-            alt="Logo Gota de Luz"
+            alt={`Logo ${process.env.NEXT_PUBLIC_COMPANY_NAME}`}
           />
         </span>
         <a onClick={() => goToArea("")}>Produtos</a>

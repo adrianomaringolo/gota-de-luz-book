@@ -23,7 +23,7 @@ const Product = ({ productData }: { productData: ProductType }) => {
 
   return (
     <>
-      <Layout title="Gota de Luz">
+      <Layout title={process.env.NEXT_PUBLIC_COMPANY_NAME}>
         <Head>
           <title>Catálogo - {productData.type}</title>
         </Head>

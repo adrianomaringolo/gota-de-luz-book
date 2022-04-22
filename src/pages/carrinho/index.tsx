@@ -158,7 +158,7 @@ const Carrinho = () => {
   };
 
   return (
-    <Layout title="Gota de Luz - Reserva">
+    <Layout title={`${process.env.NEXT_PUBLIC_COMPANY_NAME} - Reserva`}>
       <CartArea>
         <div className="cart-area">
           {orderStep === 0 && (
@@ -167,9 +167,10 @@ const Carrinho = () => {
               <p className="title-description">
                 Escolha os itens e quantidades abaixo e finalize sua reserva de
                 pedido. <br />
-                Após a finalização do pedido, a equipe Gota de Luz vai entrar em
-                contato para confirmar a disponibilidade dos produtos escolhidos
-                e pagamento.
+                Após a finalização do pedido, a equipe{" "}
+                {process.env.NEXT_PUBLIC_COMPANY_NAME} vai entrar em contato
+                para confirmar a disponibilidade dos produtos escolhidos e
+                pagamento.
               </p>
               <div
                 style={{
@@ -323,8 +324,9 @@ const Carrinho = () => {
               </p>
 
               <p style={{ fontSize: "1.2em" }}>
-                Em breve, a equipe Gota de Luz vai entrar em contato para
-                confirmar os produtos e combinar a entrega.
+                Em breve, a equipe {process.env.NEXT_PUBLIC_COMPANY_NAME} vai
+                entrar em contato para confirmar os produtos e combinar a
+                entrega.
               </p>
 
               <p>Obrigado pelo seu apoio!</p>

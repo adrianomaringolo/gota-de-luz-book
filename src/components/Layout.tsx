@@ -16,7 +16,10 @@ const Layout = ({ title = "This is the default title", children }: Props) => (
       <link rel="icon" href="/favicon.ico" />
       <meta
         name="description"
-        content="Catálogo virtual dos produtos Gota de Luz"
+        content={
+          "Catálogo virtual dos produtos " +
+          process.env.NEXT_PUBLIC_COMPANY_NAME
+        }
       />
       <meta name="og:title" content={title} />
       <meta name="twitter:card" content="summary_large_image" />

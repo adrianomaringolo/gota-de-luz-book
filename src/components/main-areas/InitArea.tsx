@@ -16,10 +16,11 @@ export const InitArea: React.FC = () => {
           className={styles.svgLogo}
         />
         <p className={styles.highlight}>
-          A marca Gota de Luz oferece produtos artesanais, feitos 100% à base de
-          óleos vegetais nobres e óleos essenciais. Livres de conservantes. Toda
-          a renda obtida é revertida para os trabalhos assistenciais da Morada
-          Espírita Professor Lairi Hans.
+          A marca {process.env.NEXT_PUBLIC_COMPANY_NAME} oferece produtos
+          artesanais, feitos 100% à base de óleos vegetais nobres e óleos
+          essenciais. Livres de conservantes. Toda a renda obtida é revertida
+          para os trabalhos assistenciais da Morada Espírita Professor Lairi
+          Hans.
         </p>
         <Products />
       </div>
