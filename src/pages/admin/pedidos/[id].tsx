@@ -55,7 +55,7 @@ const Pedido = () => {
           <Image
             priority
             src="/images/logo-color.png"
-            height={80}
+            height={75}
             width={261}
             alt="Logo"
           />

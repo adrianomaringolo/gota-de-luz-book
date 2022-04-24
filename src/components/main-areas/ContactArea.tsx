@@ -66,20 +66,20 @@ export const ContactArea: React.FC = () => {
             </p>
             <p className={styles.highlight}>
               <a
-                href="https://www.facebook.com/gotadeluz.artesanais"
+                href="https://www.facebook.com/gotadecura.artesanais"
                 className="social-link"
                 target="_blank"
               >
                 <img src="/images/icons/facebook-logo.png" width={50} />
-                @gotadeluz.artesanais
+                @gotadecura.artesanais
               </a>
               <a
-                href="https://www.instagram.com/gotadeluz_artesanais/"
+                href="https://www.instagram.com/gotadecura_artesanais/"
                 className="social-link"
                 target="_blank"
               >
                 <img src="/images/icons/instagram-logo.png" width={50} />
-                @gotadeluz_artesanais
+                @gotadecura_artesanais
               </a>
             </p>
           </div>

@@ -36,10 +36,9 @@ const Product = ({ productData }: { productData: ProductType }) => {
           <Link href="/#produtos">
             <div style={{ padding: "10px" }}>
               <Image
-                priority
                 src={`/images/logos/logo-${productData.id}.png`}
-                height={92}
-                width={300}
+                height={110}
+                width={384}
                 alt="Logo"
               />
             </div>
