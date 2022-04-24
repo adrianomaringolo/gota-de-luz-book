@@ -17,7 +17,7 @@ const Layout = ({ title = "This is the default title", children }: Props) => (
       <meta
         name="description"
         content={
-          "Catálogo virtual dos produtos " +
+          "Catálogo virtual para os produtos " +
           process.env.NEXT_PUBLIC_COMPANY_NAME
         }
       />
