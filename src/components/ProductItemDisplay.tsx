@@ -5,24 +5,23 @@ import { CartService } from "../services/CartService";
 import { formatCurrency } from "../utils/format";
 
 const StyledProductItemDisplay = styled.div`
-  .itemContainer {
-    @media only screen and (min-width: 768px) {
-      min-width: 300px;
-    }
+  @media only screen and (min-width: 768px) {
+    min-width: 300px;
+  }
 
-    position: relative;
-    overflow: hidden;
-    flex: 1;
-    min-width: 200px;
-    max-width: 500px;
-    height: 300px;
-    margin: 3px;
-    border: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-width: 200px;
+  max-width: 500px;
+  width: 100%;
+  height: 300px;
+  margin: 3px;
+  border: 1px solid #ccc;
 
-    &:hover {
-      .productText {
-        opacity: 1;
-      }
+  &:hover {
+    .productText {
+      opacity: 1;
     }
   }
 
@@ -179,54 +178,53 @@ const ProductItemDisplay = ({
   };
 
   return (
-    <StyledProductItemDisplay>
-      <div className="itemContainer" key={item.name}>
-        <div
-          className="item"
-          style={{
-            background: `url('${item.image}') no-repeat center / cover`,
-          }}
-        ></div>
-        <div className="productText">
-          <p className="itemTitle">{item.name}</p>
-          {!item.available ? (
-            <p>
-              <big>
-                <strong>Produto não disponível</strong>
-              </big>
-            </p>
-          ) : (
-            <p style={{ marginBottom: 0 }}>
-              <strong>{formatCurrency(item.price)}</strong>
-            </p>
+    <StyledProductItemDisplay key={item.name}>
+      <div
+        className="item"
+        style={{
+          background: `url('${item.image}') no-repeat center / cover`,
+        }}
+      ></div>
+      <div className="productText">
+        <p className="itemTitle">{item.name}</p>
+        {!item.available ? (
+          <p>
+            <big>
+              <strong>Produto não disponível</strong>
+            </big>
+          </p>
+        ) : (
+          <p style={{ marginBottom: 0 }}>
+            <strong>{formatCurrency(item.price)}</strong>
+          </p>
+        )}
+        <p className="itemDesc">{item.description}</p>
+        <div style={{ display: "flex" }}>
+          {item.detailedDescription && (
+            <button
+              style={{ margin: "0 5px" }}
+              onClick={() => setViewMode("expanded")}
+              className="moreButton"
+            >
+              Saiba mais
+            </button>
           )}
-          <p className="itemDesc">{item.description}</p>
-          <div style={{ display: "flex" }}>
-            {item.detailedDescription && (
-              <button
-                style={{ margin: "0 5px" }}
-                onClick={() => setViewMode("expanded")}
-                className="moreButton"
-              >
-                Saiba mais
-              </button>
-            )}
-            {item.available && (
-              <button
-                style={{ margin: "0 5px", display: "flex" }}
-                onClick={() => addToCart()}
-                className="moreButton"
-              >
-                <img
-                  src="/images/shopping-bag.png"
-                  style={{ width: 20, marginRight: "5px" }}
-                />{" "}
-                Pedir
-              </button>
-            )}
-          </div>
+          {item.available && (
+            <button
+              style={{ margin: "0 5px", display: "flex" }}
+              onClick={() => addToCart()}
+              className="moreButton"
+            >
+              <img
+                src="/images/shopping-bag.png"
+                style={{ width: 20, marginRight: "5px" }}
+              />{" "}
+              Pedir
+            </button>
+          )}
         </div>
       </div>
+
       <div className={`modal ${viewMode}`}>
         <div className={`detailedItem modalItem`}>
           <p className="itemTitle">
