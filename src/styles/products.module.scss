@@ -39,60 +39,6 @@
   }
 }
 
-.detailedItem {
-  background-color: #fff;
-  max-width: 1000px;
-  width: 100%;
-  padding: 25px;
-
-  @media only screen and (min-width: 768px) {
-    padding: 50px;
-    .infoOverflowArea {
-      max-height: 80vh;
-    }
-  }
-  .infoOverflowArea {
-    display: flex;
-    flex-wrap: wrap;
-    overflow-x: auto;
-    max-height: 400px;
-  }
-  .itemTitle {
-    margin-bottom: 50px;
-  }
-  .image {
-    min-width: 300px;
-    min-height: 300px;
-    flex: 1;
-    margin-top: 25px;
-  }
-  .detailedDescription {
-    flex: 1;
-    margin-top: 25px;
-    text-align: left;
-    min-width: 300px;
-    @media only screen and (min-width: 768px) {
-      margin-left: 25px;
-    }
-  }
-  .buttonArea {
-    text-align: right;
-    margin-top: 20px;
-  }
-  button {
-    padding: 15px;
-    border: 1px solid #333;
-    background-color: transparent;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.5s;
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.1);
-    }
-  }
-}
-
 .productDetais {
   width: 100%;
   min-height: 100vh;
