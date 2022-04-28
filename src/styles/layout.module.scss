@@ -33,7 +33,11 @@
   }
 
   &.sectionLogo {
-    background: url(/images/background-init.jpg) no-repeat 50% / cover;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.4)
+      ),
+      url(/images/background-init.jpg) no-repeat 50% / cover;
     padding-top: 25px;
   }
 

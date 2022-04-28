@@ -63,7 +63,7 @@ const ProductItemDisplay = ({
               >
                 <img
                   src="/images/shopping-bag.png"
-                  style={{ width: 16, marginRight: "5px" }}
+                  style={{ width: 20, marginRight: "5px" }}
                 />{" "}
                 Pedir
               </button>
