@@ -23,7 +23,7 @@ const Produtos = () => {
   };
 
   const changeAmount = (index: number, newAmount: number) => {
-    let newProducts = [...products];
+    let newProducts = [...products.filter((p) => p.available)];
     newProducts[index].amount = newAmount;
     setProducts(newProducts);
   };
@@ -111,7 +111,6 @@ const Produtos = () => {
                             changeAmount(index, Number(event.target.value));
                           }}
                           type="number"
-                          min={0}
                           value={item.amount}
                         />
                       </td>
