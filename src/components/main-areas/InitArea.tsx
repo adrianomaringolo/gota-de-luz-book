@@ -15,6 +15,7 @@ export const InitArea: React.FC = () => {
           alt="Logo"
           className={styles.svgLogo}
         />
+        <p className={styles.slogan}>Cuidando com Amor</p>
         <p className={styles.highlight}>
           A marca {process.env.NEXT_PUBLIC_COMPANY_NAME} oferece produtos
           artesanais, feitos 100% à base de óleos vegetais nobres e óleos
