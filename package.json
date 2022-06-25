@@ -8,6 +8,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@fullpage/react-fullpage": "0.1.19",
     "@types/classnames": "2.2.11",
     "babel-preset-next": "^1.4.0",

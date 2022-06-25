@@ -994,6 +994,11 @@
     "lodash" "^4.17.13"
     "to-fast-properties" "^2.0.0"
 
+"@emailjs/browser@^3.6.2":
+  "integrity" "sha512-Swc8w+vwDX4XPy6tPegOFGSwHqNiEmEsIKbtAkqHo2WqnS0ORZUnnuZats2R3XqwfxNQD0F6RwnlVWHIMf6sCQ=="
+  "resolved" "https://registry.npmjs.org/@emailjs/browser/-/browser-3.6.2.tgz"
+  "version" "3.6.2"
+
 "@emotion/is-prop-valid@^0.8.8":
   "integrity" "sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA=="
   "resolved" "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz"
@@ -1485,13 +1490,6 @@
   "integrity" "sha512-4NnJbCeWE+8YBzupn/YrJxZ8VnjcJq5iR1laqQ1vkpQgBiA7bwk0Rp24fxsdNinzJY2U+HHS4dJJDPdoMjdJ7w=="
   "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-17.0.3.tgz"
   "version" "17.0.3"
-  dependencies:
-    "@types/react" "*"
-
-"@types/react-image-gallery@1.0.2":
-  "integrity" "sha512-fKeK70TxqEBw3k8HtQCZ0mHoPnCSzuIKAb7quaHgL/RUx7f012AKWPXlav1JGfhrfSyfi160T8aMkFN1yDSFOA=="
-  "resolved" "https://registry.npmjs.org/@types/react-image-gallery/-/react-image-gallery-1.0.2.tgz"
-  "version" "1.0.2"
   dependencies:
     "@types/react" "*"
 

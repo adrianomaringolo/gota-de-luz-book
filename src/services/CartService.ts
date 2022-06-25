@@ -3,6 +3,8 @@ import { ProductItem } from "../interfaces";
 import { db } from "./../utils/firebase";
 import { ProductsService } from "./ProductsService";
 
+import emailjs from "@emailjs/browser";
+
 const ordersRef = db.collection("orders");
 
 export interface CartItemType extends ProductItem {
@@ -122,10 +124,16 @@ const clearCart = () => {
 const saveOrder = async (cart: any, contactInfo: any) => {
   const lastOrder = (await getOrders()).pop();
 
-  fetch(
-    `https://us-central1-portal-morada.cloudfunctions.net/sendGotaDeLuzAlert?order=${
-      Number(lastOrder.orderId) + 1
-    }&client=${contactInfo.name}`
+  emailjs.send(
+    "service_e229fy4",
+    "template_yp8q4jb",
+    {
+      order_number: Number(lastOrder.orderId) + 1,
+      client_name: contactInfo.name,
+      mail_list: `adrianomaringolo@gmail.com, gotadeluzpedido@gmail.com, 
+      gotadeluzdespacho@gmail.com, danipadovani@uol.com.br, msmattar@hotmail.com`,
+    },
+    "JAGvYZKyVMK9JdME2"
   );
 
   return await ordersRef.doc().set({
