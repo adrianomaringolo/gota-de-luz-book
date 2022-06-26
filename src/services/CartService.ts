@@ -126,7 +126,7 @@ const saveOrder = async (cart: any, contactInfo: any) => {
 
   emailjs.send(
     "service_e229fy4",
-    "template_yp8q4jb",
+    "gota-de-cura",
     {
       order_number: Number(lastOrder.orderId) + 1,
       client_name: contactInfo.name,
