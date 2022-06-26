@@ -142,7 +142,7 @@ export const Navbar = () => {
     {
       title: "Cromatografias",
       id: "cromat",
-      onClick: () => router.push("carrinho"),
+      onClick: () => router.push("cromatografias"),
     },
     {
       title: (
