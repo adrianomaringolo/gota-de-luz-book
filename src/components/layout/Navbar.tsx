@@ -140,6 +140,11 @@ export const Navbar = () => {
     },
     { title: "Contato", id: "#contato", onClick: () => goToArea("contato") },
     {
+      title: "Cromatografias",
+      id: "cromat",
+      onClick: () => router.push("carrinho"),
+    },
+    {
       title: (
         <>
           <img src="/images/icons/shopping-cart.svg" alt="Meu pedido" />

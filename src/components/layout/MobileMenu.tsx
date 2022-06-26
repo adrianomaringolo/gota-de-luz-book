@@ -93,6 +93,14 @@ export const MobileMenu: React.FC<{
         <a onClick={() => goToArea("recursos")}>Recursos</a>
         <a onClick={() => goToArea("instagram")}>Instagram</a>
         <a onClick={() => goToArea("contato")}>Contato</a>
+        <a
+          onClick={() => {
+            closeMenu();
+            router.push("cromatografias");
+          }}
+        >
+          Cromatografias
+        </a>
       </nav>
     </StyledMobileMenu>
   );
