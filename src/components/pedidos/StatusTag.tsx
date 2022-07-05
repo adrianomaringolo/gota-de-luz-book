@@ -19,6 +19,8 @@ export const StatusTag = ({
         return "Separado/Enviado";
       case ORDER_STATUS.PAGO:
         return "Pago";
+      case ORDER_STATUS.EM_FINALIZACAO:
+        return "Em Finalização";
       case ORDER_STATUS.CANCELADO:
         return "Cancelado";
       default:
@@ -37,6 +39,8 @@ export const StatusTag = ({
         return "is-link";
       case ORDER_STATUS.PAGO:
         return "is-light";
+      case ORDER_STATUS.EM_FINALIZACAO:
+        return "is-link";
       case ORDER_STATUS.CANCELADO:
         return "is-dark";
       default:

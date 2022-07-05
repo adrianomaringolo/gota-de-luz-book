@@ -22,6 +22,7 @@ export const ORDER_STATUS = {
   APROVADO: "aprovado",
   PAGO: "pago",
   SEPARADO: "separado-enviado",
+  EM_FINALIZACAO: "em-finalizacao",
   FINALIZADO: "finalizado",
   CANCELADO: "cancelado",
 };
