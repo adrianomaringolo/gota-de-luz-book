@@ -40,7 +40,7 @@ export const StatusTag = ({
       case ORDER_STATUS.PAGO:
         return "is-light";
       case ORDER_STATUS.EM_FINALIZACAO:
-        return "is-link";
+        return "is-info";
       case ORDER_STATUS.CANCELADO:
         return "is-dark";
       default:
