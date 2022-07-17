@@ -7,6 +7,7 @@ import { formatCurrency } from "../../../utils/format";
 const Produtos = () => {
   const [products, setProducts] = useState<any[]>([]);
   const [isSaving, setIsSaving] = useState<boolean>(false);
+  const [showDesc, setShowDesc] = useState<boolean>(false);
 
   const getProducts = async () =>
     setProducts(await ProductsService.getProducts());
@@ -58,6 +59,17 @@ const Produtos = () => {
             dos pedidos.
           </p>
         </div>
+
+        <label className="b-checkbox checkbox is-medium">
+          <input
+            type="checkbox"
+            checked={showDesc}
+            onChange={(event) => setShowDesc(event.target.checked)}
+          />
+          <span className="check mr-2"></span>
+          Exibir descrição dos produtos
+        </label>
+
         {products && products.length && (
           <div className="table-container">
             <table className="table is-bordered is-striped is-hoverable">
@@ -66,7 +78,7 @@ const Produtos = () => {
                   <th className="print-none">Código</th>
                   <th>Produto</th>
                   <th>Preço</th>
-                  <th>Descrição</th>
+                  {showDesc && <th>Descrição</th>}
                   <th className="print-none">Disponível</th>
                   <th className="print-none">Quantidade</th>
                 </tr>
@@ -85,13 +97,15 @@ const Produtos = () => {
                         </div>
                       </td>
                       <td>{formatCurrency(item.price)}</td>
-                      <td>
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: item.detailedDescription || "-",
-                          }}
-                        ></span>
-                      </td>
+                      {showDesc && (
+                        <td>
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: item.detailedDescription || "-",
+                            }}
+                          ></span>
+                        </td>
+                      )}
                       <td className="print-none">
                         <label className="b-checkbox checkbox is-medium">
                           <input
