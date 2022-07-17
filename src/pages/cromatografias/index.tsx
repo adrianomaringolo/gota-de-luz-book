@@ -47,14 +47,6 @@ const Cromatografias = () => (
           </li>
           <li>
             <a
-              href="https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Melaleuca%20alternifolia.pdf?alt=media&token=ecca7ff8-4534-49a0-a278-c20a771fa237"
-              target="_blank"
-            >
-              Melaleuca (<i>Melaleuca alternifolia</i>)
-            </a>
-          </li>
-          <li>
-            <a
               href="https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Cymbopogon%20citratus.pdf?alt=media&token=66341630-2a54-4d6a-87af-b7a92ac958a8"
               target="_blank"
             >
