@@ -8,6 +8,7 @@ const Produtos = () => {
   const [products, setProducts] = useState<any[]>([]);
   const [isSaving, setIsSaving] = useState<boolean>(false);
   const [showDesc, setShowDesc] = useState<boolean>(false);
+  const [showUnavailable, setShowUnavailable] = useState<boolean>(false);
 
   const getProducts = async () =>
     setProducts(await ProductsService.getProducts());
@@ -70,6 +71,16 @@ const Produtos = () => {
           Exibir descrição dos produtos
         </label>
 
+        <label className="b-checkbox checkbox is-medium">
+          <input
+            type="checkbox"
+            checked={showUnavailable}
+            onChange={(event) => setShowUnavailable(event.target.checked)}
+          />
+          <span className="check mr-2"></span>
+          Exibir produtos indisponíveis
+        </label>
+
         {products && products.length && (
           <div className="table-container">
             <table className="table is-bordered is-striped is-hoverable">
@@ -86,7 +97,9 @@ const Produtos = () => {
               <tbody>
                 {products
                   ?.sort((a, b) => a.type - b.type || a.name - b.name)
-                  .filter((p) => p.available)
+                  .filter(
+                    (p) => showUnavailable || (!showUnavailable && p.available)
+                  )
                   .map((item: any, index: number) => (
                     <tr key={`${item.id}`} className="print-line">
                       <td className="print-none">{item.id}</td>
