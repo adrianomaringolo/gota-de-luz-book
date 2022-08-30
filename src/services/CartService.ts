@@ -4,6 +4,7 @@ import { db } from "./../utils/firebase";
 import { ProductsService } from "./ProductsService";
 
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const ordersRef = db.collection("orders");
 
@@ -65,6 +66,8 @@ const addItemToCart = async (item: CartItemType) => {
 
   cartObj = { ...cartObj, items: newItems };
   localStorage.setItem("cart", JSON.stringify(cartObj));
+
+  toast.success("O produto foi adicionado ao carrinho!");
 
   PubSub.publish("card_add_item", "");
 };

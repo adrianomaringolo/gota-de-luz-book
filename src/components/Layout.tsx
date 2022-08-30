@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import { Navbar } from "./layout/Navbar";
+import { Toaster } from "react-hot-toast";
 
 type Props = {
   children?: ReactNode;
@@ -26,6 +27,12 @@ const Layout = ({ title = "This is the default title", children }: Props) => (
     </Head>
 
     <Navbar />
+
+    <Toaster
+      toastOptions={{
+        duration: 5000,
+      }}
+    />
 
     {children}
   </div>
