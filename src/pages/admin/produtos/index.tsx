@@ -61,7 +61,7 @@ const Produtos = () => {
           </p>
         </div>
 
-        <label className="b-checkbox checkbox is-medium">
+        <label className="b-checkbox checkbox is-medium  print-none">
           <input
             type="checkbox"
             checked={showDesc}
@@ -71,7 +71,7 @@ const Produtos = () => {
           Exibir descrição dos produtos
         </label>
 
-        <label className="b-checkbox checkbox is-medium">
+        <label className="b-checkbox checkbox is-medium  print-none">
           <input
             type="checkbox"
             checked={showUnavailable}
