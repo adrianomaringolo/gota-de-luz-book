@@ -9,15 +9,19 @@ const StyledProductItemDisplay = styled.div`
     min-width: 300px;
   }
 
+  &:hover {
+    border-color: #000;
+  }
+
   position: relative;
   overflow: hidden;
   flex: 1;
   min-width: 200px;
   max-width: 500px;
   width: 100%;
-  height: 300px;
   margin: 3px;
   border: 1px solid #ccc;
+  transition: border-color 0.5s;
 
   &:hover {
     .productText {
@@ -26,12 +30,12 @@ const StyledProductItemDisplay = styled.div`
   }
 
   .productText {
-    position: absolute;
+    //position: absolute;
     //opacity: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.8);
+
     transition: all 0.5s;
     display: flex;
     flex-direction: column;
@@ -56,7 +60,8 @@ const StyledProductItemDisplay = styled.div`
   }
 
   .item {
-    height: 100%;
+    height: 300px;
+    cursor: pointer;
   }
 
   .itemTitle {
@@ -181,6 +186,7 @@ const ProductItemDisplay = ({
     <StyledProductItemDisplay key={item.name}>
       <div
         className="item"
+        onClick={() => setViewMode("expanded")}
         style={{
           background: `url('${item.image}') no-repeat center / cover`,
         }}
