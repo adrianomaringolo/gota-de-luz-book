@@ -55,7 +55,9 @@ export const OrderActivities = ({
                       ]
                     </span>
                   </p>
-                  <div style={{ whiteSpace: "pre" }}>{comment.comment}</div>
+                  <div style={{ whiteSpace: "pre-line" }}>
+                    {comment.comment}
+                  </div>
                 </div>
               ))
           ) : (
