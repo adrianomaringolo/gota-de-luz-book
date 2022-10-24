@@ -4,7 +4,7 @@ const testimonyRef = db.collection("testimony");
 
 const getTestimonyList = async () => {
   let result: any[] = [];
-  const snapshot = await testimonyRef.orderBy("sentAt").get();
+  const snapshot = await testimonyRef.orderBy("sentAt", "desc").get();
 
   snapshot.forEach((doc) => {
     result.push({ ...doc.data() });

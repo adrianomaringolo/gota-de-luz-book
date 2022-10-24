@@ -103,6 +103,39 @@
     }
   }
 
+  &.sectionVisit {
+    background-color: #fff;
+
+    p.highlight {
+      color: #555;
+      font-weight: 700;
+      margin: 0.5rem;
+    }
+
+    .more {
+      color: #555;
+      font-size: 1.25rem;
+      text-align: center;
+
+      div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      a,
+      .moreLink {
+        border: 1px solid #555;
+        color: #555;
+        padding: 20px;
+        margin: 3px;
+        transition: background-color 0.5s;
+        &:hover {
+          background: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
   &.sectionPhotos {
     background-color: #fff;
     display: grid;
