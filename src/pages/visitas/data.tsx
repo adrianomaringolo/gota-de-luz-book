@@ -38,6 +38,29 @@ export const testimony = [
     name: "Eveline Miachon",
     date: "Visitação de 15 de outubro de 2022",
   },
+  {
+    text: (
+      <>
+        A visita guiada na chácara da Mãe Luzia foi uma experiência muito
+        agradável, o grupo foi recebido com um delicioso café da manhã,
+        preparado com muito carinho, e depois passamos a ouvir os relatos sobre
+        as plantas e as destilações e a conhecer todo o processo, o que foi
+        surpreendente e me deixou muito inspirada a saber mais. E em cada
+        cantinho tinha o cuidado das pessoas que nos recepcionaram, todos e
+        todas muito simpáticos e acolhedores!
+        <br />
+        Por fim, ainda um lanchinho e a oportunidade de levar com vc um
+        pouquinho da chácara, através de produtos incríveis!
+        <br />
+        Recomendo fortemente essa experiência para o corpo e a alma 💕 <br />
+        Minha gratidão imensa!
+        <br />
+      </>
+    ),
+
+    name: "Flavia Pereira Bueno",
+    date: "Visitação de 15 de outubro de 2022",
+  },
 ];
 
 export const images = [
