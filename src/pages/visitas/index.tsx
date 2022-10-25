@@ -1,6 +1,7 @@
 import Layout from "components/Layout";
 import ImageGallery from "react-image-gallery";
 import styled from "styled-components";
+import { images, testimony } from "./data";
 
 const StyledVisitasArea = styled.section`
   padding: 80px 10px;
@@ -23,6 +24,7 @@ const StyledVisitasArea = styled.section`
   .testimony-item {
     font-size: 1rem;
     padding: 2rem;
+    margin-bottom: 1rem;
     background-color: #f4eef2;
     .name {
       font-weight: bold;
@@ -33,49 +35,6 @@ const StyledVisitasArea = styled.section`
     }
   }
 `;
-
-const images = [
-  {
-    original: "/images/visit/photo-01.jpg",
-    thumbnail: "/images/visit/photo-01.jpg",
-  },
-  {
-    original: "/images/visit/photo-02.jpg",
-    thumbnail: "/images/visit/photo-02.jpg",
-  },
-  {
-    original: "/images/visit/photo-03.jpg",
-    thumbnail: "/images/visit/photo-03.jpg",
-  },
-  {
-    original: "/images/visit/photo-04.jpg",
-    thumbnail: "/images/visit/photo-04.jpg",
-  },
-  {
-    original: "/images/visit/photo-05.jpg",
-    thumbnail: "/images/visit/photo-05.jpg",
-  },
-  {
-    original: "/images/visit/photo-06.jpg",
-    thumbnail: "/images/visit/photo-06.jpg",
-  },
-  {
-    original: "/images/visit/photo-07.jpg",
-    thumbnail: "/images/visit/photo-07.jpg",
-  },
-  {
-    original: "/images/visit/photo-08.jpg",
-    thumbnail: "/images/visit/photo-08.jpg",
-  },
-];
-
-const testimony = [
-  {
-    text: "A visita na Chácara uma forma de ter uma manhã muito diferente e com vivências ímpares nos mais amplos sentidos: faz bem aos olhos, aos ouvidos, ao coração, ou seja, beneficia corpo e espírito! O café da manhã é um momento especial, com alimentos que nutrem muito além do corpo, de tanto carinho que tem ao ser preparado. A destilação é outro ponto forte, no qual podemos acompanhar processos de transformação que calam fundo nos sentimentos e nos traz benefícios dos mais variados. É um tipo de passeio que recomendo muito não só a aromaterapeutas mas tb à pessoas que adoram a natureza e estar em ambientes saudáveis e especiais!",
-    name: "Simone Cruvinel Hoffmann de Almeida",
-    date: "Visitação de 15 de outubro de 2022",
-  },
-];
 
 const Visitas = () => {
   return (
