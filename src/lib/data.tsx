@@ -113,3 +113,5 @@ export const images = [
     thumbnail: "/images/visit/photo-11.jpg",
   },
 ];
+
+export default {};

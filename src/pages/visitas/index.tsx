@@ -1,7 +1,7 @@
 import Layout from "components/Layout";
 import ImageGallery from "react-image-gallery";
 import styled from "styled-components";
-import { images, testimony } from "./data";
+import { images, testimony } from "../../lib/data";
 
 const StyledVisitasArea = styled.section`
   padding: 80px 10px;
