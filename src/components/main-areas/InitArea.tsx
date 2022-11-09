@@ -16,12 +16,17 @@ export const InitArea: React.FC = () => {
           className={styles.svgLogo}
         />
         <p className={styles.slogan}>Cuidando com Amor</p>
-        <p className={styles.highlight}>
-          A marca {process.env.NEXT_PUBLIC_COMPANY_NAME} oferece produtos
-          artesanais, feitos 100% à base de óleos vegetais nobres e óleos
-          essenciais. Livres de conservantes. Toda a renda obtida é revertida
-          para os trabalhos assistenciais da Morada Espírita Professor Lairi
-          Hans.
+        <p
+          className={styles.highlight}
+          style={{ padding: "2rem", fontSize: "1.1rem", lineHeight: "1.4rem" }}
+        >
+          <span>
+            A marca {process.env.NEXT_PUBLIC_COMPANY_NAME} oferece produtos
+            artesanais, feitos 100% à base de óleos vegetais nobres e óleos
+            essenciais. Livres de conservantes. Toda a renda obtida é revertida
+            para os trabalhos assistenciais da Morada Espírita Professor Lairi
+            Hans.
+          </span>
         </p>
         <Products />
       </div>

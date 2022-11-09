@@ -16,13 +16,7 @@ export const productTypes: ProductType[] = [
       <p>Essa linha vem trazer a propriedade das argilas naturais. Enriquecidos com as argilas verde, vermelha, roxa, amarela, branca e preta.</p>`,
     image: "background-7.jpg",
   },
-  {
-    id: "sais",
-    type: "Sais de banho",
-    description:
-      "Produtos feitos à base de óleos essenciais. Livre de essências sintéticas. Livre de produtos de origem animal.",
-    image: "background-4.jpg",
-  },
+
   {
     id: "hidrolatos",
     type: "Hidrolatos - 120ml",
@@ -51,5 +45,19 @@ export const productTypes: ProductType[] = [
       <br/>
       `,
     image: "background-3.jpg",
+  },
+  {
+    id: "sais",
+    type: "Sais de banho",
+    description:
+      "Produtos feitos à base de óleos essenciais. Livre de essências sintéticas. Livre de produtos de origem animal.",
+    image: "background-4.jpg",
+  },
+  {
+    id: "sprays",
+    type: "Sprays Energéticos",
+    description:
+      "Produtos feitos à base de óleos essenciais. Livre de essências sintéticas. Livre de produtos de origem animal.",
+    image: "background-5.jpg",
   },
 ];
