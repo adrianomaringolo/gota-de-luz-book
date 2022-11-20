@@ -7,7 +7,7 @@ import { ProductItem, ProductType } from "../interfaces";
 import { getAllProductsIds, getProductData } from "lib/products";
 
 import styles from "styles/products.module.scss";
-import ProductItemDisplay from "components/ProductItemDisplay";
+import ProductItemDisplay from "components/products/ProductItemDisplay";
 import { ProductsService } from "services/ProductsService";
 import Layout from "components/Layout";
 

@@ -1,10 +1,6 @@
-import React, { useState } from "react";
 import styled from "styled-components";
-import { ProductItem } from "../interfaces";
-import { CartService } from "../services/CartService";
-import { formatCurrency } from "../utils/format";
 
-const StyledProductItemDisplay = styled.div`
+export const StyledProductItemDisplay = styled.div`
   @media only screen and (min-width: 768px) {
     min-width: 300px;
   }
@@ -77,6 +73,30 @@ const StyledProductItemDisplay = styled.div`
   .itemDesc {
     font-size: 1rem;
     line-height: 1.1rem;
+  }
+
+  p.old-price {
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  .seal-img {
+    position: absolute;
+    width: 90px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .price-discount {
+    position: absolute;
+    background-color: #fff;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #222;
+    text-align: center;
+    line-height: 0.8rem;
   }
 
   .modal {
@@ -163,101 +183,3 @@ const StyledProductItemDisplay = styled.div`
     }
   }
 `;
-
-const ProductItemDisplay = ({
-  item,
-  type,
-}: {
-  item: ProductItem;
-  type: string;
-}) => {
-  const [viewMode, setViewMode] = useState("");
-
-  const addToCart = () => {
-    CartService.addItemToCart({
-      ...item,
-      id: item.id,
-      type,
-      price: item.price,
-    });
-  };
-
-  return (
-    <StyledProductItemDisplay key={item.name}>
-      <div
-        className="item"
-        onClick={() => setViewMode("expanded")}
-        style={{
-          background: `url('${item.image}') no-repeat center / cover`,
-        }}
-      ></div>
-      <div className="productText">
-        <p className="itemTitle">{item.name}</p>
-        {!item.available ? (
-          <p>
-            <big>
-              <strong>Produto não disponível</strong>
-            </big>
-          </p>
-        ) : (
-          <p style={{ marginBottom: 0 }}>
-            <strong>{formatCurrency(item.price)}</strong>
-          </p>
-        )}
-        <p className="itemDesc">{item.description}</p>
-        <div style={{ display: "flex" }}>
-          {item.detailedDescription && (
-            <button
-              style={{ margin: "0 5px" }}
-              onClick={() => setViewMode("expanded")}
-              className="moreButton"
-            >
-              Saiba mais
-            </button>
-          )}
-          {item.available && (
-            <button
-              style={{ margin: "0 5px", display: "flex" }}
-              onClick={() => addToCart()}
-              className="moreButton"
-            >
-              <img
-                src="/images/shopping-bag.png"
-                style={{ width: 20, marginRight: "5px" }}
-              />{" "}
-              Pedir
-            </button>
-          )}
-        </div>
-      </div>
-
-      <div className={`modal ${viewMode}`}>
-        <div className={`detailedItem modalItem`}>
-          <p className="itemTitle">
-            {type}: {item.name}
-          </p>
-          <div className="infoOverflowArea">
-            <div
-              className="image"
-              style={{
-                background: `url('${item.image}') no-repeat center / contain`,
-                backgroundPosition: "top",
-              }}
-            ></div>
-            <div
-              className="detailedDescription"
-              dangerouslySetInnerHTML={{
-                __html: item.detailedDescription || "",
-              }}
-            ></div>
-          </div>
-          <div className="buttonArea">
-            <button onClick={() => setViewMode("")}>Entendi, obrigado!</button>
-          </div>
-        </div>
-      </div>
-    </StyledProductItemDisplay>
-  );
-};
-
-export default ProductItemDisplay;

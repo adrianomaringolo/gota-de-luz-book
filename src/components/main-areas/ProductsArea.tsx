@@ -1,4 +1,4 @@
-import Products from "../Products";
+import Products from "../products/Products";
 import styles from "./../../styles/layout.module.scss";
 import cn from "classnames";
 

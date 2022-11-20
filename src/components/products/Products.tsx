@@ -1,9 +1,9 @@
 import React from "react";
-import { ProductType } from "../interfaces";
+import { ProductType } from "../../interfaces";
 
-import { productTypes } from "../data/products";
+import { productTypes } from "../../data/products";
 
-import styles from "./../styles/products.module.scss";
+import styles from "./../../styles/products.module.scss";
 import Link from "next/link";
 
 const Products = () => (

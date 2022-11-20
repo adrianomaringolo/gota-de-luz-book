@@ -1,7 +1,7 @@
 import styles from "styles/layout.module.scss";
 import Image from "next/image";
 import cn from "classnames";
-import Products from "components/Products";
+import Products from "components/products/Products";
 
 export const InitArea: React.FC = () => {
   return (

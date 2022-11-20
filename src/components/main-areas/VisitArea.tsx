@@ -18,10 +18,11 @@ export const VisitArea: React.FC = () => {
           interval={15000}
           dynamicHeight={true}
         ></Carousel>
-        <h2 className="fancy-title">
-          VISITA GUIADA À CHÁCARA MÃE LUZIA - 12/11/22
-        </h2>
-        <p>Gostaria de conhecer a chácara da Morada?</p>
+        <h2 className="fancy-title">VISITA GUIADA À CHÁCARA MÃE LUZIA</h2>
+        <p>
+          Gostaria de conhecer a chácara da Morada? Aguarde novas datas em{" "}
+          <b>2023</b>
+        </p>
 
         <p>
           É nessa chácara que são cultivadas as plantas que são destiladas para
@@ -38,7 +39,7 @@ export const VisitArea: React.FC = () => {
           e explicação do processo + visita guiada à propriedade
           <br />
           <br />
-          <b>Valor</b>: R$ 90,00 por pessoa
+          {/* <b>Valor</b>: R$ 90,00 por pessoa */}
           <br />
           <br />
           <big>
@@ -52,9 +53,9 @@ export const VisitArea: React.FC = () => {
         >
           <div>
             <Link href="/visitas">+ Detalhes</Link>
-            <a href="https://forms.gle/JeBEWFbrndTrdX7v9" target="blank">
+            {/* <a href="https://forms.gle/JeBEWFbrndTrdX7v9" target="blank">
               👉 Faça seu cadastro e garanta sua vaga
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
