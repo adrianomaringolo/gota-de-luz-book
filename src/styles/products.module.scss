@@ -4,13 +4,21 @@
   margin: 0 -5px;
 
   .typeContainer {
-    overflow: hidden;
+    position: relative;
+
     flex: 1;
     min-width: 80px;
     height: 70px;
     margin: 5px;
     line-height: 0.9em;
     border: 1px solid #fff;
+
+    .sealImage {
+      position: absolute;
+      width: 60px;
+      top: -20px;
+      left: -20px;
+    }
 
     .productTypeCard {
       height: 100%;
@@ -29,6 +37,7 @@
       &:hover {
         opacity: 1;
         transform: scale(1.1);
+        z-index: 1000;
       }
     }
     @media only screen and (min-width: 768px) {

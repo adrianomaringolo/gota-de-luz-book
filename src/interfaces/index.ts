@@ -5,6 +5,7 @@ export interface ProductType {
   description: string;
   image: string;
   items?: Array<ProductItem>;
+  seal?: string;
 }
 
 export interface ProductItem {

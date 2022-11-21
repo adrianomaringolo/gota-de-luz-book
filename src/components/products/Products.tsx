@@ -11,6 +11,7 @@ const Products = () => (
     {productTypes.map((type: ProductType) => (
       <Link href={`/${type.id}`} key={type.id}>
         <div className={styles.typeContainer}>
+          {type.seal && <img src={type.seal} className={styles.sealImage} />}
           <div
             className={styles.productTypeCard}
             style={{
