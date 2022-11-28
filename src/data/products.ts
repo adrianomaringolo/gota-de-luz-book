@@ -7,7 +7,7 @@ export const productTypes: ProductType[] = [
     description:
       "<p>Óleos vegetais e óleos essenciais.</p><p>Todos os sabonetes são feitos com hidrolato de melaleuca orgânica destilada por nós!</p>",
     image: "background-8.jpg",
-    seal: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-blackfriday.png?alt=media&token=4f5bae84-7611-43ed-829e-6ffd7f7574a2",
+    seal: "",
   },
   {
     id: "sabonetes-argila",
@@ -16,7 +16,7 @@ export const productTypes: ProductType[] = [
       <p>Uma linha apenas com o aroma dos óleos vegetais, predominando o aroma do azeite de oliva extra-virgem.</p>
       <p>Essa linha vem trazer a propriedade das argilas naturais. Enriquecidos com as argilas verde, vermelha, roxa, amarela, branca e preta.</p>`,
     image: "background-7.jpg",
-    seal: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-blackfriday.png?alt=media&token=4f5bae84-7611-43ed-829e-6ffd7f7574a2",
+    seal: "",
   },
 
   {
@@ -29,7 +29,7 @@ export const productTypes: ProductType[] = [
       </div>
       `,
     image: "background-9.jpg",
-    seal: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-blackfriday.png?alt=media&token=4f5bae84-7611-43ed-829e-6ffd7f7574a2",
+    seal: "",
   },
   {
     id: "hidrolatos-1l",
@@ -48,7 +48,7 @@ export const productTypes: ProductType[] = [
       <br/>
       `,
     image: "background-3.jpg",
-    seal: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-blackfriday.png?alt=media&token=4f5bae84-7611-43ed-829e-6ffd7f7574a2",
+    seal: "",
   },
   {
     id: "sais",
@@ -56,13 +56,13 @@ export const productTypes: ProductType[] = [
     description:
       "Produtos feitos à base de óleos essenciais. Livre de essências sintéticas. Livre de produtos de origem animal.",
     image: "background-4.jpg",
-    seal: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-blackfriday.png?alt=media&token=4f5bae84-7611-43ed-829e-6ffd7f7574a2",
+    seal: "",
   },
   {
     id: "sprays",
-    type: "Sprays Energéticos",
+    type: "Sprays",
     description:
-      "Produtos feitos à base de óleos essenciais. Livre de essências sintéticas. Livre de produtos de origem animal.",
+      "Produtos feitos à base de óleos essenciais e álcool de cereais. Livre de essências sintéticas.",
     image: "background-5.jpg",
   },
 ];
