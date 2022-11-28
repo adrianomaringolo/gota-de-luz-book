@@ -6,7 +6,7 @@ export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
-    const modalSet = localStorage.getItem("blackFridaySet");
+    const modalSet = localStorage.getItem("blackFridayEndSet");
 
     if (!modalSet) {
       setShowModal(true);
@@ -16,14 +16,14 @@ export const AlertModal: React.FC = () => {
   const closeWarningModal = () => {
     CartService.clearCart();
     setShowModal(false);
-    localStorage.setItem("blackFridaySet", "true");
+    localStorage.setItem("blackFridayEndSet", "true");
   };
 
   return (
     <SweetAlert
       show={showModal}
       showCancel={false}
-      title="Semana Black Friday"
+      title="🎄 Em breve, kits de Natal"
       onConfirm={closeWarningModal}
       customButtons={
         <React.Fragment>
@@ -36,14 +36,10 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Essa semana teremos muitos produtos Gota de Cura com descontos especiais!
+      A semana Black Friday acabou, mas em breve teremos muitos kits de Natal
+      com preços especiais!
       <br />
-      <br />
-      Procure pelo selo especial nos nossos produtos e aproveite nossos
-      descontos! É apenas até dia 27/11 ou enquanto durarem nossos estoques!{" "}
-      <br />
-      <br />
-      Aproveite para fazer suas reservas agora!😉
+      Fique ligado!😉
     </SweetAlert>
   );
 };
