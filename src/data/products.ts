@@ -54,7 +54,7 @@ export const productTypes: ProductType[] = [
     id: "sais",
     type: "Sais de banho",
     description:
-      "Produtos feitos à base de óleos essenciais. Livre de essências sintéticas. Livre de produtos de origem animal.",
+      "O uso de sais de banho e escaldapé são muitos relaxantes e terapêuticos. Ao deixar seus pés de molho numa água morna com sal, você vai sentir o alívio do estresse do dia a dia e das tensões acumuladas. <br/><br/>Aliando o aroma e o poder terapêuticodos óleos essenciais à esses sais, você verá os efeitos tranquilizantes ainda mais potencializados e ainda vai aproveitar das propriedades específicas que cada planta tem a oferecer.",
     image: "background-4.jpg",
     seal: "",
   },

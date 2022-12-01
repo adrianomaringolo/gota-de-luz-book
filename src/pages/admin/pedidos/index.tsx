@@ -51,6 +51,15 @@ const Pedidos = () => {
     return total;
   };
 
+  // const getTotalFromOrders = () => {
+  //   let total = 0;
+  //   orders.forEach((order: any) => {
+  //     total += getTotal(order);
+  //   });
+
+  //   return total;
+  // };
+
   const lastLastStatusLogPerson = (order: any) =>
     order.statusLogs && order.statusLogs.length > 0
       ? order.statusLogs[order.statusLogs.length - 1]?.userName
@@ -92,6 +101,9 @@ const Pedidos = () => {
             <p>
               Exibindo <b>{orders.length}</b> pedido(s)
             </p>
+            {/* <p>
+              Valor total: <b>R$ {formatCurrency(getTotalFromOrders())}</b>
+            </p> */}
             <div className="table-container">
               <table className="table is-bordered is-striped is-hoverable">
                 <thead>
