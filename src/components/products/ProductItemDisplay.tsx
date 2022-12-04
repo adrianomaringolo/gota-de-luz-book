@@ -61,7 +61,12 @@ const ProductItemDisplay = ({
             </p>
           </>
         )}
-        <p className="itemDesc">{item.description}</p>
+        <p
+          className="itemDesc"
+          dangerouslySetInnerHTML={{
+            __html: item.description || "",
+          }}
+        ></p>
         <div style={{ display: "flex" }}>
           {item.detailedDescription && (
             <button
