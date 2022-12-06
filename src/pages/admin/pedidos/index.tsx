@@ -51,14 +51,14 @@ const Pedidos = () => {
     return total;
   };
 
-  // const getTotalFromOrders = () => {
-  //   let total = 0;
-  //   orders.forEach((order: any) => {
-  //     total += getTotal(order);
-  //   });
+  const getTotalFromOrders = () => {
+    let total = 0;
+    orders.forEach((order: any) => {
+      total += getTotal(order);
+    });
 
-  //   return total;
-  // };
+    return total;
+  };
 
   const lastLastStatusLogPerson = (order: any) =>
     order.statusLogs && order.statusLogs.length > 0
@@ -101,9 +101,9 @@ const Pedidos = () => {
             <p>
               Exibindo <b>{orders.length}</b> pedido(s)
             </p>
-            {/* <p>
+            <p style={{ display: "none" }}>
               Valor total: <b>R$ {formatCurrency(getTotalFromOrders())}</b>
-            </p> */}
+            </p>
             <div className="table-container">
               <table className="table is-bordered is-striped is-hoverable">
                 <thead>
