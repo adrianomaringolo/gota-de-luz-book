@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useDisclosure } from "utils/hooks/useDisclosure";
 import { ProductItem } from "../../interfaces";
 import { CartService } from "../../services/CartService";
 import { formatCurrency } from "../../utils/format";
+import { OptionsSelectModal } from "./OptionsSelectModal";
 import { StyledProductItemDisplay } from "./StyledProductItemDisplay";
 
 const ProductItemDisplay = ({
@@ -12,10 +14,21 @@ const ProductItemDisplay = ({
   type: string;
 }) => {
   const [viewMode, setViewMode] = useState("");
+  const { close, open, isOpen } = useDisclosure();
 
-  const addToCart = () => {
+  const handleOrderClick = () => {
+    if (item.optionsSet && item.optionsSet.length > 0) {
+      open();
+    } else {
+      addToCart();
+    }
+  };
+
+  const addToCart = (selectedTypes?: string[]) => {
+    debugger;
     CartService.addItemToCart({
       ...item,
+      name: item.name + (selectedTypes ? ` (${selectedTypes.join(", ")})` : ""),
       id: item.id,
       type,
       price: item.price,
@@ -80,7 +93,7 @@ const ProductItemDisplay = ({
           {item.available && (
             <button
               style={{ margin: "0 5px", display: "flex" }}
-              onClick={() => addToCart()}
+              onClick={handleOrderClick}
               className="moreButton"
             >
               <img
@@ -118,6 +131,12 @@ const ProductItemDisplay = ({
           </div>
         </div>
       </div>
+      <OptionsSelectModal
+        item={item}
+        displayModal={isOpen}
+        closeModal={close}
+        addToCart={addToCart}
+      />
     </StyledProductItemDisplay>
   );
 };

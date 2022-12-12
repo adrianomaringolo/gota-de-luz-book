@@ -166,6 +166,11 @@ h2.fancy-title {
   font-size: 1.5em;
 }
 
+.button-confirmation.inverse {
+  background: none;
+  color: #666;
+}
+
 .print-only {
   display: none;
 }

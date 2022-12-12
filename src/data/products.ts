@@ -2,6 +2,13 @@ import { ProductType } from "../interfaces";
 
 export const productTypes: ProductType[] = [
   {
+    id: "kits",
+    type: "Kits de Natal",
+    description:
+      "Kits com preços especiais para você presentear alguém muito querido e ainda ajudar a tornar mais farto o Natal de muitas famílias assistidas pelos trabalhos da Morada.",
+    image: "background-christimas.jpg",
+  },
+  {
     id: "sabonetes",
     type: "Sabonetes artesanais",
     description:
