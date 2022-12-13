@@ -7,6 +7,7 @@ export const productTypes: ProductType[] = [
     description:
       "Kits com preços especiais para você presentear alguém muito querido e ainda ajudar a tornar mais farto o Natal de muitas famílias assistidas pelos trabalhos da Morada.",
     image: "background-christimas.jpg",
+    seal: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-natal.png?alt=media&token=f4e18656-c522-4ff8-8b5b-344c628ca11f",
   },
   {
     id: "sabonetes",

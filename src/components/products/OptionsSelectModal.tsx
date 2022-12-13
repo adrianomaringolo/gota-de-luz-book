@@ -37,6 +37,14 @@ export const OptionsSelectModal = ({
     setSelectedValues(newArray);
   };
 
+  const canOrder = () =>
+    selectedValues.filter((value) => value).length === item.optionsSet?.length;
+
+  const handleClose = () => {
+    setSelectedValues([]);
+    closeModal();
+  };
+
   return (
     <StyledModal>
       <SweetAlert
@@ -50,21 +58,22 @@ export const OptionsSelectModal = ({
               className="button-confirmation big"
               onClick={() => {
                 addToCart(selectedValues);
-                closeModal();
+                handleClose();
               }}
+              disabled={!canOrder()}
             >
               Pedir
             </button>
             <button
               className="button-confirmation inverse big"
-              onClick={closeModal}
+              onClick={handleClose}
             >
               Cancelar
             </button>
           </React.Fragment>
         }
       >
-        <p>Selecione os items do kit que você deseja</p>
+        <p>Selecione os items do kit que você deseja para pedir</p>
         {item.optionsSet?.map((item, i) => (
           <div>
             <p className="item-name">{item.name}</p>
@@ -72,7 +81,13 @@ export const OptionsSelectModal = ({
               value={selectedValues[i]}
               onChange={(e: any) => setValueToPosition(i, e.target.value)}
             >
-              {item.values.map((value) => (
+              <option value="" disabled selected>
+                - Selecione -
+              </option>
+              {(typeof item.values === "string"
+                ? item.values.split(",")
+                : item.values
+              ).map((value) => (
                 <option value={value}>{value}</option>
               ))}
             </select>

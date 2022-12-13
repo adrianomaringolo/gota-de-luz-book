@@ -10,7 +10,7 @@ export interface ProductType {
 
 export interface OptionsSetItem {
   name: string;
-  values: string[];
+  values: string[] | string;
 }
 
 export interface ProductItem {
