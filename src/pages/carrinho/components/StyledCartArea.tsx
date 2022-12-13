@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledCartArea = styled.div`
+const StyledCartArea = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 100px;
@@ -107,3 +107,5 @@ export const StyledCartArea = styled.div`
     }
   }
 `;
+
+export default StyledCartArea;

@@ -10,8 +10,8 @@ import { useRouter } from "next/dist/client/router";
 import { ContactForm } from "../../components/Cart/ContactForm";
 import { ConfirmationOrder } from "../../components/Cart/ConfirmationOrder";
 import { formatCurrency } from "../../utils/format";
-import { StyledCartArea } from "./components/StyledCartArea";
-import { CartItem } from "./components/CartItem";
+import StyledCartArea from "./components/StyledCartArea";
+import CartItem from "./components/CartItem";
 
 const Carrinho = () => {
   const [cart, setCart] = useState<CartType>();
