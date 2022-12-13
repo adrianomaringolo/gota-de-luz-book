@@ -25,7 +25,6 @@ const ProductItemDisplay = ({
   };
 
   const addToCart = (selectedTypes?: string[]) => {
-    debugger;
     CartService.addItemToCart({
       ...item,
       name: item.name + (selectedTypes ? ` (${selectedTypes.join(", ")})` : ""),
@@ -100,7 +99,7 @@ const ProductItemDisplay = ({
                 src="/images/shopping-bag.png"
                 style={{ width: 20, marginRight: "5px" }}
               />{" "}
-              Pedir
+              {item.optionsSet ? "Selecionar kit" : "Pedir"}
             </button>
           )}
         </div>
