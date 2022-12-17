@@ -7,6 +7,44 @@ const StyledArea = styled.section`
   margin: 0 auto;
 `;
 
+const reports = [
+  {
+    name: "Lavanda",
+    cientificName: "Lavandula dentata e Cymbopogon citratus",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Lavanda%20dentata%20e%20Pelargonium%20graveolens.pdf?alt=media&token=9289ec29-2ab2-4995-abc9-8d0270ec01cc",
+  },
+  {
+    name: "Melaleuca",
+    cientificName: "Melaleuca alternifolia",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Melaleuca%20alternifolia.pdf?alt=media&token=ecca7ff8-4534-49a0-a278-c20a771fa237",
+  },
+  {
+    name: "Capim limão",
+    cientificName: "Cymbopogon citratus",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Cymbopogon%20citratus.pdf?alt=media&token=66341630-2a54-4d6a-87af-b7a92ac958a8",
+  },
+  {
+    name: "Gerânio",
+    cientificName: "Pelargonium graveolens",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Pelargonium%20graveolens.pdf?alt=media&token=67365247-8a6b-40fe-a562-059a1d3eebc7",
+  },
+  {
+    name: "Jambolão",
+    cientificName: "Syzygium cumini",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Syzygium%20cumini.pdf?alt=media&token=6e80af9a-4f80-48af-86a2-e3dbc55f84e4",
+  },
+  {
+    name: "Guaçatonga",
+    cientificName: "Casearia sylvestris",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Casearia%20sylvestris.pdf?alt=media&token=c9da6805-20b1-455b-94c4-e8f21a5536f5",
+  },
+  {
+    name: "Palmarosa",
+    cientificName: "Cymbopogon martini",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Cymbopogon%20martini.pdf?alt=media&token=25f43f47-2a2b-4445-9c2a-94f31e32f6fe",
+  },
+];
+
 const Cromatografias = () => (
   <>
     <Layout title={process.env.NEXT_PUBLIC_COMPANY_NAME}>
@@ -29,55 +67,13 @@ const Cromatografias = () => (
           Luzia.
         </p>
         <ul>
-          <li>
-            <a
-              href="https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Lavanda%20dentata%20e%20Pelargonium%20graveolens.pdf?alt=media&token=9289ec29-2ab2-4995-abc9-8d0270ec01cc"
-              target="_blank"
-            >
-              Lavanda (<i>Lavandula dentata</i> e <i>Cymbopogon citratus</i>)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Melaleuca%20alternifolia.pdf?alt=media&token=ecca7ff8-4534-49a0-a278-c20a771fa237"
-              target="_blank"
-            >
-              Melaleuca (<i>Melaleuca alternifolia</i>)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Cymbopogon%20citratus.pdf?alt=media&token=66341630-2a54-4d6a-87af-b7a92ac958a8"
-              target="_blank"
-            >
-              Capim limão (<i>Cymbopogon citratus</i>)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Pelargonium%20graveolens.pdf?alt=media&token=67365247-8a6b-40fe-a562-059a1d3eebc7"
-              target="_blank"
-            >
-              Gerânio (<i>Pelargonium graveolens</i>)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Syzygium%20cumini.pdf?alt=media&token=6e80af9a-4f80-48af-86a2-e3dbc55f84e4"
-              target="_blank"
-            >
-              Jambolão (<i>Syzygium cumini</i>)
-            </a>
-          </li>
-          <li>
-            Hidrolato de{" "}
-            <a
-              href="https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Casearia%20sylvestris.pdf?alt=media&token=c9da6805-20b1-455b-94c4-e8f21a5536f5"
-              target="_blank"
-            >
-              Guaçatonga (<i>Casearia sylvestris</i>)
-            </a>
-          </li>
+          {reports.map(({ name, url, cientificName }) => (
+            <li>
+              <a href={url} target="_blank">
+                {name} (<i>{cientificName}</i>)
+              </a>
+            </li>
+          ))}
         </ul>
       </StyledArea>
     </Layout>
