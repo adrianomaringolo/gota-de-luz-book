@@ -158,12 +158,21 @@ h2.fancy-title {
   background: rgb(241, 241, 241);
 }
 
-.button-confirmation:hover {
-  background: rgb(167, 166, 166);
+.button-confirmation:hover:not(:disabled):not(.inverse) {
+  background: #cf8fbd;
+}
+
+.button-confirmation:disabled {
+  background: rgb(212, 212, 212);
 }
 
 .button-confirmation.big {
   font-size: 1.5em;
+}
+
+.button-confirmation.inverse {
+  background: none;
+  color: #666;
 }
 
 .print-only {

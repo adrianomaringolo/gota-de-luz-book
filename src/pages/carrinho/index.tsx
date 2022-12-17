@@ -1,6 +1,5 @@
 import Layout from "../../components/Layout";
 import React, { FormEvent, useEffect, useState } from "react";
-import styled from "styled-components";
 import {
   CartType,
   CartService,
@@ -11,93 +10,8 @@ import { useRouter } from "next/dist/client/router";
 import { ContactForm } from "../../components/Cart/ContactForm";
 import { ConfirmationOrder } from "../../components/Cart/ConfirmationOrder";
 import { formatCurrency } from "../../utils/format";
-
-const CartArea = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 100px;
-  background: url(/images/background-init.jpg) no-repeat 50% / cover;
-  //height: 100vh;
-
-  .cart-area {
-    background: #fff;
-    padding: 15px;
-    max-width: 800px;
-    height: fit-content;
-    @media only screen and (min-width: 768px) {
-      padding: 50px;
-    }
-  }
-  input {
-    padding: 5px;
-    font-size: 1.2em;
-  }
-
-  .buy-button {
-    background-color: #c7e2cb;
-    &:hover {
-      color: white;
-      background-color: #618566;
-    }
-  }
-
-  .product-name {
-    display: block;
-    @media only screen and (min-width: 500px) {
-      display: inline;
-    }
-  }
-
-  .title {
-    font-size: 1.2em;
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-
-  .title-description {
-    font-size: 0.9em;
-    color: #888;
-    margin-top: 0;
-  }
-
-  .total-value {
-    border-top: 1px solid #aaa;
-    padding-top: 10px;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-
-  .remove-button {
-    color: #4d0303;
-    padding: 5px;
-    border: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .item-price {
-    font-weight: bold;
-    width: 70px;
-    display: inline-block;
-  }
-
-  .buttonArea {
-    text-align: right;
-    margin-top: 20px;
-  }
-  button {
-    padding: 15px;
-    border: 1px solid #333;
-    background-color: transparent;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.5s;
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.1);
-    }
-  }
-`;
+import StyledCartArea from "./components/StyledCartArea";
+import CartItem from "./components/CartItem";
 
 const Carrinho = () => {
   const [cart, setCart] = useState<CartType>();
@@ -117,10 +31,9 @@ const Carrinho = () => {
   useEffect(() => {
     getCart();
 
-    PubSub.subscribe("card_add_item", () => {
-      console.log("Cart changed!");
-      getCart();
-    });
+    PubSub.subscribe("card_add_item", () => getCart());
+
+    return () => PubSub.unsubscribe("card_add_item");
   }, []);
 
   const getTotal = () => {
@@ -159,7 +72,7 @@ const Carrinho = () => {
 
   return (
     <Layout title={`${process.env.NEXT_PUBLIC_COMPANY_NAME} - Reserva`}>
-      <CartArea>
+      <StyledCartArea>
         <div className="cart-area">
           {orderStep === 0 && (
             <div>
@@ -181,39 +94,7 @@ const Carrinho = () => {
                 }}
               >
                 {cart?.items?.map((item: CartItemType) => (
-                  <div
-                    key={`${item.id}`}
-                    style={{
-                      borderBottom: "1px solid #ccc",
-                      paddingBottom: 5,
-                      marginBottom: 5,
-                    }}
-                  >
-                    <input
-                      onChange={(event) => {
-                        CartService.editItemAmount(
-                          item.id,
-                          Number(event.target.value)
-                        );
-                      }}
-                      type="number"
-                      min={0}
-                      value={item.amount}
-                      style={{ width: 60, marginRight: "10px" }}
-                    />
-                    <div
-                      className="item-price"
-                      style={!item.amount ? { color: "#ccc" } : {}}
-                    >
-                      {formatCurrency(item.price * (item.amount || 0))}
-                    </div>
-                    <span
-                      className="product-name"
-                      style={!item.amount ? { color: "#aaa" } : {}}
-                    >
-                      [{item.type}] {item.name}
-                    </span>
-                  </div>
+                  <CartItem item={item} />
                 ))}
               </div>
               <div className="total-value">
@@ -358,7 +239,7 @@ const Carrinho = () => {
             </div>
           )}
         </div>
-      </CartArea>
+      </StyledCartArea>
     </Layout>
   );
 };

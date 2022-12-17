@@ -8,6 +8,11 @@ export interface ProductType {
   seal?: string;
 }
 
+export interface OptionsSetItem {
+  name: string;
+  values: string[] | string;
+}
+
 export interface ProductItem {
   id: string;
   name: string;
@@ -19,4 +24,5 @@ export interface ProductItem {
   detailedDescription?: string;
   available?: boolean;
   seal?: string;
+  optionsSet?: OptionsSetItem[];
 }
