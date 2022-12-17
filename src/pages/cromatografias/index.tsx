@@ -9,7 +9,7 @@ const StyledArea = styled.section`
 
 const reports = [
   {
-    name: "Lavanda",
+    name: "Lavanda e Capim limão",
     cientificName: "Lavandula dentata e Cymbopogon citratus",
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Lavanda%20dentata%20e%20Pelargonium%20graveolens.pdf?alt=media&token=9289ec29-2ab2-4995-abc9-8d0270ec01cc",
   },
@@ -34,7 +34,7 @@ const reports = [
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Syzygium%20cumini.pdf?alt=media&token=6e80af9a-4f80-48af-86a2-e3dbc55f84e4",
   },
   {
-    name: "Guaçatonga",
+    name: "Hidrolato de Guaçatonga",
     cientificName: "Casearia sylvestris",
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Casearia%20sylvestris.pdf?alt=media&token=c9da6805-20b1-455b-94c4-e8f21a5536f5",
   },
