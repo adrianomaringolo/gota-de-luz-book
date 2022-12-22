@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { CartService } from "services/CartService";
 
-const WARNING_KEY = "christimasSet";
+const WARNING_KEY = "blackFridayEndSet";
 
 export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -25,7 +25,7 @@ export const AlertModal: React.FC = () => {
     <SweetAlert
       show={showModal}
       showCancel={false}
-      title="🎄 Kits de Natal"
+      title="🏖️ Recesso de fim de ano"
       onConfirm={closeWarningModal}
       customButtons={
         <React.Fragment>
@@ -38,47 +38,16 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      <div style={{ textAlign: "left" }}>
-        🎄🎅🏻🎁 E começou a nossa promoção de Natal com kits muito especiais para
-        você presentear aquela pessoa querida e ainda ajudar a tornar mais farto
-        o Natal de muitas famílias assistidas pelos trabalhos da Morada.
-        <br />
-        <br />
-        Os kits disponíveis são:
-        <br />
-        - 2 sais por R$40
-        <br />
-        - 2 sprays por R$40
-        <br />
-        - 1 spray + 1 sais por R$40
-        <br />
-        - 2 Hidrolatos* R$50
-        <br />
-        - 3 Hidrolatos* R$72
-        <br />
-        <br />
-        * o hidrolato de immortelle não é válido para essa promoção
-        <br />
-        <br />
-        <big>Como pedir?</big>
-        <br />
-        <br />
-        1 - Acesse nosso site: gotadecura.com.br
-        <br />
-        2 - Procure a área "Kits de Natal"
-        <br />
-        3 - Escolha a melhor opção de kit para você e clique em "Selecionar kit"
-        <br />
-        4 - Escolha quais os itens que vão compor seu kit
-        <br />
-        5 - Clique em pedir (e peça outros produtos 😋)
-        <br />
-        6 - Veja seu carrinho, insira seus dados de contato e feche seu pedido
-        <br />
-        7 - Aguarde o contato de uma das nossas voluntárias para acertar o
-        pagamento e envio
-        <br />8 - Receba sua encomenda de carinho, amor e cura!
-      </div>
+      Na semana entre o Natal e o Ano Novo, faremos um pequeno recesso. Os
+      pedidos podem ser feitos normalmente, mas serão atendidos apenas na
+      primeira semana de janeiro. Agradecemos a compreensão!
+      <br />
+      <br />
+      Além disso, em 2023 será necessário fazer alguns reajustes nos preços dos
+      nossos produtos, mas ainda dá pra garantir os preços de 2022!
+      <br />
+      <br />
+      Venha aproveitar!😉
     </SweetAlert>
   );
 };
