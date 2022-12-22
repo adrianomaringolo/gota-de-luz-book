@@ -5,8 +5,10 @@ import { CartService } from "services/CartService";
 export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
+  const WARNING_KEY = "blackFridayEndSet";
+
   useEffect(() => {
-    const modalSet = localStorage.getItem("blackFridayEndSet");
+    const modalSet = localStorage.getItem(WARNING_KEY);
 
     if (!modalSet) {
       setShowModal(true);
@@ -16,14 +18,14 @@ export const AlertModal: React.FC = () => {
   const closeWarningModal = () => {
     CartService.clearCart();
     setShowModal(false);
-    localStorage.setItem("blackFridayEndSet", "true");
+    localStorage.setItem(WARNING_KEY, "true");
   };
 
   return (
     <SweetAlert
       show={showModal}
       showCancel={false}
-      title="🎄 Em breve, kits de Natal"
+      title="Recesso de fim de ano"
       onConfirm={closeWarningModal}
       customButtons={
         <React.Fragment>
@@ -36,10 +38,16 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      A semana Black Friday acabou, mas em breve teremos muitos kits de Natal
-      com preços especiais!
+      Na semana entre o Natal e o Ano Novo, faremos um pequeno recesso. Os
+      pedidos podem ser feitos normalmente, mas serão atendidos apenas na
+      primeira semana de janeiro. Agradecemos a compreensão!
       <br />
-      Fique ligado!😉
+      <br />
+      Além disso, em 2023 será necessário fazer alguns reajustes nos preços dos
+      nossos produtos, mas ainda dá pra garantir os preços de 2022!
+      <br />
+      <br />
+      Venha aproveitar!😉
     </SweetAlert>
   );
 };
