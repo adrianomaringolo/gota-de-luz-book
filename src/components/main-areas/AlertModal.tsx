@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { CartService } from "services/CartService";
 
-const WARNING_KEY = "blackFridayEndSet";
+const WARNING_KEY = "newPrices2023";
 
 export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -25,7 +25,7 @@ export const AlertModal: React.FC = () => {
     <SweetAlert
       show={showModal}
       showCancel={false}
-      title="🏖️ Recesso de fim de ano"
+      title="Atualização dos preços"
       onConfirm={closeWarningModal}
       customButtons={
         <React.Fragment>
@@ -38,16 +38,11 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Na semana entre o Natal e o Ano Novo, faremos um pequeno recesso. Os
-      pedidos podem ser feitos normalmente, mas serão atendidos apenas na
-      primeira semana de janeiro. Agradecemos a compreensão!
+      Em breve será necessário fazer alguns reajustes nos preços dos nossos
+      produtos, mas ainda dá pra garantir os preços de 2022!
       <br />
       <br />
-      Além disso, em 2023 será necessário fazer alguns reajustes nos preços dos
-      nossos produtos, mas ainda dá pra garantir os preços de 2022!
-      <br />
-      <br />
-      Venha aproveitar!😉
+      Venha aproveitar ainda hoje!😉
     </SweetAlert>
   );
 };
