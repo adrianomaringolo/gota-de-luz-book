@@ -38,11 +38,11 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Em breve será necessário fazer alguns reajustes nos preços dos nossos
-      produtos, mas ainda dá pra garantir os preços de 2022!
+      Foi necessário fazer alguns reajustes nos preços dos nossos produtos esse
+      ano, agradecemos a compreensão.
       <br />
       <br />
-      Venha aproveitar ainda hoje!😉
+      Confira nosso catálogo e aproveite!😉
     </SweetAlert>
   );
 };
