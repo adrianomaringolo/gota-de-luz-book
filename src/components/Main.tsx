@@ -9,7 +9,7 @@ import { VisitArea } from "./main-areas/VisitArea";
 
 const Main = () => (
   <>
-    <AlertModal />
+    {/* <AlertModal /> */}
     <InitArea />
     <VisitArea />
     <TestimonyArea />
