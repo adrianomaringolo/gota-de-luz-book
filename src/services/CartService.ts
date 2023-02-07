@@ -134,8 +134,7 @@ const saveOrder = async (cart: any, contactInfo: any) => {
     {
       order_number: Number(lastOrder.orderId) + 1,
       client_name: contactInfo.name,
-      mail_list: `adrianomaringolo@gmail.com, gotadeluzpedido@gmail.com, abia.gotadecura@gmail.com,
-      gotadeluzdespacho@gmail.com, danipadovani@uol.com.br, msmattar@hotmail.com`,
+      mail_list: `adrianomaringolo@gmail.com,gotadeluzpedido@gmail.com,abia.gotadecura@gmail.com,gotadeluzdespacho@gmail.com,danipadovani@uol.com.br,msmattar@hotmail.com,thaisab@gmail.com`,
     },
     "JAGvYZKyVMK9JdME2"
   );

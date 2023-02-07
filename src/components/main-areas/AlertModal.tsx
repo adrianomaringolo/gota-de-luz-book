@@ -25,7 +25,7 @@ export const AlertModal: React.FC = () => {
     <SweetAlert
       show={showModal}
       showCancel={false}
-      title="Atualização dos preços"
+      title="Novos produtos"
       onConfirm={closeWarningModal}
       customButtons={
         <React.Fragment>
