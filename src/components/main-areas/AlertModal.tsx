@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { CartService } from "services/CartService";
 
-const WARNING_KEY = "newPrices2023";
+const WARNING_KEY = "newProducts23-2";
 
 export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -38,8 +38,12 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Foi necessário fazer alguns reajustes nos preços dos nossos produtos esse
-      ano, agradecemos a compreensão.
+      Temos novos produtos disponíveis! ✨✨✨
+      <br />
+      <br />
+      - Oléo essencial de manejricão (2ml e 5ml)
+      <br />
+      - Sais de banho de copaíba
       <br />
       <br />
       Confira nosso catálogo e aproveite!😉

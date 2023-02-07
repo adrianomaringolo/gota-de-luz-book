@@ -5,10 +5,11 @@ import { DestinationArea } from "./main-areas/DestinationArea";
 import { GalleryArea } from "./main-areas/GalleryArea";
 import { TestimonyArea } from "./main-areas/TestimonyArea";
 import { VisitArea } from "./main-areas/VisitArea";
+import { AlertModal } from "./main-areas/AlertModal";
 
 const Main = () => (
   <>
-    {/* <AlertModal /> */}
+    <AlertModal />
     <InitArea />
     <VisitArea />
     <TestimonyArea />
