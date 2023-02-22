@@ -44,19 +44,20 @@ const Visitas = () => {
           <h1>Visitação</h1>
           <h3 className="title">
             <big>
-              Aguarde novas datas em <b>2023</b>
+              Datas em <b>2023</b>
+              <small>04/03, 15/04, 17/06, 22/07, 16/09, 11/11</small>
             </big>
             <br />
             VISITA GUIADA À CHÁCARA MÃE LUZIA
           </h3>
-          {/* <a
+          <a
             className="cta-button"
             href="https://forms.gle/JeBEWFbrndTrdX7v9"
             target="blank"
           >
             👉 Faça seu cadastro e garanta sua vaga
           </a>
-          <p>Gostaria de conhecer a chácara da Morada?</p> */}
+          <p>Gostaria de conhecer a chácara da Morada?</p>
 
           <p>
             É nessa chácara que são cultivadas as plantas que são destiladas
@@ -158,13 +159,13 @@ const Visitas = () => {
           ))}
 
           <hr />
-          {/* <a
+          <a
             className="cta-button"
             href="https://forms.gle/JeBEWFbrndTrdX7v9"
             target="blank"
           >
             👉 Faça seu cadastro e garanta sua vaga
-          </a> */}
+          </a>
         </StyledVisitasArea>
       </Layout>
     </>

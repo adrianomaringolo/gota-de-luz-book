@@ -20,8 +20,9 @@ export const VisitArea: React.FC = () => {
         ></Carousel>
         <h2 className="fancy-title">VISITA GUIADA À CHÁCARA MÃE LUZIA</h2>
         <p>
-          Gostaria de conhecer a chácara da Morada? Aguarde novas datas em{" "}
-          <b>2023</b>
+          Datas em <b>2023</b>:
+          <br />
+          <small>04/03, 15/04, 17/06, 22/07, 16/09, 11/11</small>
         </p>
 
         <p>
@@ -53,9 +54,9 @@ export const VisitArea: React.FC = () => {
         >
           <div>
             <Link href="/visitas">+ Detalhes</Link>
-            {/* <a href="https://forms.gle/JeBEWFbrndTrdX7v9" target="blank">
+            <a href="https://forms.gle/JeBEWFbrndTrdX7v9" target="blank">
               👉 Faça seu cadastro e garanta sua vaga
-            </a> */}
+            </a>
           </div>
         </div>
       </div>
