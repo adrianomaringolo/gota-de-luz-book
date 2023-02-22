@@ -39,6 +39,12 @@ const reports = [
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Casearia%20sylvestris.pdf?alt=media&token=c9da6805-20b1-455b-94c4-e8f21a5536f5",
   },
   {
+    name: "Majericão",
+    cientificName: "Ocimum basilicum",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Ocimum%20basilicum.pdf?alt=media&token=15c58e8b-cb45-4a8d-ae48-f8c7970d4aef",
+  },
+
+  {
     name: "Palmarosa",
     cientificName: "Cymbopogon martini",
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Cymbopogon%20martini.pdf?alt=media&token=25f43f47-2a2b-4445-9c2a-94f31e32f6fe",
