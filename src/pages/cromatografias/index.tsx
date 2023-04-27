@@ -49,6 +49,16 @@ const reports = [
     cientificName: "Cymbopogon martini",
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Cymbopogon%20martini.pdf?alt=media&token=25f43f47-2a2b-4445-9c2a-94f31e32f6fe",
   },
+  {
+    name: "Immortelle",
+    cientificName: "Helichrysum italicum",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Helichrysum%20italicum.pdf?alt=media&token=80f8a211-435d-4b28-99c0-39201535bbd5",
+  },
+  {
+    name: "Louro",
+    cientificName: "Laurus nobilis",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Laurus%20nobilis.pdf?alt=media&token=f550adaa-feae-4ed2-806f-86b8ed99eb2c",
+  },
 ];
 
 const Cromatografias = () => (
