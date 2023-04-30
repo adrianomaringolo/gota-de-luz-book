@@ -39,7 +39,7 @@ const reports = [
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Casearia%20sylvestris.pdf?alt=media&token=c9da6805-20b1-455b-94c4-e8f21a5536f5",
   },
   {
-    name: "Majericão",
+    name: "Manjericão",
     cientificName: "Ocimum basilicum",
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Ocimum%20basilicum.pdf?alt=media&token=15c58e8b-cb45-4a8d-ae48-f8c7970d4aef",
   },
@@ -58,6 +58,16 @@ const reports = [
     name: "Louro",
     cientificName: "Laurus nobilis",
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Laurus%20nobilis.pdf?alt=media&token=f550adaa-feae-4ed2-806f-86b8ed99eb2c",
+  },
+  {
+    name: "Cipreste",
+    cientificName: "Cupressus sempervirens",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Cupressus%20sempervirens.pdf?alt=media&token=2cd405d2-bb39-47f5-8778-a131a61f455f",
+  },
+  {
+    name: "Niaouli",
+    cientificName: "Melaleuca quinquenervia",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Melaleuca%20quinquenervia.pdf?alt=media&token=9c5fb8a0-9bd2-4f2b-9aeb-01185ae234cb",
   },
 ];
 
