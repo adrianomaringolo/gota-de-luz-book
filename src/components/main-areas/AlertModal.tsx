@@ -38,12 +38,12 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Temos novos produtos disponíveis! ✨✨✨
+      Aproveite os kits promocionais de Dia das Mães! ✨✨✨
       <br />
       <br />
-      - Oléo essencial de manejricão (2ml e 5ml)
-      <br />
-      - Sais de banho de copaíba
+      Dê um presente especial para alguém muito especial e ainda contribua para
+      levar a fatia de pão para muitas mães e suas famílias assistidas pela
+      Morada.
       <br />
       <br />
       Confira nosso catálogo e aproveite!😉
