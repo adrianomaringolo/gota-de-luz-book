@@ -13,23 +13,36 @@ const Sobre = () => (
       <h1>Sobre nós</h1>
 
       <p>
-        O Gota de Cura nasceu em 2017 através da iniciativa do nosso
-        aromaterapeuta Marcelo Mattar. O catálogo inicialmente contava com os
-        sabonetes artesanais e com o tempo foi se ampliando para os sabonetes,
-        óleos, sprays e sais e continua se ampliando.
+        A marca Gota de Cura nasceu em 2017 através da iniciativa do nosso
+        aromaterapeuta Marcelo Mattar. Tudo começou com a elaboração dos
+        primeiros sabonetes artesanais feitos com óleos vegetais nobres,
+        predominando o azeite de oliva extra virgem, enriquecidos com óleos
+        essenciais de alecrim e lavanda. Desde o início, os sabonetes já tinham
+        como diferencial o uso de hidrolatos orgânicos de melaleuca (tea tree|)
+        ao invés de água na sua manipulação.
       </p>
-
       <p>
-        Desde o princípio, quando se chamava Gota de Luz, o propósito sem foi o
-        de levar a cura e as propriedades das plantas através dos produtos e que
-        toda a renda fosse revertida aos trabalhados assistenciais da Morada
+        Mais adiante, novas receitas foram elaboradas, acrescentando novos
+        aromas terapêuticos, sempre com óleos essenciais de qualidade.
+      </p>
+      <p>
+        Com o passar do tempo, nosso aromaterapeuta começou a destilar, de forma
+        artesanal, plantas aromáticas para obter seus próprios óleos essenciais
+        e hidrolatos.
+      </p>
+      <p>
+        Com o tempo, além dos sabonetes, nosso catálogo ganhou espaço para os
+        sprays energéticos, sais de banho, hidrolatos e óleos essenciais.
+      </p>
+      <p>
+        Nunca perdemos o propósito de levar a cura e as propriedades
+        terapêuticas e vibracionais das plantas através dos nossos produtos e
+        que toda a renda fosse revertida aos trabalhados assistenciais da Morada
         Espírita Professor Lairi Hans.
       </p>
-
       <p>
-        Hoje já contamos com uma grande equipe de voluntários e um grande
-        catálogo de produtos e pretendemos continuar crescendo e levando muita
-        cura a todos.
+        Hoje a família Gota de Cura cresceu e já contamos com uma grande equipe
+        de voluntários e um catálogo de produtos sempre em expansão.
       </p>
 
       <p>
