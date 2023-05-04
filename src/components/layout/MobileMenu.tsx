@@ -101,6 +101,14 @@ export const MobileMenu: React.FC<{
         >
           Cromatografias
         </a>
+        <a
+          onClick={() => {
+            closeMenu();
+            router.push("sobre");
+          }}
+        >
+          Sobre
+        </a>
       </nav>
     </StyledMobileMenu>
   );

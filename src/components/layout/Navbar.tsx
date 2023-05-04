@@ -145,6 +145,11 @@ export const Navbar = () => {
       onClick: () => router.push("cromatografias"),
     },
     {
+      title: "Sobre",
+      id: "sobre",
+      onClick: () => router.push("sobre"),
+    },
+    {
       title: (
         <>
           <img src="/images/icons/shopping-cart.svg" alt="Meu pedido" />
