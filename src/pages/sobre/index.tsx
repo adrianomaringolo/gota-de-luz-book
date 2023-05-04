@@ -18,7 +18,7 @@ const Sobre = () => (
         primeiros sabonetes artesanais feitos com óleos vegetais nobres,
         predominando o azeite de oliva extra virgem, enriquecidos com óleos
         essenciais de alecrim e lavanda. Desde o início, os sabonetes já tinham
-        como diferencial o uso de hidrolatos orgânicos de melaleuca (tea tree|)
+        como diferencial o uso de hidrolatos orgânicos de melaleuca (tea tree)
         ao invés de água na sua manipulação.
       </p>
       <p>
