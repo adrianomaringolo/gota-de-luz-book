@@ -45,7 +45,8 @@ const Visitas = () => {
           <h3 className="title">
             <big>
               Datas em <b>2023</b>
-              <small>04/03, 15/04, 17/06, 22/07, 16/09, 11/11</small>
+              <br />
+              <small>17/06, 16/09, 11/11</small>
             </big>
             <br />
             VISITA GUIADA À CHÁCARA MÃE LUZIA

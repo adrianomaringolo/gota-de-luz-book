@@ -21,8 +21,8 @@ export const VisitArea: React.FC = () => {
         <h2 className="fancy-title">VISITA GUIADA À CHÁCARA MÃE LUZIA</h2>
         <p>
           Datas em <b>2023</b>:
-          <br />
-          <small>04/03, 15/04, 17/06, 22/07, 16/09, 11/11</small>
+          <br /><br />
+          <small>17/06, 16/09, 11/11</small>
         </p>
 
         <p>
