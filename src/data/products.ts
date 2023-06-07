@@ -13,7 +13,7 @@ export const productTypes: ProductType[] = [
     id: "sabonetes",
     type: "Sabonetes artesanais",
     description:
-      "<p>Óleos vegetais e óleos essenciais.</p><p>Todos os sabonetes são feitos com hidrolato de melaleuca orgânica destilada por nós!</p>",
+      "<p>Óleos vegetais e óleos essenciais.</p><p>Ao invés de água, usamos hidrolatos na confecção dos nossos sabonetes. Hidrolatos orgânicos destilados na chácara da Morada (melaleuca, lavanda, immortelle e os demais que destilamos)!</p>",
     image: "background-8.jpg",
     seal: "",
   },
