@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { CartService } from "services/CartService";
 
-const WARNING_KEY = "mothersDay-23";
+const WARNING_KEY = "newprices-2sem23";
 
 export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -38,12 +38,12 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Aproveite os kits promocionais de Dia das Mães! ✨✨✨
+      Você já conhece nossos sprays energéticos e nossos sais de banho!
       <br />
       <br />
-      Dê um presente especial para alguém muito especial e ainda contribua para
-      levar a fatia de pão para muitas mães e suas famílias assistidas pela
-      Morada.
+      Os sprays são confeccionados especialmente para trazer efeitos vibratórios
+      ao ambiente e às pessoas! <br /> Os sais de banho são ótimos para ajudar
+      no relaxamento no dia a dia!
       <br />
       <br />
       Confira nosso catálogo e aproveite!😉
