@@ -8,7 +8,7 @@ export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
-    const modalSet = true; //localStorage.getItem(WARNING_KEY);
+    const modalSet = localStorage.getItem(WARNING_KEY);
 
     if (!modalSet) {
       setShowModal(true);
