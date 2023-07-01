@@ -38,7 +38,7 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Você já conhece nossos sprays energéticos e nossos sais de banho!
+      Você já conhece nossos sprays energéticos e nossos sais de banho?
       <br />
       <br />
       Os sprays são confeccionados especialmente para trazer efeitos vibratórios
