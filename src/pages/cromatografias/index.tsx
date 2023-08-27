@@ -93,13 +93,15 @@ const Cromatografias = () => (
           Luzia.
         </p>
         <ul>
-          {reports.map(({ name, url, cientificName }) => (
-            <li>
-              <a href={url} target="_blank">
-                {name} (<i>{cientificName}</i>)
-              </a>
-            </li>
-          ))}
+          {reports
+            .sort((a, b) => a.name < b.name)
+            .map(({ name, url, cientificName }) => (
+              <li>
+                <a href={url} target="_blank">
+                  {name} (<i>{cientificName}</i>)
+                </a>
+              </li>
+            ))}
         </ul>
       </StyledArea>
     </Layout>

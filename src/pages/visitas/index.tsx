@@ -46,7 +46,7 @@ const Visitas = () => {
             <big>
               Datas em <b>2023</b>
               <br />
-              <small>17/06, 16/09, 11/11</small>
+              <small>16/09, 18/11</small>
             </big>
             <br />
             VISITA GUIADA À CHÁCARA MÃE LUZIA
