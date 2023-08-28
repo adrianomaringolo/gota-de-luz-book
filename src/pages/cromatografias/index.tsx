@@ -94,7 +94,7 @@ const Cromatografias = () => (
         </p>
         <ul>
           {reports
-            .sort((a, b) => a.name < b.name)
+            .sort((a, b) => a.name.localeCompare(b.name))
             .map(({ name, url, cientificName }) => (
               <li>
                 <a href={url} target="_blank">

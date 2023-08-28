@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "export NODE_OPTIONS=--openssl-legacy-provider && next",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && next build",
+    "build": "next build",
     "start": "export NODE_OPTIONS=--openssl-legacy-provider && next start",
     "type-check": "tsc"
   },
