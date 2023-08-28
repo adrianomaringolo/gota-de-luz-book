@@ -9,7 +9,6 @@ const Produtos = () => {
   const [products, setProducts] = useState<any[]>([]);
   const [isSaving, setIsSaving] = useState<boolean>(false);
   const [selectedType, setSelectedType] = useState<string>("");
-  const [showUnavailable, setShowUnavailable] = useState<boolean>(false);
 
   const getProducts = async () =>
     setProducts(await ProductsService.getProducts());
@@ -38,12 +37,6 @@ const Produtos = () => {
   const changeAmount = (index: number, newAmount: number) => {
     let newProducts = [...products.filter((p) => p.available)];
     newProducts[index].amount = newAmount;
-    setProducts(newProducts);
-  };
-
-  const checkProduct = (index: number, checked: boolean) => {
-    let newProducts = [...products];
-    newProducts[index].available = checked;
     setProducts(newProducts);
   };
 

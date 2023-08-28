@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider && next",
+    "build:win": "set NODE_OPTIONS=--openssl-legacy-provider && next build",
     "dev:mac": "export NODE_OPTIONS=--openssl-legacy-provider && next",
     "build": "export NODE_OPTIONS=--openssl-legacy-provider && next build",
     "start": "export NODE_OPTIONS=--openssl-legacy-provider && next start",
