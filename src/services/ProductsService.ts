@@ -30,8 +30,15 @@ const saveProducts = async (products: any[]) => {
   }
 };
 
+const saveProduct = async (product: any) => {
+  await productsRef.doc(product.id).set({
+    ...product,
+  });
+};
+
 export const ProductsService = {
   saveProducts,
   getProducts,
   getProductsByType,
+  saveProduct,
 };
