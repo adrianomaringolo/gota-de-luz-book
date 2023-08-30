@@ -123,6 +123,7 @@ const Produtos = () => {
                             }}
                             type="number"
                             value={item.amount}
+                            style={{ minWidth: 80 }}
                           />
                           <button
                             className={`button is-medium is-success print-none ${
