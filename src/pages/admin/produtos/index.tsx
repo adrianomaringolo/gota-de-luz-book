@@ -95,7 +95,7 @@ const Produtos = () => {
                 {products
                   ?.sort((a, b) => a.name - b.name)
                   .filter((p) => p.type === selectedType)
-                  .map((item: any, index: number) => (
+                  .map((item: any) => (
                     <tr key={`${item.id}`} className="print-line">
                       <td className="print-none">{item.id}</td>
                       <td>
