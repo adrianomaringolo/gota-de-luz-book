@@ -73,8 +73,11 @@ const Produtos = () => {
             <option value="" disabled>
               - Selecione a categoria -
             </option>
+            <option value="all">- TODOS OS PRODUTOS -</option>
             {productTypes.map((type) => (
-              <option value={type.type}>{type.type}</option>
+              <option value={type.type} key={type.type}>
+                {type.type}
+              </option>
             ))}
           </select>
         </div>
@@ -94,7 +97,9 @@ const Produtos = () => {
               <tbody>
                 {products
                   ?.sort((a, b) => a.name - b.name)
-                  .filter((p) => p.type === selectedType)
+                  .filter(
+                    (p) => selectedType === "all" || p.type === selectedType
+                  )
                   .map((item: any) => (
                     <tr key={`${item.id}`} className="print-line">
                       <td className="print-none">{item.id}</td>
