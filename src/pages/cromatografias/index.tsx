@@ -64,6 +64,11 @@ const reports = [
     cientificName: "Cupressus sempervirens",
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Cupressus%20sempervirens.pdf?alt=media&token=2cd405d2-bb39-47f5-8778-a131a61f455f",
   },
+  {
+    name: "Malaleuca Branca",
+    cientificName: "Melaleuca armillaris",
+    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Melaleuca%20armillaris.pdf?alt=media&token=078c66c3-0e22-4e58-98f5-e38b4e3adde2",
+  },
 ];
 
 const Cromatografias = () => (
