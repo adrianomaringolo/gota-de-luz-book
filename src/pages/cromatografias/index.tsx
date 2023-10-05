@@ -64,11 +64,6 @@ const reports = [
     cientificName: "Cupressus sempervirens",
     url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Cupressus%20sempervirens.pdf?alt=media&token=2cd405d2-bb39-47f5-8778-a131a61f455f",
   },
-  {
-    name: "Niaouli",
-    cientificName: "Melaleuca quinquenervia",
-    url: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Melaleuca%20quinquenervia.pdf?alt=media&token=9c5fb8a0-9bd2-4f2b-9aeb-01185ae234cb",
-  },
 ];
 
 const Cromatografias = () => (
