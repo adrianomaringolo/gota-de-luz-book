@@ -38,12 +38,12 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Confire nosso novo hidrolato de canela?
+      Conhece nosso novo hidrolato de canela?
       <br />
       <br />
-      Um sabor delicioso, além de ter propriedades bactericidas e antifúngicas.
-      Excelente para fortalecer a imunidade e com a vantagem de ser extremamente
-      seguro para ser usado, inclusive para crianças.
+      Com um sabor delicioso, além de ter propriedades bactericidas e
+      antifúngicas. Excelente para fortalecer a imunidade e com a vantagem de
+      ser extremamente seguro para ser usado, inclusive para crianças.
       <br />
       <br />
       Confira nosso catálogo e aproveite!😉
