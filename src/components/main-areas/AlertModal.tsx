@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { CartService } from "services/CartService";
 
-const WARNING_KEY = "newoils-2sem23";
+const WARNING_KEY = "novo-hidrolato-canela";
 
 export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -38,12 +38,12 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Você já conhece nosso catálogo de óleos essenciais?
+      Confire nosso novo hidrolato de canela?
       <br />
       <br />
-      Nossos OEs são destilados das plantas cultivadas de forma orgânica na
-      Chácara Mãe Luzia. Temos OEs de cipreste, citronela, melaleuca e vários
-      outros!
+      Um sabor delicioso, além de ter propriedades bactericidas e antifúngicas.
+      Excelente para fortalecer a imunidade e com a vantagem de ser extremamente
+      seguro para ser usado, inclusive para crianças.
       <br />
       <br />
       Confira nosso catálogo e aproveite!😉
