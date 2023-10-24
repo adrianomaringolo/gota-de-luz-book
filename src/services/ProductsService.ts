@@ -22,6 +22,26 @@ const getProductsByType = async (type: string) => {
   return result;
 };
 
+const getProductById = async (id: string) => {
+  let result: any[] = [];
+  const snapshot = await productsRef.where("id", "==", id).get();
+
+  snapshot.forEach((doc) => {
+    result.push({ ...doc.data() });
+  });
+  return result[0];
+};
+
+const getProductByUrlName = async (urlName: string) => {
+  let result: any[] = [];
+  const snapshot = await productsRef.where("urlName", "==", urlName).get();
+
+  snapshot.forEach((doc) => {
+    result.push({ ...doc.data() });
+  });
+  return result[0];
+};
+
 const saveProducts = async (products: any[]) => {
   for (const product of products) {
     await productsRef.doc(product.id).set({
@@ -41,4 +61,6 @@ export const ProductsService = {
   getProducts,
   getProductsByType,
   saveProduct,
+  getProductById,
+  getProductByUrlName,
 };

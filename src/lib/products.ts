@@ -4,9 +4,9 @@ import { ProductType } from "interfaces";
 export const getAllProductsIds = () =>
   productTypes.map((productType: ProductType) => ({
     params: {
-      id: productType.id,
+      type: productType.id,
     },
   }));
 
-export const getProductData = (id: string) =>
-  productTypes.find((p) => p.id === id);
+export const getProductData = (type: string) =>
+  productTypes.find((p) => p.id === type);
