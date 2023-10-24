@@ -2,19 +2,13 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { ProductItem, ProductType } from "../../interfaces";
-import { getAllProductsIds, getProductData } from "lib/products";
+import React from "react";
 
 import styles from "styles/products.module.scss";
-import ProductItemDisplay from "components/products/ProductItemDisplay";
 import { ProductsService } from "services/ProductsService";
 import Layout from "components/Layout";
-import { StyledProductItemDisplay } from "components/products/StyledProductItemDisplay";
 
 const ProductItemDetails = ({ productData }: { productData: any }) => {
-  const [products, setProducts] = useState<any[]>([]);
-
   return (
     <>
       <Layout title={process.env.NEXT_PUBLIC_COMPANY_NAME}>
