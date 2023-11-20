@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { CartService } from "services/CartService";
 
-const WARNING_KEY = "newoils-2sem23";
+const WARNING_KEY = "black-friday23";
 
 export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -25,7 +25,7 @@ export const AlertModal: React.FC = () => {
     <SweetAlert
       show={showModal}
       showCancel={false}
-      title="Novas opções de óleos essenciais"
+      title="Semana de ofertas 🤑"
       onConfirm={closeWarningModal}
       customButtons={
         <React.Fragment>
@@ -38,13 +38,9 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Você já conhece nosso catálogo de óleos essenciais?
-      <br />
-      <br />
-      Nossos OEs são destilados das plantas cultivadas de forma orgânica na
-      Chácara Mãe Luzia. Temos OEs de cipreste, citronela, melaleuca e vários
-      outros!
-      <br />
+      Aproveite nossa semana de ofertas para garantir seus kits (dois sprays
+      energéticos, dois sais de banho ou um spray e um sais de banho) por um
+      preço espcial.
       <br />
       Confira nosso catálogo e aproveite!😉
     </SweetAlert>

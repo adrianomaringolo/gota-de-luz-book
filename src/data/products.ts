@@ -1,14 +1,14 @@
 import { ProductType } from "../interfaces";
 
 export const productTypes: ProductType[] = [
-  // {
-  //   id: "kits",
-  //   type: "Kits de Dia das Mães",
-  //   description:
-  //     "Kits com preços especiais para você presentear sua mãe e ainda ajudar muitas famílias assistidas pelos trabalhos da Morada.",
-  //   image: "background-mothers.jpg",
-  //   seal: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-mothers.png?alt=media&token=b9a71bb2-8c38-4539-9547-454466f2b006",
-  // },
+  {
+    id: "kits",
+    type: "Semana de ofertas",
+    description:
+      "Kits com preços especiais para você aproveitar nossa semana de ofertas",
+    image: "background-ofertas.jpg",
+    seal: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-semanaofertas.png?alt=media&token=576422fb-912b-4602-9b44-2576e5d9e077",
+  },
   {
     id: "sabonetes",
     type: "Sabonetes artesanais",
