@@ -17,11 +17,11 @@ const Produtos = () => {
     getProducts();
   }, []);
 
-  const saveProducts = async () => {
+  const saveProduct = async (product: any) => {
     setIsSaving(true);
-    await ProductsService.saveProducts(products);
+    await ProductsService.saveProduct(product);
     setIsSaving(false);
-    toast.success("Produtos atualizados!");
+    toast.success("Produto atualizado!");
   };
 
   const changeAvailability = async (product: any, available: boolean) => {
@@ -34,9 +34,9 @@ const Produtos = () => {
     toast.success("Produtos atualizados!");
   };
 
-  const changeAmount = (index: number, newAmount: number) => {
-    let newProducts = [...products.filter((p) => p.available)];
-    newProducts[index].amount = newAmount;
+  const changeAmount = (id: string, newAmount: number) => {
+    let newProducts = [...products];
+    newProducts.find((p) => p.id === id).amount = newAmount;
     setProducts(newProducts);
   };
 
@@ -44,12 +44,12 @@ const Produtos = () => {
     <AdminLayout>
       <section>
         <h1 className="is-size-2">Produtos</h1>
-        <button
+        {/* <button
           className="button is-small is-info print-none"
           onClick={() => window.print()}
         >
           Imprimir
-        </button>
+        </button> */}
         <div className="print-none mb-5 notification is-link is-size-6">
           <p>
             Defina abaixo a disponibilidade para venda e a quantidade de cada
@@ -73,13 +73,16 @@ const Produtos = () => {
             <option value="" disabled>
               - Selecione a categoria -
             </option>
+            <option value="all">- TODOS OS PRODUTOS -</option>
             {productTypes.map((type) => (
-              <option value={type.type}>{type.type}</option>
+              <option value={type.type} key={type.type}>
+                {type.type}
+              </option>
             ))}
           </select>
         </div>
 
-        {products && products.length && (
+        {products && products.length > 0 && (
           <div className="table-container">
             <table className="table is-bordered is-striped is-hoverable">
               <thead className="print-line">
@@ -94,8 +97,10 @@ const Produtos = () => {
               <tbody>
                 {products
                   ?.sort((a, b) => a.name - b.name)
-                  .filter((p) => p.type === selectedType)
-                  .map((item: any, index: number) => (
+                  .filter(
+                    (p) => selectedType === "all" || p.type === selectedType
+                  )
+                  .map((item: any) => (
                     <tr key={`${item.id}`} className="print-line">
                       <td className="print-none">{item.id}</td>
                       <td>
@@ -115,14 +120,26 @@ const Produtos = () => {
                         </td>
                       )} */}
                       <td className="print-none">
-                        <input
-                          className="input is-medium mr-3"
-                          onChange={(event) => {
-                            changeAmount(index, Number(event.target.value));
-                          }}
-                          type="number"
-                          value={item.amount}
-                        />
+                        <div className="is-flex">
+                          <input
+                            className="input is-medium mr-3"
+                            onChange={(event) => {
+                              changeAmount(item.id, Number(event.target.value));
+                            }}
+                            type="number"
+                            value={item.amount}
+                            style={{ minWidth: 80 }}
+                          />
+                          <button
+                            className={`button is-medium is-success print-none ${
+                              isSaving ? "is-loading" : ""
+                            }`}
+                            disabled={isSaving}
+                            onClick={() => saveProduct(item)}
+                          >
+                            Salvar
+                          </button>
+                        </div>
                       </td>
                       <td className="print-none">
                         {item.available ? (
@@ -157,16 +174,6 @@ const Produtos = () => {
             </table>
           </div>
         )}
-
-        <button
-          className={`button is-large is-primary print-none ${
-            isSaving ? "is-loading" : ""
-          }`}
-          disabled={isSaving}
-          onClick={saveProducts}
-        >
-          Salvar
-        </button>
       </section>
     </AdminLayout>
   );

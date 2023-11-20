@@ -40,7 +40,7 @@ export const AlertModal: React.FC = () => {
     >
       Aproveite nossa semana de ofertas para garantir seus kits (dois sprays
       energéticos, dois sais de banho ou um spray e um sais de banho) por um
-      preço espcial.
+      preço especial.
       <br />
       Confira nosso catálogo e aproveite!😉
     </SweetAlert>
