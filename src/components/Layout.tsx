@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import Head from "next/head";
 import { Navbar } from "./layout/Navbar";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
 
 type Props = {
   children?: ReactNode;
@@ -34,6 +35,7 @@ const Layout = ({ title = "This is the default title", children }: Props) => (
       }}
     />
 
+    <Analytics />
     {children}
   </div>
 );
