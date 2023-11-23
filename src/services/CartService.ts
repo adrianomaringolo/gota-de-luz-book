@@ -8,6 +8,16 @@ import toast from "react-hot-toast";
 
 const ordersRef = db.collection("orders");
 
+const orderMailList = [
+  "adrianomaringolo@gmail.com", // Adriano
+  "gotadeluzpedido@gmail.com", // Cris
+  "gotadeluzdespacho@gmail.com", // Thais
+  "danipadovani@uol.com.br", // Daniela
+  "msmattar@hotmail.com", // Marcelo
+  "thaisab@gmail.com", // Thaisa
+  "imediatocontabil@gmail.com", // Ana Claudia
+];
+
 export interface CartItemType extends ProductItem {
   amount?: number;
   type: string;
@@ -134,7 +144,7 @@ const saveOrder = async (cart: any, contactInfo: any) => {
     {
       order_number: Number(lastOrder.orderId) + 1,
       client_name: contactInfo.name,
-      mail_list: `adrianomaringolo@gmail.com,gotadeluzpedido@gmail.com,abia.gotadecura@gmail.com,gotadeluzdespacho@gmail.com,danipadovani@uol.com.br,msmattar@hotmail.com,thaisab@gmail.com,imediatocontabil@gmail.com`,
+      mail_list: orderMailList.join(","),
     },
     "JAGvYZKyVMK9JdME2"
   );
