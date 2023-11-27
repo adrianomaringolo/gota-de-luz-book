@@ -1,14 +1,14 @@
 import { ProductType } from "../interfaces";
 
 export const productTypes: ProductType[] = [
-  {
-    id: "kits",
-    type: "Semana de ofertas",
-    description:
-      "Kits com preços especiais para você aproveitar nossa semana de ofertas",
-    image: "background-ofertas.jpg",
-    seal: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-semanaofertas.png?alt=media&token=576422fb-912b-4602-9b44-2576e5d9e077",
-  },
+  // {
+  //   id: "kits",
+  //   type: "Semana de ofertas",
+  //   description:
+  //     "Kits com preços especiais para você aproveitar nossa semana de ofertas",
+  //   image: "background-ofertas.jpg",
+  //   seal: "https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-semanaofertas.png?alt=media&token=576422fb-912b-4602-9b44-2576e5d9e077",
+  // },
   {
     id: "sabonetes",
     type: "Sabonetes artesanais",

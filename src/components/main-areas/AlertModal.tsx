@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { CartService } from "services/CartService";
 
-const WARNING_KEY = "black-friday23";
+const WARNING_KEY = "natal-23";
 
 export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -25,7 +25,7 @@ export const AlertModal: React.FC = () => {
     <SweetAlert
       show={showModal}
       showCancel={false}
-      title="Semana de ofertas 🤑"
+      title="Natal está chegando 🎄"
       onConfirm={closeWarningModal}
       customButtons={
         <React.Fragment>
@@ -38,9 +38,8 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Aproveite nossa semana de ofertas para garantir seus kits (dois sprays
-      energéticos, dois sais de banho ou um spray e um sais de banho) por um
-      preço especial.
+      Compre um presente especial nesse Natal e leve os aromas da cura para
+      alguém querido!
       <br />
       Confira nosso catálogo e aproveite!😉
     </SweetAlert>
