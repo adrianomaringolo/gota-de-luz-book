@@ -73,4 +73,10 @@ export const productTypes: ProductType[] = [
       "Produtos feitos à base de óleos essenciais e álcool de cereais. Livre de essências sintéticas.",
     image: "background-5.jpg",
   },
+  {
+    id: "acessorios",
+    type: "Acessórios",
+    description: "",
+    image: "background-ofertas.jpg",
+  },
 ];
