@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { CartService } from "services/CartService";
 
-const WARNING_KEY = "natal-23";
+const WARNING_KEY = "recesso-final-2023";
 
 export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -25,7 +25,7 @@ export const AlertModal: React.FC = () => {
     <SweetAlert
       show={showModal}
       showCancel={false}
-      title="Natal está chegando 🎄"
+      title="🏖️ Recesso de final de ano!"
       onConfirm={closeWarningModal}
       customButtons={
         <React.Fragment>
@@ -38,8 +38,14 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Compre um presente especial nesse Natal e leve os aromas da cura para
-      alguém querido!
+      Estaremos em recesso a partir de 22 de dezembro, e novos pedidos serão
+      atendidos a partir de 02 de janeiro. <br />
+      <br />
+      Agradecemos pela compreensão e desejamos um 2024 cheio de realizações!
+      <br />
+      <br />
+      Até mais e boas festas! 🥳
+      <br />
       <br />
       Confira nosso catálogo e aproveite!😉
     </SweetAlert>
