@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import { CartService } from "services/CartService";
 
-const WARNING_KEY = "recesso-final-2023";
+const WARNING_KEY = "2024-novo-hidrolato";
 
 export const AlertModal: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -25,7 +25,7 @@ export const AlertModal: React.FC = () => {
     <SweetAlert
       show={showModal}
       showCancel={false}
-      title="🏖️ Recesso de final de ano!"
+      title="🆕 Novidade! Temos hidrolato de erva baleeira"
       onConfirm={closeWarningModal}
       customButtons={
         <React.Fragment>
@@ -38,14 +38,9 @@ export const AlertModal: React.FC = () => {
         </React.Fragment>
       }
     >
-      Estaremos em recesso a partir de 22 de dezembro, e novos pedidos serão
-      atendidos a partir de 02 de janeiro. <br />
+      Temos uma novidade no nosso catálogo!
       <br />
-      Agradecemos pela compreensão e desejamos um 2024 cheio de realizações!
-      <br />
-      <br />
-      Até mais e boas festas! 🥳
-      <br />
+      Aproveite para pedir nosso novo hidrolato de erva baleeira.
       <br />
       Confira nosso catálogo e aproveite!😉
     </SweetAlert>
