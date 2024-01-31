@@ -51,13 +51,15 @@ const Product = ({ productData }: { productData: ProductType }) => {
               />
             </p>
             <div className={styles.productItems}>
-              {products?.map((item: ProductItem) => (
-                <ProductItemDisplay
-                  item={item}
-                  type={productData.type}
-                  key={item.id}
-                />
-              ))}
+              {products
+                ?.filter((item: ProductItem) => !item.hidden)
+                .map((item: ProductItem) => (
+                  <ProductItemDisplay
+                    item={item}
+                    type={productData.type}
+                    key={item.id}
+                  />
+                ))}
             </div>
             <Link href="/#produtos">
               <h3 className="link">&lt;&lt; Voltar para início</h3>

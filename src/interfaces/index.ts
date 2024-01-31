@@ -25,4 +25,5 @@ export interface ProductItem {
   available?: boolean;
   seal?: string;
   optionsSet?: OptionsSetItem[];
+  hidden?: boolean;
 }
