@@ -1,4 +1,4 @@
-import { ProductItem } from "interfaces";
+import { ProductItem } from "interfaces/products";
 import React, { useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
 import styled from "styled-components";

@@ -2,29 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "~react-image-gallery/styles/css/image-gallery.css";
+@import '~react-image-gallery/styles/css/image-gallery.css';
 
 @font-face {
-  font-family: "AmpleSoft";
-  src: url("/fonts/AmpleSoftPro-Light.ttf");
+  font-family: 'AmpleSoft';
+  src: url('/fonts/AmpleSoftPro-Light.ttf');
   font-weight: 300;
 }
 
 @font-face {
-  font-family: "AmpleSoft";
-  src: url("/fonts/AmpleSoftPro.ttf");
+  font-family: 'AmpleSoft';
+  src: url('/fonts/AmpleSoftPro.ttf');
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "AmpleSoft";
-  src: url("/fonts/AmpleSoftPro-Bold.ttf");
+  font-family: 'AmpleSoft';
+  src: url('/fonts/AmpleSoftPro-Bold.ttf');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "Amarillo";
-  src: url("/fonts/Amarillo.ttf");
+  font-family: 'Amarillo';
+  src: url('/fonts/Amarillo.ttf');
   font-weight: 400;
 }
 
@@ -135,7 +135,7 @@ h2.fancy-title {
   color: #444;
 }
 .hvr-underline-from-center:before {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   left: 51%;
@@ -224,4 +224,17 @@ tr {
   .print-only-table {
     display: table-cell;
   }
+}
+
+.cta-button {
+  padding: 2rem;
+  margin: 1rem 0;
+  display: inline-block;
+  background-color: #f3eaf3;
+  transition: all 0.4s;
+}
+.cta-button:hover {
+  color: #fff;
+  background-color: #ac8fac;
+  text-decoration: none;
 }

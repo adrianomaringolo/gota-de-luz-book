@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { ProductItem, ProductType } from "../../interfaces";
+import { ProductItem, ProductType } from "../../interfaces/products";
 import { getAllProductsIds, getProductData } from "lib/products";
 
 import styles from "styles/products.module.scss";

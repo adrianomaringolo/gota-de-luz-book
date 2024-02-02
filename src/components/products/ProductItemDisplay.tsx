@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDisclosure } from "utils/hooks/useDisclosure";
-import { ProductItem } from "../../interfaces";
+import { ProductItem } from "../../interfaces/products";
 import { CartService } from "../../services/CartService";
 import { formatCurrency } from "../../utils/format";
 import { OptionsSelectModal } from "./OptionsSelectModal";

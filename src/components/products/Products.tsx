@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductType } from "../../interfaces";
+import { ProductType } from "../../interfaces/products";
 
 import { productTypes } from "../../data/products";
 
