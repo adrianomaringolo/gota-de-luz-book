@@ -21,7 +21,6 @@ const sendNewOrderEmail = async (
   )
 }
 
-
 const sendNewEnrollmentEmail = async (
   visitDates: string[],
   clientName: string,
@@ -34,11 +33,12 @@ const sendNewEnrollmentEmail = async (
       title: `[Gota de Cura] 🌟 Nova inscrição`,
       html_message: `<p style="font-size: 20px">Nova inscrição para visitação realizada pelo site!</p>
 
-      <p>Data: ${visitDates.map(date => formatDateUTC(date)).join(', ')}</p>
+      <p>Data: ${visitDates.map((date) => formatDateUTC(date)).join(', ')}</p>
       <p>Nome: ${clientName}</p>
       
       <hr/>
-      Para acessar mais informações acesse <a href="https://www.gotadecura.com.br/admin/visitas">gotadecura.com.br/admin/visitas</a>`      mail_list: mailList.join(','),
+      Para acessar mais informações acesse <a href="https://www.gotadecura.com.br/admin/visitas">gotadecura.com.br/admin/visitas</a>`,
+      mail_list: mailList.join(','),
     },
     'JAGvYZKyVMK9JdME2',
   )
@@ -46,5 +46,5 @@ const sendNewEnrollmentEmail = async (
 
 export const EmailSender = {
   sendNewOrderEmail,
-  sendNewEnrollmentEmail
+  sendNewEnrollmentEmail,
 }
