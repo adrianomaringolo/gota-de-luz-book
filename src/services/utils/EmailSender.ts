@@ -20,6 +20,30 @@ const sendNewOrderEmail = async (
   )
 }
 
+
+const sendNewEnrollmentEmail = async (
+  visitDates: string[],
+  clientName: string,
+  mailList: string[],
+): Promise<void> => {
+  emailjs.send(
+    'service_e229fy4',
+    'gota-de-cura',
+    {
+      title: `[Gota de Cura] 🌟 Nova inscrição`,
+      html_message: `<p style="font-size: 20px">Nova inscrição para visitação realizada pelo site!</p>
+
+      <p>Data: ${visitDates}</p>
+      <p>Nome: ${clientName}</p>
+      
+      <hr/>
+      Para acessar mais informações acesse <a href="https://www.gotadecura.com.br/admin/visitas">gotadecura.com.br/admin/visitas</a>`      mail_list: mailList.join(','),
+    },
+    'JAGvYZKyVMK9JdME2',
+  )
+}
+
 export const EmailSender = {
   sendNewOrderEmail,
+  sendNewEnrollmentEmail
 }
