@@ -15,6 +15,7 @@ export const BasicModal: React.FC<ModalProps> = ({ open, children }) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          backgroundColor: 'rgba(0, 0, 0, 0.75)',
         },
         content: {
           width: 'fit-content',
