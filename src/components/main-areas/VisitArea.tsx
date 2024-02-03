@@ -1,6 +1,7 @@
 import cn from 'classnames'
 import { VisitCTA } from 'components/visitas/VisitCTA'
 import { VisitListDisplayer } from 'components/visitas/VisitListDisplayer'
+import Link from 'next/link'
 import styles from './../../styles/layout.module.scss'
 
 export const VisitArea: React.FC = () => {
@@ -36,7 +37,10 @@ export const VisitArea: React.FC = () => {
           </big>
         </p>
 
-        <div className="my-5 flex justify-center">
+        <div className="my-5 flex justify-center gap-4">
+          <Link href="/visitas">
+            <div className="cta-button hover:cursor-pointer">Veja mais detalhes</div>
+          </Link>
           <VisitCTA />
         </div>
       </div>
