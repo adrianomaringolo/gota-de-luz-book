@@ -28,12 +28,10 @@ const Inscricao = () => {
   const [showSuccess, setShowSuccess] = useState(false)
 
   const openConfirmation = () => {
-    console.log(getValues())
     setShowConfirmation(true)
   }
 
   const saveEnrollment = async () => {
-    debugger
     const data = getValues()
     for (const date of selectedDates) {
       await VisitsService.addEnrollmentToVisit(date, data)
@@ -94,7 +92,7 @@ const Inscricao = () => {
                   label="Celular"
                   placeholder="(99) 99999-9999"
                   {...register('cellphone', { required: true })}
-                  helperText="Nossa equipe entrará em contato com você por esse número. DDD + número do celular"
+                  helperText="Nossa equipe entrará em contato com você por esse número por <b>WhatsApp</b>. DDD + número do celular"
                 />
                 <InputField
                   required
