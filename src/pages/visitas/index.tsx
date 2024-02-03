@@ -89,7 +89,7 @@ const Visitas = () => {
           </p>
 
           <p>
-            <b>O valor é de R$ 90,00 por pessoa!</b>
+            <b>O valor é de R$ 110,00 por pessoa!</b>
           </p>
 
           <p className="border-t pt-4 mt-4 mb-4 italic">
