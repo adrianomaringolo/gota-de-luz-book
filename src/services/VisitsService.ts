@@ -17,7 +17,7 @@ const addEnrollmentToVisit = async (visitId: string, enrollmentData: any) => {
   const visit = await visitsRef.doc(visitId).get()
   const visitData = visit.data()
   const enrollments = visitData?.enrollments ?? []
-  enrollments.push({...enrollmentData, createdAt: new Date().toISOString()})
+  enrollments.push({ ...enrollmentData, createdAt: new Date().toISOString() })
 
   return await visitsRef.doc(visitId).update({
     enrollments,

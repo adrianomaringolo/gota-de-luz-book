@@ -1,4 +1,5 @@
 import emailjs from '@emailjs/browser'
+import { formatDateUTC } from 'utils/format'
 
 const sendNewOrderEmail = async (
   orderNumber: number,
@@ -33,7 +34,7 @@ const sendNewEnrollmentEmail = async (
       title: `[Gota de Cura] 🌟 Nova inscrição`,
       html_message: `<p style="font-size: 20px">Nova inscrição para visitação realizada pelo site!</p>
 
-      <p>Data: ${visitDates}</p>
+      <p>Data: ${visitDates.map(date => formatDateUTC(date)).join(', ')}</p>
       <p>Nome: ${clientName}</p>
       
       <hr/>
