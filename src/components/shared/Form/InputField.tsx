@@ -1,4 +1,4 @@
-import { ChangeEvent, InputHTMLAttributes, ReactNode, forwardRef } from 'react'
+import { forwardRef, InputHTMLAttributes, ReactNode } from 'react'
 import { cn } from 'utils/styling'
 
 export interface TextInputGroupProps extends InputHTMLAttributes<HTMLInputElement> {

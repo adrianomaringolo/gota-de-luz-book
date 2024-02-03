@@ -1,9 +1,7 @@
-import styles from './../../styles/layout.module.scss'
 import cn from 'classnames'
-import { Carousel } from 'react-responsive-carousel'
-import Link from 'next/link'
-import { VisitListDisplayer } from 'components/visitas/VisitListDisplayer'
 import { VisitCTA } from 'components/visitas/VisitCTA'
+import { VisitListDisplayer } from 'components/visitas/VisitListDisplayer'
+import styles from './../../styles/layout.module.scss'
 
 export const VisitArea: React.FC = () => {
   return (

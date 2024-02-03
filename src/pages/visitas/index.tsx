@@ -1,13 +1,9 @@
 import Layout from 'components/Layout'
+import { VisitCTA } from 'components/visitas/VisitCTA'
+import { VisitListDisplayer } from 'components/visitas/VisitListDisplayer'
 import ImageGallery from 'react-image-gallery'
 import styled from 'styled-components'
 import { images, testimony } from '../../lib/data'
-import { useEffect, useState } from 'react'
-import { VisitsService } from 'services/VisitsService'
-import { formatDate, formatDateLong } from 'utils/format'
-import { Visit } from 'interfaces/visits'
-import { VisitListDisplayer } from 'components/visitas/VisitListDisplayer'
-import { VisitCTA } from 'components/visitas/VisitCTA'
 
 const StyledVisitasArea = styled.section`
   padding: 80px 10px;

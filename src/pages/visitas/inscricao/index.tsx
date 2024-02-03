@@ -1,15 +1,14 @@
 import Layout from 'components/Layout'
 import { CheckboxField, FormNumberedArea, InputField } from 'components/shared'
 import Button from 'components/shared/basic/Button'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { BasicModal } from 'components/shared/Layout/BasicModal'
+import { useRouter } from 'next/router'
+import { ChangeEvent, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
-import { VisitsService } from 'services/VisitsService'
 import { useGetVisits } from 'services/hooks'
+import { VisitsService } from 'services/VisitsService'
 import { formatDateUTC } from 'utils/format'
-
-import { useRouter } from 'next/router'
-import { BasicModal } from 'components/shared/Layout/BasicModal'
 
 type InscricaoData = {
   name: string
@@ -23,7 +22,7 @@ const Inscricao = () => {
   const router = useRouter()
 
   const [selectedDates, setSelectedDates] = useState<string[]>([])
-  const { register, handleSubmit, getValues } = useForm<InscricaoData>()
+  const { register, getValues } = useForm<InscricaoData>()
 
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
