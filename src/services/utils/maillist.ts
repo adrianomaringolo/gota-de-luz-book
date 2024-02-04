@@ -10,4 +10,6 @@ export const orderMailList = [
 
 export const visitMailList = [
   'adrianomaringolo@gmail.com', // Adriano
+  'msmattar@hotmail.com', // Marcelo
+  'kellycgbenz@gmail.com', // Kelly
 ]
