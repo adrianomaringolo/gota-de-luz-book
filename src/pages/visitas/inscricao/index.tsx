@@ -2,27 +2,24 @@ import Layout from 'components/Layout'
 import { CheckboxField, FormNumberedArea, InputField } from 'components/shared'
 import Button from 'components/shared/basic/Button'
 import { BasicModal } from 'components/shared/Layout/BasicModal'
+import { InscricaoData } from 'interfaces/visits'
 import { useRouter } from 'next/router'
 import { ChangeEvent, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { useGetVisits } from 'services/hooks'
+import { EmailSender } from 'services/utils/EmailSender'
+import { visitMailList } from 'services/utils/maillist'
 import { VisitsService } from 'services/VisitsService'
 import { formatDateUTC } from 'utils/format'
-
-type InscricaoData = {
-  name: string
-  cellphone: string
-  email: string
-  companions: number
-  lastVisit: string
-}
 
 const Inscricao = () => {
   const router = useRouter()
 
   const [selectedDates, setSelectedDates] = useState<string[]>([])
   const { register, getValues } = useForm<InscricaoData>()
+
+  const [isSaving, setIsSaving] = useState(false)
 
   const [showConfirmation, setShowConfirmation] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
@@ -33,11 +30,15 @@ const Inscricao = () => {
 
   const saveEnrollment = async () => {
     const data = getValues()
+    setIsSaving(true)
     for (const date of selectedDates) {
       await VisitsService.addEnrollmentToVisit(date, data)
     }
 
+    EmailSender.sendNewEnrollmentEmail(selectedDates, data, visitMailList)
+
     toast.success('Inscrição realizada com sucesso!')
+    setIsSaving(false)
 
     setShowConfirmation(false)
     setShowSuccess(true)
@@ -133,20 +134,22 @@ const Inscricao = () => {
         <div className=" border p-5 rounded flex flex-col gap-2 items-baseline">
           <p>Por favor, confirme as informações abaixo!</p>
 
-          <p>
+          <p className="pl-2">
             <b>Datas selecionadas: </b>
             {selectedDates.map((date) => formatDateUTC(date)).join(', ')}
           </p>
-          <p>
+          <p className="pl-2">
             <b>Nome completo:</b> {getValues().name}
           </p>
-          <p>
+          <p className="pl-2">
             <b>Celular:</b> {getValues().cellphone}
           </p>
-          <p>
+          <p className="pl-2">
             <b>Email:</b> {getValues().email}
           </p>
-          <p className="border-t pt-2">Acompanhantes: {getValues().companions}</p>
+          <p className="border-t pt-2 pl-2">
+            <b>Acompanhantes:</b> {getValues().companions}
+          </p>
 
           <div className="flex justify-end gap-2">
             <Button
@@ -155,7 +158,9 @@ const Inscricao = () => {
             >
               Corrigir informações
             </Button>
-            <Button onClick={() => saveEnrollment()}>Confirmar</Button>
+            <Button onClick={() => saveEnrollment()} disabled={isSaving}>
+              {isSaving ? 'Salvando...' : 'Confirmar'}
+            </Button>
           </div>
         </div>
       </BasicModal>

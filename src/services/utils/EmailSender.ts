@@ -1,4 +1,5 @@
 import emailjs from '@emailjs/browser'
+import { InscricaoData } from 'interfaces/visits'
 import { formatDateUTC } from 'utils/format'
 
 const sendNewOrderEmail = async (
@@ -23,21 +24,25 @@ const sendNewOrderEmail = async (
 
 const sendNewEnrollmentEmail = async (
   visitDates: string[],
-  clientName: string,
+  enrollmentData: InscricaoData,
   mailList: string[],
 ): Promise<void> => {
   emailjs.send(
     'service_e229fy4',
     'gota-de-cura',
     {
-      title: `[Gota de Cura] 🌟 Nova inscrição`,
-      html_message: `<p style="font-size: 20px">Nova inscrição para visitação realizada pelo site!</p>
+      title: `[Gota de Cura] 🌟 Nova inscrição para visitação`,
+      html_message: `<p style="font-size: 20px;margin-bottom: 20px;font-weight: bold">🌟 Nova inscrição para visitação realizada pelo site!</p>
 
-      <p>Data: ${visitDates.map((date) => formatDateUTC(date)).join(', ')}</p>
-      <p>Nome: ${clientName}</p>
+      <p><b>Data(s)</b>: ${visitDates.map((date) => formatDateUTC(date)).join(', ')}</p>
+      <p><b>Nome</b>: ${enrollmentData.name}</p>
+      <p><b>Celular</b>: ${enrollmentData.cellphone}</p>
+      <p><b>Email</b>: ${enrollmentData.email}</p>
+      <p><b>Acompanhantes</b>: ${enrollmentData.companions}</p>
+      <p><b>Última visita</b>: ${enrollmentData.lastVisit}</p>
       
       <hr/>
-      Para acessar mais informações acesse <a href="https://www.gotadecura.com.br/admin/visitas">gotadecura.com.br/admin/visitas</a>`,
+      Para acessar as informações acesse <a href="https://www.gotadecura.com.br/admin/visitas">gotadecura.com.br/admin/visitas</a>`,
       mail_list: mailList.join(','),
     },
     'JAGvYZKyVMK9JdME2',

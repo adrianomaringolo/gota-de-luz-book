@@ -1,21 +1,12 @@
 import PubSub from 'pubsub-js'
+import toast from 'react-hot-toast'
 import { ProductItem } from '../interfaces/products'
 import { db } from './../utils/firebase'
 import { ProductsService } from './ProductsService'
-import toast from 'react-hot-toast'
 import { EmailSender } from './utils/EmailSender'
+import { orderMailList } from './utils/maillist'
 
 const ordersRef = db.collection('orders')
-
-const orderMailList = [
-  'adrianomaringolo@gmail.com', // Adriano
-  'gotadeluzpedido@gmail.com', // Cris
-  'gotadeluzdespacho@gmail.com', // Thais
-  'danipadovani@uol.com.br', // Daniela
-  'msmattar@hotmail.com', // Marcelo
-  'thaisab@gmail.com', // Thaisa
-  'imediatocontabil@gmail.com', // Ana Claudia
-]
 
 export interface CartItemType extends ProductItem {
   amount?: number
