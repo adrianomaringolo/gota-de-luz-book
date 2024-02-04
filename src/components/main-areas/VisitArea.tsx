@@ -37,7 +37,7 @@ export const VisitArea: React.FC = () => {
           </big>
         </p>
 
-        <div className="my-5 flex justify-center gap-4">
+        <div className="my-5 flex flex-wrap  justify-center gap-4">
           <Link href="/visitas">
             <div className="cta-button hover:cursor-pointer">Veja mais detalhes</div>
           </Link>
