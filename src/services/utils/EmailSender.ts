@@ -49,7 +49,37 @@ const sendNewEnrollmentEmail = async (
   )
 }
 
+const sendEnrollmentGreetingEmail = async (
+  visitorName: string,
+  mailList: string[],
+): Promise<void> => {
+  emailjs.send(
+    'service_e229fy4',
+    'gota-de-cura',
+    {
+      title: `[Gota de Cura] ${visitorName}, sua inscrição foi realizada 😉`,
+      html_message: `
+      <div style="font-size: 18px">
+      <p style="font-weight:bold;font-size:22px">${visitorName}, agradecemos pela sua inscrição! 🎉</p>
+      <p>Ficaremos muito felizes em te receber na Chácara da Mãe Luzia e sua presença vai perfurmar ainda mais nossos canteiros!</p>
+      <p style="font-weight: bold">Em breve, um de nossos voluntários vai entrar em contato com você para acertar os detalhes!</p>
+      <p>Até lá, se quiser ver mais sobre a visitação, ver fotos e depoimentos de quem já foi, acesse nossa página: <a href="https://www.gotadecura.com.br/visitas">gotadecura.com.br/visitas</a> e nos acompanhe pelo <a href="https://www.instagram.com/gotadecura_artesanais/">Instagram</a>!</p>
+      <p style="background-color: #fbffc0; padding: 20px; border-radius: 20px; font-size: 14px; margin-top: 50px; font-style: italic; text-align: left">
+      <b>Importante:</b><br/><br/>
+      ⚠️ Sua pré-reserva e dos acompanhantes está feita através do preenchimento do formulário!<br/><br/>
+      ⚠️ Mas a garantia da vaga se dá após o a confirmação e o pagamento da taxa.<br/><br/>
+      ⚠️ A programação se inicia pontualmente às 8h, com encerramento às 12h.<br/><br/>
+      ⚠️ O deslocamento é por conta de cada um. Após fecharmos o grupo, passaremos mais detalhes e orientações.<br/><br/>
+      ⚠️ O valor é de R$ 110,00 por pessoa</p>
+      <p style="margin-top: 50px">Atenciosamente,<br/>Equipe Gota de Cura</p></div>`,
+      mail_list: mailList.join(','),
+    },
+    'JAGvYZKyVMK9JdME2',
+  )
+}
+
 export const EmailSender = {
   sendNewOrderEmail,
   sendNewEnrollmentEmail,
+  sendEnrollmentGreetingEmail,
 }

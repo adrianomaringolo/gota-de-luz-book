@@ -36,6 +36,7 @@ const Inscricao = () => {
     }
 
     EmailSender.sendNewEnrollmentEmail(selectedDates, data, visitMailList)
+    EmailSender.sendEnrollmentGreetingEmail(data.name.split(' ')[0], [data.email])
 
     toast.success('Inscrição realizada com sucesso!')
     setIsSaving(false)
