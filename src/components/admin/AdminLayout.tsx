@@ -82,7 +82,7 @@ const AdminLayout = ({
 
             <div className="navbar-end">
               <div className="navbar-item">
-                <p className="mr-3">Olá {user?.name}!</p>
+                <p className="mr-3">{user?.name}</p>
                 <div className="buttons">
                   <a className="button is-danger" onClick={logout}>
                     Sair
