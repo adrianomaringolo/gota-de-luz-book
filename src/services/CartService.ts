@@ -3,6 +3,7 @@ import toast from 'react-hot-toast'
 import { ProductItem } from '../interfaces/products'
 import { db } from './../utils/firebase'
 import { ProductsService } from './ProductsService'
+import { UsersService } from './UsersService'
 import { EmailSender } from './utils/EmailSender'
 import { orderMailList } from './utils/maillist'
 
@@ -172,8 +173,8 @@ const getOrderById = async (orderId: number) => {
 }
 
 const editOrderStatus = async (orderItem: any, newStatus: string) => {
-  const userLS = localStorage.getItem('adminLogged')
-    ? JSON.parse(localStorage.getItem('adminLogged') || '')
+  const userLS = localStorage.getItem(UsersService.LOGGED_USER_KEY)
+    ? JSON.parse(localStorage.getItem(UsersService.LOGGED_USER_KEY) || '')
     : undefined
 
   const newData = {
@@ -194,8 +195,8 @@ const editOrderStatus = async (orderItem: any, newStatus: string) => {
 }
 
 const addCommentToOrder = async (orderItem: any, newComment: string) => {
-  const userLS = localStorage.getItem('adminLogged')
-    ? JSON.parse(localStorage.getItem('adminLogged') || '')
+  const userLS = localStorage.getItem(UsersService.LOGGED_USER_KEY)
+    ? JSON.parse(localStorage.getItem(UsersService.LOGGED_USER_KEY) || '')
     : undefined
 
   return await ordersRef.doc(orderItem.id).update({

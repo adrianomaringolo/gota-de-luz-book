@@ -1,40 +1,41 @@
-import React, { ReactNode, useEffect, useState } from "react";
-import Head from "next/head";
-import { useRouter } from "next/dist/client/router";
-import { Toaster } from "react-hot-toast";
-import Link from "next/link";
+import { useRouter } from 'next/dist/client/router'
+import Head from 'next/head'
+import Link from 'next/link'
+import React, { ReactNode, useEffect, useState } from 'react'
+import { Toaster } from 'react-hot-toast'
+import { UsersService } from 'services/UsersService'
 
 type Props = {
-  children?: ReactNode;
-  title?: string;
-};
+  children?: ReactNode
+  title?: string
+}
 
 const AdminLayout = ({
   title = `Admin - ${process.env.NEXT_PUBLIC_COMPANY_NAME}`,
   children,
 }: Props) => {
-  const router = useRouter();
-  const [user, setUser] = useState<any>();
+  const router = useRouter()
+  const [user, setUser] = useState<any>()
 
   useEffect(() => {
-    const userLS = localStorage.getItem("adminLogged")
-      ? JSON.parse(localStorage.getItem("adminLogged") || "")
-      : undefined;
+    const userLS = localStorage.getItem(UsersService.LOGGED_USER_KEY)
+      ? JSON.parse(localStorage.getItem(UsersService.LOGGED_USER_KEY) || '')
+      : undefined
 
     if (!userLS) {
-      router.push("/admin/login");
+      router.push('/admin/login')
     } else {
-      setUser(userLS);
+      setUser(userLS)
     }
-  }, []);
+  }, [])
 
   const logout = () => {
-    localStorage.removeItem("adminLogged");
-    router.push("/admin/login");
-  };
+    localStorage.removeItem(UsersService.LOGGED_USER_KEY)
+    router.push('/admin/login')
+  }
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: 'relative' }}>
       <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />
@@ -68,7 +69,7 @@ const AdminLayout = ({
           <div
             id="navbarBasicExample"
             className="navbar-brand is-flex is-justify-content-space-between"
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
           >
             <div className="navbar-start">
               <Link href="/admin/pedidos">
@@ -97,7 +98,7 @@ const AdminLayout = ({
         <div className="container">{children}</div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default AdminLayout;
+export default AdminLayout

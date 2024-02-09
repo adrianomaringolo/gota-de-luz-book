@@ -57,7 +57,7 @@ const sendEnrollmentGreetingEmail = async (
     'service_e229fy4',
     'gota-de-cura',
     {
-      title: `[Gota de Cura] ${visitorName}, sua inscrição foi realizada 😉`,
+      title: `🪻 ${visitorName}, sua inscrição foi realizada `,
       html_message: `
       <div style="font-size: 18px">
       <p style="font-weight:bold;font-size:22px">${visitorName}, agradecemos pela sua inscrição! 🎉</p>
