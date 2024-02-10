@@ -18,14 +18,19 @@ const AdminLayout = ({
   const [user, setUser] = useState<any>()
 
   useEffect(() => {
-    const userLS = localStorage.getItem(UsersService.LOGGED_USER_KEY)
-      ? JSON.parse(localStorage.getItem(UsersService.LOGGED_USER_KEY) || '')
-      : undefined
+    try {
+      const userLS = localStorage.getItem(UsersService.LOGGED_USER_KEY)
+        ? JSON.parse(localStorage.getItem(UsersService.LOGGED_USER_KEY) || '')
+        : undefined
 
-    if (!userLS) {
+      if (!userLS) {
+        router.push('/admin/login')
+      } else {
+        setUser(userLS)
+      }
+    } catch (error) {
+      localStorage.clear()
       router.push('/admin/login')
-    } else {
-      setUser(userLS)
     }
   }, [])
 
