@@ -19,12 +19,13 @@ const Login = () => {
   const router = useRouter()
 
   const changeLogin = (e: ChangeEvent<HTMLInputElement>, field: string) => {
-    setLogin({ ...login, [field]: e.target.value })
+    setLogin({ ...login, [field]: e.target.value.toLowerCase() })
   }
 
   const onLogin = async () => {
     try {
       const userAuth = await UsersService.getUserAuth(login.name, login.pass)
+      if (!userAuth) throw new Error('Credenciais erradas')
       setError(false)
       localStorage.setItem(UsersService.LOGGED_USER_KEY, JSON.stringify(userAuth))
       router.push('/admin')
@@ -46,6 +47,7 @@ const Login = () => {
             className="input is-medium"
             type="text"
             name="name"
+            value={login?.name || ''}
             onChange={(e: ChangeEvent<HTMLInputElement>) => changeLogin(e, 'name')}
           />
         </div>
@@ -56,6 +58,7 @@ const Login = () => {
             type="text"
             placeholder="Password"
             name="pass"
+            value={login?.pass || ''}
             onChange={(e: ChangeEvent<HTMLInputElement>) => changeLogin(e, 'pass')}
           />
         </div>
