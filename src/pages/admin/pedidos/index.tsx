@@ -1,69 +1,71 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import AdminLayout from "components/admin/AdminLayout";
-import { CartItemType, CartService, ORDER_STATUS } from "services/CartService";
+import AdminLayout from 'components/admin/AdminLayout'
+import { StatusTag } from 'components/pedidos/StatusTag'
+import { format } from 'date-fns'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { CartItemType, CartService, ORDER_STATUS } from 'services/CartService'
+import styled from 'styled-components'
+import { formatCurrency } from 'utils/format'
 
-import { format } from "date-fns";
-import Link from "next/link";
-import { StatusTag } from "components/pedidos/StatusTag";
-import { formatCurrency } from "utils/format";
-
-const PedidosStyled = styled.div``;
+const PedidosStyled = styled.div``
 
 const Pedidos = () => {
-  const [orders, setOrders] = useState<any[]>([]);
-  const [statusToFilter, setStatusToFilter] = useState<string>("");
+  const [orders, setOrders] = useState<any[]>([])
+  const [statusToFilter, setStatusToFilter] = useState<string>('')
 
   const getOrders = async () => {
-    const resp = await CartService.getOrders(statusToFilter);
+    const resp = await CartService.getOrders(statusToFilter)
     if (!statusToFilter) {
       setOrders(
         resp.filter(
           (o) =>
-            o.status !== ORDER_STATUS.FINALIZADO &&
-            o.status !== ORDER_STATUS.CANCELADO
-        )
-      );
+            o.status !== ORDER_STATUS.FINALIZADO && o.status !== ORDER_STATUS.CANCELADO,
+        ),
+      )
     } else {
-      setOrders(resp);
+      setOrders(resp)
     }
-  };
+  }
 
   useEffect(() => {
-    getOrders();
-  }, []);
+    getOrders()
+  }, [])
 
   const getTotalItens = (order: any) => {
-    let total = 0;
+    let total = 0
     order.items.forEach((element: CartItemType) => {
-      total += element.amount || 0;
-    });
+      total += element.amount || 0
+    })
 
-    return total;
-  };
+    return total
+  }
 
   const getTotal = (order: any) => {
-    let total = 0;
+    let total = 0
     order.items.forEach((element: CartItemType) => {
-      total += element.price * (element.amount || 0);
-    });
+      total += element.price * (element.amount || 0)
+    })
 
-    return total;
-  };
+    if (order.coupon && order.coupon.percentageDiscount) {
+      total -= total * (order.coupon.percentageDiscount / 100)
+    }
+
+    return total
+  }
 
   const getTotalFromOrders = () => {
-    let total = 0;
+    let total = 0
     orders.forEach((order: any) => {
-      total += getTotal(order);
-    });
+      total += getTotal(order)
+    })
 
-    return total;
-  };
+    return total
+  }
 
   const lastLastStatusLogPerson = (order: any) =>
     order.statusLogs && order.statusLogs.length > 0
       ? order.statusLogs[order.statusLogs.length - 1]?.userName
-      : "-";
+      : '-'
 
   return (
     <AdminLayout>
@@ -82,17 +84,12 @@ const Pedidos = () => {
               <option value={ORDER_STATUS.APROVADO}>Aprovado</option>
               <option value={ORDER_STATUS.PAGO}>Pago</option>
               <option value={ORDER_STATUS.SEPARADO}>Separado/enviado</option>
-              <option value={ORDER_STATUS.EM_FINALIZACAO}>
-                Em finalização
-              </option>
+              <option value={ORDER_STATUS.EM_FINALIZACAO}>Em finalização</option>
               <option value={ORDER_STATUS.FINALIZADO}>Finalizado</option>
               <option value={ORDER_STATUS.CANCELADO}>Cancelado</option>
             </select>
           </div>
-          <button
-            className="button is-large ml-2 is-primary"
-            onClick={getOrders}
-          >
+          <button className="button is-large ml-2 is-primary" onClick={getOrders}>
             Filtrar
           </button>
         </div>
@@ -101,7 +98,7 @@ const Pedidos = () => {
             <p>
               Exibindo <b>{orders.length}</b> pedido(s)
             </p>
-            <p style={{ display: "none" }}>
+            <p style={{ display: 'none' }}>
               Valor total: <b>R$ {formatCurrency(getTotalFromOrders())}</b>
             </p>
             <div className="table-container">
@@ -119,25 +116,19 @@ const Pedidos = () => {
                   {orders
                     .sort((a, b) => b.orderId - a.orderId)
                     .map((order: any) => (
-                      <tr key={"order-" + order.orderId}>
+                      <tr key={'order-' + order.orderId}>
                         <td>
                           <strong>{order.orderId}</strong>
                           <br />
-                          {format(
-                            new Date(order.createdAt),
-                            "dd/MM/yyyy HH:mm"
-                          )}
+                          {format(new Date(order.createdAt), 'dd/MM/yyyy HH:mm')}
                         </td>
                         <td>
                           <div className="has-text-weight-bold">
                             {order.contactInfo.name}
                           </div>
+                          <div className="is-size-6">{order.contactInfo.phone}</div>
                           <div className="is-size-6">
-                            {order.contactInfo.phone}
-                          </div>
-                          <div className="is-size-6">
-                            {order.contactInfo.city} (CEP:{" "}
-                            {order.contactInfo.zipcode})
+                            {order.contactInfo.city} (CEP: {order.contactInfo.zipcode})
                           </div>
                         </td>
                         <td>
@@ -156,8 +147,7 @@ const Pedidos = () => {
                                     .filter((item: any) => item.amount)
                                     .map((item: any) => (
                                       <p>
-                                        {item.amount} x [{item.type}]{" "}
-                                        {item.name}
+                                        {item.amount} x [{item.type}] {item.name}
                                       </p>
                                     ))}
                                 </div>
@@ -171,10 +161,7 @@ const Pedidos = () => {
                           {lastLastStatusLogPerson(order)}
                         </td>
                         <td>
-                          <Link
-                            href={`/admin/pedidos/${order.orderId}`}
-                            key={order.id}
-                          >
+                          <Link href={`/admin/pedidos/${order.orderId}`} key={order.id}>
                             Ver detalhes
                           </Link>
                         </td>
@@ -189,7 +176,7 @@ const Pedidos = () => {
         )}
       </PedidosStyled>
     </AdminLayout>
-  );
-};
+  )
+}
 
-export default Pedidos;
+export default Pedidos
