@@ -134,7 +134,8 @@ const Pedidos = () => {
                         <td>
                           {getTotalItens(order)} items
                           <div className="is-size-6 has-text-weight-bold">
-                            {formatCurrency(getTotal(order))}
+                            {formatCurrency(getTotal(order))}{' '}
+                            {order.coupon && order.coupon.percentageDiscount && '🎟️'}
                           </div>
                           <details>
                             <summary className="has-background-link-light is-size-5">
