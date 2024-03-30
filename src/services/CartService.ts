@@ -1,3 +1,4 @@
+import { Coupon } from 'interfaces/coupons'
 import PubSub from 'pubsub-js'
 import toast from 'react-hot-toast'
 import { ProductItem } from '../interfaces/products'
@@ -122,7 +123,7 @@ const clearCart = () => {
   PubSub.publish('card_add_item', '')
 }
 
-const saveOrder = async (cart: any, contactInfo: any) => {
+const saveOrder = async (cart: any, contactInfo: any, coupon: Coupon | undefined) => {
   const lastOrder = (await getOrders()).pop()
   const currentOrderNumber = lastOrder ? Number(lastOrder.orderId) + 1 : 0
 
@@ -139,6 +140,12 @@ const saveOrder = async (cart: any, contactInfo: any) => {
         type: i.type,
       })),
     orderId: currentOrderNumber,
+    coupon: coupon
+      ? {
+          number: coupon.number,
+          percentageDiscount: coupon.percentageDiscount,
+        }
+      : '',
     contactInfo,
     status: ORDER_STATUS.EM_ESPERA,
     createdAt: new Date().toISOString(),

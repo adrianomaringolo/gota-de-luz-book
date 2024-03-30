@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const StyledCartArea = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const StyledCartArea = styled.div`
   .cart-area {
     background: #fff;
     padding: 15px;
-    max-width: 800px;
+    max-width: 900px;
     height: fit-content;
     @media only screen and (min-width: 768px) {
       padding: 50px;
@@ -106,6 +106,6 @@ const StyledCartArea = styled.div`
       background-color: rgba(0, 0, 0, 0.1);
     }
   }
-`;
+`
 
-export default StyledCartArea;
+export default StyledCartArea

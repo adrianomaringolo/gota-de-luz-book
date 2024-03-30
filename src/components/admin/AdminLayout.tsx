@@ -83,6 +83,9 @@ const AdminLayout = ({
               <Link href="/admin/produtos">
                 <a className="navbar-item has-text-weight-bold">Produtos</a>
               </Link>
+              <Link href="/admin/visitas">
+                <a className="navbar-item has-text-weight-bold">Visitas</a>
+              </Link>
             </div>
 
             <div className="navbar-end">

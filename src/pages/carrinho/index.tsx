@@ -1,56 +1,54 @@
-import Layout from "../../components/Layout";
-import React, { FormEvent, useEffect, useState } from "react";
-import {
-  CartType,
-  CartService,
-  CartItemType,
-} from "../../services/CartService";
-import styles from "./../../styles/products.module.scss";
-import { useRouter } from "next/dist/client/router";
-import { ContactForm } from "../../components/Cart/ContactForm";
-import { ConfirmationOrder } from "../../components/Cart/ConfirmationOrder";
-import { formatCurrency } from "../../utils/format";
-import StyledCartArea from "./components/StyledCartArea";
-import CartItem from "./components/CartItem";
+import { Coupon } from 'interfaces/coupons'
+import { useRouter } from 'next/dist/client/router'
+import React, { FormEvent, useEffect, useState } from 'react'
+import { ConfirmationOrder } from '../../components/Cart/ConfirmationOrder'
+import { ContactForm } from '../../components/Cart/ContactForm'
+import Layout from '../../components/Layout'
+import { CartItemType, CartService, CartType } from '../../services/CartService'
+import { formatCurrency } from '../../utils/format'
+import styles from './../../styles/products.module.scss'
+import CartItem from './components/CartItem'
+import StyledCartArea from './components/StyledCartArea'
 
 const Carrinho = () => {
-  const [cart, setCart] = useState<CartType>();
+  const [cart, setCart] = useState<CartType>()
 
-  const [errorMessage, setErrorMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false)
 
-  const [orderStep, setOrderStep] = useState(0);
+  const [orderStep, setOrderStep] = useState(0)
 
-  const [contactInfo, setContactInfo] = useState<any>();
+  const [contactInfo, setContactInfo] = useState<any>()
+  const [appliedCoupon, setAppliedCoupon] = useState<Coupon>()
 
-  const router = useRouter();
+  const router = useRouter()
 
   const getCart = async () => {
-    setCart(await CartService.getCart());
-  };
+    setCart(await CartService.getCart())
+  }
 
   useEffect(() => {
-    getCart();
+    getCart()
 
-    PubSub.subscribe("card_add_item", () => getCart());
+    PubSub.subscribe('card_add_item', () => getCart())
 
-    return () => PubSub.unsubscribe("card_add_item");
-  }, []);
+    return () => PubSub.unsubscribe('card_add_item')
+  }, [])
 
   const getTotal = () => {
-    let total = 0;
+    let total = 0
     cart?.items.forEach((element: CartItemType) => {
-      total += element.price * (element.amount || 0);
-    });
+      total += element.price * (element.amount || 0)
+    })
 
-    return total;
-  };
+    return total
+  }
 
   const saveOrder = async (e: FormEvent) => {
-    e.preventDefault();
-    setOrderStep(3);
-    await CartService.saveOrder(cart, contactInfo);
-    setOrderStep(4);
-  };
+    e.preventDefault()
+    setOrderStep(3)
+    await CartService.saveOrder(cart, contactInfo, appliedCoupon)
+    setOrderStep(4)
+  }
 
   const checkData = () => {
     if (
@@ -59,16 +57,16 @@ const Carrinho = () => {
       !contactInfo?.city ||
       !contactInfo?.zipcode
     ) {
-      setErrorMessage(true);
+      setErrorMessage(true)
     } else {
-      setErrorMessage(false);
-      setOrderStep(2);
+      setErrorMessage(false)
+      setOrderStep(2)
     }
-  };
+  }
 
   const newCart = () => {
-    CartService.clearCart();
-  };
+    CartService.clearCart()
+  }
 
   return (
     <Layout title={`${process.env.NEXT_PUBLIC_COMPANY_NAME} - Reserva`}>
@@ -78,35 +76,30 @@ const Carrinho = () => {
             <div>
               <p className="title">Meu pedido</p>
               <p className="title-description">
-                Escolha os itens e quantidades abaixo e finalize sua reserva de
-                pedido. <br />
-                Após a finalização do pedido, a equipe{" "}
-                {process.env.NEXT_PUBLIC_COMPANY_NAME} vai entrar em contato
-                para confirmar a disponibilidade dos produtos escolhidos e
-                pagamento.
+                Escolha os itens e quantidades abaixo e finalize sua reserva de pedido.{' '}
+                <br />
+                Após a finalização do pedido, a equipe{' '}
+                {process.env.NEXT_PUBLIC_COMPANY_NAME} vai entrar em contato para
+                confirmar a disponibilidade dos produtos escolhidos e pagamento.
               </p>
               <div
                 style={{
-                  padding: "20px",
-                  maxHeight: "600px",
-                  overflowY: "scroll",
-                  border: "1px solid #ccc",
+                  padding: '20px',
+                  maxHeight: '600px',
+                  overflowY: 'scroll',
+                  border: '1px solid #ccc',
                 }}
               >
-                {cart?.items?.map((item: CartItemType) => (
-                  <CartItem item={item} />
-                ))}
+                {cart?.items?.map((item: CartItemType) => <CartItem item={item} />)}
               </div>
-              <div className="total-value">
-                Valor total: {formatCurrency(getTotal())}
-              </div>
-              <div className={styles.buttonArea} style={{ display: "flex" }}>
+              <div className="total-value">Valor total: {formatCurrency(getTotal())}</div>
+              <div className={styles.buttonArea} style={{ display: 'flex' }}>
                 <button
                   onClick={() => {
-                    setOrderStep(0);
-                    router.push("/#produtos");
+                    setOrderStep(0)
+                    router.push('/#produtos')
                   }}
-                  style={{ marginRight: "auto" }}
+                  style={{ marginRight: 'auto' }}
                 >
                   Pedir mais produtos
                 </button>
@@ -123,33 +116,26 @@ const Carrinho = () => {
           {orderStep === 1 && (
             <form>
               <p className="title">Dados de contato</p>
-              <p className="title-description">
-                Preencha seus dados de contato abaixo
-              </p>
+              <p className="title-description">Preencha seus dados de contato abaixo</p>
               {errorMessage && (
-                <p style={{ color: "red" }}>
-                  Preencha todos os campos obrigatórios
-                </p>
+                <p style={{ color: 'red' }}>Preencha todos os campos obrigatórios</p>
               )}
-              <ContactForm
-                setContactInfo={setContactInfo}
-                contactInfo={contactInfo}
-              />
-              <div className={styles.buttonArea} style={{ display: "flex" }}>
+              <ContactForm setContactInfo={setContactInfo} contactInfo={contactInfo} />
+              <div className={styles.buttonArea} style={{ display: 'flex' }}>
                 <button
                   type="button"
                   onClick={() => {
-                    setOrderStep(0);
+                    setOrderStep(0)
                   }}
-                  style={{ marginRight: "auto" }}
+                  style={{ marginRight: 'auto' }}
                 >
                   Voltar aos produtos
                 </button>
                 <button
                   type="submit"
                   onClick={(e) => {
-                    e.preventDefault();
-                    checkData();
+                    e.preventDefault()
+                    checkData()
                   }}
                   className="buy-button"
                 >
@@ -162,20 +148,24 @@ const Carrinho = () => {
           {orderStep === 2 && (
             <div>
               <p className="title">Confirmação</p>
-              <p className="title-description">
-                Confirme os produtos e seus dados de contato abaixo e clique em
-                "Confirmar pedido"
+              <p className="title-description mb-5">
+                Confirme os produtos e seus dados de contato abaixo e clique em "Confirmar
+                pedido"
               </p>
 
-              <ConfirmationOrder cart={cart} contactInfo={contactInfo} />
+              <ConfirmationOrder
+                cart={cart}
+                contactInfo={contactInfo}
+                handleAppliedCoupon={(coupon) => setAppliedCoupon(coupon)}
+              />
 
-              <div className={styles.buttonArea} style={{ display: "flex" }}>
+              <div className={styles.buttonArea} style={{ display: 'flex' }}>
                 <button
                   type="button"
                   onClick={() => {
-                    setOrderStep(1);
+                    setOrderStep(1)
                   }}
-                  style={{ marginRight: "auto" }}
+                  style={{ marginRight: 'auto' }}
                 >
                   Corrigir dados de contato
                 </button>
@@ -191,47 +181,46 @@ const Carrinho = () => {
           )}
 
           {orderStep === 3 && (
-            <div style={{ textAlign: "center" }}>
-              <p style={{ fontSize: "2em", fontWeight: "bold", color: "#ddd" }}>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: '2em', fontWeight: 'bold', color: '#ddd' }}>
                 Sua reserva está sendo processada!
               </p>
             </div>
           )}
 
           {orderStep === 4 && (
-            <div style={{ textAlign: "center" }}>
-              <p style={{ fontSize: "1.5em", fontWeight: "bold" }}>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: '1.5em', fontWeight: 'bold' }}>
                 Sua reserva foi feita com sucesso!
               </p>
 
-              <p style={{ fontSize: "1.2em" }}>
-                Em breve, a equipe {process.env.NEXT_PUBLIC_COMPANY_NAME} vai
-                entrar em contato para confirmar os produtos e combinar a
-                entrega.
+              <p style={{ fontSize: '1.2em' }}>
+                Em breve, a equipe {process.env.NEXT_PUBLIC_COMPANY_NAME} vai entrar em
+                contato para confirmar os produtos e combinar a entrega.
               </p>
 
               <p>Obrigado pelo seu apoio!</p>
 
               <p>
-                👋❤️ Gostaria de nos deixar um{" "}
+                👋❤️ Gostaria de nos deixar um{' '}
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSetBUhLfPUyn-AAaeZFSluLuB3BEzrpEX0yirA2CPk6LklYWg/viewform"
                   target="blank"
                 >
                   depoimento
-                </a>{" "}
+                </a>{' '}
                 ?
               </p>
 
-              <div className={styles.buttonArea} style={{ display: "flex" }}>
+              <div className={styles.buttonArea} style={{ display: 'flex' }}>
                 <button
                   type="button"
                   onClick={() => {
-                    setContactInfo({});
-                    CartService.clearCart();
-                    setOrderStep(0);
+                    setContactInfo({})
+                    CartService.clearCart()
+                    setOrderStep(0)
                   }}
-                  style={{ marginRight: "auto" }}
+                  style={{ marginRight: 'auto' }}
                 >
                   Fechar
                 </button>
@@ -241,7 +230,7 @@ const Carrinho = () => {
         </div>
       </StyledCartArea>
     </Layout>
-  );
-};
+  )
+}
 
-export default Carrinho;
+export default Carrinho
