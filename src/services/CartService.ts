@@ -56,7 +56,7 @@ const addItemToCart = async (item: CartItemType) => {
   const newItems = cartObj ? cartObj.items : []
 
   // if item already exists
-  let found: CartItemType = newItems?.find((i: CartItemType) => i.name === item.name)
+  let found: CartItemType = newItems?.find((i: CartItemType) => i.id === item.id)
 
   if (found) {
     found.amount = (found.amount || 0) + 1
