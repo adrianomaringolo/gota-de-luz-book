@@ -2,23 +2,27 @@ import emailjs from '@emailjs/browser'
 import { InscricaoData } from 'interfaces/visits'
 import { formatDateUTC } from 'utils/format'
 
+const EMAIL_SERVICE_ID = 'service_nbvmzkk'
+const EMAIL_TEMPLATE_ID = 'gota-de-cura-email'
+const EMAIL_PUBLIC_KEY = 'nkdbOud2NdTKI7vBK'
+
 const sendNewOrderEmail = async (
   orderNumber: number,
   clientName: string,
   mailList: string[],
 ): Promise<void> => {
   emailjs.send(
-    'service_e229fy4',
-    'gota-de-cura',
+    EMAIL_SERVICE_ID,
+    EMAIL_TEMPLATE_ID,
     {
-      title: `[Gota de Cura] 🟣 Novo pedido no site: #${orderNumber}`,
+      title: `🟣 Novo pedido no site: #${orderNumber}`,
       html_message: `<p style="font-size: 20px">Novo pedido (#${orderNumber}) feito no Gota de Cura de&nbsp;<strong>${clientName}</strong>.</p>
       <hr>
       <p>Acesse a &aacute;rea de pedidos do Painel de Administrador do site Gota de Cura para ver os pedidos.
       <a style="color: #1155cc; font-size: small;" href="https://gotadecura.com.br/admin/pedidos" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?q=https://gotadecura.com.br/admin/pedidos&amp;source=gmail&amp;ust=1656279865216000&amp;usg=AOvVaw3lxiqiYazuRuntDO6vGblT">https://gotadecura.com.br/<wbr>admin/pedidos</a></p>`,
       mail_list: mailList.join(','),
     },
-    'JAGvYZKyVMK9JdME2',
+    EMAIL_PUBLIC_KEY,
   )
 }
 
@@ -28,10 +32,10 @@ const sendNewEnrollmentEmail = async (
   mailList: string[],
 ): Promise<void> => {
   emailjs.send(
-    'service_e229fy4',
-    'gota-de-cura',
+    EMAIL_SERVICE_ID,
+    EMAIL_TEMPLATE_ID,
     {
-      title: `[Gota de Cura] 🌟 Nova inscrição para visitação`,
+      title: `🌟 Nova inscrição para visitação`,
       html_message: `<p style="font-size: 20px;margin-bottom: 20px;font-weight: bold">🌟 Nova inscrição para visitação realizada pelo site!</p>
 
       <p><b>Data(s)</b>: ${visitDates.map((date) => formatDateUTC(date)).join(', ')}</p>
@@ -45,7 +49,7 @@ const sendNewEnrollmentEmail = async (
       Para acessar as informações acesse <a href="https://www.gotadecura.com.br/admin/visitas">gotadecura.com.br/admin/visitas</a>`,
       mail_list: mailList.join(','),
     },
-    'JAGvYZKyVMK9JdME2',
+    EMAIL_PUBLIC_KEY,
   )
 }
 
@@ -54,8 +58,8 @@ const sendEnrollmentGreetingEmail = async (
   mailList: string[],
 ): Promise<void> => {
   emailjs.send(
-    'service_e229fy4',
-    'gota-de-cura',
+    EMAIL_SERVICE_ID,
+    EMAIL_TEMPLATE_ID,
     {
       title: `🪻 ${visitorName}, sua inscrição foi realizada `,
       html_message: `
@@ -74,7 +78,7 @@ const sendEnrollmentGreetingEmail = async (
       <p style="margin-top: 50px">Atenciosamente,<br/>Equipe Gota de Cura</p></div>`,
       mail_list: mailList.join(','),
     },
-    'JAGvYZKyVMK9JdME2',
+    EMAIL_PUBLIC_KEY,
   )
 }
 
