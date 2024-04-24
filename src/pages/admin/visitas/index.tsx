@@ -2,7 +2,7 @@ import AdminLayout from 'components/admin/AdminLayout'
 import { useState } from 'react'
 import { useGetVisits } from 'services/hooks'
 import { formatDateUTC } from 'utils/format'
-import { SendThankEmailModal } from './SendThankEmailModal'
+import { SendThankEmailModal } from '../../../components/admin/SendThankEmailModal'
 
 const Visitas = () => {
   const visits = useGetVisits()
