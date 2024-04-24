@@ -2,15 +2,22 @@ import AdminLayout from 'components/admin/AdminLayout'
 import { useState } from 'react'
 import { useGetVisits } from 'services/hooks'
 import { formatDateUTC } from 'utils/format'
+import { SendThankEmailModal } from './SendThankEmailModal'
 
 const Visitas = () => {
   const visits = useGetVisits()
   const [statusToFilter, setStatusToFilter] = useState<string>('')
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   return (
     <AdminLayout>
       <div>
-        <h1 className="is-size-2">Visitas</h1>
+        <div className="flex justify-between">
+          <h1 className="is-size-2">Visitas</h1>
+          <button className="button is-primary" onClick={() => setShowModal(true)}>
+            Enviar email de agradecimento
+          </button>
+        </div>
         Filtrar por data:
         <div className="is-flex">
           <div className="select is-large mb-3">
@@ -113,6 +120,8 @@ const Visitas = () => {
           <p>Não há pedidos para exibir</p>
         )} */}
       </div>
+
+      <SendThankEmailModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </AdminLayout>
   )
 }
