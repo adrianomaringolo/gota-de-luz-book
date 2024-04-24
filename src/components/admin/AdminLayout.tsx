@@ -76,21 +76,24 @@ const AdminLayout = ({
             className="navbar-brand is-flex is-justify-content-space-between"
             style={{ width: '100%' }}
           >
-            <div className="navbar-start">
+            <div className="flex flex-wrap">
               <Link href="/admin/pedidos">
-                <a className="navbar-item has-text-weight-bold">Pedidos</a>
+                <a className="navbar-item font-bold">Pedidos</a>
               </Link>
               <Link href="/admin/produtos">
-                <a className="navbar-item has-text-weight-bold">Produtos</a>
+                <a className="navbar-item font-bold">Produtos</a>
               </Link>
               <Link href="/admin/visitas">
-                <a className="navbar-item has-text-weight-bold">Visitas</a>
+                <a className="navbar-item font-bold">Visitas</a>
+              </Link>
+              <Link href="/admin/cupons">
+                <a className="navbar-item font-bold">Cupons</a>
               </Link>
             </div>
 
             <div className="navbar-end">
               <div className="navbar-item">
-                <p className="mr-3">{user?.name}</p>
+                <p className="mr-3 hidden md:block">{user?.name}</p>
                 <div className="buttons">
                   <a className="button is-danger" onClick={logout}>
                     Sair
