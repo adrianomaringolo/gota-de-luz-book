@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { ReactNode, useEffect, useState } from 'react'
 import { Toaster } from 'react-hot-toast'
+import { useGetLoggedUser } from 'services/hooks/useGetLoggedUser'
 import { UsersService } from 'services/UsersService'
 
 type Props = {
@@ -16,6 +17,8 @@ const AdminLayout = ({
 }: Props) => {
   const router = useRouter()
   const [user, setUser] = useState<any>()
+
+  const { isAdmin } = useGetLoggedUser()
 
   useEffect(() => {
     try {
@@ -83,12 +86,16 @@ const AdminLayout = ({
               <Link href="/admin/produtos">
                 <a className="navbar-item font-bold">Produtos</a>
               </Link>
-              <Link href="/admin/visitas">
-                <a className="navbar-item font-bold">Visitas</a>
-              </Link>
-              <Link href="/admin/cupons">
-                <a className="navbar-item font-bold">Cupons</a>
-              </Link>
+              {isAdmin && (
+                <>
+                  <Link href="/admin/visitas">
+                    <a className="navbar-item font-bold">Visitas</a>
+                  </Link>
+                  <Link href="/admin/cupons">
+                    <a className="navbar-item font-bold">Cupons</a>
+                  </Link>
+                </>
+              )}
             </div>
 
             <div className="navbar-end">
