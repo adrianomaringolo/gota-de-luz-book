@@ -144,7 +144,7 @@ const sendVisitThankEmail = async (
           <p style="font-size: 18px">Veja mais:</p>
           <p>
             📷 Veja as fotos da visita:
-            <a href="https://photos.app.goo.gl/GyVQWEcqfWHUPGQbA" target="_blank">Gota de Cura - Visitação 20.04.24</a>
+            <a href="https://photos.app.goo.gl/VPgyoCsibEnaBqA18" target="_blank">Gota de Cura - Visitação 15.06.24</a>
           </p>
           <p>
             💬 Deixe um depoimento sobre sua experiência:
@@ -170,7 +170,7 @@ const sendVisitThankEmail = async (
             )
             .join('')}
           <ul style="font-size: 12px; text-align: left; padding-left: 15px">
-            <li>O cupom deve ser utilizado de 01/05/2024 a 31/05/2024.</li>
+            <li>O cupom deve ser utilizado ao longo do mês de julho.</li>
             <li>O cupom não é cumulativo, apenas um cupom pode ser utilizado por compra.</li>
             <li>
               Ao finalizar sua compra no site, inclua o código acima no campo "Cupom de
