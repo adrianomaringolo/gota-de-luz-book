@@ -67,16 +67,19 @@ const Inscricao = () => {
               text="Selecione a(s) data(s) da visita que deseja participar"
             >
               <div className="flex flex-wrap gap-4 mt-3">
-                {visitList.map((visit) => (
-                  <CheckboxField
-                    key={visit.id}
-                    value={visit.date}
-                    label={formatDateUTC(visit.date)}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      checkDate(e.target.value)
-                    }
-                  />
-                ))}
+                {visitList.map((visit) => {
+                  if (new Date(visit.date) < new Date()) return null
+                  return (
+                    <CheckboxField
+                      key={visit.id}
+                      value={visit.date}
+                      label={formatDateUTC(visit.date)}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        checkDate(e.target.value)
+                      }
+                    />
+                  )
+                })}
               </div>
             </FormNumberedArea>
           </div>
