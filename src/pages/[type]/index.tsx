@@ -1,31 +1,30 @@
-import { GetStaticProps, GetStaticPaths } from "next";
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { ProductItem, ProductType } from "../../interfaces/products";
-import { getAllProductsIds, getProductData } from "lib/products";
-
-import styles from "styles/products.module.scss";
-import ProductItemDisplay from "components/products/ProductItemDisplay";
-import { ProductsService } from "services/ProductsService";
-import Layout from "components/Layout";
+import Layout from 'components/Layout'
+import ProductItemDisplay from 'components/products/ProductItemDisplay'
+import { getAllProductsIds, getProductData } from 'lib/products'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import { ProductsService } from 'services/ProductsService'
+import styles from 'styles/products.module.scss'
+import { ProductItem, ProductType } from '../../interfaces/products'
 
 const Product = ({ productData }: { productData: ProductType }) => {
-  const [products, setProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState<any[]>([])
 
   const getProducts = async () =>
-    setProducts(await ProductsService.getProductsByType(productData.type));
+    setProducts(await ProductsService.getProductsByType(productData.type))
 
   useEffect(() => {
-    getProducts();
-  }, []);
+    getProducts()
+  }, [])
 
   return (
     <>
       <Layout title={process.env.NEXT_PUBLIC_COMPANY_NAME}>
         <Head>
-          <title>Catálogo - {productData.type}</title>
+          <title>Catálogo - {productData.typeLabel}</title>
         </Head>
         <div
           className={styles.productDetais}
@@ -34,7 +33,7 @@ const Product = ({ productData }: { productData: ProductType }) => {
           }}
         >
           <Link href="/#produtos">
-            <div style={{ padding: "10px" }}>
+            <div style={{ padding: '10px' }}>
               <Image
                 src={`/images/logos/logo-${productData.id}.png`}
                 height={110}
@@ -43,22 +42,16 @@ const Product = ({ productData }: { productData: ProductType }) => {
               />
             </div>
           </Link>
-          <h1 className="text-4xl text-bold mb-6">{productData.type}</h1>
+          <h1 className="text-4xl text-bold mb-6">{productData.typeLabel}</h1>
           <section className={styles.infoArea}>
             <p className={styles.description}>
-              <span
-                dangerouslySetInnerHTML={{ __html: productData.description }}
-              />
+              <span dangerouslySetInnerHTML={{ __html: productData.description }} />
             </p>
             <div className={styles.productItems}>
               {products
                 ?.filter((item: ProductItem) => !item.hidden)
                 .map((item: ProductItem) => (
-                  <ProductItemDisplay
-                    item={item}
-                    type={productData.type}
-                    key={item.id}
-                  />
+                  <ProductItemDisplay item={item} type={productData.type} key={item.id} />
                 ))}
             </div>
             <Link href="/#produtos">
@@ -68,24 +61,24 @@ const Product = ({ productData }: { productData: ProductType }) => {
         </div>
       </Layout>
     </>
-  );
-};
+  )
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllProductsIds();
+  const paths = getAllProductsIds()
   return {
     paths,
     fallback: false,
-  };
-};
+  }
+}
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const productData = getProductData(params?.type as string);
+  const productData = getProductData(params?.type as string)
   return {
     props: {
       productData,
     },
-  };
-};
+  }
+}
 
-export default Product;
+export default Product
