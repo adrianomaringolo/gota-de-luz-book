@@ -26,7 +26,14 @@ export const productTypes: ProductType[] = [
     image: 'background-7.jpg',
     seal: '',
   },
-
+  {
+    id: 'sabonetes-manteiga',
+    type: 'Sabonetes de manteiga',
+    description: `<p>Feitos com azeite de oliva extra virgem, cada sabonete é cuidadosamente elaborado para proporcionar uma experiência única de cuidado com a pele.</p>
+      <p>Ao invés de água, usamos hidrolatos na confecção dos nossos sabonetes. Hidrolatos orgânicos destilados na chácara da Morada (melaleuca, lavanda, immortelle e os demais que destilamos)!</p>`,
+    image: 'background-6.jpg',
+    seal: '',
+  },
   {
     id: 'hidrolatos',
     type: 'Hidrolatos - 120ml',
