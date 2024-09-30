@@ -4,6 +4,8 @@ import { VisitListDisplayer } from 'components/visitas/VisitListDisplayer'
 import Link from 'next/link'
 import styles from './../../styles/layout.module.scss'
 
+const OPEN_VISITS: boolean = false
+
 export const VisitArea: React.FC = () => {
   return (
     <div id="visitacao" className={cn('section', styles.section, styles.sectionVisit)}>
@@ -11,7 +13,7 @@ export const VisitArea: React.FC = () => {
         <h2 className="fancy-title">VISITA GUIADA À CHÁCARA MÃE LUZIA</h2>
 
         <div className="my-5">
-          <VisitListDisplayer />
+          <VisitListDisplayer isOpened={OPEN_VISITS} />
         </div>
 
         <p className="mb-4">
@@ -41,7 +43,8 @@ export const VisitArea: React.FC = () => {
           <Link href="/visitas">
             <div className="cta-button hover:cursor-pointer">Veja mais detalhes</div>
           </Link>
-          <VisitCTA />
+
+          {OPEN_VISITS && <VisitCTA />}
         </div>
       </div>
     </div>

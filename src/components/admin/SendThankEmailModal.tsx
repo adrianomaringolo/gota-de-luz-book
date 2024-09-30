@@ -12,7 +12,7 @@ interface SendThankEmailModalProps {
 export type ThankEmailData = {
   visitorName: string
   visitorEmail: string
-  coupons: string
+  // coupons: string
   bcc: string
 }
 
@@ -25,13 +25,12 @@ export const SendThankEmailModal = (props: SendThankEmailModalProps) => {
     await EmailSender.sendVisitThankEmail(
       data.visitorName,
       data.visitorEmail,
-      data.coupons,
+      // data.coupons,
       data.bcc,
     )
     toast.success('Email enviado com sucesso!')
     setValue('visitorName', '')
     setValue('visitorEmail', '')
-    setValue('coupons', '')
     setFocus('visitorName')
   }
 
@@ -60,11 +59,11 @@ export const SendThankEmailModal = (props: SendThankEmailModalProps) => {
             placeholder="Email do visitante"
             {...register('visitorEmail', { required: true })}
           />
-          <input
+          {/* <input
             className="input is-medium"
             placeholder="Cupons (separados por vírgula)"
             {...register('coupons', { required: true })}
-          />
+          /> */}
           <input
             className="input is-medium"
             placeholder="Emails (BCC)"

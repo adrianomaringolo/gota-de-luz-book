@@ -85,7 +85,7 @@ const sendEnrollmentGreetingEmail = async (
 const sendVisitThankEmail = async (
   visitorName: string,
   visitorEmail: string,
-  coupons: string,
+  // coupons: string,
   bccList: string,
 ): Promise<void> => {
   emailjs.send(
@@ -150,37 +150,6 @@ const sendVisitThankEmail = async (
             💬 Deixe um depoimento sobre sua experiência:
             <a href="https://forms.gle/oJxGeuXHJWgv37tW6" target="_blank">Clique aqui</a>
           </p>
-        </div>
-        <div style="background-color: #eee;border-radius: 10px;padding: 10px;color: #888;font-size: 14px;">
-          <img
-            style="width: 100px"
-            src="https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/assets%2Fgift-icon.png?alt=media&token=e1d9ba97-5ea1-441c-a7df-2a236cd92e4c"
-          />
-          <p>
-            Como agradecimento, deixaremos mais um presente para você:
-            <b>UM CUPOM DE DESCONTO DE 10%</b> para a sua próxima compra em nosso site.
-          </p>
-          ${coupons
-            .split(',')
-            .map(
-              (coupon) =>
-                '<p style="font-weight: bold; background-color: #fff; padding: 10px 20px">' +
-                coupon +
-                '</p>',
-            )
-            .join('')}
-          <ul style="font-size: 12px; text-align: left; padding-left: 15px">
-            <li>O cupom deve ser utilizado ao longo do mês de setembro.</li>
-            <li>O cupom não é cumulativo, apenas um cupom pode ser utilizado por compra.</li>
-            <li>
-              Ao finalizar sua compra no site, inclua o código acima no campo "Cupom de
-              desconto".
-            </li>
-            <li>O cupom pode ser usado apenas uma vez.</li>
-            <li>
-              Em caso de dúvidas, entre em contato com a gente pelo WhatsApp ou Instagram.
-            </li>
-          </ul>
         </div>
       </div>`,
       mail_list: visitorEmail,
