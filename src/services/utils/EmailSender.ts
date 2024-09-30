@@ -144,7 +144,7 @@ const sendVisitThankEmail = async (
           <p style="font-size: 18px">Veja mais:</p>
           <p>
             📷 Veja as fotos da visita:
-            <a href="https://photos.app.goo.gl/iVZfrGvDUPk85sLi6" target="_blank">Visita Chácara Mãe Luzia - 17.08.24</a>
+            <a href="https://photos.app.goo.gl/aWe9xYmrsTMo22sp9" target="_blank">Visita Chácara Mãe Luzia - 21.09.24</a>
           </p>
           <p>
             💬 Deixe um depoimento sobre sua experiência:
