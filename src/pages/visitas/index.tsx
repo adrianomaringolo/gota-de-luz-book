@@ -1,5 +1,4 @@
 import Layout from 'components/Layout'
-import { VisitCTA } from 'components/visitas/VisitCTA'
 import { VisitListDisplayer } from 'components/visitas/VisitListDisplayer'
 import ImageGallery from 'react-image-gallery'
 import styled from 'styled-components'
@@ -32,11 +31,11 @@ const Visitas = () => {
         <StyledVisitasArea>
           <h1 className="text-4xl font-semibold">Visitação</h1>
 
-          <VisitListDisplayer />
+          <VisitListDisplayer isOpened={false} />
 
-          <div className="my-5 flex justify-center">
+          {/* <div className="my-5 flex justify-center">
             <VisitCTA />
-          </div>
+          </div> */}
 
           <h3 className="text-2xl font-semibold">
             Conheça mais sobre a visita guiada à Chácara Mãe Luzia
@@ -127,7 +126,7 @@ const Visitas = () => {
             </div>
           ))}
 
-          <VisitCTA />
+          {/* <VisitCTA /> */}
         </StyledVisitasArea>
       </Layout>
     </>
