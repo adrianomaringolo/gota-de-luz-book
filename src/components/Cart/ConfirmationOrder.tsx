@@ -35,7 +35,7 @@ export const ConfirmationOrder = ({
   }
 
   const applyCoupon = () => {
-    const couponToApply = activeCoupons.find((c) => c.number === coupon)
+    const couponToApply = activeCoupons.find((c) => c.code === coupon)
 
     if (!couponToApply) {
       setCouponMessage('❌ Esse cupom não é válido ou está expirado.')
@@ -48,6 +48,14 @@ export const ConfirmationOrder = ({
     handleAppliedCoupon(couponToApply)
 
     setCouponMessage('✅ Cupom válido! O desconto foi aplicado.')
+  }
+
+  const getDiscount = (total: number, coupon: Coupon) => {
+    if (coupon.discountType === 'fixed') {
+      return coupon.discount
+    } else {
+      return (total * coupon.discount) / 100
+    }
   }
 
   return (
@@ -94,16 +102,15 @@ export const ConfirmationOrder = ({
           {appliedCoupon && (
             <>
               <p className="text-xl border-t mt-3 pt-3 text-green-900">
-                Desconto aplicado: {appliedCoupon.percentageDiscount}% (
-                {formatCurrency((getTotal() * appliedCoupon.percentageDiscount) / 100)})
+                Desconto aplicado:{' '}
+                {appliedCoupon.discountType === 'fixed'
+                  ? `${formatCurrency(appliedCoupon.discount)}`
+                  : `${appliedCoupon.discount}% (${formatCurrency(getDiscount(getTotal(), appliedCoupon))})`}
               </p>
 
               <p className="font-bold">
                 <span className="text-xl">➡️ Valor com desconto:</span>{' '}
-                {formatCurrency(
-                  getTotal() -
-                    (getTotal() * (appliedCoupon?.percentageDiscount || 0)) / 100,
-                )}
+                {formatCurrency(getTotal() - getDiscount(getTotal(), appliedCoupon))}
               </p>
             </>
           )}

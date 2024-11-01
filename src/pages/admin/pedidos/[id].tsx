@@ -34,6 +34,14 @@ const Pedido = () => {
     return total
   }
 
+  const getDiscount = (total: number, type: 'fixed' | 'percentage', discount: number) => {
+    if (type === 'fixed') {
+      return discount
+    } else {
+      return (total * discount) / 100
+    }
+  }
+
   return (
     <>
       <Head>
@@ -122,17 +130,24 @@ const Pedido = () => {
         {order.coupon && (
           <>
             <p className="text-xl border-t mt-3 pt-3 text-green-900">
-              Desconto aplicado: {order.coupon.percentageDiscount}% (
-              {formatCurrency((getTotal() * order.coupon.percentageDiscount) / 100)})
+              Desconto aplicado:{' '}
+              {order.coupon?.discountType === 'fixed'
+                ? formatCurrency(order.coupon.discount)
+                : `${order.coupon.discount}% (${formatCurrency((getTotal() * order.coupon.percentageDiscount) / 100)})`}
             </p>
             <p>
               Cupom usado: <strong>{order.coupon.number}</strong> 🎟️
             </p>
 
             <p className="font-bold text-3xl mt-3">
-              <span className="">➡️ Valor com desconto:</span>{' '}
+              <span className="text-xl">➡️ Valor com desconto:</span>{' '}
               {formatCurrency(
-                getTotal() - (getTotal() * (order.coupon?.percentageDiscount || 0)) / 100,
+                getTotal() -
+                  getDiscount(
+                    getTotal(),
+                    order.coupon.discountType,
+                    order.coupon.discount,
+                  ),
               )}
             </p>
           </>

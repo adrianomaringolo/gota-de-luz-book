@@ -46,8 +46,12 @@ const Pedidos = () => {
       total += element.price * (element.amount || 0)
     })
 
-    if (order.coupon && order.coupon.percentageDiscount) {
-      total -= total * (order.coupon.percentageDiscount / 100)
+    if (order.coupon && order.coupon.discount) {
+      if (order.coupon.discountType === 'fixed') {
+        total -= order.coupon.discount
+      } else {
+        total -= total * (order.coupon.discount / 100)
+      }
     }
 
     return total
@@ -135,7 +139,7 @@ const Pedidos = () => {
                           {getTotalItens(order)} items
                           <div className="is-size-6 has-text-weight-bold">
                             {formatCurrency(getTotal(order))}{' '}
-                            {order.coupon && order.coupon.percentageDiscount && '🎟️'}
+                            {order.coupon && order.coupon.discount && '🎟️'}
                           </div>
                           <details>
                             <summary className="has-background-link-light is-size-5">

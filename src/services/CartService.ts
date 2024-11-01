@@ -142,8 +142,9 @@ const saveOrder = async (cart: any, contactInfo: any, coupon: Coupon | undefined
     orderId: currentOrderNumber,
     coupon: coupon
       ? {
-          number: coupon.number,
-          percentageDiscount: coupon.percentageDiscount,
+          number: coupon.code,
+          discount: coupon.discount,
+          discountType: coupon.discountType,
         }
       : '',
     contactInfo,
