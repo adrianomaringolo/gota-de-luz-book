@@ -14,7 +14,9 @@ const getActiveCoupons: () => Promise<Coupon[]> = async () => {
 }
 
 const addCoupon: (coupon: Omit<Coupon, 'id'>) => Promise<void> = async (coupon) => {
-  await couponsRef.add({ ...coupon, createdAt: new Date().toISOString() })
+  await couponsRef
+    .doc(coupon.code)
+    .set({ ...coupon, createdAt: new Date().toISOString() })
 }
 
 export const CouponsService = {

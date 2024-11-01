@@ -10,8 +10,9 @@ interface AddCouponModalProps {
 }
 
 export type AddCouponData = {
-  number: string
-  percentageDiscount: number
+  code: string
+  discount: number
+  discountType: 'percentage' | 'fixed'
   startDate: string
   endDate: string
 }
@@ -39,25 +40,40 @@ export const AddCouponModal = (props: AddCouponModalProps) => {
             type="text"
             placeholder="Código do Cupom"
             className="input is-medium"
-            {...register('number', { required: true })}
+            {...register('code', { required: true })}
           />
+          <div className="flex gap-4">
+            <input
+              type="radio"
+              value="percentage"
+              {...register('discountType', { required: true })}
+            />
+            <label>Desconto (%)</label>
+            <input
+              type="radio"
+              value="fixed"
+              {...register('discountType', { required: true })}
+            />
+            <label>Valor Fixo (R$)</label>
+          </div>
+
           <input
             type="number"
-            placeholder="Porcentagem de Desconto"
+            placeholder="Desconto"
             className="input is-medium"
-            {...register('percentageDiscount', { required: true })}
+            {...register('discount', { required: true })}
           />
           <input
             type="date"
             placeholder="Data de Início"
             className="input is-medium"
-            {...register('startDate', { required: true })}
+            {...register('startDate', { required: false })}
           />
           <input
             type="date"
             placeholder="Data de Fim"
             className="input is-medium"
-            {...register('endDate', { required: true })}
+            {...register('endDate', { required: false })}
           />
         </div>
         <div className="flex justify-between items-center mt-4">

@@ -29,15 +29,24 @@ const Cupons = () => {
         </thead>
         <tbody>
           {coupoms
-            .sort((a, b) => (b.number > a.number ? 1 : -1))
+            .sort((a, b) => (b.code > a.code ? 1 : -1))
             .map((coupon: Coupon) => (
-              <tr key={'coupon-' + coupon.id}>
+              <tr key={'coupon-' + coupon.code}>
                 <td>{coupon.active ? '✅' : '⛔'}</td>
-                <td>{coupon.number}</td>
-                <td>{coupon.percentageDiscount} %</td>
+                <td>{coupon.code}</td>
                 <td>
-                  {format(new Date(coupon.startDate), 'dd/MM/yyyy')} -{' '}
-                  {format(new Date(coupon.endDate), 'dd/MM/yyyy')}
+                  {coupon.discountType === 'fixed'
+                    ? `R$ ${coupon.discount}`
+                    : `${coupon.discount}%`}
+                </td>
+                <td>
+                  {coupon.startDate && coupon.startDate !== ''
+                    ? format(new Date(coupon.startDate), 'dd/MM/yyyy')
+                    : 'N/A'}{' '}
+                  |{' '}
+                  {coupon.endDate && coupon.endDate !== ''
+                    ? format(new Date(coupon.endDate), 'dd/MM/yyyy')
+                    : 'N/A'}
                 </td>
               </tr>
             ))}
