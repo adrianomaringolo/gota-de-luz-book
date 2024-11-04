@@ -106,6 +106,19 @@ const removeItem = async (itemId: string) => {
   PubSub.publish('card_add_item', '')
 }
 
+const updatePrices = async (cart: any) => {
+  const products = await getAllItems()
+
+  cart.items.forEach((item: CartItemType) => {
+    const product = products.find((p: ProductItem) => p.id === item.id)
+    if (product) {
+      item.price = product.price
+    }
+  })
+
+  return cart
+}
+
 const getCart = async () => {
   let cartJSON = localStorage.getItem('cart')
 
@@ -115,7 +128,7 @@ const getCart = async () => {
     localStorage.setItem('cart', JSON.stringify({ items }))
     cartJSON = localStorage.getItem('cart')
   }
-  return cartJSON ? JSON.parse(cartJSON) : undefined
+  return cartJSON ? updatePrices(JSON.parse(cartJSON)) : undefined
 }
 
 const clearCart = () => {
