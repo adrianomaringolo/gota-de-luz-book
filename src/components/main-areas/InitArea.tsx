@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export const InitArea: React.FC = () => {
   return (
-    <div className="p-20 bg-[url('/images/background-init.png')] bg-no-repeat bg-cover">
+    <div className="p-2 pt-20 md:p-20 bg-[url('/images/background-init.png')] bg-no-repeat bg-cover">
       <div className="flex flex-col justify-center max-w-[60rem] mx-auto my-0 px-5 py-0">
         <div className="text-center pt-8">
           <Image

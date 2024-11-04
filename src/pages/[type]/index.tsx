@@ -27,7 +27,7 @@ const Product = ({ productData }: { productData: ProductType }) => {
           <title>Catálogo - {productData.typeLabel ?? productData.type}</title>
         </Head>
         <div className={styles.productDetais}>
-          <div className="my-8 max-w-6xl">
+          <div className="my-8 max-w-[100%] md:max-w-6xl">
             <ProductCategories size="small" />
           </div>
 
