@@ -17,7 +17,6 @@ const StyledHeader = styled.header`
   width: 100%;
   z-index: 10;
   justify-content: space-between;
-  box-shadow: #444 0px 0px 8px;
 
   .tag {
     background-color: #4c3b82;
