@@ -26,7 +26,7 @@
       }
     }
     p.slogan {
-      font-family: "Amarillo", sans-serif !important;
+      font-family: 'Amarillo', sans-serif !important;
       color: #ab95a4;
       text-align: end;
       max-width: 500px;
@@ -48,19 +48,15 @@
   }
 
   &.sectionLogo {
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.6),
-        rgba(255, 255, 255, 0.4)
-      ),
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4)),
       url(/images/background-init.jpg) no-repeat 50% / cover;
     padding-top: 25px;
   }
 
   &.sectionTestimony {
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.9),
-        rgba(255, 255, 255, 0.7)
-      ),
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)),
       url(/images/background-testimony.jpg) no-repeat 50% / cover;
     padding-top: 25px;
   }
@@ -70,11 +66,9 @@
   }
 
   &.sectionDestination {
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      ),
-      url("/images/background-destination.jpg") no-repeat 20% / cover;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+      url('/images/background-destination.jpg') no-repeat 20% / cover;
 
     p.highlight {
       color: #555;
@@ -143,12 +137,12 @@
   }
 
   &.sectionContact {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url("/images/background-contact.jpg") no-repeat center/cover;
+    background: url('/images/background-contact.jpg') no-repeat center/cover;
 
     h2 {
-      color: #fff;
-      border-color: #fff;
+      color: #4c3b82;
+      border-color: #4c3b82;
+      margin-bottom: 20px;
     }
   }
 }

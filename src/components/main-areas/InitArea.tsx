@@ -1,35 +1,46 @@
-import styles from "styles/layout.module.scss";
-import Image from "next/image";
-import cn from "classnames";
-import Products from "components/products/Products";
+import FacebookButton from 'components/layout/FacebookButton'
+import InstagramButton from 'components/layout/InstagramButton'
+import { ProductCategories } from 'components/products/ProductCategories'
+import Image from 'next/image'
 
 export const InitArea: React.FC = () => {
   return (
-    <div className={cn("section", styles.section, styles.sectionLogo)}>
-      <div className={styles.contentArea}>
-        <Image
-          priority
-          src="/images/logo.svg"
-          height={150}
-          width={100}
-          alt="Logo"
-          className={styles.svgLogo}
-        />
-        <p className={styles.slogan}>Cuidando com Amor</p>
-        <p
-          className={styles.highlight}
-          style={{ padding: "2rem", fontSize: "1.1rem", lineHeight: "1.4rem" }}
-        >
-          <span>
-            A marca {process.env.NEXT_PUBLIC_COMPANY_NAME} oferece produtos
-            artesanais, feitos 100% à base de óleos vegetais nobres e óleos
-            essenciais. Livres de conservantes. Toda a renda obtida é revertida
-            para os trabalhos assistenciais da Morada Espírita Professor Lairi
-            Hans.
-          </span>
+    <div className="p-20 bg-[url('/images/background-init.png')] bg-no-repeat bg-cover">
+      <div className="flex flex-col justify-center max-w-[60rem] mx-auto my-0 px-5 py-0">
+        <div className="text-center pt-8">
+          <Image
+            priority
+            src="/images/logo.png"
+            height={200}
+            width={600}
+            layout="intrinsic"
+            objectFit="contain"
+            alt="Gota de Cura, cuidando com amor"
+            className="max-w-[600px]"
+          />
+        </div>
+        <p className="my-4 text-center text-xl leading-7">
+          A marca {process.env.NEXT_PUBLIC_COMPANY_NAME} oferece produtos artesanais,
+          feitos 100% à base de óleos vegetais nobres e óleos essenciais. Livres de
+          conservantes. Toda a renda obtida é revertida para os trabalhos assistenciais da
+          Morada Espírita Professor Lairi Hans.
         </p>
-        <Products />
+
+        <h2 className="text-center mt-6 mb-4 italic">Conheça nossos produtos</h2>
+        <ProductCategories />
+
+        <h2 className="text-center mt-10 italic">
+          Acompanhe nosso trabalho pelas redes sociais
+        </h2>
+        <div className="flex gap-3 flex-wrap justify-center mt-3">
+          <span className="my-1">
+            <InstagramButton />
+          </span>
+          <span className="my-1">
+            <FacebookButton />
+          </span>
+        </div>
       </div>
     </div>
-  );
-};
+  )
+}

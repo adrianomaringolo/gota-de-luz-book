@@ -1,16 +1,16 @@
-import React, { ReactNode } from "react";
-import Head from "next/head";
-import { Navbar } from "./layout/Navbar";
-import { Toaster } from "react-hot-toast";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from '@vercel/analytics/react'
+import Head from 'next/head'
+import React, { ReactNode } from 'react'
+import { Toaster } from 'react-hot-toast'
+import { Navbar } from './layout/Navbar'
 
 type Props = {
-  children?: ReactNode;
-  title?: string;
-};
+  children?: ReactNode
+  title?: string
+}
 
-const Layout = ({ title = "This is the default title", children }: Props) => (
-  <div style={{ position: "relative", minHeight: "100%" }}>
+const Layout = ({ title = 'This is the default title', children }: Props) => (
+  <div style={{ position: 'relative', minHeight: '100%' }}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -19,12 +19,18 @@ const Layout = ({ title = "This is the default title", children }: Props) => (
       <meta
         name="description"
         content={
-          "Catálogo virtual para os produtos " +
-          process.env.NEXT_PUBLIC_COMPANY_NAME
+          'Catálogo virtual para os produtos ' + process.env.NEXT_PUBLIC_COMPANY_NAME
         }
       />
       <meta name="og:title" content={title} />
       <meta name="twitter:card" content="summary_large_image" />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+      ></link>
     </Head>
 
     <Navbar />
@@ -38,9 +44,9 @@ const Layout = ({ title = "This is the default title", children }: Props) => (
     <Analytics />
     {children}
   </div>
-);
+)
 
-export default Layout;
+export default Layout
 
 {
   /* <div style={{ textAlign: "center", paddingTop: "50px" }}>

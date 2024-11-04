@@ -1,9 +1,9 @@
 import Layout from 'components/Layout'
+import { ProductCategories } from 'components/products/ProductCategories'
 import ProductItemDisplay from 'components/products/ProductItemDisplay'
 import { getAllProductsIds, getProductData } from 'lib/products'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { ProductsService } from 'services/ProductsService'
@@ -18,32 +18,26 @@ const Product = ({ productData }: { productData: ProductType }) => {
 
   useEffect(() => {
     getProducts()
-  }, [])
+  }, [productData.type])
 
   return (
     <>
       <Layout title={process.env.NEXT_PUBLIC_COMPANY_NAME}>
         <Head>
-          <title>Catálogo - {productData.typeLabel}</title>
+          <title>Catálogo - {productData.typeLabel ?? productData.type}</title>
         </Head>
-        <div
-          className={styles.productDetais}
-          style={{
-            backgroundImage: `url('/images/flower-backgrounds/${productData.image}')`,
-          }}
-        >
-          <Link href="/#produtos">
-            <div style={{ padding: '10px' }}>
-              <Image
-                src={`/images/logos/logo-${productData.id}.png`}
-                height={110}
-                width={384}
-                alt="Logo"
-              />
-            </div>
-          </Link>
-          <h1 className="text-4xl text-bold mb-6">{productData.typeLabel}</h1>
+        <div className={styles.productDetais}>
+          <div className="my-8 max-w-6xl">
+            <ProductCategories size="small" />
+          </div>
+
           <section className={styles.infoArea}>
+            <h1
+              className="text-4xl text-bold mb-6"
+              dangerouslySetInnerHTML={{
+                __html: productData.typeLabel ?? productData.type,
+              }}
+            />
             <p className={styles.description}>
               <span dangerouslySetInnerHTML={{ __html: productData.description }} />
             </p>
