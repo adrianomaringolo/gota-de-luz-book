@@ -1,7 +1,7 @@
-import styles from "styles/layout.module.scss";
-import cn from "classnames";
-import Image from "next/image";
-import styled from "styled-components";
+import cn from 'classnames'
+import Image from 'next/image'
+import styled from 'styled-components'
+import styles from 'styles/layout.module.scss'
 
 const ContactAreaStyled = styled.div`
   .info-area {
@@ -27,13 +27,13 @@ const ContactAreaStyled = styled.div`
       margin-right: 10px;
     }
   }
-`;
+`
 
 export const ContactArea: React.FC = () => {
   return (
     <ContactAreaStyled
       id="contato"
-      className={cn("section", styles.section, styles.sectionContact)}
+      className={cn('section', styles.section, styles.sectionContact)}
     >
       <div className={styles.contentArea}>
         <h2 className="fancy-title">Entre em contato</h2>
@@ -49,17 +49,11 @@ export const ContactArea: React.FC = () => {
             </a>
           </div>
           <div className="social-area">
-            <p
-              className={styles.highlight}
-              style={{ textAlign: "left", marginTop: 0 }}
-            >
+            <p className={styles.highlight} style={{ textAlign: 'left', marginTop: 0 }}>
               <strong>Aromaterapeuta responsável</strong>
               <br />
               Marcelo Soares Mattar - Profissional CertAroma (
-              <a
-                href="https://www.instagram.com/p/CbaM_GvAs4U/"
-                target="_blank"
-              >
+              <a href="https://www.instagram.com/p/CbaM_GvAs4U/" target="_blank">
                 Ver mais
               </a>
               )
@@ -83,8 +77,20 @@ export const ContactArea: React.FC = () => {
               </a>
             </p>
           </div>
+
+          <div>
+            <strong>Loja física</strong>
+            <br />
+            Rua José Paulino, 1916, Campinas - SP
+            <br />
+            <br />
+            <strong>Horário de funcionamento</strong>
+            <br />
+            Segunda das 9h às 13h | Terça a sexta das 9h às 17h | Sábado das 8h às 17h
+            <br />
+          </div>
         </div>
       </div>
     </ContactAreaStyled>
-  );
-};
+  )
+}
