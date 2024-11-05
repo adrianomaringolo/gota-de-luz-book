@@ -8,7 +8,7 @@ import { scrollToElement } from '../../utils/layout'
 import { MobileMenu } from './MobileMenu'
 
 const StyledHeader = styled.header`
-  background: #f7f4ff;
+  background: #e0ddf4;
   padding: 5px;
   display: flex;
   align-items: center;
@@ -177,7 +177,10 @@ export const Navbar = () => {
   return (
     <>
       <StyledHeader>
-        <div className="logo-image" onClick={() => goToArea('')}></div>
+        <div
+          className="logo-image invisible md:visible"
+          onClick={() => goToArea('')}
+        ></div>
         <ul>
           {navOptions.map((option) => {
             return (

@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import { scrollToElement } from "../../utils/layout";
-import Image from "next/image";
-import { useRouter } from "next/router";
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import styled from 'styled-components'
+import { scrollToElement } from '../../utils/layout'
 
 const StyledMobileMenu = styled.header`
   width: 100%;
   height: 100%;
-  background: #633b58;
+  background: #e0ddf4;
   position: fixed;
   top: 0;
   left: 100%;
@@ -28,7 +28,7 @@ const StyledMobileMenu = styled.header`
 
     background-color: transparent;
     border: none;
-    background-image: url("/images/icons/close.png");
+    background-image: url('/images/icons/close.png');
     background-size: 100%;
     background-repeat: no-repeat;
   }
@@ -47,7 +47,7 @@ const StyledMobileMenu = styled.header`
       margin-bottom: 40px;
     }
     a {
-      color: #fff;
+      color: #4c3b82;
       font-size: 24px;
       line-height: 33px;
       text-decoration: none;
@@ -62,54 +62,54 @@ const StyledMobileMenu = styled.header`
       margin-top: auto;
     }
   }
-`;
+`
 
 export const MobileMenu: React.FC<{
-  menuOpened: boolean;
-  closeMenu: () => void;
+  menuOpened: boolean
+  closeMenu: () => void
 }> = ({ menuOpened, closeMenu }) => {
-  const router = useRouter();
+  const router = useRouter()
 
   const goToArea = (id: string) => {
-    closeMenu();
-    router.replace("/#" + id);
-    scrollToElement(id);
-  };
+    closeMenu()
+    router.replace('/#' + id)
+    scrollToElement(id)
+  }
 
   return (
-    <StyledMobileMenu className={menuOpened ? "opened" : ""}>
+    <StyledMobileMenu className={menuOpened ? 'opened' : ''}>
       <button className="close" onClick={closeMenu}></button>
       <nav>
-        <span className="logo" onClick={() => goToArea("")}>
+        <span className="logo" onClick={() => goToArea('')}>
           <Image
-            src="/images/logos/logo-icon-white.svg"
+            src="/images/logos/logo-icon.png"
             width={150}
             height={90}
+            objectFit="contain"
             alt={`Logo ${process.env.NEXT_PUBLIC_COMPANY_NAME}`}
           />
         </span>
-        <a onClick={() => goToArea("")}>Produtos</a>
-        <a onClick={() => goToArea("depoimentos")}>Depoimentos</a>
-        <a onClick={() => goToArea("recursos")}>Recursos</a>
-        <a onClick={() => goToArea("instagram")}>Instagram</a>
-        <a onClick={() => goToArea("contato")}>Contato</a>
+        <a onClick={() => goToArea('')}>Produtos</a>
+        <a onClick={() => goToArea('depoimentos')}>Depoimentos</a>
+        <a onClick={() => goToArea('recursos')}>Recursos</a>
+        <a onClick={() => goToArea('contato')}>Contato</a>
         <a
           onClick={() => {
-            closeMenu();
-            router.push("cromatografias");
+            closeMenu()
+            router.push('cromatografias')
           }}
         >
           Cromatografias
         </a>
         <a
           onClick={() => {
-            closeMenu();
-            router.push("sobre");
+            closeMenu()
+            router.push('sobre')
           }}
         >
           Sobre
         </a>
       </nav>
     </StyledMobileMenu>
-  );
-};
+  )
+}
