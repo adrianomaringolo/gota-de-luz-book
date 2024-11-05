@@ -62,7 +62,7 @@ export const productTypes: ProductType[] = [
     description: `<p>Feitos com azeite de oliva extra virgem, cada sabonete é cuidadosamente elaborado para proporcionar uma experiência única de cuidado com a pele.</p>
       <p>Ao invés de água, usamos hidrolatos na confecção dos nossos sabonetes. Hidrolatos orgânicos destilados na chácara da Morada (melaleuca, lavanda, immortelle e os demais que destilamos)!</p>`,
     image: 'sabonetes-manteiga.jpg',
-    seal: '',
+    seal: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-new.png?alt=media&token=9ad4fc11-08a0-43a9-b350-b20b57dbac92',
   },
 
   {
@@ -96,6 +96,7 @@ export const productTypes: ProductType[] = [
     description:
       'Protetor labial feito com óleos vegetais e óleos essenciais. Livre de conservantes.',
     image: 'protetor-labial.jpg',
+    seal: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-new.png?alt=media&token=9ad4fc11-08a0-43a9-b350-b20b57dbac92',
   },
   {
     id: 'colonias',
@@ -112,6 +113,7 @@ export const productTypes: ProductType[] = [
     description:
       'Tinturas são extratos alcoólicos de substâncias naturais, como ervas ou princípios ativos de plantas medicinais. Elas são preparadas pela dissolução dessas substâncias em um veículo alcoólico, sendo uma forma comum de apresentação farmacêutica. O álcool é usado para extrair os compostos desejados, tornando as tinturas uma opção eficaz para o uso medicinal.',
     image: 'tinturas.jpg',
+    seal: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-new.png?alt=media&token=9ad4fc11-08a0-43a9-b350-b20b57dbac92',
   },
   {
     id: 'acessorios',
