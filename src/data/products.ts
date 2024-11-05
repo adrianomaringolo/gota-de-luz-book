@@ -32,6 +32,14 @@ export const productTypes: ProductType[] = [
     seal: '',
   },
   {
+    id: 'diluicoes-oleos-essenciais',
+    type: 'Diluições',
+    description:
+      'As diluições de óleos essenciais são óleos vegetais (TCM) que servem para diluir os óleos essenciais, tornando-os seguros para uso na pele. São óleos vegetais puros, sem adição de conservantes ou corantes.<br/>Nossas diluições são a 2% (duas gotas de óleo essencial para cada 5ml de diluição)',
+    image: 'diluicoes-oleos-essenciais.jpg',
+    seal: '',
+  },
+  {
     id: 'sabonetes',
     type: 'Sabonetes artesanais',
     description: `<p>Óleos vegetais e óleos essenciais.</p>
