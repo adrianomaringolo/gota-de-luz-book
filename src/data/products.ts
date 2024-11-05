@@ -78,7 +78,6 @@ export const productTypes: ProductType[] = [
   {
     id: 'sprays',
     type: 'Sprays',
-    typeLabel: 'Sprays',
     description:
       'Produtos feitos à base de óleos essenciais e álcool de cereais. Livre de essências sintéticas.',
     image: 'sprays.jpg',
@@ -93,9 +92,9 @@ export const productTypes: ProductType[] = [
   {
     id: 'colonias',
     type: 'Colonias',
-    typeLabel: 'Colônias',
+    typeLabel: 'Águas de Colônia',
     description:
-      'Produtos feitos à base de óleos essenciais e álcool de cereais. Livre de essências sintéticas.',
+      ' Produtos feitos à base de óleos essenciais e álcool de cereais. Livre de essências sintéticas.',
     image: 'colonias.jpg',
   },
   {
