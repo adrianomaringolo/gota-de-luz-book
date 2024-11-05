@@ -105,6 +105,7 @@ export const productTypes: ProductType[] = [
     description:
       ' Produtos feitos à base de óleos essenciais e álcool de cereais. Livre de essências sintéticas.',
     image: 'colonias.jpg',
+    seal: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-new.png?alt=media&token=9ad4fc11-08a0-43a9-b350-b20b57dbac92',
   },
   {
     id: 'tinturas',
