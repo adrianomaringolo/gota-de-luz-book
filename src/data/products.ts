@@ -84,6 +84,14 @@ export const productTypes: ProductType[] = [
     image: 'sprays.jpg',
   },
   {
+    id: 'cremes',
+    type: 'Cremes',
+    typeLabel: 'Cremes',
+    description:
+      'Cremes para uso diário, feitos com óleos vegetais e óleos essenciais. Livre de parabenos e conservantes químicos.',
+    image: 'cremes.jpg',
+  },
+  {
     id: 'colonias',
     type: 'Colonias',
     typeLabel: 'Colônias',
