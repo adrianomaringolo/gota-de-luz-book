@@ -25,21 +25,21 @@ export const InitArea: React.FC = () => {
           conservantes. Toda a renda obtida é revertida para os trabalhos assistenciais da
           Morada Espírita Professor Lairi Hans.
         </p>
+      </div>
 
-        <h2 className="text-center mt-6 mb-4 italic">Conheça nossos produtos</h2>
-        <ProductCategories />
+      <h2 className="text-center mt-6 mb-4 italic">Conheça nossos produtos</h2>
+      <ProductCategories />
 
-        <h2 className="text-center mt-10 italic">
-          Acompanhe nosso trabalho pelas redes sociais
-        </h2>
-        <div className="flex gap-3 flex-wrap justify-center mt-3">
-          <span className="my-1">
-            <InstagramButton />
-          </span>
-          <span className="my-1">
-            <FacebookButton />
-          </span>
-        </div>
+      <h2 className="text-center mt-10 italic">
+        Acompanhe nosso trabalho pelas redes sociais
+      </h2>
+      <div className="flex gap-3 flex-wrap justify-center mt-3">
+        <span className="my-1">
+          <InstagramButton />
+        </span>
+        <span className="my-1">
+          <FacebookButton />
+        </span>
       </div>
     </div>
   )

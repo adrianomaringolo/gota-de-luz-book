@@ -91,11 +91,11 @@ export const productTypes: ProductType[] = [
     image: 'sprays.jpg',
   },
   {
-    id: 'cremes',
-    type: 'Cremes',
+    id: 'protetor-labial',
+    type: 'Protetor labial',
     description:
-      'Cremes para uso diário, feitos com óleos vegetais e óleos essenciais. Livre de parabenos e conservantes químicos.',
-    image: 'cremes.jpg',
+      'Protetor labial feito com óleos vegetais e óleos essenciais. Livre de conservantes.',
+    image: 'protetor-labial.jpg',
   },
   {
     id: 'colonias',
