@@ -2,104 +2,10 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import PubSub from 'pubsub-js'
 import { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import { cn } from 'utils/styling'
 import { CartItemType, CartService, CartType } from '../../services/CartService'
 import { scrollToElement } from '../../utils/layout'
 import { MobileMenu } from './MobileMenu'
-
-const StyledHeader = styled.header`
-  background: #e0ddf4;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-  justify-content: space-between;
-
-  .tag {
-    background-color: #4c3b82;
-    color: white;
-    padding: 1px 5px;
-    border-radius: 5px;
-    margin-left: 5px;
-    font-size: 0.7em;
-  }
-  .logo-image {
-    margin-left: 15px;
-    background-image: url('/images/logos/logo-icon.png');
-    width: 50px;
-    height: 50px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: opacity 0.5s;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-
-  li {
-    display: flex;
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-    a,
-    button {
-      font-size: 1em;
-      padding: 10px;
-      border: 1px solid transparent;
-      transition: all 0.8s;
-      margin: 0 5px;
-      background-color: transparent;
-      color: #4c3b82;
-      cursor: pointer;
-      &:hover {
-        border-color: #4c3b82;
-        background-color: rgba(255, 255, 255, 0.8);
-      }
-
-      &.active {
-        border-color: #4c3b82;
-        background-color: transparent;
-      }
-    }
-  }
-
-  .menu-burguer {
-    margin-left: 12px;
-    background-color: transparent;
-    border: none;
-    width: 50px;
-    display: flex;
-    visibility: hidden;
-  }
-
-  .cart-button {
-    width: 50px;
-    display: flex;
-  }
-
-  @media only screen and (max-width: 768px) {
-    .logo-image {
-      margin-right: auto;
-    }
-    .menu-burguer {
-      visibility: visible;
-    }
-    ul {
-      button {
-        display: none;
-      }
-    }
-  }
-`
 
 export const Navbar = () => {
   const router = useRouter()
@@ -118,7 +24,11 @@ export const Navbar = () => {
 
   const getCartBadge = () =>
     cart?.items &&
-    cart?.items.length > 0 && <span className="tag">{getTotalItens()}</span>
+    cart?.items.length > 0 && (
+      <span className="absolute top-0 right-0 bg-[#4c3b82] text-white px-1 py-px rounded-md ml-1 text-[0.7em]">
+        {getTotalItens()}
+      </span>
+    )
 
   const navOptions = [
     { title: 'Produtos', id: '#', onClick: () => goToArea('') },
@@ -151,8 +61,8 @@ export const Navbar = () => {
           {getCartBadge()}
         </>
       ),
-      classNames: 'cart-button',
       id: 'carrinho',
+      className: 'w-14',
       onClick: () => router.push('carrinho'),
     },
   ]
@@ -176,19 +86,29 @@ export const Navbar = () => {
 
   return (
     <>
-      <StyledHeader>
+      <header className="bg-[#e0ddf4] p-2 flex items-center fixed w-full z-10 justify-between">
         <div
-          className="logo-image invisible md:visible"
+          className={cn(
+            "ml-4 bg-[url('/images/logos/logo-icon.png')] w-12 h-12 bg-contain bg-no-repeat",
+            'bg-center transition-opacity cursor-pointer invisible md:visible',
+          )}
           onClick={() => goToArea('')}
         ></div>
-        <ul>
+        <ul className="list-none p-0 m-0 flex">
           {navOptions.map((option) => {
             return (
-              <li key={`nav-option-${option.id}`}>
+              <li key={`nav-option-${option.id}`} className="flex">
                 <button
-                  className={`${option.classNames || ''} ${
-                    router.asPath === `/${option.id}` ? 'active' : ''
-                  }`}
+                  className={cn(
+                    router.asPath === `/${option.id}`
+                      ? 'border-[#4c3b82] bg-transparent'
+                      : '',
+                    'relative hidden md:block',
+                    'text-[1em] p-2 border-[1px] border-[transparent] transition-all mx-2 my-0',
+                    'bg-transparent text-[#4c3b82] cursor-pointer',
+                    'hover:border-[#4c3b82]',
+                    option.className,
+                  )}
                   onClick={option.onClick}
                 >
                   {option.title}
@@ -198,7 +118,10 @@ export const Navbar = () => {
           })}
         </ul>
 
-        <button className="menu-burguer" onClick={() => setMobileMenuOpen(true)}>
+        <button
+          className="ml-3 bg-transparent border-none w-12 flex visible md:invisible"
+          onClick={() => setMobileMenuOpen(true)}
+        >
           <Image
             src="/images/icons/menu-burger.svg"
             width={30}
@@ -206,7 +129,7 @@ export const Navbar = () => {
             alt="Items menu"
           />
         </button>
-      </StyledHeader>
+      </header>
       <MobileMenu
         menuOpened={mobileMenuOpen}
         closeMenu={() => setMobileMenuOpen(false)}
