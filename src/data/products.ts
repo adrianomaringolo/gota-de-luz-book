@@ -122,4 +122,12 @@ export const productTypes: ProductType[] = [
     description: '',
     image: 'acessorios.jpg',
   },
+  {
+    id: 'vales',
+    type: 'Vales',
+    typeLabel: 'Vale-Presente 🎁',
+    description:
+      'Que tal dar um vale-presente para alguém querido?<br/>Os vales podem ser usados pelo site ou na nossa loja física.',
+    image: 'vales.jpg',
+  },
 ]

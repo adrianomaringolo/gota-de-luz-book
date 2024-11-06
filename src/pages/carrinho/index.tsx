@@ -90,7 +90,9 @@ const Carrinho = () => {
                   border: '1px solid #ccc',
                 }}
               >
-                {cart?.items?.map((item: CartItemType) => <CartItem item={item} />)}
+                {cart?.items
+                  ?.filter((item) => item.amount && item.amount > 0)
+                  .map((item: CartItemType) => <CartItem item={item} />)}
               </div>
               <div className="total-value">Valor total: {formatCurrency(getTotal())}</div>
               <div className={styles.buttonArea} style={{ display: 'flex' }}>
