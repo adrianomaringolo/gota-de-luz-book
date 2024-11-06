@@ -58,7 +58,7 @@ const ScrollSlider: React.FC<ScrollSliderProps> = ({ children, className }) => {
       {canScrollLeft && (
         <button
           onClick={scrollLeft}
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 z-50"
         >
           &#8592;
         </button>
