@@ -10,8 +10,8 @@ type ProductCategoriesProps = {
 }
 
 const sizes = {
-  small: { image: 'w-12 h-12 md:w-24 md:h-24', label: 'text-sm', seal: 'w-10' },
-  large: { image: 'w-20 h-20 md:w-48 md:h-48', label: 'text-md', seal: 'w-16' },
+  small: { image: 'w-12 h-12 md:w-24 md:h-24', label: 'text-sm', seal: 'w-7 md:w-10' },
+  large: { image: 'w-20 h-20 md:w-48 md:h-48', label: 'text-md', seal: 'w-8 md:w-16' },
 }
 
 export const ProductCategories = (props: ProductCategoriesProps) => {
