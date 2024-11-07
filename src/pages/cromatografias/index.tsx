@@ -84,6 +84,16 @@ const reports = [
     cientificName: 'Cordia verbenacea',
     url: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Cordia%20verbenacea%20-%20HID.pdf?alt=media&token=32ec37de-7844-4bb1-bdab-5841441c74ab',
   },
+  {
+    name: 'Laranja sanguínea - Hidrolato',
+    cientificName: 'Citrus sinensis',
+    url: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Hidrolato%20de%20laranja%20sanguinea.pdf?alt=media&token=65a07f95-2dda-41f1-9f14-3f1f23d36941',
+  },
+  {
+    name: 'Laranja sanguínea - Óleo essencial',
+    cientificName: 'Citrus sinensis',
+    url: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20OE%20de%20laranja%20sanguinea.pdf?alt=media&token=795dba99-473c-4f76-8c5b-49ffccf545f6',
+  },
 ]
 
 const Cromatografias = () => (
