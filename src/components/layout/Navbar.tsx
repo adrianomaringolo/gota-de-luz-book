@@ -62,7 +62,7 @@ export const Navbar = () => {
         </>
       ),
       id: 'carrinho',
-      className: 'w-14',
+      className: 'w-14 block ml-auto',
       onClick: () => router.push('carrinho'),
     },
   ]
@@ -90,11 +90,11 @@ export const Navbar = () => {
         <div
           className={cn(
             "ml-4 bg-[url('/images/logos/logo-icon.png')] w-12 h-12 bg-contain bg-no-repeat",
-            'bg-center transition-opacity cursor-pointer invisible md:visible',
+            'bg-center transition-opacity cursor-pointer',
           )}
           onClick={() => goToArea('')}
         ></div>
-        <ul className="list-none p-0 m-0 flex">
+        <ul className="list-none p-0 m-0 flex ml-auto md:ml-0">
           {navOptions.map((option) => {
             return (
               <li key={`nav-option-${option.id}`} className="flex">
