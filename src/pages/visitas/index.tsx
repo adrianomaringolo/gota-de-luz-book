@@ -1,4 +1,5 @@
 import Layout from 'components/Layout'
+import { VisitCTA } from 'components/visitas/VisitCTA'
 import { VisitListDisplayer } from 'components/visitas/VisitListDisplayer'
 import ImageGallery from 'react-image-gallery'
 import styled from 'styled-components'
@@ -29,15 +30,15 @@ const Visitas = () => {
     <>
       <Layout title={process.env.NEXT_PUBLIC_COMPANY_NAME}>
         <StyledVisitasArea>
-          <h1 className="text-4xl font-semibold">Visitação</h1>
+          <h1 className="text-4xl font-semibold mt-10">Visitação</h1>
 
-          <VisitListDisplayer isOpened={false} />
+          <VisitListDisplayer />
 
-          {/* <div className="my-5 flex justify-center">
+          <div className="my-5 flex justify-center">
             <VisitCTA />
-          </div> */}
+          </div>
 
-          <h3 className="text-2xl font-semibold">
+          <h3 className="text-2xl font-semibold mt-10">
             Conheça mais sobre a visita guiada à Chácara Mãe Luzia
           </h3>
 
@@ -88,17 +89,7 @@ const Visitas = () => {
           </p>
 
           <p>
-            <b>O valor é de R$ 110,00 por pessoa!</b>
-          </p>
-
-          <p className="border-t pt-4 mt-4 mb-4 italic">
-            ⚠️ O número de vagas é limitado. Os interessados devem preencher o formulário
-            e aguardar o contato da equipe Gota de Cura para confirmar a reserva e obter
-            mais detalhes para pagamento.
-          </p>
-
-          <p className="mb-4 italic">
-            ⚠️ A garantia da vaga se dá após o a confirmação e o pagamento da taxa.
+            <b>O valor é de R$ 120,00 por pessoa!</b>
           </p>
 
           <h3 className="border-t mt-4 pt-4 text-2xl font-semibold">Galeria de fotos</h3>
@@ -126,7 +117,7 @@ const Visitas = () => {
             </div>
           ))}
 
-          {/* <VisitCTA /> */}
+          <VisitCTA />
         </StyledVisitasArea>
       </Layout>
     </>

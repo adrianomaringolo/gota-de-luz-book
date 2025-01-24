@@ -33,16 +33,11 @@ export const Navbar = () => {
   const navOptions = [
     { title: 'Produtos', id: '#', onClick: () => goToArea('') },
     {
-      title: 'Depoimentos',
-      id: '#depoimentos',
-      onClick: () => goToArea('depoimentos'),
+      title: 'Visitas',
+      id: 'visitas',
+      onClick: () => router.push('visitas'),
     },
     { title: 'Recursos', id: '#recursos', onClick: () => goToArea('recursos') },
-    // {
-    //   title: 'Instagram',
-    //   id: '#instagram',
-    //   onClick: () => goToArea('instagram'),
-    // },
     { title: 'Contato', id: '#contato', onClick: () => goToArea('contato') },
     {
       title: 'Cromatografias',

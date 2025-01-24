@@ -4,7 +4,7 @@ import { VisitListDisplayer } from 'components/visitas/VisitListDisplayer'
 import Link from 'next/link'
 import styles from './../../styles/layout.module.scss'
 
-const OPEN_VISITS: boolean = false
+const OPEN_VISITS: boolean = true
 
 export const VisitArea: React.FC = () => {
   return (
@@ -31,7 +31,7 @@ export const VisitArea: React.FC = () => {
           explicação do processo + visita guiada à propriedade
           <br />
           <br />
-          <b>Valor</b>: R$ 110,00 por pessoa
+          <b>Valor</b>: R$ 120,00 por pessoa
           <br />
           <br />
           <big>

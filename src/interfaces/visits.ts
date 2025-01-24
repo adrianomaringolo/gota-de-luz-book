@@ -8,6 +8,6 @@ export type InscricaoData = {
   name: string
   cellphone: string
   email: string
-  companions: number
+  companions: string[]
   lastVisit: string
 }

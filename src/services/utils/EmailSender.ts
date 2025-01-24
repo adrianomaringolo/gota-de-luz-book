@@ -27,7 +27,7 @@ const sendNewOrderEmail = async (
 }
 
 const sendNewEnrollmentEmail = async (
-  visitDates: string[],
+  visitDate: string,
   enrollmentData: InscricaoData,
   mailList: string[],
 ): Promise<void> => {
@@ -35,14 +35,14 @@ const sendNewEnrollmentEmail = async (
     EMAIL_SERVICE_ID,
     EMAIL_TEMPLATE_ID,
     {
-      title: `🌟 Nova inscrição para visitação`,
-      html_message: `<p style="font-size: 20px;margin-bottom: 20px;font-weight: bold">🌟 Nova inscrição para visitação realizada pelo site!</p>
+      title: `🌟 Inscrição para visitação de ${enrollmentData.name}`,
+      html_message: `<p style="font-size: 20px;margin-bottom: 20px;font-weight: bold">Nova inscrição para visitação realizada pelo site!</p>
 
-      <p><b>Data(s)</b>: ${visitDates.map((date) => formatDateUTC(date)).join(', ')}</p>
+      <p><b>Data</b>: ${formatDateUTC(visitDate)}</p>
       <p><b>Nome</b>: ${enrollmentData.name}</p>
       <p><b>Celular</b>: ${enrollmentData.cellphone}</p>
       <p><b>Email</b>: ${enrollmentData.email}</p>
-      <p><b>Acompanhantes</b>: ${enrollmentData.companions}</p>
+      <p><b>Acompanhantes</b>: ${enrollmentData.companions.join(', ')}</p>
       <p><b>Última visita</b>: ${enrollmentData.lastVisit}</p>
       
       <hr/>
@@ -70,11 +70,34 @@ const sendEnrollmentGreetingEmail = async (
       <p>Até lá, se quiser ver mais sobre a visitação, ver fotos e depoimentos de quem já foi, acesse nossa página: <a href="https://www.gotadecura.com.br/visitas">gotadecura.com.br/visitas</a> e nos acompanhe pelo <a href="https://www.instagram.com/gotadecura_artesanais/">Instagram</a>!</p>
       <p style="background-color: #fbffc0; padding: 20px; border-radius: 20px; font-size: 14px; margin-top: 50px; font-style: italic; text-align: left">
       <b>Importante:</b><br/><br/>
-      ⚠️ Sua pré-reserva e dos acompanhantes está feita através do preenchimento do formulário!<br/><br/>
-      ⚠️ Mas a garantia da vaga se dá após o a confirmação e o pagamento da taxa.<br/><br/>
       ⚠️ A programação se inicia pontualmente às 8h, com encerramento às 12h.<br/><br/>
       ⚠️ O deslocamento é por conta de cada um. Após fecharmos o grupo, passaremos mais detalhes e orientações.<br/><br/>
-      ⚠️ O valor é de R$ 110,00 por pessoa</p>
+      ⚠️ O valor é de R$ 120,00 por pessoa</p>
+      <hr/>
+      <div style="font-size: 14px; text-align: left">
+        <h4>Informativos sobre o pagamento:</h4>
+        <p>
+          ⚠️ O pagamento será combinado com a equipe Gota de Cura. A garantia da vaga
+          se dá após a confirmação e o pagamento da taxa.
+        </p>
+
+        <p><b>Sobre desistência e reembolso:</b></p>
+        <p>
+          ⚠️ Até 14 dias antes do evento: reembolso de <b>50% do valor</b> através de
+          transferência bancária.
+        </p>
+
+        <p>
+          ⚠️ Até 7 dias antes do evento: reembolso de <b>50% do valor</b> através de
+          vale-presente para compra de produtos pelo site ou loja (frete não incluso).
+        </p>
+
+        <p>
+          ⚠️ Com menos de 7 dias para o evento:
+          <u> não haverá reembolso, nem reserva de vaga para eventos futuros, nem troca
+            por produtos.</u>.
+        </p>
+      </div>
       <p style="margin-top: 50px">Atenciosamente,<br/>Equipe Gota de Cura</p></div>`,
       mail_list: mailList.join(','),
     },
