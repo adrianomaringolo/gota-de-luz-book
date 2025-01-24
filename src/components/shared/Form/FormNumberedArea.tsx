@@ -13,7 +13,7 @@ export const FormNumberedArea = (
   return (
     <>
       <h3 className="text-2xl font-semibold flex gap-3 items-center border-t pt-6">
-        <span className="bg-[#f2e4ee] w-10 h-10 rounded-full flex justify-center items-center">
+        <span className="bg-[#f2e4ee] min-w-[40px] min-h-[40px] w-10 h-10 rounded-full inline-flex justify-center items-center">
           {number}
         </span>
         {text}
