@@ -96,7 +96,7 @@ const Inscricao = () => {
 
             <FormNumberedArea
               number={3}
-              text="Pretende levar acompanhantes? Se sim, preencha os nomes abaixo?"
+              text="Pretende levar acompanhantes? Se sim, preencha os nomes abaixo:"
             >
               {companions.map((_, index) => (
                 <div className="flex items-end gap-2" key={index}>
