@@ -54,7 +54,7 @@ const Inscricao = () => {
                       key={visit.id}
                       value={visit.date}
                       label={formatDateUTC(visit.date)}
-                      radioGroup="visits"
+                      name="visit-date"
                       onChange={(e: ChangeEvent<HTMLInputElement>) =>
                         setSelectedDate(e.target.value)
                       }
