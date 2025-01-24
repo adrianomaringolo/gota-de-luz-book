@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { useGetVisits } from 'services/hooks'
 import { formatDateUTC } from 'utils/format'
-import { ConfirmModal } from './parts/confirm-modal'
+import { ConfirmModal } from '../../../components/visitas/ConfirmModal'
 
 const Inscricao = () => {
   const [selectedDate, setSelectedDate] = useState<string>()
