@@ -44,6 +44,10 @@ export const ConfirmModal = (props: ConfirmModalProps) => {
         <h2 className="text-2xl font-semibold mb-3">✅ Confirmação da inscrição</h2>
         <div className=" border p-5 rounded flex flex-col gap-2 items-baseline">
           <p>Por favor, confirme as informações abaixo!</p>
+          <p className="bg-orange-600 text-sm py-2 px-3 text-white rounded">
+            Se certifique que o número do celular esteja correto, será o meio de contato
+            da nossa equipe com você!
+          </p>
 
           <p className="pl-2">
             <b>Datas selecionada: </b>
