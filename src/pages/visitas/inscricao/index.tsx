@@ -1,7 +1,8 @@
 import Layout from 'components/Layout'
-import { FormNumberedArea, InputField } from 'components/shared'
+import { CheckboxField, FormNumberedArea, InputField } from 'components/shared'
 import Button from 'components/shared/basic/Button'
 import { RadioField } from 'components/shared/Form/RadioField'
+import { PaymentTerms } from 'components/visitas/PaymentTerms'
 import { InscricaoData } from 'interfaces/visits'
 import { ChangeEvent, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -18,6 +19,9 @@ const Inscricao = () => {
 
   const [companions, setCompanions] = useState<string[]>([])
   const [showConfirmation, setShowConfirmation] = useState(false)
+
+  const [agreedToTerms, setAgreedToTerms] = useState(false)
+  const [isOpenTerms, setIsOpenTerms] = useState(false)
 
   const openConfirmation = () => {
     const formData = getValues()
@@ -131,8 +135,30 @@ const Inscricao = () => {
                 {...register('lastVisit')}
               />
             </FormNumberedArea>
+            <CheckboxField
+              label={
+                <>
+                  Li e concordo com as regras de{' '}
+                  <button
+                    className="underline text-blue-600"
+                    type="button"
+                    onClick={() => setIsOpenTerms(true)}
+                  >
+                    pagamento e reembolso
+                  </button>
+                </>
+              }
+              onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                setAgreedToTerms(e.target.checked)
+              }}
+            />
             <div className="flex mt-5 justify-end">
-              <Button type="button" onClick={openConfirmation} className="w-full">
+              <Button
+                type="button"
+                onClick={openConfirmation}
+                className="w-full"
+                disabled={!agreedToTerms}
+              >
                 Enviar
               </Button>
             </div>
@@ -148,6 +174,8 @@ const Inscricao = () => {
           onClose={() => setShowConfirmation(false)}
         />
       )}
+
+      <PaymentTerms isOpen={isOpenTerms} onClose={() => setIsOpenTerms(false)} />
     </>
   )
 }
