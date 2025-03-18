@@ -62,7 +62,7 @@ export const productTypes: ProductType[] = [
     description: `<p>Feitos com azeite de oliva extra virgem, cada sabonete é cuidadosamente elaborado para proporcionar uma experiência única de cuidado com a pele.</p>
       <p>Ao invés de água, usamos hidrolatos na confecção dos nossos sabonetes. Hidrolatos orgânicos destilados na chácara da Morada (melaleuca, lavanda, immortelle e os demais que destilamos)!</p>`,
     image: 'sabonetes-manteiga.jpg',
-    seal: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-new.png?alt=media&token=9ad4fc11-08a0-43a9-b350-b20b57dbac92',
+    seal: '',
   },
 
   {
@@ -89,6 +89,13 @@ export const productTypes: ProductType[] = [
     description:
       'Produtos feitos à base de óleos essenciais e álcool de cereais. Livre de essências sintéticas.',
     image: 'sprays.jpg',
+  },
+  {
+    id: 'sprays-topicos',
+    type: 'Sprays tópicos',
+    description: `<p>Sprays naturais para uso sobre a pele</p>`,
+    image: 'sprays-topicos.jpg',
+    seal: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/products%2Fseals%2Fseal-new.png?alt=media&token=9ad4fc11-08a0-43a9-b350-b20b57dbac92',
   },
   {
     id: 'protetor-labial',
