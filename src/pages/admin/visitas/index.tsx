@@ -1,13 +1,19 @@
 import AdminLayout from 'components/admin/AdminLayout'
-import { useState } from 'react'
+import { Visit } from 'interfaces/visits'
+import { useEffect, useState } from 'react'
 import { useGetVisits } from 'services/hooks'
 import { formatDateUTC } from 'utils/format'
-import { SendThankEmailModal } from '../../../components/admin/SendThankEmailModal'
 
 const Visitas = () => {
   const visits = useGetVisits()
-  const [statusToFilter, setStatusToFilter] = useState<string>('')
+  const [date, setDate] = useState<string>('')
   const [showModal, setShowModal] = useState<boolean>(false)
+
+  const [selectedVisit, setSelectedVisit] = useState<Visit>()
+
+  useEffect(() => {
+    setSelectedVisit(visits.find((v) => v.date === date))
+  }, [visits, date])
 
   return (
     <AdminLayout>
@@ -21,10 +27,7 @@ const Visitas = () => {
         Filtrar por data:
         <div className="is-flex">
           <div className="select is-large mb-3">
-            <select
-              value={statusToFilter}
-              onChange={(e: any) => setStatusToFilter(e.target.value)}
-            >
+            <select value={date} onChange={(e: any) => setDate(e.target.value)}>
               <option value="">Todas</option>
 
               {visits.map((visit) => (
@@ -38,90 +41,37 @@ const Visitas = () => {
             Filtrar
           </button>
         </div>
-        {/* {visits && visit.length ? (
+        {selectedVisit?.enrollments ? (
           <>
-            <p>
-              Exibindo <b>{orders.length}</b> pedido(s)
-            </p>
-            <p style={{ display: 'none' }}>
-              Valor total: <b>R$ {formatCurrency(getTotalFromOrders())}</b>
-            </p>
             <div className="table-container">
               <table className="table is-bordered is-striped is-hoverable">
                 <thead>
                   <tr>
-                    <th>Código/Data</th>
-                    <th>Cliente</th>
-                    <th>Produtos</th>
-                    <th>Status</th>
-                    <th></th>
+                    <th>Nome</th>
+                    <th>Celular</th>
+                    <th>Email</th>
+                    <th>Acompanhantes</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {orders
-                    .sort((a, b) => b.orderId - a.orderId)
-                    .map((order: any) => (
-                      <tr key={'order-' + order.orderId}>
-                        <td>
-                          <strong>{order.orderId}</strong>
-                          <br />
-                          {format(new Date(order.createdAt), 'dd/MM/yyyy HH:mm')}
-                        </td>
-                        <td>
-                          <div className="has-text-weight-bold">
-                            {order.contactInfo.name}
-                          </div>
-                          <div className="is-size-6">{order.contactInfo.phone}</div>
-                          <div className="is-size-6">
-                            {order.contactInfo.city} (CEP: {order.contactInfo.zipcode})
-                          </div>
-                        </td>
-                        <td>
-                          {getTotalItens(order)} items
-                          <div className="is-size-6 has-text-weight-bold">
-                            {formatCurrency(getTotal(order))}
-                          </div>
-                          <details>
-                            <summary className="has-background-link-light is-size-5">
-                              Ver produtos
-                            </summary>
-                            <div className="card">
-                              <div className="card-content">
-                                <div className="content is-size-6">
-                                  {order.items
-                                    .filter((item: any) => item.amount)
-                                    .map((item: any) => (
-                                      <p>
-                                        {item.amount} x [{item.type}] {item.name}
-                                      </p>
-                                    ))}
-                                </div>
-                              </div>
-                            </div>
-                          </details>
-                        </td>
-                        <td>
-                          <StatusTag status={order.status} size="is-medium" />
-                          <br />
-                          {lastLastStatusLogPerson(order)}
-                        </td>
-                        <td>
-                          <Link href={`/admin/pedidos/${order.orderId}`} key={order.id}>
-                            Ver detalhes
-                          </Link>
-                        </td>
-                      </tr>
-                    ))}
+                  {selectedVisit?.enrollments.map((enrollment) => (
+                    <tr key={'visit-' + enrollment.name}>
+                      <td>{enrollment.name}</td>
+                      <td>{enrollment.cellphone}</td>
+                      <td>{enrollment.email}</td>
+                      <td>{enrollment.companions?.join(', ')}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
           </>
         ) : (
-          <p>Não há pedidos para exibir</p>
-        )} */}
+          <p>Não há visitas para exibir</p>
+        )}
       </div>
 
-      <SendThankEmailModal isOpen={showModal} onClose={() => setShowModal(false)} />
+      {/* <SendThankEmailModal isOpen={showModal} onClose={() => setShowModal(false)} /> */}
     </AdminLayout>
   )
 }
