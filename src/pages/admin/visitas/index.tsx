@@ -47,6 +47,7 @@ const Visitas = () => {
               <table className="table is-bordered is-striped is-hoverable">
                 <thead>
                   <tr>
+                    <th>#</th>
                     <th>Nome</th>
                     <th>Celular</th>
                     <th>Email</th>
@@ -54,8 +55,9 @@ const Visitas = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {selectedVisit?.enrollments.map((enrollment) => (
+                  {selectedVisit?.enrollments.map((enrollment, i) => (
                     <tr key={'visit-' + enrollment.name}>
+                      <td>{i + 1}</td>
                       <td>{enrollment.name}</td>
                       <td>{enrollment.cellphone}</td>
                       <td>{enrollment.email}</td>
