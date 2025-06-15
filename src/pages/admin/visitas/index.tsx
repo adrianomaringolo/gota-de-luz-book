@@ -1,4 +1,5 @@
 import AdminLayout from 'components/admin/AdminLayout'
+import { SendThankEmailModal } from 'components/admin/SendThankEmailModal'
 import { Visit } from 'interfaces/visits'
 import { useEffect, useState } from 'react'
 import { useGetVisits } from 'services/hooks'
@@ -73,7 +74,7 @@ const Visitas = () => {
         )}
       </div>
 
-      {/* <SendThankEmailModal isOpen={showModal} onClose={() => setShowModal(false)} /> */}
+      <SendThankEmailModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </AdminLayout>
   )
 }
