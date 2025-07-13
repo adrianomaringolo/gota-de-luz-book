@@ -4,8 +4,10 @@ export interface ProductType {
   typeLabel?: string
   description: string
   image: string
+  mode: 'type' | 'category'
   items?: Array<ProductItem>
   seal?: string
+  customClassName?: string
 }
 
 export interface OptionsSetItem {

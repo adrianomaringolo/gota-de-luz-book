@@ -14,7 +14,11 @@ const Product = ({ productData }: { productData: ProductType }) => {
   const [products, setProducts] = useState<any[]>([])
 
   const getProducts = async () =>
-    setProducts(await ProductsService.getProductsByType(productData.type))
+    setProducts(
+      productData.mode === 'type'
+        ? await ProductsService.getProductsByType(productData.type)
+        : await ProductsService.getProductsByCategory(productData.type),
+    )
 
   useEffect(() => {
     getProducts()

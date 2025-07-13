@@ -11,24 +11,17 @@ export const InitArea: React.FC = () => {
           <Image
             priority
             src="/images/logo.png"
-            height={200}
-            width={600}
-            layout="intrinsic"
+            height={150}
+            width={400}
             objectFit="contain"
             alt="Gota de Cura, cuidando com amor"
-            className="max-w-[600px]"
+            className="max-w-[400px]"
           />
         </div>
-        <p className="my-4 text-center text-xl leading-7">
-          A marca {process.env.NEXT_PUBLIC_COMPANY_NAME} oferece produtos artesanais,
-          feitos 100% à base de óleos vegetais nobres e óleos essenciais. Livres de
-          conservantes. Toda a renda obtida é revertida para os trabalhos assistenciais da
-          Morada Espírita Professor Lairi Hans.
-        </p>
       </div>
 
       <h2 className="text-center mt-6 mb-4 italic">Conheça nossos produtos</h2>
-      <ProductCategories />
+      <ProductCategories mode="grid" />
 
       <h2 className="text-center mt-10 italic">
         Acompanhe nosso trabalho pelas redes sociais
