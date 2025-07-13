@@ -159,7 +159,7 @@ export const productTypes: ProductType[] = [
     id: 'amazonia',
     type: 'Cantinho da Amazônia',
     typeLabel: 'Cantinho da Amazônia',
-    customClassName: 'col-span-3',
+    customClassName: 'cols-span-2 md:col-span-3',
     description: `<section class="amazonia-section">
         <p>
           Um espaço dedicado à sabedoria, à força e ao encanto da floresta.
