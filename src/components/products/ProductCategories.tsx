@@ -68,5 +68,5 @@ export const ProductCategories = (props: ProductCategoriesProps) => {
     return <div className="grid grid-cols-2 md:grid-cols-6 gap-4">{elements}</div>
   }
 
-  return <ScrollSlider className="gap-6">{elements}</ScrollSlider>
+  return <ScrollSlider className="bg-white/75 gap-6">{elements}</ScrollSlider>
 }

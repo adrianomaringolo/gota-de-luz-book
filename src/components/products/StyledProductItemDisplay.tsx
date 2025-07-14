@@ -1,12 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledProductItemDisplay = styled.div`
   @media only screen and (min-width: 768px) {
     min-width: 300px;
-  }
-
-  &:hover {
-    border-color: #000;
   }
 
   position: relative;
@@ -16,8 +12,6 @@ export const StyledProductItemDisplay = styled.div`
   max-width: 500px;
   width: 100%;
   margin: 3px;
-  border: 1px solid #ccc;
-  transition: border-color 0.5s;
 
   &:hover {
     .productText {
@@ -38,7 +32,6 @@ export const StyledProductItemDisplay = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    padding: 10px;
   }
 
   .moreButton {
@@ -182,4 +175,4 @@ export const StyledProductItemDisplay = styled.div`
       }
     }
   }
-`;
+`

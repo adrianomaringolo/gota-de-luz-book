@@ -6,7 +6,7 @@ import Image from 'next/image'
 export const InitArea: React.FC = () => {
   return (
     <div className="p-2 pt-20 md:p-20 bg-[url('/images/background-init.png')] bg-no-repeat bg-cover">
-      <div className="flex flex-col justify-center max-w-[60rem] mx-auto my-0 px-5 py-0">
+      <div className="flex flex-col justify-center max-w-[60rem] mx-auto my-0 px-5 py-0 mb-10">
         <div className="text-center pt-8">
           <Image
             priority
@@ -20,7 +20,6 @@ export const InitArea: React.FC = () => {
         </div>
       </div>
 
-      <h2 className="text-center mt-6 mb-4 italic">Conheça nossos produtos</h2>
       <ProductCategories mode="grid" />
 
       <h2 className="text-center mt-10 italic">

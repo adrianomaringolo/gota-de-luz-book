@@ -8,6 +8,7 @@ export interface ProductType {
   items?: Array<ProductItem>
   seal?: string
   customClassName?: string
+  areaBackground?: string
 }
 
 export interface OptionsSetItem {
