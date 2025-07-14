@@ -89,7 +89,13 @@ const Visitas = () => {
           </p>
 
           <p>
-            <b>O valor é de R$ 120,00 por pessoa!</b>
+            <p className="text-lg">
+              <b>Valor por pessoa</b>:
+              <br /> R$ 120,00 (acima de 15 anos)
+              <br />
+              <span className="text-sm text-gray-700">R$ 40,00 (de 8 a 14 anos)</span>
+              <br /> <span className="text-sm text-gray-700">isento: até 7 anos</span>
+            </p>
           </p>
 
           <h3 className="border-t mt-4 pt-4 text-2xl font-semibold">Galeria de fotos</h3>

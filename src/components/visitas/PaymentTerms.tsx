@@ -16,7 +16,8 @@ export const PaymentTerms = ({ isOpen, onClose }: PaymentTermsProps) => {
           <br />
           - O deslocamento é por conta de cada um. Após fecharmos o grupo, passaremos mais
           detalhes e orientações.
-          <br />- O valor é de R$ 120,00 por pessoa
+          <br />- O valor é de R$ 120,00 por pessoa acima de 15 anos / R$ 40,00 por pessoa
+          de 8 a 14 anos / isento até 7 anos.
         </p>
 
         <p className="border-t font-semibold mt-3">Pagamento</p>

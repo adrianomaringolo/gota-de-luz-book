@@ -72,7 +72,7 @@ const sendEnrollmentGreetingEmail = async (
       <b>Importante:</b><br/><br/>
       ⚠️ A programação se inicia pontualmente às 8h, com encerramento às 12h.<br/><br/>
       ⚠️ O deslocamento é por conta de cada um. Após fecharmos o grupo, passaremos mais detalhes e orientações.<br/><br/>
-      ⚠️ O valor é de R$ 120,00 por pessoa</p>
+      ⚠️ O valor é de R$ 120,00 por pessoa acima de 15 anos / R$ 40,00 por pessoa de 8 a 14 anos / isento até 7 anos.</p>
       <hr/>
       <div style="font-size: 14px; text-align: left">
         <h4>Informativos sobre o pagamento:</h4>

@@ -31,7 +31,13 @@ export const VisitArea: React.FC = () => {
           explicação do processo + visita guiada à propriedade
           <br />
           <br />
-          <b>Valor</b>: R$ 120,00 por pessoa
+          <p className="text-lg">
+            <b>Valor por pessoa</b>:
+            <br /> R$ 120,00 (acima de 15 anos)
+            <br />
+            <span className="text-sm text-gray-700">R$ 40,00 (de 8 a 14 anos)</span>
+            <br /> <span className="text-sm text-gray-700">isento: até 7 anos</span>
+          </p>
           <br />
           <br />
           <big>
