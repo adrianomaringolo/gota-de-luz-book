@@ -44,7 +44,7 @@ const reports = [
     url: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelat%C3%B3rio%20T%C3%A9cnico%20-%20Casearia%20sylvestris.pdf?alt=media&token=c9da6805-20b1-455b-94c4-e8f21a5536f5',
   },
   {
-    name: 'Manjericão - Óleo essencial',
+    name: 'Manjericão doce - Óleo essencial',
     cientificName: 'Ocimum basilicum',
     url: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20Ocimum%20basilicum.pdf?alt=media&token=15c58e8b-cb45-4a8d-ae48-f8c7970d4aef',
   },
@@ -93,6 +93,11 @@ const reports = [
     name: 'Laranja sanguínea - Óleo essencial',
     cientificName: 'Citrus sinensis',
     url: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20OE%20de%20laranja%20sanguinea.pdf?alt=media&token=795dba99-473c-4f76-8c5b-49ffccf545f6',
+  },
+  {
+    name: 'Manjericão cravo - Óleo essencial',
+    cientificName: 'Ocimum gratissimum',
+    url: 'https://firebasestorage.googleapis.com/v0/b/gota-de-luz.appspot.com/o/reports%2FRelato%CC%81rio%20Te%CC%81cnico%20-%20OE%20de%20Ocimum%20gratissimum.pdf?alt=media&token=5c14caa6-fadf-418c-a36b-1cdf125c89ad',
   },
 ]
 
